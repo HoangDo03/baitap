@@ -71,8 +71,10 @@ section{
     width: 25%;
 }
 .container_grid .slogan h1 {
-    font: italic 3rem "Times New Roman", serif;
+    font-family: "Times New Roman", serif;
     color: #4c718d;
+    font-style: italic;
+    font-size: clamp(2rem, 3.5vw, 6rem);
     line-height: 1.1;
     text-align: left;
     letter-spacing: 0.1vw;
@@ -262,7 +264,7 @@ section{
     aspect-ratio: 3/2;
 }
 .gallery3 .quote {
-    width: 20%;
+    width: 25%;
     top: 40%;
     right: 20%;
     z-index: 2;
@@ -297,25 +299,25 @@ section{
 
 /* Footer */
 .credits {
-  width: 60%;
-  max-width: 720px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: left;
-  padding: 2% 0;
-  
+    width: 60%;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding: 2% 0;
+    
 }
 .credits p {
-  font-size: clamp(0.5rem, 0.7vw, 0.9rem);
-  font-weight: 300;
-  margin: 0;
+    font-size: clamp(0.5rem, 0.7vw, 0.9rem);
+    font-weight: 300;
+    margin: 0;
 }
 .credits h3 {
-  font-size: clamp(0.5rem, 0.7vw, 0.9rem);
-  font-weight: bold;
-  margin: 0.2rem 0 0;
+    font-size: clamp(0.5rem, 0.7vw, 0.9rem);
+    font-weight: bold;
+    margin: 0.2rem 0 0;
 }
 
 /* Responsive */
@@ -334,7 +336,7 @@ header .title {
     font-size: clamp(0.5rem, 1vw, 0.9rem);
 }
 .container_grid .slogan h1{
-    font-size: clamp(1rem, 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 3vw, 4rem);
 }
 .container_grid .photo1{
     top: 30%;
@@ -365,12 +367,19 @@ header .title {
     margin-bottom: 2rem; 
 }
 .content_container{
-    width: 70%;
+    width: 60%;
+}
+.container_grid .quote p{
+    font-size: clamp(0.3rem, 1.5vw, 2rem);
 }
 .gallery1 .title p{
     font-size: 2rem;
 }
 
+
+.container_grid .photo1{
+    top: 45%;
+}
 .container_grid .photo2{
     bottom: -5%;
 }
@@ -378,29 +387,35 @@ header .title {
 .gallery1 .quote{
     font-size: clamp(0.2rem, 1.5vw, 1rem);
 }
-
+.gallery1 .slogan h1{
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
 .gallery1 .title p{
     font-size: clamp(0.2rem, 6vw, 3rem);
 }
 
-.content_container, .credits, .temp{ 
-    width: 90%; 
+.content_container, .credits{ 
+    width: 60%; 
     padding: 2%; 
 }
+.temp { 
+    width: 60%; 
+}
 .credits { 
-    flex-direction: column; 
-    text-align: center; 
-    gap: 0.5rem; 
-    font-size: 0.1rem;
+    font-size: 0.01rem;
 }
 }
-@media(max-width: 430px) {
+@media(max-width: 500px) {
 body { 
     font-size: 10px; }
 
 header .title { 
     font-size: clamp(3rem, 4vw, 6rem);
     letter-spacing: -0.1vw; 
+}
+.subtitle { 
+    font-size: clamp(0.5rem, 1vw, 1.2rem); 
+    margin-bottom: 1rem; 
 }
 .content_container,.temp, .credits {
     width: 70%;
@@ -409,7 +424,7 @@ header .title {
     font-size: clamp(0.5rem, 4vw, 2rem);
 }
 .container_grid .quote p{
-    font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.2rem, 1.5vw, 1.5rem);
 }
 .container_grid .photo1{
     top:40%;
@@ -419,11 +434,13 @@ header .title {
 }
 .gallery2 .quote{
     top: -10%;
-    font-size: clamp(0.5rem, 0.4vw, 0.6rem);
+
+    font-size: clamp(0.5rem, 0.6vw, 0.7rem);
 }
 .gallery3 .quote{
     top: -0%;
-    font-size: clamp(0.2rem, 0.3vw, 0.6rem);
+    width: 20%;
+    font-size: clamp(0.3rem, 0.4vw, 0.6rem);
 }
 
 .gallery3 .photo1{
@@ -433,13 +450,39 @@ header .title {
 }
 .gallery3 .photo2{
     left: 20%;
+    bottom: -20%;
 }
 .gallery3 .quote{
     font-size: clamp(0.5rem, 0.4vw, 0.6rem);
-    top: 40%;
+    top: 30%;
     right: 15%;
 }
 .credits {
     font-size: 0.2rem;
 }
+}
+@media(max-width: 370px) {
+    header .title { 
+    font-size: clamp(2rem, 3vw, 4rem);
+    letter-spacing: -0.1vw; 
+}
+    .gallery .quote{
+        top: 55%;
+        font-size: clamp(0.4rem, 0.8vw, 1.2rem);
+        height: fit-content;
+    }
+    .gallery2 .quote{
+        left: 20%;
+        width: 30%;
+        font-size: clamp(0.4rem, 0.7vw, 1rem);
+    }
+    .gallery2 .photo_bottom {
+        width: 40%;
+        left: 18%;
+    }
+    .gallery2 .photo_top {
+        top: 10%;
+        width: 20%;
+        right: 25%;
+    }
 }
