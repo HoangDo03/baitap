@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-1: "Noto Serif", serif;
+    --font-2: "Inter", sans-serif;
+    --font-3: 'Bodoni Moda', serif;
+
+}
+
+body {
+    background-color: #F9F9F5;
+    overflow-x: hidden;
+}
+
+.container_grid {
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-template-rows: 70% auto;
+}
+
+.container_grid>div {
+    background-color: #f1f1f1;
+}
+
+.portrait-1 {
+    position: relative;
+}
+
+.portrait-1 .brand {
+    position: absolute;
+    color: white;
+    font-size: clamp(0.5rem, 3vw, 4rem);
+    text-align: center;
+    padding: 5%;
+}
+
+.portrait-1 img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    background-position: center;
+    aspect-ratio: 1;
+}
+
+.container_grid .title {
+    position: relative;
+    background-color: #796A68;
+    width: 100%;
+}
+
+.container_grid .title>* {
+    position: absolute;
+    margin: 0 auto;
+    padding: 10%;
+
+}
+
+.container_grid .title div {
+    color: white;
+    font-size: clamp(0.2rem, 3.5vw, 10rem);
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.container_grid .title p {
+    color: #C0BF8C;
+    bottom: 0%;
+    font-size: clamp(0.1rem, 2.2vw, 5rem);
+    font-weight: 500;
+}
+
+.container_grid .name {
+    margin: 0;
+    padding: 0;
+    color: white;
+    z-index: 2;
+    background: linear-gradient(to right, #796A68, #C0BF8C);
+}
+
+.container_grid .name div {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1rem, 13vw, 15rem);
+    line-height: 1;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.portrait-2 img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    object-fit: fill;
+    aspect-ratio: 16/9;
+    /* background-position: left; */
+}
+
+.content_container {
+    font-family: var(--font-2);
+    margin-top: 3.5%;
+}
+
+.body-text,
+.question {
+    width: clamp(10%, 100%, 800px);
+    font-family: var(--font-2);
+    text-align: justify;
+    margin: 2% auto;
+    line-height: 27px;
+}
+
+.body-text {
+    font-size: clamp(0.2rem, 8vw, 16px);
+    font-weight: 400;
+}
+
+.question {
+    font-size: clamp(0.2rem, 6vw, 20px);
+    font-weight: 700;
+
+}
+
+.card,
+.first-card {
+    width: clamp(10%, 80%, 800px);
+    margin: auto;
+}
+
+
+.first-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- khối ảnh + overlay --- */
+.first-card .portrait {
+    position: relative;
+}
+
+.first-card .portrait img {
+    width: 100%;
+    display: block;
+    object-fit:  scale-down ;
+}
+
+.first-card .overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to right, #796A68, #C0BF8C);
+}
+
+.first-card .overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to bottom, #796A68, #C0BF8C);
+}
+
+.first-card .overlay-logo {
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    font-size: clamp(1rem, 15vw, 22rem);
+    font-family: var(--font-3);
+    font-weight: bold;
+    color: #C0BF8C
+}
+
+.first-card .overlay-container {
+    background: #6a5a55;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    
+}
+
+.first-card .overlay-quote {
+    margin: 5% 15% 15% 5%;
+    font-family: var(--font-2);
+    font-size: clamp(0.2rem, 3vw, 17rem);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.first-card .overlay-bottom{
+    bottom:0;
+    height: 1.5vw;
+    width: 100%;
+    background: linear-gradient(to left, #796A68, #C0BF8C);
+}
+
+.first-card .overlay-source {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-2);
+    font-size: clamp(0.1rem, 1.3vw, 4rem);
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.8;
+    margin-left: 5%;
+}
+
+
+.card .portrait {
+    position: relative;
+}
+
+.card .portrait img {
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    display: block;
+
+}
+
+
+.card .overlay-top,
+.card .overlay-bottom {
+    position: absolute;
+    width: 100%;
+    height: 3%;
+    z-index: 3;
+}
+
+
+.card .overlay-top {
+    top: 0%;
+    background: linear-gradient(to left, #796A68, #C0BF8C);
+}
+
+.card .overlay-bottom {
+    bottom: 0%;
+    background: linear-gradient(to left, #C0BF8C, #796A68);
+}
+
+.card .overlay-right {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    z-index: 2;
+    width: 15%;
+    height: 50%;
+    background: linear-gradient(to bottom, #C0BF8C, #796A68);
+
+}
+
+
+.card .overlay-logo {
+    position: absolute;
+    z-index: 3;
+    font-size: clamp(1rem, 15vw, 22rem);
+    font-family: var(--font-3);
+    font-weight: bold;
+    color: #C0BF8C;
+    top: 0%;
+}
+
+.card .overlay-quote {
+    position: absolute;
+    width: 75%;
+    color: #fff;
+    font-family: var(--font-2);
+    font-size: clamp(0.2rem, 3vw, 17rem);
+    font-weight: 500;
+    line-height: 1.5;
+    top: 65%;
+    bottom: 10%;
+    left: 10%;
+    right: 20%;
+}
+
+.card .overlay-source {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-2);
+    font-size: clamp(0.1rem, 1.3vw, 4rem);
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.8;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+}
+
+
+.temp {
+    width: clamp(50px, 95%, 800px);
+    background: linear-gradient(to right, #796A68, #C0BF8C);
+    height: 1vh;
+    margin: 0 auto;
+}
+
+/* Footer */
+.credits {
+    width: clamp(10%, 100%, 800px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding: 2% 0;
+
+}
+
+.credits p {
+    font-size: clamp(0.1rem, 2vw, 16px);
+    font-weight: 300;
+    margin: 0;
+}
+
+.credits h3 {
+    font-size: clamp(0.1rem, 2vw, 15px);
+    font-weight: bold;
+    margin: 0.2rem 0 0;
+}
+
+@media screen and (max-width: 900px) {
+
+    .body-text,
+    .question {
+        padding: 0 15px;
+    }
+}
