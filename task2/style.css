@@ -82,8 +82,8 @@ body {
 }
 
 .container_grid .name div {
-    font-family: 'Bodoni Moda', serif;
-    font-size: clamp(1rem, 13vw, 15rem);
+    font-family: var(--font-1);
+    font-size: clamp(0.5rem, 13vw, 15rem);
     line-height: 1;
     margin-top: 3%;
     margin-left: 3%;
@@ -136,7 +136,6 @@ body {
     flex-direction: column;
 }
 
-/* --- khối ảnh + overlay --- */
 .first-card .portrait {
     position: relative;
 }
