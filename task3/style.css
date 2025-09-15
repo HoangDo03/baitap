@@ -86,9 +86,8 @@ header {
 
 .slider {
     overflow: hidden;
-    margin: auto;
     height: 100%;
-    margin-top: 5%;
+    margin: 5% auto 0;
 }
 
 .slides {
@@ -110,18 +109,20 @@ header {
     position: relative;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
     padding-left: 20%;
-    margin-bottom: 30%;
+    /* margin-bottom: 30%; */
+    cursor: pointer;
 }
 
 .location-tour-item {
     position: absolute;
     left: 0;
+    bottom: 0;
+    /* margin-bottom: 30%; */
     writing-mode: sideways-lr;
     text-orientation: mixed;
     color: #e2e2e2;
-    font-size: clamp(0.8rem, 4vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: bold;
     transition: color 0.5s linear;
     cursor: pointer;
@@ -132,55 +133,73 @@ header {
 
 }
 
+/* .overlay-tour-item{
+    background: rgba(0, 0, 0, 0.541);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    inset: 0;
+    border-radius: 15%;
+
+} */
 
 .img-tour {
     position: relative;
     width: 100%;
-    height: clamp(300px, 30vh, 500px);
     place-content: center;
+    border-radius: 20%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    font-weight: bold;
 
-
-    /* background: rgb(220, 136, 136); */
-    /* border-radius: ; */
 }
 
-.img-tour>* {
+.img-tour:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.img-tour .overlay-tour-item,
+.img-tour .content {
     position: absolute;
 }
 
+
 .img-tour img {
-    z-index: 1;
-    top: 0;
-    right: 0;
     width: 100%;
-    object-fit: cover;
     aspect-ratio: 5/6;
+    object-fit: cover;
     border-radius: 15%;
+}
+
+.img-tour .content{
+    font-size: clamp(0.3rem,2vw,20px);
+    right: 10%;
+    left: 10%;
+    bottom: 10%;
 }
 
 .sum-day-tour {
     position: absolute;
     top: 10%;
     right: 10%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .title-tour-item {
     position: absolute;
-    bottom: 30%;
-    left: 10%;
-    z-index: 2;
+    bottom: 25%;
+    z-index: 3;
     text-align: left;
 }
 
 .info-tour-item {
-    position: absolute;
+    /* position: absolute; */
     color: #ffdd77;
-    z-index: 2;
-    bottom: 5%;
-    left: 10%;
+    z-index: 3;
+    /* margin-bottom: 10%; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -206,15 +225,30 @@ header {
     z-index: 2;
 }
 
+.travel .travel-img{
+    padding-left: 6%;
+}
+
 .travel .travel-slides {
     position: absolute;
-    top: 10%;
-    right: 0;
-    width: 50%;
-    height: 100%;
+    top: 20%;
+    right: 10%;
+    width: 35%;
+    aspect-ratio: 1/1;  
     z-index: 2;
+    border-radius: 50%;
     background-color: white;
+    overflow: hidden;  
 }
+
+.travel-slides .circle-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    aspect-ratio: 1/1;
+    display: block;
+}
+
 
 .tour-foreign {
     position: relative;
@@ -239,7 +273,6 @@ header {
     width: 100%;
     border-radius: 5%;
     overflow: hidden;
-    /* bo tròn cả overlay */
     font-family: sans-serif;
 
 }
@@ -274,10 +307,14 @@ header {
     color: white;
 }
 
+.tour-card .info{
+    display: flex;
+    justify-content: space-between;
+}
+
 .tour-card .price {
     font-weight: bold;
     color: #fdd835;
-    /* vàng */
     margin-top: 5px;
 }
 
@@ -286,9 +323,10 @@ header {
     margin-top: 3px;
 }
 
-.news{
-    display:flex;
+.news {
+    display: flex;
     /* gap:10%; */
+    padding-bottom: 5%;
 }
 
 .left-news {
@@ -297,68 +335,117 @@ header {
     padding-left: 1%;
 }
 
-img {
+.left-news img {
     display: block;
     width: 90%;
     height: 90%;
     border-radius: 3%;
 }
 
-.post-overlay {
+.news-overlay {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 88%;
-    height: 90%;
+    width: 88.5%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     background: linear-gradient(to top, #073146, transparent 60%);
     border-radius: 3%;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 
-.left-news .post-overlay p {
+.left-news .news-overlay p {
     color: white;
     transform: translateY(50%);
     transition: transform 0.5s ease;
     padding: 5%;
 }
 
-.left-news .post-overlay span{
+.left-news .news-overlay span {
     font-size: clamp(0.2rem, 2vw, 25px);
 }
 
-.left-news:hover .post-overlay p{
+.left-news:hover .news-overlay p {
     transform: translateY(0);
 }
 
-.left-news img{
+.left-news img {
     display: block;
     width: 90%;
-    height: 90%;
+    height: 100%;
     border-radius: 3%;
 }
 
-.right-news{
+.right-news {
     flex: 0 0 50%;
     display: flex;
     flex-wrap: wrap;
-    gap:5%;
+    gap: 1%;
 }
 
-.right-news .col{
-    flex: 0 0 calc(50% - 10px);
-    width: 100%;
-    height: 30%;
+.right-news .col {
+    flex: 0 0 calc(50% - 1%);
 }
 
-.right-news .col img{
-    width: 30%;
-    height: 30%;
+.col .news-container {
+    display: flex;
+    align-items: center;
+    gap: 1%
 }
 
+.col .news-container img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.col .news-container h3 {
+    flex: 0 0 60%;
+    font-size: clamp(0.2rem, 3vw, 18px);
+    line-height: 1.4;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#FABs{
+    position: fixed;
+    display: flex;
+    top: 60%;
+    right: 1%;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 999;
+
+}
+
+.fab{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #00BFC4;
+
+}
+.btn-fab img{
+    width: 30px;
+}
+
+.btn-fab{
+    width: 50px;
+    height: 50px;
+    background-color: #00BFC4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    margin-bottom: 8px;
+}
 
 
 .wrap-footer {
@@ -382,7 +469,8 @@ img {
 }
 
 .logo-footer img {
-    width: 30vw;
+    width: 35vw;
+    height: 10vw;
     position: absolute;
     z-index: 2;
     inset: 0;
