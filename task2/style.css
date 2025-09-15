@@ -201,7 +201,7 @@ body {
 .first-card .overlay-source {
     display: flex;
     justify-content: space-between;
-    font-size: var(--font-2);
+    font-family: var(--font-2);
     font-size: clamp(0.1rem, 1.3vw, 4rem);
     font-weight: bold;
     color: #fff;

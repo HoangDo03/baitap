@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif", serif;
+}
+
+.text-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.607);
+    z-index: 1000;
+
+}
+
+.wrap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: clamp(0.2rem, 1.5vw, 18px);
+}
+
+.wrap-header img {
+    width: 20vw;
+}
+
+.menu {
+    text-align: right;
+}
+
+.menu ul {
+    box-sizing: border-box;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    list-style: none;
+    padding-right: 3%;
+}
+
+.overlay-banner img {
+    width: 100%;
+}
+
+.sub-title {
+    color: black;
+    font-size: clamp(0.1rem, 2vw, 4rem);
+    padding-top: 5%;
+}
+
+.title-tour {
+    color: #00BFC4;
+    font-size: clamp(0.1rem, 3vw, 4rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 1.5%;
+    padding-bottom: 5%;
+}
+
+
+.tour-local {
+    position: relative;
+    background: url(img/bg-travel-acency-5-1.png) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+}
+
+.tour-local .sub-title {
+    padding-top: 20%;
+}
+
+.slider {
+    overflow: hidden;
+    margin: auto;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.slides {
+    display: flex;
+    width: 200%;
+    animation: slideShow 6s infinite;
+}
+
+.slide-tour {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.tour-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    padding-left: 20%;
+    margin-bottom: 30%;
+}
+
+.location-tour-item {
+    position: absolute;
+    left: 0;
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+    color: #e2e2e2;
+    font-size: clamp(0.8rem, 4vw, 3rem);
+    font-weight: bold;
+    transition: color 0.5s linear;
+    cursor: pointer;
+}
+
+.location-tour-item:hover {
+    color: #00BFC4;
+
+}
+
+
+.img-tour {
+    position: relative;
+    width: 100%;
+    height: clamp(300px, 30vh, 500px);
+    place-content: center;
+
+
+    /* background: rgb(220, 136, 136); */
+    /* border-radius: ; */
+}
+
+.img-tour>* {
+    position: absolute;
+}
+
+.img-tour img {
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 5/6;
+    border-radius: 15%;
+}
+
+.sum-day-tour {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    z-index: 2;
+}
+
+.title-tour-item {
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+    z-index: 2;
+    text-align: left;
+}
+
+.info-tour-item {
+    position: absolute;
+    color: #ffdd77;
+    z-index: 2;
+    bottom: 5%;
+    left: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.travel {
+    position: relative;
+    background: url(img/bg-tour.jpg) center/cover no-repeat fixed
+}
+
+
+.overlay-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+    background-color: unset;
+    background-image: linear-gradient(to bottom, #073146 30%, rgb(7 49 70 / 50%), #073146 80%);
+}
+
+.travel .container {
+    position: relative;
+    z-index: 2;
+}
+
+.travel .travel-slides {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    background-color: white;
+}
+
+.tour-foreign {
+    position: relative;
+    background: url(img/anton-shuvalov-JVHy9YYrTTw-unsplash-scaled.jpg) center/cover no-repeat fixed
+}
+
+.tour-foreign>.overlay-1 {
+    background-color: unset;
+    background-image: linear-gradient(to bottom, #073146 40%, transparent);
+}
+
+.tour-foreign .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 10%;
+    margin: 0 auto;
+    padding-bottom: 5%;
+}
+
+.tour-card {
+    position: relative;
+    width: 100%;
+    border-radius: 5%;
+    overflow: hidden;
+    /* bo tròn cả overlay */
+    font-family: sans-serif;
+
+}
+
+.tour-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tour-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #073146, transparent 60%);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.tour-card .content {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    color: white;
+}
+
+.tour-card .price {
+    font-weight: bold;
+    color: #fdd835;
+    /* vàng */
+    margin-top: 5px;
+}
+
+.tour-card .stars {
+    color: gold;
+    margin-top: 3px;
+}
+
+.news{
+    display:flex;
+    /* gap:10%; */
+}
+
+.left-news {
+    flex: 0 0 50%;
+    position: relative;
+    padding-left: 1%;
+}
+
+img {
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 3%;
+}
+
+.post-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 88%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background: linear-gradient(to top, #073146, transparent 60%);
+    border-radius: 3%;
+    overflow: hidden; 
+}
+
+
+.left-news .post-overlay p {
+    color: white;
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
+    padding: 5%;
+}
+
+.left-news .post-overlay span{
+    font-size: clamp(0.2rem, 2vw, 25px);
+}
+
+.left-news:hover .post-overlay p{
+    transform: translateY(0);
+}
+
+.left-news img{
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 3%;
+}
+
+.right-news{
+    flex: 0 0 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5%;
+}
+
+.right-news .col{
+    flex: 0 0 calc(50% - 10px);
+    width: 100%;
+    height: 30%;
+}
+
+.right-news .col img{
+    width: 30%;
+    height: 30%;
+}
+
+
+
+.wrap-footer {
+    position: relative;
+}
+
+.overlay-footer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #073146 40%, #19694f 90%);
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.logo-footer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 25%;
+}
+
+.logo-footer img {
+    width: 30vw;
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    margin: auto;
+}
+
+.logo-footer .text-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: clamp(3rem, 9vw, 140px);
+    letter-spacing: 17px;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.326);
+}
+
+.main-footer {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.main-footer .wrap-title {
+    position: block;
+    text-align: center;
+    width: 100%;
+    color: #ffdd77;
+    padding: 2% 0;
+    font-size: clamp(0.2rem, 1.5vw, 3rem);
+}
+
+.main-footer .list-tour {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+
+}
+
+.list-tour ul {
+    list-style-type: none;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.list-tour ul li {
+    white-space: nowrap;
+    padding-bottom: 15%;
+}
+
+
+
+
+.temp {
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    background: white;
+    height: 0.3vh;
+    margin: 2% auto;
+}
+
+.bottom-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+    z-index: 2;
+    padding-right: 2%;
+    padding-left: 2%;
+
+}
+
+.bottom-footer .title {
+    color: #ffdd77;
+    font-weight: 300;
+    font-size: clamp(0.1rem, 1.5vw, 4rem);
+}
+
+.bottom-footer ul {
+    list-style-type: none;
+}
+
+
+/* animation cho slide */
+/* @keyframes slideShow {
+  0%, 40% {
+    transform: translateX(0);
+  }
+  50%, 90% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
