@@ -5,6 +5,7 @@
 }
 
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
     font-family: "Noto Serif", serif;
@@ -20,9 +21,9 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    right: 0; 
+    right: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.461);
+    background-color: rgba(0, 0, 0, 0.269);
     position: sticky;
 }
 
@@ -37,14 +38,12 @@ header {
 }
 
 
-.wrap-header .ic-menu
-{
+.wrap-header .ic-menu {
     display: none;
     padding-left: 3%;
 }
 
-.wrap-header .ic-find
-{
+.wrap-header .ic-find {
     padding-right: 3%;
 }
 
@@ -68,6 +67,7 @@ header {
     padding-left: 2%;
     margin-bottom: 2%;
     margin-left: 2%;
+    margin-top: 3%;
 
 }
 
@@ -91,7 +91,7 @@ header {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: slideAnimation 15s infinite; 
+    animation: slideAnimation 15s infinite;
 }
 
 
@@ -117,39 +117,53 @@ header {
 }
 
 @keyframes slideAnimation {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    30% { opacity: 1; }
-    35% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
 
-#s2 .header-content{
-    position: absolute; 
+#s2 .header-content {
+    position: absolute;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
     color: white;
     z-index: 3;
     width: 100%;
-    
+
 }
 
-#s2 .header-content{
+#s2 .header-content {
     width: 40%;
 }
 
-.header-content h1{
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+.header-content h1 {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     line-height: 0.8;
     font-weight: 500;
-    font-size: clamp(1rem,4.5vw,70px);
+    font-size: clamp(1rem, 4.5vw, 70px);
     padding-bottom: 5%;
 }
 
-.header-content h1 .text-in-header{
+.header-content h1 .text-in-header {
     text-shadow: none;
     opacity: 1;
     background-image: linear-gradient(360deg, rgba(255, 255, 255, 0.1) 0%, #FFF 56%, #FFF 100%);
@@ -164,16 +178,16 @@ header {
 
 }
 
-#s2 p{
+#s2 p {
     max-width: 60%;
     text-align: justify;
     font-size: clamp(0.1rem, 2vw, 16px);
     font-weight: 400;
     line-height: 137%;
-    
+
 }
 
-#s2 div i{
+#s2 div i {
     width: 30px;
     height: 30px;
     padding: 1%;
@@ -230,37 +244,53 @@ header {
 
 .slide-tour {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
-    justify-content: center;
-    align-content: center;
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     width: 100%;
+    padding:0 2%;
+    
+
 }
+
+@media (max-width: 768px) {
+  .slide-tour {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-tour {
+    grid-template-columns: 1fr; 
+  }
+}
+
 
 .tour-item {
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 100%;
-    padding-left: 20%;
+    padding-left: 10%;
     padding-bottom: 10%;
     cursor: pointer;
 }
 
 .location-tour-item {
     position: absolute;
-    left: 0;
     bottom: 0;
-    height: 100%;
-    padding-bottom: 10%;
-    /* margin-bottom: 30%; */
-    writing-mode: sideways-lr;
-    text-orientation: mixed;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
     color: #e2e2e2;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: bold;
-    transition: color 0.5s linear;
-    cursor: pointer;
+    font-size: clamp(1.2rem, 2.8vw, 40px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    opacity: 0.9;
+    cursor: default;
+    margin-left: 5px; 
 }
+
+
 
 .location-tour-item:hover {
     color: #00BFC4;
@@ -271,19 +301,20 @@ header {
 
 .img-tour {
     position: relative;
-    width: 100%;
+    width: 100%; 
+    margin-left: 8%;
     aspect-ratio: 3/4;
     place-content: center;
     border-radius: 15%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform1 0.3s ease, box-shadow 0.3s ease;
     color: white;
     font-weight: bold;
-    font-size: clamp(0.1rem,3vw,20px);
+    font-size: clamp(0.1rem, 3vw, 20px);
     background: url(img/du-lich-Da-Lat-ivivu.jpg) center/cover no-repeat;
     margin-bottom: 2%;
 }
 
-.img-tour:hover{
+.img-tour:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
@@ -293,7 +324,7 @@ header {
     position: absolute;
 }
 
-.overlay-tour-item{
+.overlay-tour-item {
     background: rgba(0, 0, 0, 0.457);
     width: 100%;
     height: 100%;
@@ -319,13 +350,23 @@ header {
 
 .title-tour-item {
     position: absolute;
-    bottom: 25%;
+    bottom: 20%;
     left: 10%;
     right: 10%;
-    top: 50%;
     z-index: 3;
+    display: flex;
+    flex-direction: column;  
+    justify-content: flex-end;
+    align-items: flex-start;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    line-height: 1.4;
+    color: #fff;
     text-align: left;
+    word-break: break-word;   
+    white-space: normal;      
 }
+
+
 
 .info-tour-item {
     position: relative;
@@ -345,9 +386,13 @@ header {
 
 .travel {
     position: relative;
+    padding-bottom: 10%;
     background: url(img/bg-tour.jpg) center/cover no-repeat fixed;
 }
 
+.travel >.sub-title {
+    color: white;
+}
 
 .overlay-1 {
     position: absolute;
@@ -362,10 +407,10 @@ header {
 .travel .container {
     position: relative;
     z-index: 2;
-    margin: 0 clamp(5%,1%,1%);
+    margin: 0 clamp(5%, 1%, 1%);
 }
 
-.travel .travel-img img{
+.travel .travel-img img {
     padding-left: 6%;
     /* width: clamp(3rem,30rem,50rem); */
     width: 50%;
@@ -376,30 +421,31 @@ header {
     top: 20%;
     right: 5%;
     width: 45%;
-    aspect-ratio: 1/1;  
+    aspect-ratio: 1/1;
     z-index: 2;
     border-radius: 50%;
     background-color: white;
-    overflow: hidden;  
+    overflow: hidden;
 }
 
-.travel .travel-slides div{
+.travel .travel-slides div {
     position: relative;
 }
 
 .travel-slides .circle-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  
+    object-fit: cover;
     aspect-ratio: 1/1;
     display: block;
 }
 
 
 
-.travel-slides .circle-slide{
+.travel-slides .circle-slide {
     position: relative;
 }
+
 .travel-slides .text-slide {
     position: absolute;
     top: 10%;
@@ -412,6 +458,10 @@ header {
 .tour-foreign {
     position: relative;
     background: url(img/anton-shuvalov-JVHy9YYrTTw-unsplash-scaled.jpg) center/cover no-repeat fixed
+}
+
+.tour-foreign .sub-title {
+    color: white;
 }
 
 .tour-foreign>.overlay-1 {
@@ -438,7 +488,7 @@ header {
 
 }
 
-.tour-card:hover{
+.tour-card:hover {
     transform: scale(1.02);
     box-shadow: 0 5% 5% rgba(0, 0, 0, 0.3);
 }
@@ -471,10 +521,10 @@ header {
     left: 15px;
     right: 15px;
     color: white;
-    font-size: clamp(0.2rem,2vw, 1.7rem);
+    font-size: clamp(0.2rem, 4.5vw, 1.7rem);
 }
 
-.tour-card .info{
+.tour-card .info {
     display: flex;
     justify-content: space-between;
 }
@@ -577,11 +627,11 @@ header {
     line-height: 1.4;
     margin: 10px 0;
     width: 200px;
-    overflow: hidden;         
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#FABs{
+#FABs {
     position: fixed;
     display: flex;
     top: 60%;
@@ -589,23 +639,21 @@ header {
     flex-direction: column;
     justify-content: center;
     z-index: 999;
-    
-
 }
 
-.fab{
+.fab {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     background: #00BFC4;
     cursor: pointer;
-
 }
-.btn-fab img{
+
+.btn-fab img {
     width: 30px;
 }
 
-.btn-fab{
+.btn-fab {
     width: 50px;
     height: 50px;
     background-color: #00BFC4;
@@ -616,6 +664,21 @@ header {
     color: #fff;
     margin-bottom: 8px;
 }
+
+@media (max-width: 480px) {
+  #FABs {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    top: auto;
+    right: auto;
+  }
+}
+
 
 
 .wrap-footer {
@@ -733,7 +796,7 @@ header {
 
 
 /* animation cho slide */
-/* @keyframes slideShow {
+@keyframes slideShow1 {
   0%, 40% {
     transform: translateX(0);
   }
@@ -743,55 +806,76 @@ header {
   100% {
     transform: translateX(0);
   }
-} */
+}
 
 @media screen and (max-width: 992px) {
 
-    header{
+    header {
         padding: 20px 0;
     }
 
-    .wrap-header .phone, 
-    .wrap-header .menu
-    {
+    .wrap-header .phone,
+    .wrap-header .menu {
         display: none;
 
     }
 
-    .wrap-header .ic-menu
-    {
+    .wrap-header .ic-menu {
         display: block;
     }
-   
-    .news{
+
+    .news {
         flex-direction: column;
         align-items: center;
         margin: 10%;
-        
+
     }
 
-    .left-news{
+    .left-news {
         place-items: center;
         margin-bottom: 5%;
     }
 
-    .news-overlay{
+    .news-overlay {
         width: 100%;
     }
 
-    .left-news img{
+    .left-news img {
         width: 100%;
     }
-    .right-news{
+
+    .right-news {
         place-items: center;
         flex-direction: column;
     }
 
-    .col .news-container{
+    .col .news-container {
         margin-bottom: 5%;
     }
 
-    .col .news-container img{
+    .col .news-container img {
         aspect-ratio: 2;
+    }
+}
+
+@media (max-width: 768px) {
+  /* .travel .travel-img img {
+      padding-left: 0;
+      width: 100%;
+  }
+
+  .travel .travel-slides {
+      position: static;
+      width: 100%;
+      border-radius: 0;
+      margin-top: 20px;
+  } */
+}
+
+
+@media (max-width: 400px) {
+    #FABs{
+        bottom: 0%;
+        flex-direction: row;
     }
 }
