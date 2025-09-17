@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Noto Serif", serif;
-    overflow-x: hidden;
+     overflow-x: hidden !important;
 }
 
 .text-center {
@@ -197,9 +197,8 @@ header {
 }
 
 #s2 div i {
-    width: 30px;
-    height: 30px;
-    padding: 1%;
+    width: clamp(30px, 6vw, 60px);
+    height: clamp(30px, 6vw, 60px);
     border-radius: 50%;
     border: white solid 3px;
     cursor: pointer;
@@ -245,7 +244,7 @@ header {
     margin: 5% auto 0;
 }
 
-.slides {
+.tour-local .slides {
     display: flex;
     width: 200%;
     animation: slideShow 6s infinite;
@@ -268,11 +267,6 @@ header {
   }
 }
 
-@media (max-width: 480px) {
-  .slide-tour {
-    grid-template-columns: 1fr; 
-  }
-}
 
 
 .tour-item {
@@ -292,13 +286,13 @@ header {
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left top;
     color: #e2e2e2;
-    font-size: clamp(1.5rem, 3vw, 40px);
+    font-size: clamp(2rem, 3.5vw, 50px);
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap;
     opacity: 0.9;
     cursor: default;
-    margin-left: 5px; 
+ 
 }
 
 
@@ -479,14 +473,14 @@ font-size: clamp(1rem, 2vw, 1.5rem);
         position: static;
         margin-top: 20px;
         width: 80%;
-        max-widt
+        /* max-width: ; */
     }
 }
 
 
 .tour-foreign {
     position: relative;
-    background: url(img/anton-shuvalov-JVHy9YYrTTw-unsplash-scaled.jpg) center/cover no-repeat fixed
+    background: url(img/anton-shuvalov-JVHy9YYrTTw-unsplash-scaled.jpg) center/cover no-repeat fixed;
 }
 
 .tour-foreign .sub-title {
@@ -507,6 +501,7 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .tour-card {
+    animation: none;
     position: relative;
     width: 90%;
     margin: 0 auto;
@@ -557,6 +552,7 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 .tour-card .info {
     display: flex;
     justify-content: space-between;
+    font-size: clamp(0.1rem, 4vw, 1.7rem);
 }
 
 .tour-card .price {
@@ -617,6 +613,7 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 
 .left-news:hover .news-overlay p {
     transform: translateY(0);
+    font-size: clamp(0.1rem, 2.6vw, 20px);
 }
 
 .left-news img {
@@ -672,8 +669,8 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .btn-fab {
-    width: clamp(40px, 6vw, 70px);
-    height: clamp(40px, 6vw, 70px);
+    width: clamp(30px, 6vw, 60px);
+    height: clamp(30px, 6vw, 60px);
     background-color: #00BFC4;
     display: flex;
     align-items: center;
@@ -690,6 +687,7 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 
 @media (max-width: 480px) {
   #FABs {
+    max-width: 100%;
     position: fixed;
     bottom: 10px;
     left: 50%;
@@ -700,7 +698,10 @@ font-size: clamp(1rem, 2vw, 1.5rem);
     top: auto;
     right: auto;
   }
-
+.location-tour-item{
+    font-size: clamp(1rem, 10vw, 40px);
+    margin-right: 10%;
+}
 
   .banner-slideshow {
       aspect-ratio: 9/16; 
@@ -777,7 +778,7 @@ font-size: clamp(1rem, 2vw, 1.5rem);
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: clamp(1rem, 5vw, 140px);
+    font-size: clamp(0.5rem, 5vw, 140px);
     letter-spacing: 15px;
     z-index: 1;
     color: rgba(255, 255, 255, 0.326);
@@ -880,17 +881,42 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .tour-item{
+        margin-left: 5%;
+        padding-left: 10%;
+    }
     .bottom-footer {
         grid-template-columns: repeat(2, 1fr);
     }
     .main-footer .list-tour {
         grid-template-columns: repeat(2, 1fr);
     }
+    .logo-footer .text-cover{
+        letter-spacing: 3.4vw;
+    }
+.news,
+.travel .container,
+.bottom-footer,
+.main-footer .list-tour {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.slide-tour {
+    grid-template-columns: 1fr; 
+  }
+  .title-tour-item{
+    top: 20%;
+    font-size: clamp(0.1rem, 8vw, 2rem);
+  }
+  .info-tour-item{
+    font-size: clamp(0.1rem, 8vw, 2rem);
+  }
+
 }
 
 
 /* animation cho slide */
-@keyframes slideShow1 {
+@keyframes slideShow {
   0%, 40% {
     transform: translateX(0);
   }
@@ -952,82 +978,3 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-  /* .travel .travel-img img {
-      padding-left: 0;
-      width: 100%;
-  }
-
-  .travel .travel-slides {
-      position: static;
-      width: 100%;
-      border-radius: 0;
-      margin-top: 20px;
-  } */
-}
-
-/* @media (max-width: 550px) {
-  .slide-tour {
-    grid-template-columns: 1fr !important; 
-    padding: 0; 
-    margin: 0 auto;
-  }
-
-  .tour-item {
-    width: 100% !important;
-    padding-left: 0 !important;
-    margin: 0 auto 20px;
-  }
-
-  .img-tour {
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
-} */
-* {
-  outline: 1px solid red; 
-}
-
-/* @media (max-width: 600px) {
-  .slide-tour {
-    grid-template-columns: 1fr !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-  }
-
-  .tour-item {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto 20px !important;
-  }
-
-  .img-tour {
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  .location-tour-item {
-    position: static !important;
-    transform: none !important;
-    text-align: center !important;
-    margin: 10px 0 !important;
-    font-size: 1rem !important;
-  }
-
-  .tour-item,
-  .img-tour,
-  .slide-tour,
-  .news,
-  .left-news,
-  .right-news,
-  .travel .travel-img img,
-  .travel .travel-slides {
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: 100% !important;
-  }
-
-  body {
-    overflow-x: hidden !important;
-  }
-} */
