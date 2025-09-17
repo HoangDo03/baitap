@@ -380,12 +380,12 @@ header {
     color: #ffdd77;
     z-index: 3;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     bottom: -40%;
-    left: 5%;
-    right: 5%;
-    width: 90%;
+    left: 10%;
+    right: 10%;
+    width: 80%;
     font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
@@ -1015,8 +1015,8 @@ footer {
     }
 
     .info-tour-item {
-        left: 5%;
-        bottom: -40%;
+        /* left: 5%; */
+        /* bottom: -40%; */
         font-size: clamp(0.3rem, 7vw, 20px);
     }
 
