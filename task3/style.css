@@ -1015,7 +1015,8 @@ footer {
     }
 
     .info-tour-item {
-        bottom:-40%;
+        left: 5%;
+        bottom: -40%;
         font-size: clamp(0.3rem, 7vw, 20px);
     }
 
