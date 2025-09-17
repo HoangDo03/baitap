@@ -30,7 +30,7 @@ header {
 .wrap-header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     color: white;
     box-sizing: border-box;
@@ -48,7 +48,7 @@ header {
 }
 
 .wrap-header img {
-    max-width: 180px;
+    max-width: 60%;
     width: auto;
     height: auto;
 }
@@ -151,6 +151,15 @@ header {
 
 }
 
+#s2 .overlay-slide-s2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.269) ;
+}
+
 #s2 .header-content {
     width: 40%;
 }
@@ -159,7 +168,7 @@ header {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     line-height: 0.8;
     font-weight: 500;
-    font-size: clamp(1rem, 4.5vw, 70px);
+    font-size: clamp(0.5rem, 4vw, 70px);
     padding-bottom: 5%;
 }
 
@@ -203,16 +212,16 @@ header {
 
 .sub-title {
     color: black;
-    font-size: clamp(0.1rem, 2vw, 4rem);
+    font-size: clamp(0.1rem, 4vw, 4rem);
     padding-top: 5%;
 }
 
 .title-tour {
     color: #00BFC4;
-    font-size: clamp(0.1rem, 4vw, 4rem);
+    font-size: clamp(0.1rem, 4.5vw, 4rem);
     font-weight: bold;
     text-transform: uppercase;
-    padding-top: 1.5%;
+    padding-top: 2%;
     padding-bottom: 5%;
 }
 
@@ -255,6 +264,7 @@ header {
 @media (max-width: 768px) {
   .slide-tour {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto; 
   }
 }
 
@@ -267,7 +277,8 @@ header {
 
 .tour-item {
     position: relative;
-    width: 90%;
+    width: 80%; 
+    max-width: 90%;
     height: 100%;
     padding-left: 10%;
     padding-bottom: 10%;
@@ -281,7 +292,7 @@ header {
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left top;
     color: #e2e2e2;
-    font-size: clamp(1.2rem, 2.8vw, 40px);
+    font-size: clamp(1.5rem, 3vw, 40px);
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap;
@@ -303,10 +314,10 @@ header {
     position: relative;
     width: 100%; 
     margin-left: 8%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1;
     place-content: center;
     border-radius: 15%;
-    transition: transform1 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: white;
     font-weight: bold;
     font-size: clamp(0.1rem, 3vw, 20px);
@@ -350,7 +361,7 @@ header {
 
 .title-tour-item {
     position: absolute;
-    bottom: 20%;
+    top: 50%;
     left: 10%;
     right: 10%;
     z-index: 3;
@@ -358,7 +369,7 @@ header {
     flex-direction: column;  
     justify-content: flex-end;
     align-items: flex-start;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: 1.4;
     color: #fff;
     text-align: left;
@@ -374,12 +385,12 @@ header {
     z-index: 3;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
     bottom: 5%;
-    left: 0;
+    left: 5%;
     right: 5%;
-
+    width: 90%;
+font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 
@@ -390,7 +401,7 @@ header {
     background: url(img/bg-tour.jpg) center/cover no-repeat fixed;
 }
 
-.travel >.sub-title {
+.travel .sub-title {
     color: white;
 }
 
@@ -407,12 +418,11 @@ header {
 .travel .container {
     position: relative;
     z-index: 2;
-    margin: 0 clamp(5%, 1%, 1%);
+    margin: 0 5vw;
 }
 
 .travel .travel-img img {
     padding-left: 6%;
-    /* width: clamp(3rem,30rem,50rem); */
     width: 50%;
 }
 
@@ -440,8 +450,6 @@ header {
     display: block;
 }
 
-
-
 .travel-slides .circle-slide {
     position: relative;
 }
@@ -454,6 +462,27 @@ header {
     z-index: 5;
     font-weight: 800;
 }
+
+@media (max-width: 768px) {
+    .travel .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .travel .travel-img img {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .travel .travel-slides {
+        position: static;
+        margin-top: 20px;
+        width: 80%;
+        max-widt
+    }
+}
+
 
 .tour-foreign {
     position: relative;
@@ -479,7 +508,8 @@ header {
 
 .tour-card {
     position: relative;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     border-radius: 5%;
     overflow: hidden;
     font-family: sans-serif;
@@ -626,7 +656,7 @@ header {
     font-size: clamp(0.1rem, 2vw, 18px);
     line-height: 1.4;
     margin: 10px 0;
-    width: 200px;
+    width: 20vw;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -641,21 +671,9 @@ header {
     z-index: 999;
 }
 
-.fab {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #00BFC4;
-    cursor: pointer;
-}
-
-.btn-fab img {
-    width: 30px;
-}
-
 .btn-fab {
-    width: 50px;
-    height: 50px;
+    width: clamp(40px, 6vw, 70px);
+    height: clamp(40px, 6vw, 70px);
     background-color: #00BFC4;
     display: flex;
     align-items: center;
@@ -663,6 +681,11 @@ header {
     border-radius: 50%;
     color: #fff;
     margin-bottom: 8px;
+}
+
+.btn-fab img {
+    width: clamp(20px, 3vw, 40px);
+    height: auto;
 }
 
 @media (max-width: 480px) {
@@ -676,6 +699,40 @@ header {
     justify-content: center;
     top: auto;
     right: auto;
+  }
+
+
+  .banner-slideshow {
+      aspect-ratio: 9/16; 
+      object-fit: cover;
+  }
+
+   #s2 .header-content {
+      width: 90%;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+  }
+
+  .header-content h1 {
+      font-size: clamp(1rem, 10vw, 25px);
+      line-height: 1.2;
+      text-align: center;
+  }
+
+  #s2 p {
+      max-width: 70%;
+      font-size: clamp(0.7rem, 3vw, 12px);
+      text-align: center;
+      margin: 0 auto;
+  }
+
+  #s2 div i {
+      margin: 10px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
 }
 
@@ -713,13 +770,15 @@ header {
 .logo-footer .text-cover {
     position: absolute;
     top: 50%;
+    margin: 0 ;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 100%;
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: clamp(3rem, 9vw, 140px);
-    letter-spacing: 17px;
+    font-size: clamp(1rem, 5vw, 140px);
+    letter-spacing: 15px;
     z-index: 1;
     color: rgba(255, 255, 255, 0.326);
 }
@@ -731,20 +790,20 @@ header {
 }
 
 .main-footer .wrap-title {
-    position: block;
+    display: block;
     text-align: center;
     width: 100%;
     color: #ffdd77;
     padding: 2% 0;
-    font-size: clamp(0.2rem, 1.5vw, 3rem);
+    font-size: clamp(0.2rem, 3.5vw, 25px);
 }
 
 .main-footer .list-tour {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     color: white;
+    padding: 2%;
 
 }
 
@@ -756,10 +815,14 @@ header {
 
 .list-tour ul li {
     white-space: nowrap;
-    padding-bottom: 15%;
+    padding-bottom: 5%;
+    font-size:clamp(0.3rem,2.5vw, 23px);
+    margin: auto;
 }
 
-
+.list-tour ul li i{
+    padding-right: 10%;
+}
 
 
 .temp {
@@ -770,13 +833,18 @@ header {
     height: 0.3vh;
     margin: 2% auto;
 }
+footer {
+  background: url(img/bg-1.jpg) no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
 
 .bottom-footer {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     color: white;
     z-index: 2;
     padding-right: 2%;
@@ -787,11 +855,37 @@ header {
 .bottom-footer .title {
     color: #ffdd77;
     font-weight: 300;
-    font-size: clamp(0.1rem, 1.5vw, 4rem);
+    font-size: clamp(0.1rem,2.5vw, 23px);
 }
 
 .bottom-footer ul {
     list-style-type: none;
+}
+.bottom-footer ul li {
+    padding-bottom: 3%;
+    font-size: clamp(0.1rem,2vw, 22px);
+}
+
+.bottom-footer ul li i{
+    padding-right: 2%;
+}
+
+.bottom-footer .copy-right{
+    font-size:clamp(0.2rem,2vw, 25px);
+    padding-bottom: 10%;
+}
+
+.copy-right img{
+    width: 30vw;
+}
+
+@media (max-width: 480px) {
+    .bottom-footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main-footer .list-tour {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -872,10 +966,68 @@ header {
   } */
 }
 
+/* @media (max-width: 550px) {
+  .slide-tour {
+    grid-template-columns: 1fr !important; 
+    padding: 0; 
+    margin: 0 auto;
+  }
 
-@media (max-width: 400px) {
-    #FABs{
-        bottom: 0%;
-        flex-direction: row;
-    }
+  .tour-item {
+    width: 100% !important;
+    padding-left: 0 !important;
+    margin: 0 auto 20px;
+  }
+
+  .img-tour {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+} */
+* {
+  outline: 1px solid red; 
 }
+
+/* @media (max-width: 600px) {
+  .slide-tour {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .tour-item {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto 20px !important;
+  }
+
+  .img-tour {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .location-tour-item {
+    position: static !important;
+    transform: none !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+    font-size: 1rem !important;
+  }
+
+  .tour-item,
+  .img-tour,
+  .slide-tour,
+  .news,
+  .left-news,
+  .right-news,
+  .travel .travel-img img,
+  .travel .travel-slides {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+} */
