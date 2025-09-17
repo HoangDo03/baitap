@@ -24,7 +24,8 @@ header {
     right: 0;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.269);
-    position: sticky;
+    /* position: sticky; */
+    position: fixed;
 }
 
 .wrap-header {
@@ -70,6 +71,7 @@ header {
     margin-top: 3%;
 
 }
+
 
 .overlay-banner img {
     width: 100%;
