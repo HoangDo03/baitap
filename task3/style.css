@@ -822,7 +822,8 @@ font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .list-tour ul li i{
-    padding-right: 10%;
+        text-align: left;
+        margin: 0 5%;
 }
 
 
@@ -857,14 +858,17 @@ footer {
     color: #ffdd77;
     font-weight: 300;
     font-size: clamp(0.1rem,2.5vw, 23px);
+    margin: 0 5%;
 }
 
 .bottom-footer ul {
     list-style-type: none;
+    margin: 0 5%;
 }
 .bottom-footer ul li {
     padding-bottom: 3%;
     font-size: clamp(0.1rem,2vw, 22px);
+    text-align: left;
 }
 
 .bottom-footer ul li i{
@@ -890,7 +894,15 @@ footer {
     }
     .main-footer .list-tour {
         grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
+    .main-footer .list-tour ul li{
+        width: 100%;
+        text-align: left;
+        margin: 0 10%;
+    }
+
+
     .logo-footer .text-cover{
         letter-spacing: 3.4vw;
     }
