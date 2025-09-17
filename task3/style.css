@@ -265,8 +265,6 @@ header {
 @media (max-width: 768px) {
     .slide-tour {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-        grid-auto-rows: auto;
     }
 }
 
@@ -828,7 +826,7 @@ header {
 .list-tour ul li {
     white-space: nowrap;
     padding-bottom: 5%;
-    font-size: clamp(0.3rem, 2.5vw, 23px);
+    font-size: clamp(0.3rem, 2.5vw, 20px);
     margin: auto;
 }
 
@@ -869,7 +867,7 @@ footer {
 .bottom-footer .title {
     color: #ffdd77;
     font-weight: 300;
-    font-size: clamp(0.1rem, 2.5vw, 23px);
+    font-size: clamp(0.1rem, 2.5vw, 21px);
     margin: 0 5%;
 }
 
@@ -880,7 +878,7 @@ footer {
 
 .bottom-footer ul li {
     padding-bottom: 3%;
-    font-size: clamp(0.1rem, 2vw, 22px);
+    font-size: clamp(0.1rem, 2vw, 20px);
     text-align: left;
 }
 
