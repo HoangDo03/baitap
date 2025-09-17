@@ -365,7 +365,7 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    font-size: clamp(1rem, 2vw, 20px);
+    font-size: clamp(0.9rem, 2vw, 20px);
     line-height: 1.4;
     color: #fff;
     text-align: left;
@@ -386,7 +386,7 @@ header {
     left: 5%;
     right: 5%;
     width: 90%;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
 }
 
 
@@ -1011,11 +1011,11 @@ footer {
 
     .title-tour-item {
         top: 20%;
-        font-size: clamp(0.1rem, 8vw, 2rem);
+        font-size: clamp(0.3rem, 7vw, 20px);
     }
 
     .info-tour-item {
-        font-size: clamp(0.1rem, 8vw, 2rem);
+        font-size: clamp(0.3rem, 7vw, 20px);
     }
 
 }
