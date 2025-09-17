@@ -265,6 +265,7 @@ header {
 @media (max-width: 768px) {
     .slide-tour {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
         grid-auto-rows: auto;
     }
 }
@@ -503,9 +504,9 @@ header {
 }
 
 .tour-card {
-    animation: none;
     position: relative;
     width: 90%;
+    height: 90%;
     margin: 0 auto;
     border-radius: 5%;
     overflow: hidden;
@@ -548,7 +549,7 @@ header {
     left: 15px;
     right: 15px;
     color: white;
-    font-size: clamp(0.2rem, 2.7vw, 1.4rem);
+    font-size: clamp(0.4rem, 2.7vw, 1.4rem);
 }
 
 .tour-card .info {
@@ -701,6 +702,13 @@ header {
         right: auto;
     }
 
+    .tour-card .content{
+        font-size: clamp(0.4rem, 6vw, 1.4rem);
+    }
+
+    .tour-card .info{
+        font-size: clamp(0.4rem, 5vw, 1.4rem);
+    }
     .location-tour-item {
         font-size: clamp(1rem, 10vw, 40px);
         margin-right: 10%;
