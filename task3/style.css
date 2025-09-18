@@ -458,7 +458,7 @@ header {
 }
 
 .travel-text .title-tour {
-    font-size: clamp(1.5rem, 3vw, 32px);
+    font-size: clamp(2rem, 3vw, 32px);
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -524,7 +524,7 @@ header {
     left: 0;
     /* transform: translateX(-50%); */
     color: #00BFC4;
-    font-size: clamp(0.8rem, 3vw, 30px);
+    font-size: clamp(1rem, 3vw, 40px);
     margin: 0 auto;
     text-align: center;
     white-space: nowrap;
