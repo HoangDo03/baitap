@@ -273,7 +273,7 @@ header {
 .tour-local .slides {
     display: flex;
     width: 200%;
-    /* animation: slideShow 6s infinite; */
+    animation: slideShow 6s infinite;
 }
 
 .slide-tour {
