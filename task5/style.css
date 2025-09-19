@@ -18,7 +18,7 @@
 
 body {
     margin: 0;
-    font-family: "SamsungOne", Arial, sans-serif;
+    font-family:'Roboto', sans-serif;
     background-color: var(--color1-);
 }
 
@@ -36,6 +36,7 @@ main {
     justify-content: flex-start;
     overflow: hidden;
     background-color: black;
+        font-family: "SamsungOne", Arial, sans-serif;
 }
 
 .container {
