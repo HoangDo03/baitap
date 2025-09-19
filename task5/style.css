@@ -101,7 +101,7 @@ main{
   color: var(--color1-);
   text-align: center;
   padding: 1rem 1rem;
-   font-size: clamp(1rem, 4vw, 25px);
+   font-size: clamp(0.5rem, 4vw, 25px);
 }
 
 .section-2{
@@ -120,13 +120,16 @@ main{
 }
 
 .body-text{
-    font-size: clamp(0.1rem, 7.5vw, 19px);
+    font-size: clamp(0.1rem, 7.5vw, 20px);
     width: clamp(10%, 100%, 900px);
     text-align: justify;
     margin: 2% auto;
     line-height: 27px;
 }
 
+.body-text p{
+    margin-bottom: 1%;
+}
 
 
 .card-1,
@@ -237,7 +240,4 @@ main{
     .body-text{
         padding: 0 15px;
     }
-}
-@media screen and (max-width: 400px){
-
 }
