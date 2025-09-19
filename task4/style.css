@@ -519,10 +519,45 @@ button {
     line-height: 1.4;
 }
 
+.mailbox>*{
+    padding-top: 2%;
+}
+
+.mailbox div:last-child{
+    display: flex;
+    overflow: hidden;
+    width: 30%;
+}
+
+.mailbox input{
+    flex: 1;
+    height: 3rem;
+    width: 20%;
+    background-color: #10B565;
+    border: none;
+}
+
+.mailbox input::placeholder{
+    color: var(--color4-);
+    padding-left: 2%;
+    font-size: clamp(0.1rem,3vw,18px);
+}
+
+.mailbox button{
+    background: #119A48;
+    border: none;
+    padding: 0 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+
+}
+
 
 footer{
     background: #015001;
-    padding: 5%;
+    padding: 5% 5% 2% 5%;
     position: relative;
 }
 
@@ -562,3 +597,11 @@ ul li i{
     padding-top: 1%;
 }
 
+.copyright{
+    padding-top: 8%;
+    color: var(--color4-);
+}
+
+.draw div{
+    
+}
