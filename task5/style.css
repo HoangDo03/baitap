@@ -36,7 +36,7 @@ main {
     justify-content: flex-start;
     overflow: hidden;
     background-color: black;
-        font-family: "SamsungOne", Arial, sans-serif;
+    font-family: "SamsungOne", Arial, sans-serif;
 }
 
 .container {
@@ -128,6 +128,7 @@ main {
     text-align: justify;
     margin: 2% auto;
     line-height: 27px;
+    font-weight: 500;
 }
 
 .body-text p {
