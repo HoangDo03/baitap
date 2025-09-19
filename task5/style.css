@@ -1,0 +1,243 @@
+:root {
+  --color1-: #efe7e3;
+}
+
+@font-face {
+  font-family: "SamsungOne";
+  src: url("fonts/SamsungOne-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: "SamsungOne", Arial, sans-serif;
+  background-color: var(--color1-);
+}
+
+main{
+    padding-bottom: 1%;
+}
+
+.section-1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner{
+    position: relative;
+}
+.container img:first-child{
+    max-width: 100%;
+    max-height: 170vh;
+    object-fit: cover;
+}
+.container img:last-child {
+  max-width: 100%;
+  display: block;
+  aspect-ratio: 16/11;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  max-width: 100%;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  white-space: nowrap;
+  font-size: clamp(1.5rem, 10vw, 190px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--color1-);
+  text-align: center;
+}
+
+.subline {
+  display: block;
+ font-size: clamp(1.5rem, 10vw, 190px);
+  font-weight: 700;
+}
+
+.line {
+    position: absolute;
+ bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color1-);
+  font-size: clamp(0.5rem, 3vw, 40px);
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 4;
+  text-align: center;
+}
+
+.description {
+  width: clamp(10%, 70%, 700px);
+  margin: 1rem auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color1-);
+  text-align: center;
+  padding: 1rem 1rem;
+   font-size: clamp(1rem, 4vw, 25px);
+}
+
+.section-2{
+    background-color: var(--color1-);
+
+}
+
+.title-content{
+    width: 100%;
+    padding-top: 4%;
+}
+
+.title-content img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.body-text{
+    font-size: clamp(0.1rem, 7.5vw, 19px);
+    width: clamp(10%, 100%, 900px);
+    text-align: justify;
+    margin: 2% auto;
+    line-height: 27px;
+}
+
+
+
+.card-1,
+.card-2
+{
+    width: clamp(10%, 80%, 900px);
+    margin: auto;
+}
+
+.card-1 .portrait ,
+.card-2 .portrait 
+{
+    position: relative;
+}
+
+.portrait img{
+    width: 100%;
+    display: block;
+    object-fit:  scale-down ;
+}
+
+.overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to right,  black, rgb(131, 131, 131));
+}
+
+.overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 100%;
+}
+
+.card-1 .overlay-right{
+    background: linear-gradient(to bottom,black, rgb(131, 131, 131));
+}
+
+.card-2 .overlay-right{
+    background: linear-gradient(to top,black, rgb(131, 131, 131));
+}
+
+.overlay-container {
+    background: linear-gradient(to right, #2b2b2b, #000000);
+    color: var(--color1-);
+    padding: 20px;
+    width: 100%;
+    
+}
+
+.overlay-quote {
+    font-family: var(--font-2);
+    font-size: clamp(0.2rem, 3.5vw, 25rem);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.card-1 .overlay-quote{
+    margin: 5% 15% 15% 5%;
+}
+
+.card-2 .overlay-quote{
+    margin: 15% 15% 5% 5%;
+}
+
+.overlay-product-name {
+    display: flex;
+    justify-content: right;
+    font-size: clamp(0.1rem, 4.5vw, 35rem);
+    font-weight: bold;
+    color: var(--color1-);
+    opacity: 0.8;
+    margin-right: 5%;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.card-1 .overlay-product-name{
+    margin-bottom: 5%;
+
+}
+
+
+.card-2 .overlay-product-name{
+    text-align: right;
+    margin-top: 5%;
+
+}
+
+.overlay-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to right,  black, rgb(131, 131, 131));
+}
+
+@media screen and (max-width: 900px) {
+
+    .body-text{
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width: 400px){
+
+}
