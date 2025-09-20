@@ -106,14 +106,14 @@ main {
 }
 
 .description {
-    width: clamp(10%, 70%, 700px);
+    width: clamp(10%, 60%, 700px);
     margin: 0.5rem auto;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--color1-);
     text-align: center;
     padding: 1rem 1rem;
-    font-size: clamp(0.1rem, 2.7vw, 30px);
+    font-size: clamp(0.1rem, 3.4vw, 30px);
 }
 
 .description p {
@@ -139,7 +139,7 @@ main {
 }
 
 .body-text {
-    font-size: clamp(0.1rem, 2.5vw, 20px);
+    font-size: clamp(0.2rem, 3vw, 20px);
     width: clamp(10%, 100%, 900px);
     text-align: justify;
     margin: 2% auto;
