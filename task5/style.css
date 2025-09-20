@@ -11,7 +11,7 @@
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Noto Serif", serif;
     background-color: var(--color1-);
 }
 
@@ -40,7 +40,8 @@ main {
     position: relative;
 }
 
-.container img:first-child {
+.container .top-img img:first-child,
+.container .top-img img:last-child {
     max-width: 100%;
     max-height: 180vh;
     object-fit: cover;
@@ -50,7 +51,16 @@ main {
     animation: fadeInScale 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.container img:last-child {
+.container .top-img img:first-child {
+    display: block;
+}
+
+.container .top-img img:last-child {
+    display: none;
+}
+
+.container .bottom-img img:first-child,
+.container .bottom-img img:last-child {
     max-width: 100%;
     object-fit: cover;
     opacity: 0;
@@ -59,6 +69,15 @@ main {
     animation: fadeInScale 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     animation-delay: 1.3s;
 }
+
+.container .bottom-img img:first-child {
+    display: block;
+}
+
+.container .bottom-img img:last-child {
+    display: none;
+}
+
 
 .headline,
 .line {
@@ -209,7 +228,7 @@ main {
 
 .overlay-quote {
     font-family: var(--font-2);
-    font-size: clamp(0.2rem, 3.5vw, 25rem);
+    font-size: clamp(0.2rem, 4vw, 25rem);
     font-weight: 500;
     line-height: 1;
     opacity: 0;
@@ -258,11 +277,62 @@ main {
     background: linear-gradient(to right, black, rgb(131, 131, 131));
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
+
 
     .body-text {
         padding: 0 15px;
         margin-bottom: 10%;
+        font-size: 16px;
+    }
+
+    .description {
+        margin-top: 5%;
+        width: 80%;
+        font-size: 18px;
+    }
+
+
+}
+
+@media (max-width: 400px) {
+    .headline {
+        top: 20%;
+        font-size: clamp(1.5rem, 14vw, 150px);
+    }
+
+    .subline {
+        font-size: clamp(1.5rem, 14vw, 150px);
+    }
+
+    .line {
+        bottom: 10%;
+        font-size: clamp(0.5rem, 4.5vw, 30px);
+    }
+
+    .description {
+        font-size: clamp(0.1rem, 4.2vw, 27px);
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .container .top-img img:first-child {
+        display: none;
+    }
+
+    .container .top-img img:last-child {
+        display: block;
+    }
+
+    .container .bottom-img img:first-child {
+        display: none;
+    }
+
+    .container .bottom-img img:last-child {
+        display: block;
+    }
+    .overlay-quote{
+        font-size: clamp(0.2rem, 5vw, 25rem);
     }
 }
 
