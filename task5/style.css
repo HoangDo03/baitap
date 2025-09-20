@@ -108,7 +108,7 @@ main {
 }
 
 .description {
-    width: clamp(10%, 80%, 700px);
+    width: clamp(10%, 70%, 700px);
     margin: 0.5rem auto;
     font-size: 1rem;
     line-height: 1.6;
