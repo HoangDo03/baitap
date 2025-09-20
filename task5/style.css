@@ -282,7 +282,8 @@ main {
     .body-text {
         padding: 0 15px;
         margin-bottom: 10%;
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 400;
     }
 
     .description {
