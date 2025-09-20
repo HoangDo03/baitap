@@ -140,7 +140,7 @@ main {
 }
 
 .body-text {
-    font-size: clamp(0.2rem, 3.3vw, 20px);
+    font-size: clamp(0.2rem, 3.4vw, 20px);
     width: clamp(10%, 100%, 900px);
     text-align: justify;
     margin: 2% auto;
@@ -261,7 +261,8 @@ main {
 @media screen and (max-width: 900px) {
 
     .body-text {
-        padding: 0 15px 15px 15px;
+        padding: 0 15px;
+        margin-bottom: 7%;
     }
 }
 
