@@ -45,7 +45,7 @@ main {
     max-height: 180vh;
     object-fit: cover;
     opacity: 0;
-    filter: blur(6px);
+    filter: blur(8px);
     transform: scale(1.05);
     animation: fadeInScale 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -54,7 +54,7 @@ main {
     max-width: 100%;
     object-fit: cover;
     opacity: 0;
-    filter: blur(6px);
+    filter: blur(8px);
     transform: scale(1.05);
     animation: fadeInScale 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     animation-delay: 1.3s;
