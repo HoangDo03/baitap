@@ -64,7 +64,6 @@ main {
 .line {
     opacity: 0;
     transform: translateY(20px);
-    animation-timeline: view();
     animation: fadeUpText 1s ease forwards;
 
 }
@@ -90,7 +89,6 @@ main {
     font-weight: 700;
     opacity: 0;
     transform: translateY(20px);
-    animation-timeline: view();
     animation: fadeUp 1s ease forwards;
 }
 
@@ -265,10 +263,37 @@ main {
     }
 }
 
-.anim-img {
-    animation: slideInLeft linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+
+.anim-img,
+.fade-in,
+.anim-quote-up,
+.anim-quote-down {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+
+.fade-in {
+    filter: blur(8px);
+    transform: scale(1.05);
+}
+
+
+.anim-quote {
+    transform: translateY(-20px);
+}
+
+.animate.anim-img {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.animate.fade-in {
+    animation: fadeInScale 1.2s ease forwards;
+}
+
+.animate.anim-quote {
+    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.1s;
 }
 
 @keyframes slideInLeft {
@@ -280,43 +305,6 @@ main {
     to {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-.fade-in {
-    opacity: 0;
-    filter: blur(8px);
-    transform: scale(1.05);
-    animation-timeline: view();
-    animation: fadeInScale 1.2s ease forwards;
-}
-
-.anim-quote-up {
-    opacity: 0;
-    animation: fadeUp 1s ease-out forwards;
-    animation-timeline: view();
-    animation-delay: 0.1s;
-}
-
-
-.anim-quote-down {
-    opacity: 0;
-    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    will-change: opacity, transform;
-    animation-timeline: view();
-    animation-delay: 0.1s;
-
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
@@ -334,38 +322,38 @@ main {
     }
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeUpText {
-    0% {
+    from {
         opacity: 0;
         transform: translate(-50%, 40px);
     }
 
-    100% {
+    to {
         opacity: 1;
         transform: translate(-50%, 0);
     }
 }
 
 
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes fadeDown {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(-40px);
     }
 
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }

@@ -34,7 +34,8 @@
                     </p>
                 </div>
 
-                <img class="fade-in" src="imgs/006-lifestyle-galaxy-tabs11-ultra-silver-feature-visuals-thin-2p.png" alt="">
+                <img class="fade-in" src="imgs/006-lifestyle-galaxy-tabs11-ultra-silver-feature-visuals-thin-2p.png"
+                    alt="">
 
             </div>
         </section>
@@ -88,7 +89,7 @@
                 <div class="overlay-right"></div>
             </div>
             <div class="overlay-container ">
-                <p class="overlay-quote anim-quote-down">
+                <p class="overlay-quote anim-quote">
                     Gen Z đang định nghĩa lại cách học, làm việc và sáng tạo theo nhịp sống riêng.
                 </p>
                 <div class="overlay-product-name">
@@ -120,17 +121,18 @@
         </section>
         <section class="card-2">
             <div class="overlay-container ">
-                <div class="overlay-product-name" >
+                <div class="overlay-product-name">
                     Galaxy Tab <br>S11 Series
                 </div>
-                <p class="overlay-quote anim-quote-up">
+                <p class="overlay-quote anim-quote">
                     Với các đầu việc liên quan đến sáng tạo, Galaxy Tab S11 Series cung cấp bộ công cụ mạnh mẽ để biến ý
                     tưởng thành kết quả ngay lập tức mà không cần đi qua quá nhiều bước phức tạp
                 </p>
             </div>
             <div class="portrait">
                 <div class="overlay-img"><img
-                        src="imgs/004-lifestyle-galaxy-tabs11-ultra-gray-feature-visuals-spen-design-2p.png" alt=""class="anim-img">
+                        src="imgs/004-lifestyle-galaxy-tabs11-ultra-gray-feature-visuals-spen-design-2p.png" alt=""
+                        class="anim-img">
                 </div>
                 <div class="overlay-right"></div>
                 <div class="overlay-bottom"></div>
@@ -172,13 +174,14 @@
         <section class="card-1">
             <div class="portrait">
                 <div class="overlay-img"><img
-                        src="imgs/008-lifestyle-galaxy-tabs11-ultra-gray-feature-visuals-samsung-dex-2p.png" alt=""class="anim-img">
+                        src="imgs/008-lifestyle-galaxy-tabs11-ultra-gray-feature-visuals-samsung-dex-2p.png" alt=""
+                        class="anim-img">
                 </div>
                 <div class="overlay-top"></div>
                 <div class="overlay-right"></div>
             </div>
             <div class="overlay-container ">
-                <p class="overlay-quote anim-quote-down">
+                <p class="overlay-quote anim-quote">
                     Sự linh hoạt về không gian làm việc của người trẻ đang khiến khái niệm văn phòng dần trở nên đa dạng
                     hơn.
                 </p>
@@ -215,7 +218,7 @@
                 <div class="overlay-product-name ">
                     Galaxy Tab <br>S11 Series
                 </div>
-                <p class="overlay-quote anim-quote-up">
+                <p class="overlay-quote anim-quote">
                     Trong kỷ nguyên AI, “hiệu suất” đang dần được định nghĩa lại như một phong cách sống và Galaxy Tab
                     S11 Series chính là biểu tượng cho workstyle mới mẻ ấy.
                 </p>
@@ -254,7 +257,24 @@
             </div>
         </section>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    } else {
+                        entry.target.classList.remove("animate");
+                    }
+                });
+            }, { threshold: 0.2 });
 
+            document.querySelectorAll(".fade-in, .anim-img, .anim-quote")
+                .forEach((el) => observer.observe(el));
+        });
+
+
+    </script>
 </body>
 
 </html>
