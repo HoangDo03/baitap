@@ -2,13 +2,6 @@
     --color1-: #efe7e3;
 }
 
-/* @font-face {
-    font-family: "SamsungOne";
-    src: url("fonts/SamsungOne-700.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-} */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +11,7 @@
 
 body {
     margin: 0;
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--color1-);
 }
 
@@ -29,14 +22,12 @@ main {
 .section-1 {
     position: relative;
     width: 100%;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
     background-color: black;
-    /* font-family: "SamsungOne", Arial, sans-serif; */
 }
 
 .container {
@@ -53,13 +44,29 @@ main {
     max-width: 100%;
     max-height: 170vh;
     object-fit: cover;
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+    animation: fadeInScale 0.5s ease forwards;
 }
 
 .container img:last-child {
     max-width: 100%;
-    display: block;
-    aspect-ratio: 16/11;
     object-fit: cover;
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+    animation: fadeInScale 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.headline,
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-timeline: view();
+    animation: fadeUpText 1s ease forwards;
+
 }
 
 .headline {
@@ -67,7 +74,6 @@ main {
     max-width: 100%;
     top: 3%;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
     white-space: nowrap;
     font-size: clamp(1.5rem, 10vw, 190px);
@@ -75,36 +81,48 @@ main {
     line-height: 0.9;
     color: var(--color1-);
     text-align: center;
+    animation-delay: 0.8s;
 }
 
 .subline {
     display: block;
     font-size: clamp(1.5rem, 10vw, 190px);
     font-weight: 700;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-timeline: view();
+    animation: fadeUp 1s ease forwards;
 }
 
 .line {
     position: absolute;
     bottom: 4%;
     left: 50%;
-    transform: translateX(-50%);
     color: var(--color1-);
     font-size: clamp(0.5rem, 3vw, 40px);
     font-weight: 600;
     text-transform: uppercase;
     z-index: 4;
     text-align: center;
+    animation-delay: 1.2s;
 }
 
 .description {
     width: clamp(10%, 80%, 700px);
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--color1-);
     text-align: center;
     padding: 1rem 1rem;
     font-size: clamp(0.1rem, 2.7vw, 30px);
+}
+
+.description p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.4s;
 }
 
 .section-2 {
@@ -127,14 +145,13 @@ main {
     width: clamp(10%, 100%, 900px);
     text-align: justify;
     margin: 2% auto;
-    line-height: 1.5rem;
+    line-height: 1.3;
     font-weight: 500;
 }
 
 .body-text p {
     margin-bottom: 1%;
 }
-
 
 .card-1,
 .card-2 {
@@ -152,7 +169,8 @@ main {
     display: block;
     object-fit: scale-down;
 }
-.overlay-img{
+
+.overlay-img {
     background-color: black;
 }
 
@@ -187,7 +205,6 @@ main {
     color: var(--color1-);
     padding: 20px;
     width: 100%;
-
 }
 
 .overlay-quote {
@@ -226,7 +243,6 @@ main {
 
 }
 
-
 .card-2 .overlay-product-name {
     text-align: right;
     margin-top: 5%;
@@ -251,107 +267,107 @@ main {
 }
 
 .anim-img {
-  animation: slideInLeft linear both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+    animation: slideInLeft linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .fade-in {
-  opacity: 0;
-  filter: blur(8px);
-  transform: scale(1.05);
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
     animation-timeline: view();
-  animation: fadeInScale 1.2s ease forwards;
+    animation: fadeInScale 1.2s ease forwards;
 }
 
 .anim-quote-up {
-  opacity: 0;
-  animation: fadeUp 1s ease-out forwards;
-   animation-timeline: view();
-  animation-delay: 0.3s;}
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-timeline: view();
+    animation-delay: 0.1s;
+}
+
 
 .anim-quote-down {
-  opacity: 0;
-  animation: fadeDown 1s ease-out forwards;
-   animation-timeline: view();
-  animation-delay: 0.3s;}  
-
-  @keyframes zoomIn {
-  from {
     opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: opacity, transform;
+    animation-timeline: view();
+    animation-delay: 0.1s;
+
 }
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(1.1);
-    filter: blur(8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes fadeUpText {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
-@keyframes rollIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%) rotate(-120deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(0deg);
-  }
-}
 
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-
