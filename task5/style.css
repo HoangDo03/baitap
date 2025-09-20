@@ -2,12 +2,12 @@
     --color1-: #efe7e3;
 }
 
-@font-face {
+/* @font-face {
     font-family: "SamsungOne";
     src: url("fonts/SamsungOne-700.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
-}
+} */
 
 * {
     margin: 0;
@@ -36,7 +36,7 @@ main {
     justify-content: flex-start;
     overflow: hidden;
     background-color: black;
-    font-family: "SamsungOne", Arial, sans-serif;
+    /* font-family: "SamsungOne", Arial, sans-serif; */
 }
 
 .container {
@@ -97,14 +97,14 @@ main {
 }
 
 .description {
-    width: clamp(10%, 70%, 700px);
+    width: clamp(10%, 80%, 700px);
     margin: 1rem auto;
     font-size: 1rem;
     line-height: 1.6;
     color: var(--color1-);
     text-align: center;
     padding: 1rem 1rem;
-    font-size: clamp(0.5rem, 4vw, 25px);
+    font-size: clamp(0.1rem, 2.7vw, 30px);
 }
 
 .section-2 {
@@ -123,11 +123,11 @@ main {
 }
 
 .body-text {
-    font-size: clamp(0.1rem, 7.5vw, 20px);
+    font-size: clamp(0.1rem, 2.5vw, 20px);
     width: clamp(10%, 100%, 900px);
     text-align: justify;
     margin: 2% auto;
-    line-height: 27px;
+    line-height: 1.5rem;
     font-weight: 500;
 }
 
@@ -151,6 +151,9 @@ main {
     width: 100%;
     display: block;
     object-fit: scale-down;
+}
+.overlay-img{
+    background-color: black;
 }
 
 .overlay-top {
@@ -192,6 +195,9 @@ main {
     font-size: clamp(0.2rem, 3.5vw, 25rem);
     font-weight: 500;
     line-height: 1;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 .card-1 .overlay-quote {
@@ -243,3 +249,109 @@ main {
         padding: 0 15px;
     }
 }
+
+.anim-img {
+  animation: slideInLeft linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(1.05);
+    animation-timeline: view();
+  animation: fadeInScale 1.2s ease forwards;
+}
+
+.anim-quote-up {
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+   animation-timeline: view();
+  animation-delay: 0.3s;}
+
+.anim-quote-down {
+  opacity: 0;
+  animation: fadeDown 1s ease-out forwards;
+   animation-timeline: view();
+  animation-delay: 0.3s;}  
+
+  @keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-120deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
