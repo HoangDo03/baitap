@@ -282,7 +282,7 @@ main {
     .body-text {
         padding: 0 15px;
         margin-bottom: 10%;
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .description {
@@ -329,7 +329,8 @@ main {
     .container .bottom-img img:last-child {
         display: block;
     }
-    .overlay-quote{
+
+    .overlay-quote {
         font-size: clamp(0.2rem, 5vw, 25rem);
     }
 }
