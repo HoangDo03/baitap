@@ -81,7 +81,7 @@ main {
     display: none;
 }
 
-.container .bottom-img img{
+.container .bottom-img img {
     max-width: 100%;
     object-fit: cover;
     opacity: 0;
@@ -150,7 +150,7 @@ main {
     line-height: 1.8;
     color: var(--color1-);
     text-align: center;
-    font-size: clamp(0.8rem, 2.5vw, 39px); 
+    font-size: clamp(0.8rem, 2.5vw, 39px);
     line-height: 1.2;
     text-justify: inter-word;
     font-family: 'SamsungOne', sans-serif;
@@ -195,21 +195,21 @@ main {
     margin-bottom: 4%;
 }
 
-.card{
+.card {
     width: 100%;
 }
 
-.img-and-quote{
+.img-and-quote {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;   
-    
+    align-items: center;
+
 }
 
-.img-and-quote img{
+.img-and-quote img {
     display: block;
-    width: clamp(10%,90%,900px);
+    width: clamp(10%, 90%, 900px);
     height: auto;
 }
 
@@ -222,9 +222,11 @@ main {
         font-size: 18px;
         font-weight: 400;
     }
-    .img-and-quote{
+
+    .img-and-quote {
         padding: 0 5%;
     }
+
     .sapo {
         margin-top: 5%;
         width: 70%;
@@ -262,6 +264,7 @@ main {
     .container .top-img img:last-child {
         display: block;
     }
+
     .body-text {
         line-height: 27px;
     }
