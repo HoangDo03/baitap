@@ -1,6 +1,28 @@
 :root {
-    --color1-: #efe7e3;
+    --color1-: #faefe6;
 }
+
+@font-face {
+    font-family: 'SamsungOne';
+    src: url('fonts/SamsungOne-400.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SamsungOne';
+    src: url('fonts/SamsungOne-700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SamsungSharpSans';
+    src: url('fonts/SamsungSharpSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 * {
     margin: 0;
@@ -11,8 +33,8 @@
 
 body {
     margin: 0;
-    font-family: "Noto Serif", sans-serif;
     background-color: var(--color1-);
+    font-family: "Noto Serif", serif;
 }
 
 main {
@@ -43,7 +65,6 @@ main {
 .container .top-img img:first-child,
 .container .top-img img:last-child {
     max-width: 100%;
-    height: auto;
     object-fit: cover;
     opacity: 0;
     filter: blur(8px);
@@ -52,7 +73,7 @@ main {
 }
 
 .container .top-img img:first-child {
-display: block;
+    display: block;
 
 }
 
@@ -60,8 +81,7 @@ display: block;
     display: none;
 }
 
-.container .bottom-img img:first-child,
-.container .bottom-img img:last-child {
+.container .bottom-img img{
     max-width: 100%;
     object-fit: cover;
     opacity: 0;
@@ -71,33 +91,26 @@ display: block;
     animation-delay: 1.3s;
 }
 
-.container .bottom-img img:first-child {
-    display: block;
-}
-
-.container .bottom-img img:last-child {
-    display: none;
-}
-
 
 .headline,
 .line {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUpText 1s ease forwards;
+    font-family: 'SamsungSharpSans', sans-serif;
+    font-weight: 700;
 
 }
 
 .headline {
     position: absolute;
     max-width: 100%;
-    top: 12%;
+    top: 7%;
     left: 50%;
     z-index: 2;
     white-space: nowrap;
     font-size: clamp(1.5rem, 13vw, 220px);
-    font-weight: 700;
-    line-height: 0.9;
+    line-height: 1;
     color: var(--color1-);
     text-align: center;
     animation-delay: 0.8s;
@@ -115,30 +128,38 @@ display: block;
 .line {
     max-width: 70%;
     position: absolute;
-    bottom: 5%;
+    bottom: 6%;
     left: 50%;
     color: var(--color1-);
-    font-size: clamp(0.5rem, 4vw, 55px);
-    font-weight: 600;
+    font-size: clamp(0.5rem, 3.3vw, 50px);
     text-transform: uppercase;
     z-index: 4;
     text-align: center;
     animation-delay: 1.2s;
     white-space: nowrap;
     text-justify: inter-word;
+    font-family: 'SamsungOne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+
 }
 
-.description {
-    max-width: clamp(10%,60%,900px);
+.sapo {
+    max-width: clamp(30%, 70%, 900px);
     margin: 3.5rem auto;
     line-height: 1.8;
     color: var(--color1-);
     text-align: center;
-    font-size: clamp(0.1rem, 3vw, 37px);
+    font-size: clamp(0.8rem, 2.5vw, 39px); 
+    line-height: 1.2;
     text-justify: inter-word;
+    font-family: 'SamsungOne', sans-serif;
+    font-weight: 400;
+    white-space: nowrap;
+
 }
 
-.description p {
+.sapo p {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s ease forwards;
@@ -167,117 +188,29 @@ display: block;
     margin: 2% auto;
     line-height: 1.5;
     font-weight: 500;
-    padding-bottom: 2%;
-    font-family: "Noto Serif", serif;;
+    padding-bottom: 1%;
 }
 
 .body-text p {
-    margin-bottom: 6%;
+    margin-bottom: 4%;
 }
 
-.card-1,
-.card-2 {
-    width: clamp(10%, 80%, 900px);
-    margin: auto;
-}
-
-.card-1 .portrait,
-.card-2 .portrait {
-    position: relative;
-}
-
-.portrait img {
-    width: 100%;
-    display: block;
-    object-fit: scale-down;
-}
-
-.overlay-img {
-    background-color: black;
-}
-
-.overlay-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5%;
-    width: 100%;
-    z-index: 2;
-    background: linear-gradient(to right, black, rgb(131, 131, 131));
-}
-
-.overlay-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8%;
-    height: 100%;
-}
-
-.card-1 .overlay-right {
-    background: linear-gradient(to bottom, black, rgb(131, 131, 131));
-}
-
-.card-2 .overlay-right {
-    background: linear-gradient(to top, black, rgb(131, 131, 131));
-}
-
-.overlay-container {
-    background: linear-gradient(to right, #2b2b2b, #000000);
-    color: var(--color1-);
-    padding: 20px;
+.card{
     width: 100%;
 }
 
-.overlay-quote {
-    font-family: var(--font-2);
-    font-size: clamp(0.2rem, 4vw, 25rem);
-    font-weight: 500;
-    line-height: 1;
-    opacity: 0;
-    animation: fadeUp 1s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-.card-1 .overlay-quote {
-    margin: 5% 15% 15% 5%;
-}
-
-.card-2 .overlay-quote {
-    margin: 15% 15% 5% 5%;
-}
-
-.overlay-product-name {
+.img-and-quote{
+    width: 100%;
     display: flex;
-    justify-content: right;
-    font-size: clamp(0.4rem, 6vw, 35rem);
-    font-weight: bold;
-    color: var(--color1-);
-    opacity: 0.8;
-    margin-right: 5%;
-    font-weight: 700;
-    line-height: 1;
-    text-transform: uppercase;
-    text-align: right;
+    justify-content: center;
+    align-items: center;   
+    
 }
 
-.card-1 .overlay-product-name {
-    margin-bottom: 5%;
-
-}
-
-.card-2 .overlay-product-name {
-    margin-top: 5%;
-}
-
-.overlay-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 5%;
-    width: 100%;
-    z-index: 2;
-    background: linear-gradient(to right, black, rgb(131, 131, 131));
+.img-and-quote img{
+    display: block;
+    width: clamp(10%,90%,900px);
+    height: auto;
 }
 
 @media (max-width: 900px) {
@@ -285,38 +218,41 @@ display: block;
 
     .body-text {
         padding: 0 10%;
-        margin-bottom: 10%;
+        margin-bottom: 7%;
         font-size: 18px;
         font-weight: 400;
     }
-
-    .description {
+    .img-and-quote{
+        padding: 0 5%;
+    }
+    .sapo {
         margin-top: 5%;
         width: 70%;
-
     }
 
 }
 
 @media (max-width: 400px) {
     .headline {
-        top: 15%;
-        font-size: clamp(1.5rem, 14vw, 150px);
+        top: 10%;
+        font-size: clamp(1.5rem, 13vw, 100px);
     }
 
     .subline {
-        font-size: clamp(1.5rem, 14vw, 150px);
+        font-size: clamp(1.5rem, 13vw, 100px);
     }
 
     .line {
-        bottom: 10%;
-        font-size: clamp(0.5rem, 3.7vw, 30px);
+        bottom: 5.5%;
+        font-size: clamp(0.5rem, 3.4vw, 30px);
     }
 
-    .description {
-        font-size: clamp(0.3rem, 3.5vw, 30px);
-        margin: 0 auto;
+    .sapo {
+        font-size: clamp(0.3rem, 3vw, 28px);
+        margin: 1.5rem auto;
         padding: 0;
+        justify-content: center;
+        text-align: center;
     }
 
     .container .top-img img:first-child {
@@ -326,29 +262,15 @@ display: block;
     .container .top-img img:last-child {
         display: block;
     }
-
-    .container .bottom-img img:first-child {
-        display: none;
-    }
-
-    .container .bottom-img img:last-child {
-        display: block;
-    }
-
-    .overlay-quote {
-        font-size: clamp(0.2rem, 5vw, 25rem);
-    }
-    .body-text{
+    .body-text {
         line-height: 27px;
     }
- 
+
 }
 
 
 .anim-img,
-.fade-in,
-.anim-quote-up,
-.anim-quote-down {
+.fade-in {
     opacity: 0;
     will-change: opacity, transform;
 }
@@ -359,22 +281,8 @@ display: block;
     transform: scale(1.05);
 }
 
-
-.anim-quote {
-    transform: translateY(-20px);
-}
-
 .animate.anim-img {
     animation: slideInLeft 1s ease forwards;
-}
-
-.animate.fade-in {
-    animation: fadeInScale 1.2s ease forwards;
-}
-
-.animate.anim-quote {
-    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: 0.1s;
 }
 
 @keyframes slideInLeft {
@@ -424,18 +332,5 @@ display: block;
     to {
         opacity: 1;
         transform: translate(-50%, 0);
-    }
-}
-
-
-@keyframes fadeDown {
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
