@@ -11,7 +11,7 @@
 
 body {
     margin: 0;
-    font-family: "Noto Serif", serif;
+    font-family: "Noto Serif", sans-serif;
     background-color: var(--color1-);
 }
 
@@ -43,7 +43,7 @@ main {
 .container .top-img img:first-child,
 .container .top-img img:last-child {
     max-width: 100%;
-    max-height: 180vh;
+    height: auto;
     object-fit: cover;
     opacity: 0;
     filter: blur(8px);
@@ -52,7 +52,8 @@ main {
 }
 
 .container .top-img img:first-child {
-    display: block;
+display: block;
+
 }
 
 .container .top-img img:last-child {
@@ -90,11 +91,11 @@ main {
 .headline {
     position: absolute;
     max-width: 100%;
-    top: 3%;
+    top: 12%;
     left: 50%;
     z-index: 2;
     white-space: nowrap;
-    font-size: clamp(1.5rem, 10vw, 190px);
+    font-size: clamp(1.5rem, 13vw, 220px);
     font-weight: 700;
     line-height: 0.9;
     color: var(--color1-);
@@ -104,7 +105,7 @@ main {
 
 .subline {
     display: block;
-    font-size: clamp(1.5rem, 10vw, 190px);
+    font-size: clamp(1.5rem, 13vw, 220px);
     font-weight: 700;
     opacity: 0;
     transform: translateY(20px);
@@ -112,27 +113,29 @@ main {
 }
 
 .line {
+    max-width: 70%;
     position: absolute;
-    bottom: 4%;
+    bottom: 8%;
     left: 50%;
     color: var(--color1-);
-    font-size: clamp(0.5rem, 3.6vw, 40px);
+    font-size: clamp(0.5rem, 3.8vw, 55px);
     font-weight: 600;
     text-transform: uppercase;
     z-index: 4;
     text-align: center;
     animation-delay: 1.2s;
     white-space: nowrap;
+    text-justify: inter-word;
 }
 
 .description {
-    width: clamp(10%, 80%, 700px);
-    margin: 0.8rem auto;
-    line-height: 1.6;
+    max-width: clamp(10%,60%,800px);
+    margin: 3.5rem auto;
+    line-height: 1.8;
     color: var(--color1-);
     text-align: center;
-    padding: 2rem 0;
-    font-size: clamp(0.1rem, 4vw, 30px);
+    font-size: clamp(0.1rem, 3vw, 37px);
+    text-justify: inter-word;
 }
 
 .description p {
@@ -165,10 +168,11 @@ main {
     line-height: 1.5;
     font-weight: 500;
     padding-bottom: 2%;
+    font-family: "Noto Serif", serif;;
 }
 
 .body-text p {
-    margin-bottom: 1%;
+    margin-bottom: 5%;
 }
 
 .card-1,
@@ -280,7 +284,7 @@ main {
 
 
     .body-text {
-        padding: 0 15px;
+        padding: 0 10%;
         margin-bottom: 10%;
         font-size: 18px;
         font-weight: 400;
@@ -289,8 +293,8 @@ main {
     .description {
         margin-top: 5%;
         width: 70%;
-    }
 
+    }
 
 }
 
@@ -305,12 +309,12 @@ main {
     }
 
     .line {
-        bottom: 10%;
-        font-size: clamp(0.5rem, 5.5vw, 30px);
+        bottom: 15%;
+        font-size: clamp(0.5rem, 3.5vw, 30px);
     }
 
     .description {
-        font-size: clamp(0.1rem, 4.5vw, 30px);
+        font-size: clamp(0.1rem, 3.2vw, 30px);
         margin: 0 auto;
         padding: 0;
     }
