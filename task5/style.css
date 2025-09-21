@@ -1,0 +1,441 @@
+:root {
+    --color1-: #efe7e3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Noto Serif", sans-serif;
+    background-color: var(--color1-);
+}
+
+main {
+    padding-bottom: 1%;
+}
+
+.section-1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner {
+    position: relative;
+}
+
+.container .top-img img:first-child,
+.container .top-img img:last-child {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+    animation: fadeInScale 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.container .top-img img:first-child {
+display: block;
+
+}
+
+.container .top-img img:last-child {
+    display: none;
+}
+
+.container .bottom-img img:first-child,
+.container .bottom-img img:last-child {
+    max-width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+    animation: fadeInScale 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 1.3s;
+}
+
+.container .bottom-img img:first-child {
+    display: block;
+}
+
+.container .bottom-img img:last-child {
+    display: none;
+}
+
+
+.headline,
+.line {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpText 1s ease forwards;
+
+}
+
+.headline {
+    position: absolute;
+    max-width: 100%;
+    top: 12%;
+    left: 50%;
+    z-index: 2;
+    white-space: nowrap;
+    font-size: clamp(1.5rem, 13vw, 220px);
+    font-weight: 700;
+    line-height: 0.9;
+    color: var(--color1-);
+    text-align: center;
+    animation-delay: 0.8s;
+}
+
+.subline {
+    display: block;
+    font-size: clamp(1.5rem, 13vw, 220px);
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.line {
+    max-width: 70%;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    color: var(--color1-);
+    font-size: clamp(0.5rem, 3.8vw, 55px);
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 4;
+    text-align: center;
+    animation-delay: 1.2s;
+    white-space: nowrap;
+    text-justify: inter-word;
+}
+
+.description {
+    max-width: clamp(10%,60%,800px);
+    margin: 3.5rem auto;
+    line-height: 1.8;
+    color: var(--color1-);
+    text-align: center;
+    font-size: clamp(0.1rem, 3vw, 37px);
+    text-justify: inter-word;
+}
+
+.description p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.4s;
+}
+
+.section-2 {
+    background-color: var(--color1-);
+
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 4%;
+}
+
+.title-content img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.body-text {
+    font-size: clamp(0.2rem, 3.4vw, 25px);
+    width: clamp(10%, 100%, 900px);
+    text-align: justify;
+    margin: 2% auto;
+    line-height: 1.5;
+    font-weight: 500;
+    padding-bottom: 2%;
+    font-family: "Noto Serif", serif;;
+}
+
+.body-text p {
+    margin-bottom: 5%;
+}
+
+.card-1,
+.card-2 {
+    width: clamp(10%, 80%, 900px);
+    margin: auto;
+}
+
+.card-1 .portrait,
+.card-2 .portrait {
+    position: relative;
+}
+
+.portrait img {
+    width: 100%;
+    display: block;
+    object-fit: scale-down;
+}
+
+.overlay-img {
+    background-color: black;
+}
+
+.overlay-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to right, black, rgb(131, 131, 131));
+}
+
+.overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 100%;
+}
+
+.card-1 .overlay-right {
+    background: linear-gradient(to bottom, black, rgb(131, 131, 131));
+}
+
+.card-2 .overlay-right {
+    background: linear-gradient(to top, black, rgb(131, 131, 131));
+}
+
+.overlay-container {
+    background: linear-gradient(to right, #2b2b2b, #000000);
+    color: var(--color1-);
+    padding: 20px;
+    width: 100%;
+}
+
+.overlay-quote {
+    font-family: var(--font-2);
+    font-size: clamp(0.2rem, 4vw, 25rem);
+    font-weight: 500;
+    line-height: 1;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.card-1 .overlay-quote {
+    margin: 5% 15% 15% 5%;
+}
+
+.card-2 .overlay-quote {
+    margin: 15% 15% 5% 5%;
+}
+
+.overlay-product-name {
+    display: flex;
+    justify-content: right;
+    font-size: clamp(0.4rem, 6vw, 35rem);
+    font-weight: bold;
+    color: var(--color1-);
+    opacity: 0.8;
+    margin-right: 5%;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.card-1 .overlay-product-name {
+    margin-bottom: 5%;
+
+}
+
+.card-2 .overlay-product-name {
+    margin-top: 5%;
+}
+
+.overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to right, black, rgb(131, 131, 131));
+}
+
+@media (max-width: 900px) {
+
+
+    .body-text {
+        padding: 0 10%;
+        margin-bottom: 10%;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .description {
+        margin-top: 5%;
+        width: 70%;
+
+    }
+
+}
+
+@media (max-width: 400px) {
+    .headline {
+        top: 20%;
+        font-size: clamp(1.5rem, 14vw, 150px);
+    }
+
+    .subline {
+        font-size: clamp(1.5rem, 14vw, 150px);
+    }
+
+    .line {
+        bottom: 15%;
+        font-size: clamp(0.5rem, 3.5vw, 30px);
+    }
+
+    .description {
+        font-size: clamp(0.1rem, 3.2vw, 30px);
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .container .top-img img:first-child {
+        display: none;
+    }
+
+    .container .top-img img:last-child {
+        display: block;
+    }
+
+    .container .bottom-img img:first-child {
+        display: none;
+    }
+
+    .container .bottom-img img:last-child {
+        display: block;
+    }
+
+    .overlay-quote {
+        font-size: clamp(0.2rem, 5vw, 25rem);
+    }
+    .body-text{
+        line-height: 27px;
+    }
+ 
+}
+
+
+.anim-img,
+.fade-in,
+.anim-quote-up,
+.anim-quote-down {
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+
+.fade-in {
+    filter: blur(8px);
+    transform: scale(1.05);
+}
+
+
+.anim-quote {
+    transform: translateY(-20px);
+}
+
+.animate.anim-img {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.animate.fade-in {
+    animation: fadeInScale 1.2s ease forwards;
+}
+
+.animate.anim-quote {
+    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUpText {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
