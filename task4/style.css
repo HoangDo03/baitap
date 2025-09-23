@@ -7,6 +7,7 @@
     --color6-: #00EA69;
     --color7-: #212121;
     --color8-: #17691A;
+    --color9-: #808080;
     --font1-: 'Be Vietnam Pro', sans-serif;
     --font2-: 'Oswald', sans-serif;
 }
@@ -37,11 +38,11 @@
 .left-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .left-header .header-logo img {
-    height: 100px;
+    height: clamp(1rem,6vw,5rem);
     width: auto;
 }
 
@@ -52,24 +53,27 @@
 }
 
 .header-brand-name h1 {
-    font-size: 24px;
+    font-size: clamp(0.1rem,2.3vw,30px);
     font-weight: bold;
+    font-family: var(--font2-);
+    text-transform: uppercase;
 
 }
 
 .header-brand-name h2 {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: clamp(0.1rem,2vw,22px);
+    font-weight: 400;
+    font-family: var(--font2-);
 }
 
 .right-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .right-header .medal img {
-    height: 70px;
+    height: clamp(0.5rem,5vw,70px);
     width: auto;
 }
 
@@ -77,6 +81,17 @@
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: clamp(1rem,15vw,15rem);
+    font-size: clamp(0.1rem,1.2vw,20px);
+}
+
+.right-header > i{
+    font-size: clamp(0.1rem,1.5vw,30px);
+}
+
+.right-header .lang{
+    white-space: nowrap;
+    font-size: clamp(0.1rem,1.2vw,20px);
 }
 
 .bottom-header {
@@ -94,14 +109,20 @@
     grid-template-columns: repeat(8, 1fr);
     text-align: center;
     list-style-type: none;
-    margin: 1%;
-    font-size: clamp(0.2rem, 1.5vw, 18px);
+    font-size: clamp(0.2rem, 1.5vw, 24px);
 
 }
 
 .menu ul li {
-    border-right: 2px solid var(--color4-);
+    display: flex;
+    justify-content: center;
     letter-spacing: -0.03rem;
+    white-space: nowrap;
+    font-family: var(--font2-);
+}
+
+.menu ul li:not(:last-child) {
+    border-right: 2px solid var(--color4-);
 }
 
 .menu ul li:hover {
@@ -137,33 +158,33 @@
     top: 30%;
     left: 5%;
     color: var(--color4-);
-
-}
-
-
-.banner .content-container .content {
+    font-family: var(--font2-);
     text-transform: uppercase;
     line-height: 1.5;
-    font-weight: 700;
+
+
 }
 
 .banner .content-container .content h1 {
     font-size: clamp(0.5rem, 3vw, 55px);
+    font-weight: 700;
 
 }
 
 .banner .content-container .content h2 {
     font-size: clamp(0.2rem, 2.5vw, 28px);
     padding-bottom: 1%;
+    font-weight: 500;
 }
 
 button {
     background: var(--color1-);
     color: var(--color4-);
     font-size: clamp(0.2rem, 2.5vw, 16px);
-    padding: 1.3%;
+    padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 0.4rem;
+    font-weight: 700;
 }
 
 .content .text .temp {
@@ -179,8 +200,10 @@ button {
 .gallery .content-container .content {
 
     display: flex;
-    justify-content: space-between;
+    /* justify-content: flex-end; */
     align-items: center;
+    gap: 2rem;
+    padding-left: 5%;
 
 }
 
@@ -188,24 +211,26 @@ button {
     padding-bottom: 1rem;
 }
 
+.content .text {
+    flex: 4;
+    margin-top: 5%;
+    color: var(--color4-);
+    font-size: clamp(0.1rem, 1.5vw, 16px);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 .content .text h3 {
     font-weight: 900;
-    font-size: clamp(0.2rem, 3vw, 28px);
+    font-size: clamp(0.2rem, 2vw, 28px);
     /* line-height: 40px; */
 
 }
 
-.content .text {
-    flex: 3;
-    padding: 0 4rem 1rem 4rem;
-    margin-top: 5%;
-    color: var(--color4-);
-    font-size: clamp(0.1rem, 2vw, 16px);
-    line-height: 1.5;
-}
+
 
 .content .slides-content-img {
-    flex: 7;
+    flex: 6;
     overflow: hidden;
     position: relative;
 }
@@ -215,41 +240,53 @@ button {
     gap: 20px;
     text-align: center;
     text-transform: uppercase;
+    overflow: hidden;
     color: var(--color4-);
+    padding-bottom: 5%;
 }
 
 .slide-img .slide img {
-    width: clamp(100px, 20vw, 250px);
+    width: clamp(10px, 15vw, 250px);
     aspect-ratio: 2.2/3;
     object-fit: cover;
     border-radius: 40% 0;
 }
 
 .slide-img .slide h4 {
-    padding-top: 1rem;
-    font-size: clamp(0.1rem, 2vw, 20px);
+    padding-top: 0.5rem;
+    font-size: clamp(0.1rem, 1.2vw, 20px);
+
 }
 
 .slides-content-img .control {
     display: flex;
     justify-content: space-between;
     color: var(--color4-);
-    margin: 5% 5% 0 5%;
+    /* margin: 5% 5% 0 5%; */
 }
 
 .slides-content-img .btn-paper {
+    width: 3rem;
+    margin: auto;
     flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }
 
 .btn-paper i {
     padding: 11%;
     border-radius: 50%;
-    margin-right: 15%;
     border: 2px solid var(--color4-);
 }
 
+.btn-paper i:first-child {
+    margin-right: 15%;
+}
+
 .slides-content-img .temp {
-    flex: 6;
+    flex: 4;
     margin-bottom: 5%;
     border-bottom: 1px solid var(--color4-);
 }
@@ -288,12 +325,12 @@ button {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.about-row-top{
+.about-row-top {
     padding-top: 5%;
 }
 
 .about-row-top .about-text {
-    width: 85%;
+    width: 90%;
 }
 
 .about-row-top .about-text h3 {
@@ -325,7 +362,7 @@ button {
 }
 
 .about-row-bottom .grid-about-text {
-    width: 90%;
+    width: 100%;
     font-weight: 100;
     text-align: left;
 }
@@ -346,6 +383,33 @@ button {
     border-left: 1px solid var(--color7-);
 }
 
+.col .header-text {
+    position: relative;
+}
+
+.row .col .header-text .icon {
+    position: absolute;
+    z-index: 2;
+    font-size: 35px;
+
+
+}
+
+.row:first-child .col .header-text .icon {
+    top: 0;
+    left: 18%;
+}
+
+.row:last-child .col .header-text .icon {
+    top: 33%;
+    left: 9%;
+}
+
+.row .col p{
+    font-size: clamp(0.2rem,2vw,16px);
+    font-family: var(--font1-);
+}
+
 .header-text {
     padding: 2% 0;
 
@@ -360,7 +424,7 @@ button {
     background: var(--color1-);
     color: #fff;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 10px 16px;
     margin-top: 10%;
     border-radius: 1rem 0 1rem 0;
 }
@@ -383,22 +447,24 @@ button {
 }
 
 .overlay-1-about-section img {
-    height: 20rem;
+    height: clamp(1rem,20vw,20rem);
     opacity: 2;
 }
 
 .sub-container {
     position: relative;
-    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sub-container>img {
     display: block;
     width: 100%;
-    aspect-ratio: 2/0.9;
+    aspect-ratio: 2/1;
     object-fit: cover;
     object-position: top;
 }
+
 .wrapper-sub-container {
     position: absolute;
     top: 10%;
@@ -409,127 +475,460 @@ button {
     font-weight: bold;
     text-transform: uppercase;
 }
+
 .wrapper-sub-container .title {
     position: absolute;
     top: 0;
+    white-space: nowrap;
     left: 50%;
     transform: translate(-50%);
-    font-size: clamp(2rem,3vw,56px);
+    font-size: clamp(1rem, 3vw, 56px);
 }
 
 .lines {
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding-top: 40%;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: clamp(0.5rem, 4vw, 3rem);
+    width: 100%;
+    margin: 2rem auto;
+    padding: 6rem 1rem 1rem 1rem;
 }
 
-.lines > * {
+.lines>* {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content: space-between;
-    gap: 8px;
-    
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .lines i {
-    font-size: 4rem;
+    font-size: clamp(1.5rem, 5vw, 4rem);
     color: var(--color1-);
 }
 
-.lines div:nth-child(2) {
+.short-line .text,
+.tall-line .text {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     color: white;
-    width: 10rem;
+    font-size: clamp(0.1rem, 1.6vw, 2rem);
+    max-width: 100%;
 }
 
 .short-vertical-line {
-    width: 2px;
-    height: 7rem;
-    background: var(--color1-);
-    
+    width: 0.2rem;
+    height: clamp(1rem, 20vh, 25rem);
+    background: linear-gradient(to bottom, var(--color1-), transparent);
 }
 
 .tall-vertical-line {
-    width: 2px;
-    height: 13rem;
-    background: var(--color1-);
+    width: 0.2rem;
+    height: clamp(2rem, 25vh, 30rem);
+    background: linear-gradient(to bottom, var(--color1-), transparent);
 }
 
-.policy{
+
+.policy {
     width: 100%;
-    padding-top: 5%;
+    padding: 5%;
+    margin-bottom: 5rem;
 }
 
-.policy .text-container{
+.policy .text-container {
     display: flex;
     flex-direction: row;
-    padding: 0 5%;
+    padding-bottom: 2%;
+
 }
 
-.text-container .title{
+.text-container .title {
     flex: 1;
     color: var(--color1-);
-    font-size: clamp(2rem, 3vw, 56px);
+    font-size: clamp(1rem, 3vw, 56px);
     font-weight: 800;
 }
 
-.text-container p{
+.text-container p {
     flex: 1;
+    font-size: clamp(0.1rem, 2vw, 18px);
 }
 
-.grid-policy{
+.grid-policy {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 10%;
     column-gap: 3%;
-    padding: 10%;
     color: var(--color4-);
+    padding-top: 2rem;
 
 }
+
 .grid-policy .card {
     width: 100%;
-    height: 15rem;
-    border-radius: 2rem 0 2rem 0;
+    height: clamp(4rem, 40vh, 60rem);
+    border-radius: 25% 0;
     background: var(--color8-);
+    margin: 0 2rem 0 0;
+    padding: 1.5rem;
+    font-size: clamp(1rem, 3vw, 26px);
+    font-family: var(--font1-);
+    font-weight: 400;
+    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-    font-size: clamp(1rem, 3vw, 26px);
-    color: white;
 }
 
 .card i {
-    align-self: flex-start;
-    padding-top: 2%;
+    flex: 1;
+    padding-top: 15%;
+    font-size: clamp(1rem, 7.5vw, 6rem);
 }
 
 .card p {
-    margin: 0;
+    flex: 2;
+    display: flex;
     text-align: left;
     line-height: 1.4;
+    font-size: clamp(1rem, 2vw, 26px);
 }
 
-.mailbox>*{
+.rubber-industry {
+    width: 100%;
+    height: auto;
+}
+
+.rubber-industry .content-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+}
+
+.rubber-industry .content-container>img {
+    display: block;
+    aspect-ratio: 4/3.2;
+
+}
+
+.rubber-industry .content-container .overview-wrapper {
+    position: absolute;
+    top: 5%;
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    z-index: 2;
+    gap: 2rem;
+    padding: 0 5%;
+}
+
+.overview-left {
+    border-right: 1px solid white;
+}
+
+.overview-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.overview-wrapper .overview-left .overview-header {
+    text-align: center;
+}
+
+.overview-header img {
+    width: 20%;
+}
+
+.overview-left .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin: 1rem auto;
+    gap: clamp(1rem, 1vw, 1rem);
+
+}
+
+.grid .item-grid {
+    padding-top: 1rem;
+}
+
+.item-grid img {
+    width: clamp(0.1rem, 7vw, 15rem);
+}
+
+.count-number {
+    color: var(--color3-);
+    font-weight: 900;
+    font-size: clamp(0.2rem, 2vw, 40px);
+}
+
+.overview-header .count-number {
+    font-size: clamp(2rem, 5vw, 96px);
+}
+
+.count-number span {
+    text-transform: uppercase;
+    font-size: clamp(0.2rem, 1.5vw, 22px);
+}
+
+.title-item,
+.title-header {
+    color: var(--color4-);
+    font-weight: 500;
+    letter-spacing: 0;
+    /* margin-top: 1rem; */
+}
+
+.title-header {
+    font-size: clamp(0.1rem, 1.8vw, 28px);
+}
+
+.title-item {
+    font-size: clamp(0.1rem, 1.3vw, 22px);
+}
+
+.overview-right .header {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+.overview-right .header .title-header,
+.timeline
+{
+    white-space: nowrap;
+}
+
+.timeline {
+    color: var(--color4-);
+    font-size: clamp(0.1rem, 1vw, 16px);
+    text-align: center;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.2rem 0;
+}
+
+.product-icon {
+    flex: 1;
+}
+
+.product-icon img {
+    width: 60%;
+}
+
+.product-content {
+    flex: 4;
+}
+
+.product-title {
+    color: var(--color3-);
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: clamp(0.1rem, 1.3vw, 16px);
+}
+
+.product-stats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid white;
+}
+
+.product-stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+
+}
+
+.product-stat .label {
+    color: #fff;
+    font-size: clamp(0.1rem, 1.3vw, 16px);
+}
+
+.product-stat .value {
+    font-weight: bold;
+    color: #fff;
+    font-size: clamp(0.2rem, 1.5vw, 22px);
+}
+
+.stock-section,
+.post-section {
+    width: 100%;
+    margin: 4rem auto;
+    padding: 0 5rem;
+}
+
+.stock-section .stock-title {
+    display: flex;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.title {
+    color: #115740;
+    font-weight: 700;
+    font-size: clamp(1rem, 3vw, 40px);
+    text-transform: uppercase;
+}
+
+.stock-section .stock-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.stock-info,
+.stock-reports {
+    flex: 1;
+}
+
+.stock-chart {
+    display: flex;
+    justify-content: center;
+}
+
+.stock-chart img {
+    width: 100%;
+}
+
+.stock-reports {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    row-gap: 1rem;
+}
+
+.stock-reports .report-card {
+    position: relative;
+    width: 100%;
+}
+
+.stock-reports .report-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    z-index: 1;
+}
+
+.stock-reports .report-card .report-title {
+    position: relative;
+    z-index: 2;
+    color: var(--color4-);
+    background: var(--color1-);
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: clamp(0.2rem, 1.5vw, 20px);
+}
+
+.post-section ul {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.post-section ul li {
+    color: var(--color9-);
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.post-section ul li:hover {
+    color: var(--color7-);
+    border-bottom: 2px solid var(--color1-);
+}
+
+.post-section .posts {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 3rem);
+    justify-content: space-between;
+
+}
+
+.posts .post {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+    width: 33%;
+    padding-top: 2rem;
+}
+
+.post>* {
+    padding-top: 1rem;
+}
+
+.posts .post img {
+    width: 100%;
+}
+
+.post .author-post {
+    font-weight: 400;
+    font-size: clamp(0.5rem, 1.7vw, 20px);
+
+}
+
+.post .title-post {
+    font-weight: 500;
+    font-size: clamp(0.3rem, 2vw, 26px);
+    text-transform: uppercase;
+}
+
+.post .content-post {
+    font-weight: 400;
+    font-size: clamp(0.5rem, 1.5vw, 14px);
+    color: var(--color9-);
+}
+
+.post-section .footer-post {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post .day-post {
+    font-weight: 500;
+    font-size: clamp(0.5rem, 1.5vw, 14px);
+}
+
+.post .btn-post {
+    font-weight: 500;
+    font-size: clamp(0.1rem,1.5vw,12px);
+    color: var(--color4-);
+    background: var(--color1-);
+    padding: 0.2rem 0.2rem;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.mailbox>* {
     padding-top: 2%;
 }
 
-.mailbox div:last-child{
+.mailbox div:last-child {
     display: flex;
     overflow: hidden;
     width: 30%;
 }
 
-.mailbox input{
+.mailbox input {
     flex: 1;
     height: 3rem;
     width: 20%;
@@ -537,13 +936,13 @@ button {
     border: none;
 }
 
-.mailbox input::placeholder{
+.mailbox input::placeholder {
     color: var(--color4-);
     padding-left: 2%;
-    font-size: clamp(0.1rem,3vw,18px);
+    font-size: clamp(0.1rem, 3vw, 18px);
 }
 
-.mailbox button{
+.mailbox button {
     background: #119A48;
     border: none;
     padding: 0 20px;
@@ -555,19 +954,19 @@ button {
 }
 
 
-footer{
+footer {
     background: #015001;
     padding: 5% 5% 2% 5%;
     position: relative;
 }
 
-footer .title-footer{
-    font-size: clamp(2rem,7vw,80px);
+footer .title-footer {
+    font-size: clamp(2rem, 6vw, 80px);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.596);
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -575,33 +974,128 @@ footer .title-footer{
 
 }
 
-.title-info{
+.title-info {
     padding-top: 5%;
     font-weight: 700;
-    font-size: clamp(2rem,4vw,32px);
+    font-size: clamp(1rem, 3.5vw, 32px);
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-ul li{
+ul li {
     display: flex;
-    font-size: clamp(0.1rem,2vw,20px);
+    font-size: clamp(0.1rem, 2vw, 20px);
     padding: 1% 1%;
 }
 
-ul li i{
+ul li i {
     color: var(--color3-);
     padding-right: 1%;
     padding-top: 1%;
 }
 
-.copyright{
+.copyright {
     padding-top: 8%;
     color: var(--color4-);
+    font-size: clamp(0.1rem, 1.5vw, 18px);
 }
 
-.draw div{
+/* * {
+    border: 1px solid red;
+} */
+
+@media (max-width:1024px) {
+    .lines {
+        padding-top: 2rem;
+    }
+
+    .short-vertical-line {
+        height: clamp(1rem, 7vw, 7rem);
+    }
+
+    .tall-vertical-line {
+        height: clamp(1rem, 11vw, 10rem);
+    }
+
+    .grid-policy .card {
+        width: 100%;
+        height: clamp(4rem, 45vh, 30rem);
+        font-size: clamp(0.5rem, 1vw, 26px);
+    }
+    .stock-reports{
+        gap: 1rem;
+    }
+}
+
+@media (max-width:780px) {
+     .about-row-top .about-img img{
+        aspect-ratio: 2/2.1;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .about-row-bottom{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .about-row-bottom .about-graphic img{
+        margin: 0;
+        width: 50%;
+    }
+
+    .row-bottom .grid-about-text .row:first-child{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .lines {
+        padding-top: 1rem;
+    }
+
+    .grid-policy {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7%;
+        padding-bottom: 10%;
+    }
+
+    .grid-policy .card {
+        width: 100%;
+        height: clamp(4rem, 45vh, 30rem);
+        font-size: clamp(0.5rem, 1vw, 26px);
+    }
+
+    .product-content .product-stat{
+        margin-bottom: 0.1rem;
+    }
+
+    .product-item{
+        margin: 0.3rem 0;
+    }
+    .about-row-top, 
+    .about-row-bottom,
+    .stock-section, 
+    .post-section,
+    .policy,
+    .rubber-industry .content-container .overview-wrapper,
+    footer
+
+    {
+        padding:  3%;
+    }
+    .stock-section, .post-section{
+        margin: 0;
+    }
+    .posts .post{
+        padding-top: 0;
+    }
+   
     
 }
+
+@media (max-width:400px) {}
