@@ -1158,6 +1158,15 @@ ul li i {
     .mailbox input::placeholder {
         font-size: clamp(0.1rem, 2.5vw, 18px);
     }
+    .row:first-child .col .header-text .icon {
+    top: -40%;
+    left: 30%;
+}
+
+.row:last-child .col .header-text .icon {
+    top: 4%;
+    left: 18%;
+}
 }
 
 @media (max-width:790px) {
@@ -1303,6 +1312,15 @@ ul li i {
     .post .post-detail {
         padding: 1rem;
     }
+        .row:first-child .col .header-text .icon {
+    top: -10%;
+    left: 10%;
+}
+
+.row:last-child .col .header-text .icon {
+    top: 30%;
+    left: 7%;
+}
 }
 
 @media (max-width:600px) {
