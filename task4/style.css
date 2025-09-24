@@ -42,7 +42,7 @@
 }
 
 .left-header .header-logo img {
-    height: clamp(1rem,6vw,5rem);
+    height: clamp(1rem, 6vw, 5rem);
     width: auto;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .header-brand-name h1 {
-    font-size: clamp(0.1rem,2.3vw,30px);
+    font-size: clamp(0.1rem, 2.3vw, 30px);
     font-weight: bold;
     font-family: var(--font2-);
     text-transform: uppercase;
@@ -61,7 +61,7 @@
 }
 
 .header-brand-name h2 {
-    font-size: clamp(0.1rem,2vw,22px);
+    font-size: clamp(0.1rem, 2vw, 22px);
     font-weight: 400;
     font-family: var(--font2-);
 }
@@ -69,11 +69,11 @@
 .right-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .right-header .medal img {
-    height: clamp(0.5rem,5vw,70px);
+    height: clamp(0.5rem, 5vw, 70px);
     width: auto;
 }
 
@@ -81,17 +81,17 @@
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: clamp(1rem,15vw,15rem);
-    font-size: clamp(0.1rem,1.2vw,20px);
+    width: clamp(1rem, 15vw, 15rem);
+    font-size: clamp(0.1rem, 1.2vw, 20px);
 }
 
-.right-header > i{
-    font-size: clamp(0.1rem,1.5vw,30px);
+.right-header>i {
+    font-size: clamp(0.1rem, 1.5vw, 30px);
 }
 
-.right-header .lang{
+.right-header .lang {
     white-space: nowrap;
-    font-size: clamp(0.1rem,1.2vw,20px);
+    font-size: clamp(0.1rem, 1.2vw, 20px);
 }
 
 .bottom-header {
@@ -180,7 +180,7 @@
 button {
     background: var(--color1-);
     color: var(--color4-);
-    font-size: clamp(0.2rem, 2.5vw, 16px);
+    font-size: clamp(0.1rem, 1.8vw, 16px);
     padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 0.4rem;
@@ -202,7 +202,7 @@ button {
     display: flex;
     /* justify-content: flex-end; */
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     padding-left: 5%;
 
 }
@@ -233,16 +233,23 @@ button {
     flex: 6;
     overflow: hidden;
     position: relative;
+    max-width: 100%;
 }
 
 .content .slides-content-img .slide-img {
     display: flex;
+    flex-wrap: nowrap;
     gap: 20px;
     text-align: center;
     text-transform: uppercase;
     overflow: hidden;
     color: var(--color4-);
-    padding-bottom: 5%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide-img .slide{
+    max-width: 100%;
 }
 
 .slide-img .slide img {
@@ -345,7 +352,7 @@ button {
 .about-row-top .about-text p {
     text-align: justify;
     padding-bottom: 2%;
-    font-size: clamp(0.1rem, 2vw, 16px);
+    font-size: clamp(0.1rem, 1.6vw, 16px);
 }
 
 .about-row-top .about-img img {
@@ -358,25 +365,30 @@ button {
     width: 90%;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    margin-top: 30%;
 }
 
 .about-row-bottom .grid-about-text {
     width: 100%;
     font-weight: 100;
-    text-align: left;
+    text-align: justify;
+    padding-top: 3rem;
+
 }
 
 .about-row-bottom .grid-about-text .row:first-child {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%;
 
 }
 
 .row:first-child .col {
-    padding: 20% 0 5% 5%;
+    padding: 5% 0 5% 5%;
     color: var(--color7-);
+}
+
+.row:first-child .col:first-child {
+    margin-right: 1rem;
 }
 
 .row:first-child .col:last-child {
@@ -405,8 +417,8 @@ button {
     left: 9%;
 }
 
-.row .col p{
-    font-size: clamp(0.2rem,2vw,16px);
+.row .col p {
+    font-size: clamp(0.1rem, 1.6vw, 16px);
     font-family: var(--font1-);
 }
 
@@ -419,16 +431,20 @@ button {
     position: absolute;
 }
 
-.header-text button {
+.header-text .about-detail {
     position: relative;
+    width: 7rem;
+    display: flex;
+    justify-content: center;
     background: var(--color1-);
     color: #fff;
+    white-space: nowrap;
     font-weight: 600;
-    padding: 10px 16px;
+    padding: 10px 0;
     margin-top: 10%;
     border-radius: 1rem 0 1rem 0;
+    font-size: clamp(0.1rem, 1.6vw, 18px);
 }
-
 
 .overlay-about-section,
 .overlay-1-about-section {
@@ -442,12 +458,12 @@ button {
 }
 
 .overlay-1-about-section {
-    top: 47%;
+    top: 50%;
     left: 0;
 }
 
 .overlay-1-about-section img {
-    height: clamp(1rem,20vw,20rem);
+    height: clamp(1rem, 30vw, 30rem);
     opacity: 2;
 }
 
@@ -482,7 +498,7 @@ button {
     white-space: nowrap;
     left: 50%;
     transform: translate(-50%);
-    font-size: clamp(1rem, 3vw, 56px);
+    font-size: clamp(0.8rem, 3vw, 56px);
 }
 
 .lines {
@@ -593,7 +609,7 @@ button {
     display: flex;
     text-align: left;
     line-height: 1.4;
-    font-size: clamp(1rem, 2vw, 26px);
+    font-size: clamp(0.5rem, 2vw, 26px);
 }
 
 .rubber-industry {
@@ -699,8 +715,7 @@ button {
 }
 
 .overview-right .header .title-header,
-.timeline
-{
+.timeline {
     white-space: nowrap;
 }
 
@@ -906,11 +921,11 @@ button {
 
 .post .btn-post {
     font-weight: 500;
-    font-size: clamp(0.1rem,1.5vw,12px);
+    font-size: clamp(0.1rem, 1.5vw, 12px);
     color: var(--color4-);
     background: var(--color1-);
-    padding: 0.2rem 0.2rem;
-    width: 40%;
+    padding: 0.5rem;
+    width: 20%;
     display: flex;
     justify-content: center;
     border-radius: 0.3rem;
@@ -1002,11 +1017,15 @@ ul li i {
     font-size: clamp(0.1rem, 1.5vw, 18px);
 }
 
-/* * {
+* {
     border: 1px solid red;
-} */
+}
 
 @media (max-width:1024px) {
+    .header-text .about-detail {
+        width: 6rem;
+    }
+
     .lines {
         padding-top: 2rem;
     }
@@ -1019,38 +1038,54 @@ ul li i {
         height: clamp(1rem, 11vw, 10rem);
     }
 
+    .stock-reports {
+        gap: 1rem;
+    }
+
     .grid-policy .card {
         width: 100%;
-        height: clamp(4rem, 45vh, 30rem);
-        font-size: clamp(0.5rem, 1vw, 26px);
-    }
-    .stock-reports{
-        gap: 1rem;
+        height: clamp(2rem, 45vh, 13rem);
+        font-size: clamp(0.1rem, 1vw, 18px);
     }
 }
 
 @media (max-width:780px) {
-     .about-row-top .about-img img{
+    .about-row-top .about-img img {
         aspect-ratio: 2/2.1;
         display: flex;
         justify-content: center;
 
     }
 
-    .about-row-bottom{
-        display:flex;
+    .about-row-bottom {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
-    .about-row-bottom .about-graphic img{
+
+    .about-row-bottom .about-graphic img {
         margin: 0;
         width: 50%;
     }
 
-    .row-bottom .grid-about-text .row:first-child{
+    .row-bottom .grid-about-text .row:first-child {
         display: flex;
         flex-direction: row;
+    }
+
+    /* 
+    .row:first-child .col:first-child{
+        padding-right: 5%;
+    } */
+
+    .header-text .about-detail {
+        width: clamp(1rem, 10vw, 5rem);
+        font-size: clamp(0.1rem, 1.8vw, 18px);
+    }
+
+    .overlay-1-about-section img {
+        width: 100%;
     }
 
     .lines {
@@ -1058,44 +1093,112 @@ ul li i {
     }
 
     .grid-policy {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
         gap: 7%;
         padding-bottom: 10%;
+
     }
 
     .grid-policy .card {
         width: 100%;
-        height: clamp(4rem, 45vh, 30rem);
-        font-size: clamp(0.5rem, 1vw, 26px);
+        height: clamp(2rem, 30vh, 13rem);
+        font-size: clamp(0.1rem, 5vw, 18px);
     }
 
-    .product-content .product-stat{
+    .rubber-industry .content-container .overview-wrapper {
+        top: 0;
+    }
+
+    .product-content .product-stat {
         margin-bottom: 0.1rem;
     }
 
-    .product-item{
+    .product-item {
         margin: 0.3rem 0;
     }
-    .about-row-top, 
+
+    .about-row-top,
     .about-row-bottom,
-    .stock-section, 
+    .stock-section,
     .post-section,
     .policy,
     .rubber-industry .content-container .overview-wrapper,
-    footer
-
-    {
-        padding:  3%;
+    footer {
+        padding: 3%;
     }
-    .stock-section, .post-section{
+
+    .stock-section,
+    .post-section {
         margin: 0;
     }
-    .posts .post{
+
+    .posts .post {
         padding-top: 0;
     }
-   
-    
+
+    .post .btn-post {
+        padding: 0.2rem;
+        width: 40%;
+    }
+
+
 }
 
-@media (max-width:400px) {}
+@media (max-width:600px) {
+    .right-header {
+        gap: 0.3rem;
+    }
+
+
+    .grid-policy {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        justify-items: center;
+        align-items: start;
+        margin: 2rem;
+
+    }
+
+    .grid-policy .card {
+        width: clamp(1rem, 30vw, 15rem);
+        max-height: 10rem;
+        font-size: clamp(0.1rem, 4vw, 24px);
+    }
+
+
+    .product-title {
+        margin-bottom: 0;
+    }
+
+
+}
+
+@media (max-width:500px) {
+    .header-text .about-detail {
+        width: 3.5rem;
+        font-size: clamp(0.1rem, 1.8vw, 18px);
+    }
+
+    .row .col p {
+        font-size: clamp(0.1rem, 2vw, 16px);
+    }
+
+    .overview-right {
+        justify-content: flex-end;
+    }
+
+    .content .slides-content-img .slide-img{
+        gap:1rem
+    }
+
+}
+
+@media (max-width:400px) {
+    .overview-right {
+        justify-content: center;
+    }
+
+    .gallery .content-container .content {
+        gap: 0.5rem;
+    }
+}
