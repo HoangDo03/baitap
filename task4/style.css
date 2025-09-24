@@ -607,7 +607,7 @@ button {
 
 .grid-policy .card {
     width: 100%;
-    height: clamp(4rem, 40vh, 60rem);
+    height: clamp(4rem, 45vh, 60rem);
     border-radius: 25% 0;
     background: var(--color8-);
     margin: 0 2rem 0 0;
@@ -919,7 +919,7 @@ button {
 
 .post-section ul li {
     color: var(--color9-);
-    font-size: clamp(0.1rem,2vw,40px);
+    font-size: clamp(0.1rem, 2vw, 40px);
     border-bottom: none;
     cursor: pointer;
 }
@@ -960,19 +960,19 @@ button {
 
 .post-detail .author-post {
     font-weight: 400;
-    font-size: clamp(0.5rem, 1.7vw, 20px);
+    font-size: clamp(0.2rem, 1.3vw, 20px);
 
 }
 
 .post-detail .title-post {
     font-weight: 500;
-    font-size: clamp(0.3rem, 1.5vw, 26px);
+    font-size: clamp(0.5rem, 1.7vw, 26px);
     text-transform: uppercase;
 }
 
 .post-detail .content-post {
     font-weight: 400;
-    font-size: clamp(0.5rem, 1.5vw, 14px);
+    font-size: clamp(0.3rem, 1.5vw, 14px);
     color: var(--color9-);
 }
 
@@ -1467,5 +1467,15 @@ ul li i {
         width: 100%;
     }
 
+    .post-section .day-post {
+        font-size: clamp(0.1rem, 1.6vw, 20px);
+    }
+
+    .post .post-detail {
+    padding: 0.5rem;
+}
+    .post-detail>* {
+    padding-bottom: 0.3rem;
+}
 
 }
