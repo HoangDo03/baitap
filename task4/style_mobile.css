@@ -94,11 +94,12 @@
     }
 
     .about-row-top .about-text {
-        padding: 0 0 1rem 0;
+        padding: 0 0 1.5rem 0;
     }
 
     .about-row-top .about-text h3 {
         font-size: 30px;
+        padding-top: 1rem;
     }
 
     .about-row-top .about-text p {
