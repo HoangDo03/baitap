@@ -1,0 +1,426 @@
+@media (max-width:430px) {
+    .right-header>*:not(:last-child) {
+        display: none;
+    }
+
+
+
+    .icon-menu {
+        display: block;
+
+    }
+
+    .menu {
+        display: none;
+    }
+
+    
+    .banner .content-container>img{
+        aspect-ratio: 1;
+    }
+
+    .banner .content button {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: clamp(0.1rem, 3vw, 20px);
+    }
+
+    .content-container .overlay-banner{
+        aspect-ratio: 1;
+    }
+
+    .banner .content-container .content h1{
+        font-size: clamp(0.5rem, 6vw, 55px);
+        width: 85%;
+    }
+
+    .banner .content-container .content{
+        top: 10%;
+    }
+
+    .left-header .header-logo img{
+        height: clamp(1rem, 6vw, 5rem);
+    }
+
+    .gallery .content-container>img,
+    .gallery .content-container .overlay-banner{
+        aspect-ratio: 2/2.3;
+    }
+    .gallery .content-container .content{
+        flex-direction: column;
+    }
+    .gallery .content .text>*{
+        padding-bottom: 0.5rem;
+    }
+    .gallery button{
+        font-size: clamp(0.1rem, 3vw, 20px);
+    }
+    .slide-img .slide h4{
+        font-size: clamp(0.1rem, 2vw, 20px);
+    }
+
+    .gallery .content .text{
+        padding-bottom: 1rem;
+    }
+    .content .text h3{
+        width: 100%;
+        font-size: clamp(0.2rem, 4vw, 28px);
+    }
+    .content .text{
+        padding-bottom: 0.5em;
+    }
+    .content .text p{
+        width: 90%;
+        text-align: justify;
+        font-size: clamp(0.2rem, 2.4vw, 18px);
+    }
+
+    .content .slides-content-img .slide-img{
+        gap: 1rem;
+    }
+
+    .slide-img .slide img{
+        width: clamp(10px, 20vw, 270px);
+    }
+
+
+
+    .slides-content-img .control{
+        width: 80%;
+    }
+    .about-row-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-row-top .about-text {
+        padding: 0 0 1rem 0;
+    }
+
+    .about-row-top .about-text h3 {
+        font-size: 30px;
+    }
+
+    .about-row-top .about-text p {
+        font-size: 15px;
+    }
+
+    .about-row-top .about-text button {
+        font-size: 15px;
+    }
+
+    .about-row-top .about-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-row-bottom .grid-about-text .row:first-child {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .about-row-top .about-img img {
+        width: 100%;
+    }
+
+    .about-row-bottom .about-graphic img {
+        width: 80%;
+    }
+
+    .sub-container img {
+        aspect-ratio: 1;
+        object-position: top;
+    }
+
+    .wrapper-sub-container .title {
+        top: 5%;
+        font-size: clamp(0.1rem, 5vw, 20px);
+    }
+
+    .short-vertical-line,
+    .tall-vertical-line {
+        display: none;
+    }
+
+    .lines {
+        margin-top: 3rem;
+        position: absolute;
+        top: 20%;
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: clamp(0.5rem, 8vw, 2rem);
+        column-gap: 0.5rem;
+        justify-items: center;
+        align-items: center;
+
+    }
+
+    .lines> :nth-child(5) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 60%;
+    }
+
+
+    .lines>* {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: clamp(10px, 10vh, 80px);
+        width: clamp(10%, 80%, 80%);
+        background-color: #ffffff33;
+    }
+
+
+    .lines i {
+        color: #FBC02D;
+        font-size: 18px;
+    }
+
+    .lines .text {
+        font-size: clamp(0.2rem, 2.6vw, 18px);
+        color: white;
+    }
+
+
+
+    .row:first-child .col:first-child {
+        margin-right: 0;
+    }
+
+    .row:first-child .col:last-child {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .row .col .header-text .icon div {
+        font-size: 15px;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+    }
+
+    .row .col .header-text .icon i {
+        font-size: 20px;
+        left: 20%;
+        top: -60%;
+    }
+
+    .row:last-child .col {
+        padding-top: 0;
+    }
+
+    .row .col p {
+        font-size: 15px;
+    }
+
+    .grid-policy .card {
+        max-height: 8rem;
+    }
+
+    .grid-policy .card p {
+        font-size: clamp(0.1rem, 3vw, 16px);
+    }
+
+    .policy .text-container .title {
+        font-size: clamp(0.1rem, 5vw, 20px);
+    }
+
+    .policy .text-container p {
+        font-size: clamp(0.1rem, 3vw, 16px);
+    }
+
+    .rubber-industry .content-container>img {
+        aspect-ratio: 1/2.5;
+        object-fit: cover;
+    }
+
+    .overview-left {
+        border: none;
+    }
+
+    .rubber-industry .content-container .overview-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-right {
+        justify-content: center;
+    }
+
+    .gallery .content-container .content {
+        gap: 0.5rem;
+    }
+
+    
+
+    .content .text>* {
+        padding-bottom: 0;
+    }
+
+    .content .text button {
+        padding-bottom: 0.3rem;
+    }
+
+    .slides-content-img .btn-paper {
+        gap: 0.3rem;
+    }
+
+    .btn-paper i {
+        /* font-size: clamp(0.1rem,1.5vw,25px); */
+        padding: 0.4rem;
+    }
+
+    .lines {
+        padding-top: 1.2rem;
+    }
+
+    .lines i {
+        font-size: clamp(0.1rem, 5vw, 20rem);
+    }
+
+    .item-grid>* {
+        margin-top: 0.3rem;
+    }
+
+    .rubber-industry .content-container .overview-wrapper {
+        gap: 3rem;
+    }
+
+    .overview-header img {
+        width: 20%;
+    }
+
+    .count-number {
+        font-size: clamp(0.1rem, 4vw, 24px);
+    }
+
+    .count-number span {
+        font-size: clamp(0.1rem, 2.2vw, 20px);
+    }
+
+    .title-item {
+        font-size: clamp(0.1rem, 2.8vw, 16px);
+    }
+
+    .item-grid img {
+        width: 50%;
+    }
+
+    .product-item {
+        margin: 0.5rem 0;
+        gap: 0
+    }
+
+    .product-icon {
+        flex: 2;
+    }
+
+    .product-content {
+        flex: 6;
+    }
+
+    .product-icon img {
+        width: 50%;
+    }
+
+    .product-stat .label {
+        font-size: clamp(0.1rem, 3vw, 16px);
+    }
+
+    .product-title,
+    .product-stat .value {
+        font-size: clamp(0.1rem, 2.6vw, 20px);
+    }
+
+    .product-stats {
+        padding: 0.5rem 0;
+    }
+
+    ul li {
+        padding: 1% 0;
+    }
+
+    .title-header {
+        font-size: clamp(0.1rem, 3.2vw, 24px);
+    }
+
+    .timeline {
+        font-size: clamp(0.1rem, 1.6vw, 20px);
+    }
+
+    .title {
+        font-size: clamp(0.1rem, 5vw, 20px);
+    }
+
+    .stock-section .stock-container {
+        flex-direction: column;
+
+    }
+
+    .stock-reports .report-card {
+        height: 9rem;
+    }
+
+    .stock-info,
+    .stock-reports {
+        width: 100%;
+    }
+
+    .stock-reports .report-card .report-title {
+        font-size: clamp(0.2rem, 2.5vw, 20px);
+    }
+
+    .post-section .title {
+        padding: 0;
+    }
+
+    .post-section ul li {
+        font-size: clamp(0.1rem, 3vw, 40px);
+    }
+
+    .post-section .day-post {
+        font-size: clamp(0.1rem, 2.2vw, 20px);
+    }
+
+    .post .post-detail {
+        padding: 0.5rem;
+    }
+
+    .post-detail>* {
+        padding-bottom: 0.3rem;
+    }
+
+    .post-detail .author-post {
+        font-size: clamp(0.2rem, 2.7vw, 20px);
+    }
+
+    .post-detail .title-post {
+        font-size: clamp(0.5rem, 3vw, 26px);
+    }
+
+
+    .post-detail .content-post {
+        font-size: clamp(0.2rem, 2.3vw, 20px);
+    }
+
+    .post-section .posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: clamp(0.5rem, 2vw, 3rem);
+        padding: 1rem 0;
+    }
+
+    .post-detail .btn-post {
+        font-size: clamp(0.2rem, 2.3vw, 20px);
+    }
+
+    .post-section .posts>*:nth-child(n+3) {
+        display: none;
+    }
+
+    .posts .post {
+        width: 100%;
+    }
+}

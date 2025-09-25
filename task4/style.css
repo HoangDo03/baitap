@@ -47,6 +47,7 @@
 }
 
 .header-brand-name {
+    display: block;
     margin: 0;
     color: var(--color1-);
     text-align: center;
@@ -64,6 +65,14 @@
     font-size: clamp(0.1rem, 2vw, 22px);
     font-weight: 400;
     font-family: var(--font2-);
+}
+
+.right-header > *:not(:last-child) {
+    display: block;
+}
+
+.icon-menu{
+    display: none;
 }
 
 .right-header {
@@ -419,7 +428,8 @@ button {
 }
 
 .about-row-top .about-text {
-    width: 90%;
+    width: 100%;
+    padding-right: 5%;
 }
 
 .about-row-top .about-text h3 {
@@ -434,7 +444,12 @@ button {
 .about-row-top .about-text p {
     text-align: justify;
     padding-bottom: 2%;
-    font-size: clamp(0.1rem, 1.6vw, 16px);
+    font-size: clamp(0.1rem, 2vw, 16px);
+}
+
+.about-row-top .about-img{
+    width: 100%;
+    margin: 0 auto;
 }
 
 .about-row-top .about-img img {
@@ -629,12 +644,14 @@ button {
 }
 
 .short-vertical-line {
+    display: block;
     width: 0.2rem;
     height: clamp(1rem, 22vh, 27rem);
     background: linear-gradient(to bottom, var(--color1-), transparent);
 }
 
 .tall-vertical-line {
+    display: block;
     width: 0.2rem;
     height: clamp(2rem, 27vh, 32rem);
     background: linear-gradient(to bottom, var(--color1-), transparent);
@@ -831,6 +848,7 @@ button {
 }
 
 .title-header {
+    text-transform: uppercase;
     font-size: clamp(0.1rem, 1.8vw, 28px);
 }
 
@@ -910,6 +928,7 @@ button {
 
 .stock-section {
     width: 100%;
+    height: fit-content;
     margin: 4rem auto;
     padding: 0 5%;
 }
@@ -949,8 +968,7 @@ button {
 .stock-reports {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
-    row-gap: 1rem;
+    gap: 1rem 2rem;
 }
 
 .stock-reports .report-card {
@@ -1527,88 +1545,7 @@ ul li i {
     }
 }
 
-@media (max-width:420px) {
-    .menu ul li {
-        padding: 0 0.2rem;
-    }
 
-    .search-box {
-        padding-bottom: 0.5rem;
-    }
-
-    .search-box i {
-        left: 5%;
-        top: 50%;
-    }
-
-    .right-header input {
-        padding: 3px 0;
-
-    }
-    .overview-right {
-        justify-content: center;
-    }
-
-    .gallery .content-container .content {
-        gap: 0.5rem;
-    }
-
-    .content button {
-        padding: 0.3rem;
-        border-radius: 10%;
-    }
-
-    .content .text>* {
-        padding-bottom: 0;
-    }
-
-    .content .text button {
-        padding-bottom: 0.3rem;
-    }
-
-    .slides-content-img .btn-paper {
-        gap: 0.3rem;
-    }
-
-    .btn-paper i {
-        /* font-size: clamp(0.1rem,1.5vw,25px); */
-        padding: 0.4rem;
-    }
-
-    .lines {
-        padding-top: 1.2rem;
-    }
-
-    .lines i {
-        font-size: clamp(0.1rem, 5vw, 20rem);
-    }
-
-    .item-grid>* {
-        margin-top: 0.3rem;
-    }
-
-
-    .product-item {
-        margin: 0.1rem 0;
-    }
-
-    .product-icon img {
-        width: 100%;
-    }
-
-    .post-section .day-post {
-        font-size: clamp(0.1rem, 1.6vw, 20px);
-    }
-
-    .post .post-detail {
-        padding: 0.5rem;
-    }
-
-    .post-detail>* {
-        padding-bottom: 0.3rem;
-    }
-
-}
 
 @keyframes fadeSlideUp {
     to {
