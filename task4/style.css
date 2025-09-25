@@ -77,13 +77,35 @@
     width: auto;
 }
 
-.right-header input {
+.search-box {
+    position: relative;
+    display: inline-block;
+
+}
+
+.search-box input {
+    padding-left: 2.5rem; 
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    outline: none;
     width: clamp(1rem, 15vw, 15rem);
     font-size: clamp(0.1rem, 1.2vw, 20px);
 }
+
+.search-box input::placeholder{
+    padding-left: 1.2rem;
+    color: #CFD3D1;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    font-size: clamp(0.1rem, 1.2vw, 20px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    }
 
 .right-header>i {
     font-size: clamp(0.1rem, 1.5vw, 30px);
@@ -119,6 +141,7 @@
     letter-spacing: -0.03rem;
     white-space: nowrap;
     font-family: var(--font2-);
+    padding: 0 1rem;
 }
 
 .menu ul li:not(:last-child) {
@@ -406,7 +429,7 @@ button {
 }
 
 .row:first-child .col {
-    padding: 5% 0 5% 5%;
+    padding: 5% 0 5% 0;
     color: var(--color7-);
 }
 
@@ -416,6 +439,7 @@ button {
 
 .row:first-child .col:last-child {
     border-left: 1px solid var(--color7-);
+    padding-left: 5%;
 }
 
 .col .header-text {
@@ -1173,6 +1197,14 @@ ul li i {
 }
 
 @media (max-width:790px) {
+    .search-box input::placeholder{
+        padding-left: 1rem;
+    }
+
+    .menu ul li{
+        padding: 0 0.5rem;
+    }
+
     .about-row-top .about-img img {
         aspect-ratio: 2/2.1;
         display: flex;
@@ -1324,6 +1356,14 @@ ul li i {
 }
 
 @media (max-width:600px) {
+    .search-box i {
+        top: 60%
+    }
+
+    .search-box input::placeholder{
+        padding-left: 0.5rem;
+    }
+
     .right-header {
         gap: 0.3rem;
     }
@@ -1441,7 +1481,23 @@ ul li i {
     }
 }
 
-@media (max-width:400px) {
+@media (max-width:420px) {
+     .menu ul li{
+        padding: 0 0.2rem;
+    }
+    .search-box{
+        padding-bottom: 0.5rem;
+    }
+
+    .search-box i{
+        left: 5%;
+        top:50%;
+    }
+
+    .right-header input {
+        padding: 3px 0;
+
+    }
     .overview-right {
         justify-content: center;
     }
@@ -1457,6 +1513,10 @@ ul li i {
 
     .content .text>* {
         padding-bottom: 0;
+    }
+
+    .content .text button{
+        padding-bottom: 0.3rem;
     }
 
     .slides-content-img .btn-paper {
