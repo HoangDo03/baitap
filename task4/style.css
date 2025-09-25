@@ -1201,6 +1201,7 @@ ul li i {
 
     .rubber-industry .content-container .overview-wrapper {
         gap: 1rem;
+
     }
 
     .overview-left .grid {
@@ -1442,6 +1443,7 @@ ul li i {
 
     .rubber-industry .content-container .overview-wrapper {
         gap: 0.8rem;
+        padding-top: 1.5rem;
     }
 
     .item-grid img {
@@ -1517,6 +1519,7 @@ ul li i {
     .mailbox input {
         width: 50%;
         height: 1.4rem;
+        border-radius: 0;
     }
 
     .mailbox input::placeholder {
@@ -1542,7 +1545,6 @@ ul li i {
         padding: 3px 0;
 
     }
-
     .overview-right {
         justify-content: center;
     }
