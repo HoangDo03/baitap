@@ -136,39 +136,39 @@
 }
 
 .menu ul li {
-  position: relative;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  letter-spacing: -0.03rem;
-  white-space: nowrap;
-  font-family: var(--font2-);
-  padding: 0 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    letter-spacing: -0.03rem;
+    white-space: nowrap;
+    font-family: var(--font2-);
+    padding: 0 1rem;
 }
 
 .menu ul li:not(:last-child) {
-  border-right: 2px solid var(--color4-);
+    border-right: 2px solid var(--color4-);
 }
 
 .menu ul li:hover {
-  color: var(--color3-);
+    color: var(--color3-);
 }
 
 .menu ul li::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: var(--color3-);
-  transition: all 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--color3-);
+    transition: all 0.3s ease;
 }
 
 .menu ul li:hover::after {
-  left: 0;
-  width: 100%;
+    left: 0;
+    width: 100%;
 }
 
 
@@ -222,11 +222,11 @@
     animation-delay: 0.3s;
 }
 
-.banner .content-container .content h1, 
+.banner .content-container .content h1,
 .banner .content-container .content h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeSlideUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
 }
 
 
@@ -1515,7 +1515,7 @@ ul li i {
     }
 
     .mailbox input {
-        width: 40%;
+        width: 50%;
         height: 1.4rem;
     }
 
@@ -1609,8 +1609,8 @@ ul li i {
 }
 
 @keyframes fadeSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
