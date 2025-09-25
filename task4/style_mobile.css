@@ -127,9 +127,12 @@
     .about-row-bottom .about-graphic img {
         width: 80%;
     }
-
+    .overlay-1-about-section img{
+        width: clamp(10%,100%,300px);
+        height: auto;
+    }
     .sub-container img {
-        aspect-ratio: 1;
+        aspect-ratio: 1/1.2;
         object-position: top;
     }
 
@@ -232,7 +235,7 @@
     }
 
     .rubber-industry .content-container>img {
-        aspect-ratio: 1/2.5;
+        aspect-ratio: 1/2.6;
         object-fit: cover;
     }
 
