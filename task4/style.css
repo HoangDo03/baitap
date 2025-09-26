@@ -1709,7 +1709,8 @@ ul li i {
 .stock-chart,
 .report-card,
 .post-title,
-.card {
+.card,
+.footer > div{
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -1728,7 +1729,8 @@ ul li i {
 .stock-chart.animate,
 .report-card.animate,
 .post-title.animate,
-.card.animate {
+.card.animate,
+.footer > div.animate {
     opacity: 1;
     transform: translateY(0);
 }

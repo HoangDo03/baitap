@@ -507,7 +507,7 @@
             <li>Báo cáo</li>
         </ul>
         <hr>
-          <!-- <input type="radio" name="slider" id="slide1" checked>
+        <!-- <input type="radio" name="slider" id="slide1" checked>
         <input type="radio" name="slider" id="slide2">
         <input type="radio" name="slider" id="slide3"> -->
         <div class="posts">
@@ -562,7 +562,7 @@
         </div>
 
     </section>
-    <footer>
+    <footer class="footer">
         <div class="overlay-footer"></div>
         <div class="title-footer">THÔNG TIN LIÊN HỆ</div>
         <div class="info">
@@ -627,10 +627,11 @@
                     .text-container,\
                     .stock-title,\
                     .stock-chart,\
-.report-card,\
+                    .report-card,\
                     .post-title,\
                     .card,\
-                    .slide-img .slide\
+                    .slide-img .slide,\
+                    .footer > div\
                     "
             )
                 .forEach((el) => observer.observe(el));
