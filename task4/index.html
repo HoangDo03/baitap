@@ -17,7 +17,7 @@
         <div class="wrap-header">
             <div class="top-header">
                 <div class="left-header">
-                    
+
                     <div class="header-logo">
                         <img src="img/logo-vrg-main.svg" alt="">
                     </div>
@@ -33,7 +33,7 @@
                     <div class="search-box">
                         <input type="text" placeholder="Tìm kiếm">
                         <i class="fa-solid fa-magnifying-glass" style="color: #CFD3D1"></i>
-                    </div> 
+                    </div>
                     <i class="fa-solid fa-globe" style="color: #119A48;"></i>
                     <div class="lang">VI | EN</div>
                     <div class="icon-menu"><i class="fa-solid fa-bars"></i></div>
@@ -181,7 +181,7 @@
                             </p>
                         </div>
                     </div>
-            
+
                     <div class="row">
                         <div class="col">
                             <div class="header-text">
@@ -577,6 +577,37 @@
             <div></div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll("\
+                    .banner .content-container .content h1,\
+                    .banner .content-container .content h2,\
+                    .text,\
+                    .about-row-top .about-text,\
+                    .about-img,\
+                    .grid-about-text .row,\
+                    .about-graphic,\
+                    .short-line,\
+                    .tall-line,\
+                    .text-container,\
+                    .stock-title,\
+                    .post-title,\
+                    .card\
+                    "
+                )
+                .forEach((el) => observer.observe(el));
+        });
+    </script>
+
 </body>
 
 </html>
