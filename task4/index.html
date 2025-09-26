@@ -16,27 +16,31 @@
     <header>
         <div class="wrap-header">
             <div class="top-header">
-                <div class="left-header">
+                <div>
 
-                    <div class="header-logo">
-                        <img src="img/logo-vrg-main.svg" alt="">
+                    <div class="left-header">
+
+                        <div class="header-logo">
+                            <img src="img/logo-vrg-main.svg" alt="">
+                        </div>
+                        <div class="header-brand-name">
+                            <h1>Tập đoàn công nghiệp cao su Việt Nam</h1>
+                            <h2>Cao Su - Dòng Chảy Cuộc Sống</h2>
+                        </div>
                     </div>
-                    <div class="header-brand-name">
-                        <h1>Tập đoàn công nghiệp cao su Việt Nam</h1>
-                        <h2>Cao Su - Dòng Chảy Cuộc Sống</h2>
+                    <div class="right-header">
+                        <div class="medal">
+                            <img src="img/HCSV.png" alt="">
+                        </div>
+                        <div class="search-box">
+                            <input type="text" placeholder="Tìm kiếm">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #CFD3D1"></i>
+                        </div>
+                        <i class="fa-solid fa-globe" style="color: #119A48;"></i>
+                        <div class="lang">VI | EN</div>
+                        <div class="icon-menu"><i class="fa-solid fa-bars"></i></div>
                     </div>
-                </div>
-                <div class="right-header">
-                    <div class="medal">
-                        <img src="img/HCSV.png" alt="">
-                    </div>
-                    <div class="search-box">
-                        <input type="text" placeholder="Tìm kiếm">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #CFD3D1"></i>
-                    </div>
-                    <i class="fa-solid fa-globe" style="color: #119A48;"></i>
-                    <div class="lang">VI | EN</div>
-                    <div class="icon-menu"><i class="fa-solid fa-bars"></i></div>
+
                 </div>
             </div>
             <div class="bottom-header">
@@ -56,19 +60,29 @@
         </div>
     </header>
     <section class="banner">
-        <div class="content-container">
-            <div class="overlay-banner"></div>
-            <img src="img/cao-toc-dau-giay-long-thanh-xuyen-rung-cao-su-6-16080161-1-1.jpg" alt="">
-            <div class="content">
-                <h1>Tập đoàn công nghiệp cao su Việt Nam</h1>
-                <h2>Cao su - dòng chảy cuộc sống</h2>
-                <button>Khám phá thêm</button>
+
+        <div class="banner-slideshow">
+            <div class="banner-slides">
+                <div class="banner-slide active" id="s1">
+                    <img src="img/cao-toc-dau-giay-long-thanh-xuyen-rung-cao-su-6-16080161-1-1.jpg" alt="">
+                    <div class="overlay-banner"></div>
+                    <div class="banner-content">
+
+                        <h1>Tập đoàn công nghiệp cao su Việt Nam</h1>
+                        <h2>Cao su - dòng chảy cuộc sống</h2>
+
+                    </div>
+                </div>
+                <div class="banner-slide" id="s2">
+                    <img src="img/NNCNC.jpg" alt="">
+                    <div class="banner-content">
+                        <button>Khám phá thêm</button>
+                    </div>
+                </div>
+
+
             </div>
-            <!-- <div class="radio-btn-banner">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-            </div> -->
+
         </div>
     </section>
     <section class="gallery">
@@ -493,7 +507,11 @@
             <li>Báo cáo</li>
         </ul>
         <hr>
+          <!-- <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3"> -->
         <div class="posts">
+
             <div class="post">
                 <img src="img/cbd24bdcf279296497887afccbc665151e29251f.png" alt="">
                 <div class="post-detail">
@@ -535,6 +553,11 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="dots">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+            </div> -->
 
         </div>
 
@@ -589,21 +612,27 @@
             }, { threshold: 0.2 });
 
             document.querySelectorAll("\
-                    .banner .content-container .content h1,\
-                    .banner .content-container .content h2,\
+                    .gallery,\
+                    .banner-slideshow  .banner-content h1,\
+                    .banner-slideshow  .banner-content h2,\
+                    .banner-slideshow  .banner-content button,\
                     .text,\
                     .about-row-top .about-text,\
                     .about-img,\
                     .grid-about-text .row,\
                     .about-graphic,\
+                    .wrapper-sub-container .title,\
                     .short-line,\
                     .tall-line,\
                     .text-container,\
                     .stock-title,\
+                    .stock-chart,\
+.report-card,\
                     .post-title,\
-                    .card\
+                    .card,\
+                    .slide-img .slide\
                     "
-                )
+            )
                 .forEach((el) => observer.observe(el));
         });
     </script>

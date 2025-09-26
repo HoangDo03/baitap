@@ -17,15 +17,35 @@
 
     }
 
+    
+    .icon-menu i,
+    .header-brand-name{
+        font-size: clamp(0.1rem, 4vw, 20px);
+    }
+
     .menu {
         display: none;
     }
+       .banner-slideshow {
+    height: calc(70vh - 130px);
+
+}
+.top-header>div{
+    padding: 1rem;
+    
+}
 
 
-    .banner .content-container>img {
-        aspect-ratio: 1;
-    }
-
+.banner-slideshow .banner-content h1{
+    font-size: clamp(0.5rem, 5vw, 55px);
+}
+.banner-slideshow .banner-content h2 {
+     font-size: clamp(0.2rem,3vw, 28px);
+}
+.banner-slideshow button{
+    padding: 0.5rem 1.5rem;
+    font-size: clamp(0.1rem, 3vw, 20px);
+}
     .banner .content button {
         padding: 0.5rem;
         border-radius: 0.5rem;
@@ -135,6 +155,7 @@
         grid-template-columns: 1fr;
         gap: 1rem;
         padding-bottom: 1rem;
+        border: none;
     }
 
     .about-row-top .about-img img {
@@ -219,6 +240,8 @@
         padding-left: 0;
     }
 
+
+
     .row .col .header-text .icon div {
         font-size: 15px;
         width: fit-content;
@@ -230,6 +253,7 @@
         left: 20%;
         top: -60%;
     }
+
 
     .row:last-child .col {
         padding-top: 0;
@@ -429,9 +453,7 @@
     }
 
     .post-section .posts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto;
+        display: flex;
         gap: clamp(0.5rem, 2vw, 3rem);
         padding: 1rem 0;
     }
@@ -447,4 +469,5 @@
     .posts .post {
         width: 100%;
     }
+
 }
