@@ -259,7 +259,6 @@ button {
     display: flex;
     /* justify-content: flex-end; */
     align-items: center;
-    gap: 1rem;
     padding-left: 5%;
 
 }
