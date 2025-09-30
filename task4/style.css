@@ -1,15 +1,20 @@
 :root {
     --color1-: #119A48;
-    --color2-: #2E7D32;
-    --color3-: #FBC02D;
+    --color2-: #FBC02D;
+    --color3-:#333333;
     --color4-: white;
     --color5-: black;
     --color6-: #00EA69;
     --color7-: #212121;
-    --color8-: #17691A;
     --color9-: #808080;
     --font1-: 'Be Vietnam Pro', sans-serif;
-    --font2-: 'Oswald', sans-serif;
+    --font2-: 'Oswald',Arial,sans-serif;
+    --font3-: Arial, Helvetica, sans-serif;
+    --fsbutton: 1rem;
+    --font-body-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    --fs-title: clamp(1.8rem, 4vw, 3rem);
+    --fs-subtitle: clamp(1.2rem, 2vw, 1.6rem);
+
 }
 
 * {
@@ -40,6 +45,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 .top-header>div
 .left-header {
@@ -140,57 +147,120 @@
 }
 
 .menu {
-    padding: 0.2rem;
+    padding: 0.1rem;
 }
 
-.menu ul {
+.menu > ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     list-style-type: none;
-    font-size: clamp(0.2rem, 1.5vw, 24px);
+    font-size: 1.1rem;
+    font-weight: 500;
     margin: 0;
     padding: 0.5rem 0;
 }
 
-.menu ul li {
+.menu > ul li {
     position: relative;
-    display: flex;
-    justify-content: center;
+    padding: 0 2.2rem;
+}
+
+.menu > ul li a {
+    display: block;
     text-align: center;
     letter-spacing: -0.03rem;
     white-space: nowrap;
     font-family: var(--font2-);
-    padding: 0 2.8rem;
     cursor: pointer;
     transition: color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
-.menu ul li:not(:last-child) {
+.menu > ul li:not(:last-child) {
     border-right: 2px solid var(--color4-);
 }
 
-.menu ul li:hover {
-    color: var(--color3-);
+.menu > ul li a:hover {
+    color: var(--color2-);
 }
 
-.menu ul li::after {
+.menu > ul li::after {
     content: "";
     position: absolute;
     left: 50%;
     bottom: -4px;
     width: 0;
     height: 2px;
-    background: var(--color3-);
+    background: var(--color2-);
     transition: all 0.3s ease;
 }
 
-.menu ul li:hover::after {
+
+.menu > ul li:hover::after {
     left: 0;
     width: 100%;
 }
+
+.menu > ul li.has-submenu > a::after {
+  content: " ▼";
+  font-size: 0.7em;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+
+.submenu {
+    position: absolute;
+    top: 100%; 
+    background: var(--color1-);
+    left: 0;
+    width: max-content;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    z-index: 10;
+    opacity: 0;
+    display: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding-bottom: 1rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: left;
+}
+
+.submenu li{
+    padding: 0;
+}
+
+.menu > ul li:hover .submenu {
+  display: block;
+}
+
+
+.submenu li a {
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    color: #333;
+    text-decoration: none;
+   
+}
+
+.submenu li a:hover {
+    background: var(--color1-);
+    color: #fff;
+    
+}
+
+.menu > ul li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .banner-slideshow {
     position: relative;
@@ -289,7 +359,7 @@
 }
 
 .gallery .overlay-banner {
-    aspect-ratio: 2/1;
+    aspect-ratio: 2/1.2;
 }
 
 
@@ -324,17 +394,18 @@
 button {
     background: var(--color1-);
     color: var(--color4-);
-    font-size: clamp(0.1rem, 1.8vw, 16px);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     padding: 0.5rem 1.5rem;
     border: none;
     border-radius: 0.4rem;
     font-weight: 700;
+    font-family: var(--font2-);
 }
 
 .content-container>img {
     display: block;
     width: 100%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 2/1.2;
     object-fit: cover;
     object-position: bottom;
 
@@ -359,35 +430,36 @@ button {
 
     display: flex;
     /* justify-content: flex-end; */
-    align-items: center;
-    padding-left: 5%;
+    align-items:flex-end;
+    padding-left: 3%;
 
 }
 
-.content .text>* {
-    padding-bottom: 1rem;
-}
 
 .content .text {
     flex: 4;
-    margin-top: 5%;
     color: var(--color4-);
     line-height: 1.5;
     padding-bottom: 2rem;
 }
 
+.content .text > *:not(:last-child){
+    padding-bottom: 1rem;
+}
+
 .content .text p {
-    width: 70%;
-    font-size: clamp(0.1rem, 1vw, 16px);
+    width: 90%;
+    font-size: var(--font-body-size);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .content .text h3 {
-    width: 70%;
+    letter-spacing: 0.1rem;
+    width: 90%;
     font-weight: 900;
-    font-size: clamp(0.2rem, 2vw, 28px);
-
+    font-size: var(--fs-subtitle);
+    font-family: var(--font2-);
 }
 
 
@@ -438,10 +510,10 @@ button {
 
 
 .slide-img .slide img {
-    width: clamp(10px, 15vw, 250px);
+    width: clamp(10px, 18vw, 300px);
     aspect-ratio: 2.2/3;
     object-fit: cover;
-    border-radius: 40% 0;
+    border-radius: 30% 0;
     display: block;
     transition: transform 0.4s ease;
 }
@@ -452,8 +524,9 @@ button {
 
 .slide-img .slide h4 {
     padding-top: 0.5rem;
-    font-size: clamp(0.1rem, 1.2vw, 20px);
+    font-size: clamp(0.1rem, 2vw, 30px);
     white-space: wrap;
+    font-family: var(--font2-);
 
 }
 
@@ -476,14 +549,15 @@ button {
     justify-content: center;
     align-items: center;
     gap: 0.8rem;
+    
 }
 
 .btn-paper i {
-    padding: 0.5rem;
+    padding: 0.7rem;
     border-radius: 50%;
     border: 2px solid var(--color4-);
     cursor: pointer;
-    font-size: clamp(0.1rem, 2vw, 25px);
+    font-size: clamp(0.1rem, 3.7vw, 30px);
 }
 
 
@@ -501,7 +575,7 @@ button {
 }
 
 .slides-content-img .count-paper span {
-    font-size: clamp(1rem, 5vw, 3rem);
+    font-size:clamp(0.1rem, 5vw, 60px) ;
     color: var(--color6-);
     padding: 0 0.5rem;
 }
@@ -548,7 +622,7 @@ button {
 
 .about-row-top .about-text h3 {
     color: var(--color1-);
-    font-size: clamp(0.1rem, 4vw, 80px);
+    font-size: var(--fs-title);
     border-bottom: 2px solid var(--color5-);
     font-family: var(--font2-);
     font-weight: 800;
@@ -559,7 +633,12 @@ button {
 .about-row-top .about-text p {
     text-align: justify;
     padding-bottom: 2%;
-    font-size: clamp(0.1rem, 2vw, 16px);
+    font-size:var(--font-body-size);
+    line-height: 1.6;
+    font-weight: 100;
+    color: var(--color3-);
+    font-family: var(--font3-);
+
 }
 
 .about-row-top .about-img {
@@ -591,7 +670,7 @@ button {
 .about-row-bottom .grid-about-text .row:first-child {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color9-);
 
 }
 
@@ -605,25 +684,26 @@ button {
 }
 
 .row:first-child .col:last-child {
-    border-left: 1px solid var(--color7-);
+    border-left: 1px solid var(--color9-);
     padding-left: 5%;
 }
 
 .col .header-text {
     position: relative;
+
 }
 
 .row .col .header-text .icon {
     position: relative;
     z-index: 2;
-    font-size: clamp(0.5rem, 3vw, 35px);
+    font-size: var(--fs-subtitle);
 
 
 }
 
 .row .col .header-text .icon i {
     position: absolute;
-    top: -100%;
+    top: -80%;
     left: 4rem;
     z-index: 3;
 }
@@ -644,8 +724,10 @@ button {
 }
 
 .row .col p {
-    font-size: clamp(0.1rem, 1.6vw, 16px);
-    font-family: var(--font1-);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
+    font-weight: 100;
+    line-height: 1.6;
 }
 
 .header-text {
@@ -668,7 +750,8 @@ button {
     font-weight: 600;
     padding: 10px 0;
     border-radius: 1rem 0 1rem 0;
-    font-size: clamp(0.1rem, 1.6vw, 18px);
+    font-size: var(--fs-subtitle);
+    font-family: var(--font2-);
 }
 
 .overlay-about-section,
@@ -724,7 +807,8 @@ button {
     top: 0;
     left: 50%;
     transform: translate(-50%, 20px);
-    font-size: clamp(0.8rem, 3vw, 56px);
+    font-size: var(--fs-title);
+    font-family: var(--font2-);
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -761,12 +845,13 @@ button {
 
 .short-line .text,
 .tall-line .text {
-    font-weight: bold;
+    font-weight:600;
     text-transform: uppercase;
     text-align: center;
     color: white;
-    font-size: clamp(0.1rem, 1.6vw, 2rem);
+    font-size: clamp(0.1rem, 1.8vw, 2.4rem);
     max-width: 100%;
+    font-family: var(--font2-);
 }
 
 .short-vertical-line {
@@ -798,15 +883,20 @@ button {
 }
 
 .text-container .title {
+    font-family: var(--font2-);
     flex: 1;
     color: var(--color1-);
-    font-size: clamp(1rem, 3vw, 56px);
+    font-size: var(--fs-title);
     font-weight: 800;
 }
 
 .text-container p {
     flex: 1;
-    font-size: clamp(0.1rem, 2vw, 18px);
+    font-size: var(--font-body-size);
+    font-family: var(--font3-);
+    line-height: 1.6;
+    letter-spacing: 0.01rem;
+    font-weight: 100;
 }
 
 
@@ -832,11 +922,11 @@ button {
 
 .grid-policy .card {
     width: 100%;
-    height: clamp(4rem, 45vh, 60rem);
-    border-radius: 25% 0;
-    background: var(--color8-);
+    height: clamp(1rem,17rem,17rem);
+    border-radius:40px 0;
+    background: #015001;
     margin: 0 2rem 0 0;
-    padding: 1.5rem;
+    padding: 1.7rem;
     font-size: clamp(1rem, 3vw, 26px);
     font-family: var(--font1-);
     font-weight: 400;
@@ -847,16 +937,21 @@ button {
 
 .card i {
     flex: 1;
-    padding-top: 15%;
-    font-size: clamp(1rem, 7.5vw, 6rem);
+    display: flex;
+    justify-content: left;
+    margin-top: 2rem;
+    font-size: clamp(1rem, 8vw, 5rem);
 }
 
 .card p {
-    flex: 2;
+    flex: 1;
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
     display: flex;
     text-align: left;
-    line-height: 1.4;
-    font-size: clamp(0.5rem, 2vw, 26px);
+    line-height: 1.6;
+    font-size: var(--fs-subtitle);
+    padding-top: 1rem;
 }
 
 .rubber-industry {
@@ -950,7 +1045,7 @@ button {
 
 
 .count-number {
-    color: var(--color3-);
+    color: var(--color2-);
     font-weight: 900;
     font-size: clamp(0.2rem, 2vw, 40px);
 }
@@ -966,20 +1061,20 @@ button {
 
 .title-item,
 .title-header {
-    font-family: var(--font1-);
+    font-family: var(--font3-);
     color: var(--color4-);
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0;
     /* margin-top: 1rem; */
 }
 
 .title-header {
     text-transform: uppercase;
-    font-size: clamp(0.1rem, 1.8vw, 28px);
+    font-size: var(--fs-subtitle);
 }
 
 .title-item {
-    font-size: clamp(0.1rem, 1.3vw, 22px);
+    font-size: var(--font-body-size);
 }
 
 .overview-right .header {
@@ -1020,7 +1115,8 @@ button {
 }
 
 .product-title {
-    color: var(--color3-);
+    color: var(--color2-);
+    font-family: var(--font3-);
     font-weight: bold;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -1043,6 +1139,7 @@ button {
 
 .product-stat .label {
     color: #fff;
+    font-family: var(--font3-);
     font-size: clamp(0.1rem, 1.3vw, 16px);
 }
 
@@ -1066,9 +1163,10 @@ button {
 }
 
 .title {
-    color: #115740;
+    color:var(--color1-);
     font-weight: 700;
-    font-size: clamp(1rem, 3vw, 40px);
+    font-family: var(--font2-);
+    font-size: var(--fs-title);
     text-transform: uppercase;
 }
 
@@ -1115,12 +1213,13 @@ button {
     position: relative;
     z-index: 2;
     color: var(--color4-);
+    font-family: var(--font2-);
     background: var(--color1-);
     justify-content: center;
     text-align: center;
     width: 100%;
     padding: 0.5rem 0;
-    font-size: clamp(0.2rem, 1.5vw, 20px);
+    font-size:var(--font-body-size);
     white-space: nowrap;
 }
 
@@ -1134,6 +1233,7 @@ button {
 
 .post-section .title {
     padding: 2rem 0;
+    font-size: var(--fs-title);
 }
 
 .post-section ul {
@@ -1146,7 +1246,9 @@ button {
 
 .post-section ul li {
     color: var(--color9-);
-    font-size: clamp(0.1rem, 2vw, 40px);
+    font-family: var(--font1-);
+    font-weight: 300;
+    font-size: var(--fs-subtitle);
     border-bottom: none;
     cursor: pointer;
 }
@@ -1171,6 +1273,7 @@ button {
 }
 
 
+
 .post .post-detail {
     padding: 2rem;
 }
@@ -1181,23 +1284,27 @@ button {
 
 .posts .post img {
     width: 100%;
+    border-radius: 2rem 2rem 0 0;
 }
 
 .post-detail .author-post {
     font-weight: 400;
-    font-size: clamp(0.2rem, 1.3vw, 20px);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
 
 }
 
 .post-detail .title-post {
-    font-weight: 500;
-    font-size: clamp(0.5rem, 1.8vw, 26px);
+    font-weight: 600;
+    font-family: var(--font3-);
+    font-size: var(--fs-subtitle);
     text-transform: uppercase;
 }
 
 .post-detail .content-post {
     font-weight: 400;
-    font-size: clamp(0.3rem, 1.7vw, 16px);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
     color: var(--color9-);
 }
 
@@ -1208,12 +1315,14 @@ button {
 
 .post-detail .day-post {
     font-weight: 500;
-    font-size: clamp(0.5rem, 1.7vw, 14px);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
 }
 
 .post-detail .btn-post {
     font-weight: 500;
-    font-size: clamp(0.1rem, 1.7vw, 14px);
+    font-size: var(--font-body-size);
+    font-family: var(--font3-);
     color: var(--color4-);
     background: var(--color1-);
     padding: 0.5rem;
@@ -1258,8 +1367,6 @@ button {
     border-radius: 0;
 
 }
-
-
 footer {
     background: #015001;
     padding: 5% 3% 2% 3%;
@@ -1267,7 +1374,8 @@ footer {
 }
 
 footer .title-footer {
-    font-size: clamp(0.4rem, 6vw, 80px);
+    font-family: var(--font2-);
+    font-size: clamp(0.4rem, 8vw, 40rem);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.596);
 }
@@ -1282,8 +1390,9 @@ footer .title-footer {
 
 .title-info {
     padding-top: 5%;
+    font-family: var(--font3-);
     font-weight: 700;
-    font-size: clamp(0.3rem, 2.8vw, 32px);
+    font-size: var(--fs-subtitle);
 }
 
 ul {
@@ -1292,20 +1401,23 @@ ul {
 
 ul li {
     display: flex;
-    font-size: clamp(0.1rem, 2vw, 20px);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
     padding: 1% 1%;
+
 }
 
 ul li i {
-    color: var(--color3-);
     padding-right: 1%;
+    color: var(--color2-);
     padding-top: 1%;
 }
 
 .copyright {
     padding-top: 8%;
     color: var(--color4-);
-    font-size: clamp(0.1rem, 1.5vw, 18px);
+    font-family: var(--font3-);
+    font-size: var(--font-body-size);
 }
 
 .overlay-footer {
@@ -1318,7 +1430,23 @@ ul li i {
     background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='828' viewBox='0 0 250 828' fill='none'><g opacity='0.1'><path d='M86.7515 416.408C14.8882 350.845 -0.486439 223.754 0.809174 168.404C15.4927 217.684 37.9501 256.786 141.257 348.523C244.565 440.26 249.567 586.744 249.567 659.592C246.544 542.285 176.581 498.362 86.7515 416.408Z' fill='white'/><path d='M86.7515 582.501C14.8882 516.313 -0.486439 388.012 0.809174 332.135C15.4927 381.884 37.9501 421.358 141.257 513.969C244.565 606.58 249.567 754.458 249.567 828C246.544 709.576 176.581 665.235 86.7515 582.501Z' fill='white'/><path d='M86.7515 250.366C14.8882 184.179 -0.486439 55.8772 0.809174 0C15.4927 49.7488 37.9501 89.2233 141.257 181.834C244.565 274.445 249.567 422.324 249.567 495.865C246.544 377.442 176.581 333.1 86.7515 250.366Z' fill='white'/></g></svg>") no-repeat center/cover;
 }
 
+@media (max-width:1300px) {
+        .menu > ul li {
+    padding: 0 1rem; 
+  }
+
+}
+
+
 @media (max-width:1024px) {
+
+    .menu > ul li {
+    padding: 0 1.2rem; 
+  }
+
+  .menu > ul li a {
+    font-size: 1rem; 
+  }
     .banner-slideshow {
     height: calc(50vh - 130px);
 
@@ -1394,7 +1522,15 @@ ul li i {
     }
 }
 
-@media (max-width:790px) {
+@media (max-width:800px) {
+  .menu > ul li {
+    padding: 0 1rem; 
+  }
+
+  .menu > ul li a {
+    font-size: 0.9rem; 
+  }
+
     .search-box input::placeholder {
         padding-left: 1rem;
     }
@@ -1419,7 +1555,7 @@ ul li i {
 
     .about-row-bottom .about-graphic img {
         margin: 0;
-        width: 50%;
+        width: 70%;
     }
 
     .row-bottom .grid-about-text .row:first-child {
@@ -1427,14 +1563,24 @@ ul li i {
         flex-direction: row;
     }
 
-    .header-text .about-detail {
-        width: clamp(1rem, 10vw, 5rem);
-        font-size: clamp(0.1rem, 1.8vw, 18px);
-    }
+
+    .content .text > *:not(:last-child){
+    padding-bottom: 0.3rem;
+}
+    .content .text p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;       
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    white-space: normal;
+}
 
     .row .col .header-text .icon i {
-        top: -70%;
-        left: 2rem;
+        top: -60%;
+        left: 4rem;
+        font-size: var(--fs-subtitle);
     }
 
 
@@ -1466,7 +1612,7 @@ ul li i {
 
     .grid-policy .card {
         width: 100%;
-        height: clamp(2rem, 30vh, 13rem);
+        height: clamp(2rem, 35vh, 15rem);
         font-size: clamp(0.1rem, 5vw, 18px);
         padding: 1rem;
     }
@@ -1509,7 +1655,7 @@ ul li i {
     }
 
     .gallery .content-container .content {
-        padding: 4% 0 4% 4%;
+        padding: 4% 0 1% 4%;
     }
 
     .stock-section,
@@ -1554,6 +1700,16 @@ ul li i {
 }
 
 @media (max-width:600px) {
+  
+.content .text p {
+    
+    
+    -webkit-line-clamp: 3;       
+    
+    }
+  .menu > ul li a {
+    font-size: 0.8rem; 
+  }
     .search-box i {
         top: 60%
     }
@@ -1571,7 +1727,6 @@ ul li i {
     }
 
 
-
     .grid-policy {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1581,8 +1736,8 @@ ul li i {
 
     .grid-policy .card {
         width: 100%;
-        max-height: 10rem;
-        font-size: clamp(0.1rem, 4vw, 24px);
+        max-height: 13rem;
+        /* font-size: clamp(0.1rem, 4vw, 24px); */
     }
 
 
@@ -1633,6 +1788,9 @@ ul li i {
 }
 
 @media (max-width:500px) {
+    .menu > ul li a {
+    font-size: var(--font-body-size)
+  }
     .header-text .about-detail {
         width: 3.5rem;
         font-size: clamp(0.1rem, 2vw, 18px);
@@ -1654,8 +1812,8 @@ ul li i {
 
     .grid-policy .card {
         width: 100%;
-        max-height: 7rem;
-        font-size: clamp(0.1rem, 4vw, 24px);
+        max-height: 14rem;
+        font-size: clamp(0.1rem, 3vw, 24px);
         padding: 0.8rem;
     }
 
@@ -1664,7 +1822,8 @@ ul li i {
     }
 
     .row .col .header-text .icon i {
-        top: -50%;
+        top: -70%;
+        left: 0;
     }
 
     .post-section .title {
