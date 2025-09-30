@@ -106,7 +106,7 @@
     }
 
     .slide-img .slide h4 {
-        font-size: clamp(0.1rem, 2vw, 20px);
+        font-size: clamp(0.1rem, 2.5vw, 20px);
     }
 
     .gallery .content .text {
@@ -130,10 +130,11 @@
 
     .content .slides-content-img .slide-img {
         gap: 1rem;
+        max-width: 100vw;
     }
 
     .slide-img .slide img {
-        width: clamp(10px, 20vw, 270px);
+        width: clamp(10px, 25vw, 270px);
     }
 
 
@@ -510,7 +511,7 @@
     }
 
     .post-detail .content-post {
-        font-size: clamp(0.2rem, 2.3vw, 20px);
+        font-size: clamp(0.2rem, 2.5vw, 23px);
     }
 
     .post-detail .btn-post {
