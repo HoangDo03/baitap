@@ -985,7 +985,7 @@ button {
     grid-template-columns: 2fr 1.2fr;
     z-index: 2;
     gap: 2rem;
-    padding: 0 5%;
+    padding: 0 4%;
 }
 
 .overview-left {
@@ -1159,7 +1159,7 @@ button {
     width: 100%;
     height: fit-content;
     margin: 4rem auto;
-    padding: 0 3%;
+    /* padding: 0 3%; */
 }
 
 .stock-section .stock-title {
@@ -1174,6 +1174,10 @@ button {
     font-family: var(--font2-);
     font-size: var(--fs-title);
     text-transform: uppercase;
+}
+
+.stock-section .title{
+    padding-left: 3%;
 }
 
 .stock-section .stock-container {
@@ -1657,7 +1661,7 @@ ul li i {
     .post-section,
     .policy,
     footer {
-        padding: 3%;
+        padding: 4%;
     }
 
     .rubber-industry .content-container .overview-wrapper {
@@ -1704,6 +1708,10 @@ ul li i {
 
     .stock-section {
         padding: 0 auto 2rem auto;
+    }
+
+    .stock-reports .report-card .report-title{
+        white-space: wrap;
     }
 
     .mailbox input {
@@ -1777,6 +1785,10 @@ ul li i {
 
     }
 
+    .about-row-top .about-img img{
+        aspect-ratio: 1/2;
+    }
+
     .rubber-industry .content-container .overview-wrapper {
         gap: 0.8rem;
         padding-top: 1.5rem;
@@ -1798,6 +1810,10 @@ ul li i {
     .stock-reports .report-card .report-title {
         padding: 0.3rem 0.2rem;
         font-size: clamp(0.2rem, 1.3vw, 20px);
+    }
+
+    .stock-reports{
+        row-gap: 1rem;
     }
 
     .post .post-detail {
