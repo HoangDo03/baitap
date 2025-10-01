@@ -1734,6 +1734,11 @@ ul li i {
         font-size: 0.8rem;
     }
 
+     .menu>ul li {
+        padding: 0 0.2rem;
+    }
+
+
     .search-box i {
         top: 60%
     }
