@@ -87,7 +87,10 @@
 
 .icon-menu {
     display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
+
 
 .right-header {
     display: flex;
@@ -145,6 +148,12 @@
     background: var(--color1-);
     color: var(--color4-);
 }
+
+.mobile-menu {
+    display: none;
+}
+
+
 
 .menu {
     padding: 0.1rem;
@@ -214,7 +223,7 @@
 }
 
 
-.submenu {
+.menu .submenu {
     position: absolute;
     top: 100%;
     background: var(--color1-);
@@ -231,7 +240,7 @@
     text-align: left;
 }
 
-.submenu li {
+.menu .submenu li {
     padding: 0;
 }
 
@@ -240,7 +249,7 @@
 }
 
 
-.submenu li a {
+.menu .submenu li a {
     width: 100%;
     padding: 10px 0;
     display: block;
@@ -249,7 +258,7 @@
 
 }
 
-.submenu li a:hover {
+.menu .submenu li a:hover {
     background: var(--color1-);
     color: #fff;
 
@@ -727,9 +736,9 @@ button {
 
 .row .col p {
     font-family: var(--font3-);
-    font-size:  clamp(0.9rem, 1.6vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.6vw, 1.2rem);
     font-weight: 100;
-    line-height: 1.7;        
+    line-height: 1.7;
     letter-spacing: 0.2px;
     color: var(--color3-);
 }
@@ -883,7 +892,7 @@ button {
     display: flex;
     flex-direction: row;
     padding-bottom: 2%;
-    gap:1rem;
+    gap: 1rem;
 
 }
 
@@ -1176,7 +1185,7 @@ button {
     text-transform: uppercase;
 }
 
-.stock-section .title{
+.stock-section .title {
     padding-left: 3%;
 }
 
@@ -1214,7 +1223,7 @@ button {
 
 .stock-reports .report-card img {
     width: 100%;
-    aspect-ratio:1;
+    aspect-ratio: 1;
     object-fit: cover;
     display: block;
     position: absolute;
@@ -1453,7 +1462,7 @@ ul li i {
 
     }
 
-    .lines{
+    .lines {
         padding-top: 2rem;
     }
 
@@ -1680,7 +1689,7 @@ ul li i {
         padding: 4% 0 1% 4%;
     }
 
-    .sub-container>img{
+    .sub-container>img {
         aspect-ratio: 2/1.2;
     }
 
@@ -1710,7 +1719,7 @@ ul li i {
         padding: 0 auto 2rem auto;
     }
 
-    .stock-reports .report-card .report-title{
+    .stock-reports .report-card .report-title {
         white-space: wrap;
     }
 
@@ -1743,7 +1752,7 @@ ul li i {
         font-size: 0.8rem;
     }
 
-     .menu>ul li {
+    .menu>ul li {
         padding: 0 0.2rem;
     }
 
@@ -1786,7 +1795,7 @@ ul li i {
 
     }
 
-    .about-row-top .about-img img{
+    .about-row-top .about-img img {
         aspect-ratio: 1/2;
     }
 
@@ -1813,7 +1822,7 @@ ul li i {
         font-size: clamp(0.2rem, 1.3vw, 20px);
     }
 
-    .stock-reports{
+    .stock-reports {
         row-gap: 1rem;
     }
 
@@ -1831,16 +1840,19 @@ ul li i {
 }
 
 @media (max-width:510px) {
-  
+    .mobile-menu {
+        display: block;
+    }
 
     .menu {
         display: none;
     }
+
     .right-header>*:not(:last-child) {
         display: none;
     }
 
-     .icon-menu i,
+    .icon-menu i,
     .header-brand-name {
         font-size: clamp(0.4rem, 4vw, 20px);
     }
@@ -1849,6 +1861,7 @@ ul li i {
         display: block;
 
     }
+
     .header-text .about-detail {
         width: 3.5rem;
         font-size: clamp(0.1rem, 2vw, 18px);
@@ -1896,6 +1909,178 @@ ul li i {
     .mailbox input::placeholder {
         font-size: clamp(0.1rem, 1.7vw, 18px);
     }
+
+    .icon-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .wrap-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        z-index: 1000;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 9%;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 2000;
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-menu-header .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        padding: 0.4rem 0.6rem;
+        border-radius: 4px;
+    }
+
+    .mobile-menu-header .search-box i {
+        flex: 1;
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu-header .search-box input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
+
+    .mobile-menu .lang {
+        color: var(--color5-);
+        font-weight: 600;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu li {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0.5rem;
+    }
+
+    .mobile-menu ul li:hover {
+        color: var(--color2-);
+    }
+
+    .mobile-menu a,
+    .mobile-menu .menu-item {
+        width: 100%;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 0.6rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: var(--color1-);
+        font-family: var(--font2-);
+        text-decoration: none;
+    }
+
+    .mobile-menu .has-submenu:hover .submenu {
+        display: block;
+    }
+
+    .mobile-menu .has-submenu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .menu-item {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0.8rem 1rem;
+        font-family: var(--font2-);
+        font-size: 1rem;
+        color: #222;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mobile-menu .has-submenu .menu-item i {
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        background: var(--color1-);
+        transition: max-height 0.3s ease;
+    }
+
+    .mobile-menu .submenu li a {
+        display: block;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        color: var(--color4-);
+        text-decoration: none;
+    }
+
+    .mobile-menu .submenu li a:hover {
+        color: var(--color2-);
+    }
+
+    .mobile-menu .has-submenu input[type="checkbox"] {
+        display: none;
+    }
+
+    .mobile-menu .has-submenu input[type="checkbox"]:checked~.submenu {
+        max-height: 500px;
+    }
+
+
+    .mobile-menu .has-submenu input[type="checkbox"]:checked+.menu-item i {
+        transform: rotate(180deg);
+    }
+
+
+    .mobile-menu .menu-item i {
+        font-size: 0.9rem;
+        color: var(--color1-);
+    }
+
 }
 
 .banner-slideshow .banner-content h1,
@@ -1981,4 +2166,5 @@ ul li i {
         opacity: 0;
         transform: translateY(20px);
     }
+
 }

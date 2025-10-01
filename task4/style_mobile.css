@@ -1,11 +1,7 @@
+
+
 @media (max-width:480px) {
-    .wrap-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+    
 
     .header-brand-name h1{
         font-size: clamp(0.1rem, 3.5vw, 20px);
