@@ -85,6 +85,7 @@
 
     .gallery .content .text>* {
         padding-bottom: 0.5rem;
+        padding-right: 4%;
     }
 
 
@@ -101,7 +102,7 @@
     }
 
     .content .text h3 {
-        width: 95%;
+        width: 100%;
         font-size: clamp(16px, 3.5vw, 26px);
     }
 
@@ -110,7 +111,7 @@
     }
 
     .content .text p {
-        width: 95%;
+        width: 100%;
         text-align: justify;
         font-size: clamp(14px, 2.8vw, 17px);
         display: block;
