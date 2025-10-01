@@ -1729,7 +1729,8 @@ ul li i {
 
 }
 
-@media (max-width:600px) {
+
+@media (max-width:635px) {
 
     .content .text p {
 
@@ -1829,11 +1830,25 @@ ul li i {
     }
 }
 
-@media (max-width:500px) {
-    .menu>ul li a {
-        font-size: var(--font-body-size)
+@media (max-width:510px) {
+  
+
+    .menu {
+        display: none;
+    }
+    .right-header>*:not(:last-child) {
+        display: none;
     }
 
+     .icon-menu i,
+    .header-brand-name {
+        font-size: clamp(0.4rem, 4vw, 20px);
+    }
+
+    .icon-menu {
+        display: block;
+
+    }
     .header-text .about-detail {
         width: 3.5rem;
         font-size: clamp(0.1rem, 2vw, 18px);

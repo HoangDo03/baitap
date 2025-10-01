@@ -7,26 +7,11 @@
         z-index: 1000;
     }
 
-    .right-header>*:not(:last-child) {
-        display: none;
-    }
-
-
-
-    .icon-menu {
-        display: block;
-
-    }
-
-
     .icon-menu i,
     .header-brand-name {
         font-size: clamp(0.1rem, 4vw, 20px);
     }
 
-    .menu {
-        display: none;
-    }
 
     .banner-slideshow {
         height: calc(70vh - 130px);
