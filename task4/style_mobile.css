@@ -523,6 +523,7 @@
 
     .post-detail .btn-post {
         font-size: clamp(0.2rem, 2.3vw, 20px);
+        width: 25%;
     }
 
     .post-section .posts {
@@ -530,9 +531,11 @@
         gap: clamp(0.5rem, 2vw, 3rem);
         padding: 1rem 0;
     }
+    
 
     .mailbox button{
         font-size: clamp(0.8rem, 2vw, 1rem);
+        
     }
 
     .title-info{
