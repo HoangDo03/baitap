@@ -1,4 +1,4 @@
-@media (max-width:460px) {
+@media (max-width:480px) {
     .wrap-header {
         position: fixed;
         top: 0;
@@ -40,30 +40,27 @@
 
 
     .banner-slideshow .banner-content h1 {
-        font-size: clamp(0.5rem, 5vw, 55px);
+        font-size: clamp(20px, 5vw, 36px);
     }
 
     .banner-slideshow .banner-content h2 {
-        font-size: clamp(0.2rem, 3vw, 28px);
+        font-size: clamp(18px, 4vw, 30px);
     }
 
     .banner-slideshow button {
         padding: 0.5rem 1.5rem;
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .banner .content button {
         padding: 0.5rem;
         border-radius: 0.5rem;
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
-    .content-container .overlay-banner {
-        aspect-ratio: 1;
-    }
 
     .banner .content-container .content h1 {
-        font-size: clamp(0.5rem, 6vw, 55px);
+        font-size: clamp(20px, 5vw, 36px);
         width: 85%;
     }
 
@@ -95,27 +92,29 @@
 
     .gallery .content-container .content {
         flex-direction: column;
+       
     }
 
     .gallery .content .text>* {
         padding-bottom: 0.5rem;
     }
 
+
     .gallery button {
-        font-size: clamp(0.1rem, 3vw, 20px);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .slide-img .slide h4 {
-        font-size: clamp(0.1rem, 2.5vw, 20px);
+        font-size: clamp(14px, 3vw, 22px);
     }
 
     .gallery .content .text {
-        padding-bottom: 1rem;
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .content .text h3 {
-        width: 100%;
-        font-size: clamp(0.2rem, 4vw, 28px);
+        width: 95%;
+        font-size: clamp(16px, 3.5vw, 26px);
     }
 
     .content .text {
@@ -123,9 +122,10 @@
     }
 
     .content .text p {
-        width: 90%;
+        width: 95%;
         text-align: justify;
-        font-size: clamp(0.2rem, 3.2vw, 18px);
+        font-size: clamp(14px, 2.8vw, 17px);
+        display: block;
     }
 
     .content .slides-content-img .slide-img {
@@ -153,16 +153,16 @@
     }
 
     .about-row-top .about-text h3 {
-        font-size: 30px;
+        font-size: clamp(2rem, 3.5vw, 26px);
         padding-top: 1rem;
     }
 
     .about-row-top .about-text p {
-        font-size: clamp(0.2rem, 3.2vw, 18px);
+        font-size: clamp(16px, 2.8vw, 17px);
     }
 
     .about-row-top .about-text button {
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .about-row-top .about-img {
@@ -192,13 +192,13 @@
     }
 
     .sub-container img {
-        aspect-ratio: 1/1.2;
+        aspect-ratio: 1/1.5;
         object-position: top;
     }
 
     .wrapper-sub-container .title {
         top: 5%;
-        font-size: clamp(0.1rem, 5vw, 20px);
+        font-size: clamp(1.5rem, 3.5vw, 26px);
     }
 
     .short-vertical-line,
@@ -234,7 +234,7 @@
         height: clamp(10px, 10vh, 80px);
         width: clamp(10%, 80%, 80%);
         background-color: #ffffff33;
-        padding: 2rem 0;
+        padding: 3rem 1rem;
     }
 
 
@@ -244,7 +244,7 @@
     }
 
     .lines .text {
-        font-size: clamp(0.2rem, 2.6vw, 18px);
+        font-size: clamp(14px, 2.8vw, 17px);
         color: white;
     }
 
@@ -269,7 +269,7 @@
 
     .row .col .header-text .icon i {
         font-size: 20px;
-        left: 20%;
+        left: 15%;
         top: -60%;
     }
 
@@ -279,27 +279,30 @@
     }
 
     .row .col p {
-        font-size: clamp(0.2rem, 3.2vw, 18px);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .grid-policy .card {
-        max-height: 8rem;
+        max-height: 9rem;
     }
-
+    .card i{
+        margin-top: 1.5rem;
+    }
     .grid-policy .card p {
-        font-size: clamp(0.1rem, 3vw, 16px);
+        font-size: clamp(14px, 2.8vw, 17px);
     }
 
     .policy .text-container .title {
-        font-size: clamp(0.1rem, 5vw, 20px);
+        font-size: clamp(1.5rem, 3.5vw, 26px);
     }
 
     .policy .text-container p {
-        font-size: clamp(0.1rem, 3vw, 16px);
+        font-size: clamp(14px, 2.8vw, 17px);
+        text-align: justify;
     }
 
     .rubber-industry .content-container>img {
-        aspect-ratio: 1/2.6;
+        aspect-ratio: 1/2.7;
         object-fit: cover;
     }
 
@@ -318,14 +321,6 @@
     .gallery .content-container .content {
         gap: 0.5rem;
     }
-
-    .content .text p {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: block;
-    word-break: break-word;
-    white-space: normal;
-}
 
     .content .text>* {
         padding-bottom: 0;
@@ -357,8 +352,9 @@
     }
 
     .rubber-industry .content-container .overview-wrapper {
-        gap: 3rem;
+        gap: 4rem;
     }
+
 
     .overview-header img {
         width: 20%;
@@ -369,15 +365,15 @@
     }
 
     .count-number span {
-        font-size: clamp(0.1rem, 2.2vw, 20px);
+        font-size: clamp(12px, 2.5vw, 16px);
     }
 
     .title-item {
-        font-size: clamp(0.1rem, 2.8vw, 16px);
+         font-size: clamp(12px, 2.5vw, 16px);
     }
 
     .item-grid img {
-        width: 50%;
+        width: 30%;
     }
 
     .product-item {
@@ -416,14 +412,19 @@
 
     .title-header {
         font-size: clamp(0.1rem, 3.2vw, 24px);
+        padding-bottom: 0.6rem;
     }
+
 
     .timeline {
         font-size: clamp(0.1rem, 1.6vw, 20px);
     }
+    .grid .item-grid{
+        padding-bottom: 1rem;
+    }
 
     .title {
-        font-size: clamp(0.1rem, 5vw, 20px);
+        font-size: clamp(0.1rem, 5vw, 26px);
     }
 
     .stock-section .stock-container {
@@ -432,7 +433,7 @@
     }
 
     .stock-reports .report-card {
-        height: 9rem;
+        height: clamp(8rem,5vh,9rem);
     }
 
     .stock-info,
@@ -537,7 +538,26 @@
     .title-info{
         padding-bottom: 1rem;
     }
+    .title-info ul li i{
+        font-size: clamp(0.2rem, 1vw, 0.4rem);
+    }
+    .title-info ul li div{
+        font-size: clamp(0.5rem, 1.4vw, 0.7rem);
+    }
+    .copyright{
+        font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    }
     /* .detail-info>*{
         padding-bottom: 1rem;
     } */
+}
+
+@media (max-width:402px) {
+    .gallery .content-container>img,
+    .gallery .content-container .overlay-banner {
+        aspect-ratio: 1/2;
+    }
+    .slide-img .slide h4{
+                font-size: clamp(0.4rem, 4vw, 18px);
+    }
 }
