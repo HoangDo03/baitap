@@ -799,6 +799,8 @@ footer {
     display: flex;
     align-items: last baseline;
     gap: 2rem;
+    text-decoration: none;
+    color: white;
     
 
 }
