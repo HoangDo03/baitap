@@ -319,10 +319,10 @@
             <div class="bottom-footer container-section">
                 <div class="copyright">© 2025 by TRIWIN Resources PTE. LTD. All rights Reserved.</div>
                 <div class="link">
-                    <img src="img/linkedin.svg" alt="">
-                    <img src="img/facebook.svg" alt="">
-                    <img src="img/youtube.svg" alt="">
-                    <img src="img/mail.svg" alt="">
+                    <img src="img/linkedin.svg" alt="" width="25" height="25">
+                    <img src="img/facebook.svg" alt="" width="25" height="25">
+                    <img src="img/youtube.svg" alt="" width="25" height="25">
+                    <img src="img/mail.svg" alt="" width="25" height="25">
                 </div>
             </div>
 
@@ -378,7 +378,10 @@
             document.querySelectorAll("\
                 .banner-section,\
                 button,\
-                h1,h2,h5,p,\
+                h1,h2,p,\
+                .banner-content-container h5,\
+                .item-content h5,\
+                .card-text h5,\
                 .flex-about .flex-about-item i,\
                 .content-wrapper .content ul,\
                 .img,\
@@ -386,8 +389,7 @@
                 .map,\
                 .content-map .title,\
                 .esg-img,\
-                .esg-card-item,\
-                .top-footer")
+                .esg-card-item")
                 .forEach((el) => { observer.observe(el); });
         })
 

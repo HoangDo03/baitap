@@ -75,6 +75,7 @@ h5 {
     line-height: 22px;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -280,7 +281,7 @@ body {
 
 
 .banner-section {
-    /* max-width: 100%; */
+    width: 100%;
     height: 110vh;
     background: url(img/banner.png);
     background-position: bottom;
@@ -774,11 +775,19 @@ hr.gradient {
     border-radius: 1rem;
 }
 
+footer,
+footer * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+}
 
 footer {
     width: 100%;
     background: var(--color3);
     color: white;
+    min-height: 300px;
 }
 
 .top-footer,
@@ -792,6 +801,7 @@ footer {
     justify-content: flex-start;
     gap: 5rem;
     padding: 3rem clamp(0.5rem, 8vw, 6%);
+    min-height: 100px;
 
 }
 
@@ -838,6 +848,10 @@ footer {
     align-items: center;
     justify-content: space-between;
     min-height: 50px; 
+}
+
+.bottom-footer .link {
+    margin: 0 auto;
 }
 
 .bottom-footer .link img {
@@ -1208,7 +1222,10 @@ h1,p {
 
 
 .banner-section,
-button,h1,h2,h5,p,
+button,h1,h2,p,
+.banner-content-container h5,
+.item-content h5,
+.card-text h5,
 .flex-about .flex-about-item i,
 .content-wrapper .content ul,
 .img,
@@ -1216,8 +1233,7 @@ button,h1,h2,h5,p,
 .map,
 .content-map .title,
 .esg-img,
-.esg-card-item,
-.top-footer {
+.esg-card-item{
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -1225,7 +1241,10 @@ button,h1,h2,h5,p,
 
 .banner-section.animate,
 button.animate,
-h1.animate,h5.animate,h2.animate,p.animate,
+h1.animate,h2.animate,p.animate,
+.banner-content-container h5.animate,
+.item-content h5.animate,
+.card-text h5.animate,
 .flex-about .flex-about-item i.animate,
 .content-wrapper .content ul.animate,
 .img.animate,
@@ -1233,8 +1252,7 @@ h1.animate,h5.animate,h2.animate,p.animate,
 .map.animate,
 .content-map .title.animate,
 .esg-img.animate,
-.esg-card-item.animate,
-.top-footer.animate {
+.esg-card-item.animate{
     opacity: 1;
     transform: translateY(0);
 }
