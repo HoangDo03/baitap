@@ -837,6 +837,7 @@ footer {
     justify-content: center;
     align-items: center;
     justify-content: space-between;
+    min-height: 50px; 
 }
 
 .bottom-footer .link img {
@@ -1207,7 +1208,8 @@ h1,p {
 
 
 .banner-section,
-button,h1,h2,h5,p,i,
+button,h1,h2,h5,p,
+.flex-about .flex-about-item i,
 .content-wrapper .content ul,
 .img,
 .item-text,
@@ -1215,8 +1217,7 @@ button,h1,h2,h5,p,i,
 .content-map .title,
 .esg-img,
 .esg-card-item,
-.top-footer,
-.top-footer>* {
+.top-footer {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -1224,7 +1225,8 @@ button,h1,h2,h5,p,i,
 
 .banner-section.animate,
 button.animate,
-h1.animate,h5.animate,h2.animate,p.animate,i.animate,
+h1.animate,h5.animate,h2.animate,p.animate,
+.flex-about .flex-about-item i.animate,
 .content-wrapper .content ul.animate,
 .img.animate,
 .item-text.animate,
@@ -1232,8 +1234,7 @@ h1.animate,h5.animate,h2.animate,p.animate,i.animate,
 .content-map .title.animate,
 .esg-img.animate,
 .esg-card-item.animate,
-.top-footer.animate,
-.top-footer>*.animate {
+.top-footer.animate {
     opacity: 1;
     transform: translateY(0);
 }

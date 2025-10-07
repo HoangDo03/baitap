@@ -378,7 +378,8 @@
             document.querySelectorAll("\
                 .banner-section,\
                 button,\
-                h1,h2,h5,p,i,\
+                h1,h2,h5,p,\
+                .flex-about .flex-about-item i,\
                 .content-wrapper .content ul,\
                 .img,\
                 .item-text,\
@@ -386,8 +387,7 @@
                 .content-map .title,\
                 .esg-img,\
                 .esg-card-item,\
-                .top-footer,\
-                .top-footer>*")
+                .top-footer")
                 .forEach((el) => { observer.observe(el); });
         })
 
