@@ -1098,8 +1098,8 @@ footer {
 
 @media (max-width: 400px) {
     .banner-section .banner-content-container h1 {
-        font-size: var(--font-h2-size);
-        line-height: 28px;
+        font-size: var(--font-h1-size);
+        line-height: 30px;
     }
     .banner-section .banner-content-container{
         margin: 0 auto;
