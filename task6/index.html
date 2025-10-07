@@ -46,18 +46,18 @@
         </div>
     </header>
     <nav class="mobile-menu" id="mobile-menu">
-            <div class="close-btn" id="close-btn">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <ul>
-                <li><a class="active" href="#">Home</a></li>
-                <li><a href="#">We Are Triwin</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">ESG & Sustainability</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-            <!-- <div class="contact-info">
+        <div class="close-btn" id="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">We Are Triwin</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">ESG & Sustainability</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+        <!-- <div class="contact-info">
                 <div class="contact">
                     <img src="img/phone.svg" alt="">
                     <div>02836226639</div>
@@ -68,7 +68,7 @@
                 <div>
             </div>
                  -->
-        </nav>
+    </nav>
     <section class="banner-section section">
         <!-- <img src="img/unsplash-image-NxAwryAbtIw.jpg" alt="" class="overlay-banner-section"> -->
         <div class="banner-content-container container-section">
@@ -132,7 +132,7 @@
                     <img src="img/map.svg" alt="">
                 </div>
                 <div class="content-map">
-                    <div class="title">triwin at a glance</div>
+                    <div class="title">triwin<br> at a glance</div>
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="number">25+</div>
@@ -246,7 +246,7 @@
                         </p>
                     </div>
                 </div>
-                
+
             </div>
             <div class="slider-dots">
                 <span class="dot active"></span>
@@ -328,8 +328,29 @@
         const menuBtn = document.querySelector('.menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeBtn = document.getElementById('close-btn');
-        const slides = document.querySelectorAll('.news-item');
-        const dots = document.querySelectorAll('.dot');
+        const slider = document.querySelector('.news-content-container');
+        const slides = slider.querySelectorAll('.news-item');
+        const dots = slider.querySelectorAll('.dot');
+        const slidesContainer = slider.querySelector('.news-flex');
+
+        const topHeader = document.querySelector('.top-header-wrapper');
+        const bottomHeader = document.querySelector('.bottom-header-wrapper');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+        
+                bottomHeader.classList.add('sticky');
+            } else {
+              
+                bottomHeader.classList.remove('sticky');
+            }
+
+            lastScroll = currentScroll;
+        });
+
 
 
         menuBtn.addEventListener('click', () => {
@@ -341,12 +362,12 @@
         });
 
 
-        document.addEventListener("DOMContentLoaded",() => {
+        document.addEventListener("DOMContentLoaded", () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("animate");
-                        observer.unobserve(entry.target); 
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.2 });
@@ -363,30 +384,51 @@
                 .esg-card-item,\
                 .top-footer,\
                 .top-footer>*")
-            .forEach((el) => {observer.observe(el);});
+                .forEach((el) => { observer.observe(el); });
         })
 
-        let currentSlide = 0;
         const totalSlides = slides.length;
+
+        let currentIndex = 0;
+        let timer = null;
+
         function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-                dots[i].classList.toggle('active', i === index);
-            });
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            const translatePercent = (100 / totalSlides) * index;
+            slidesContainer.style.transform = `translateX(-${translatePercent}%)`;
         }
+
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
         }
-        setInterval(nextSlide, 5000);
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            timer = setInterval(nextSlide, 4000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(timer);
+        }
+
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-                clearInterval(timer);
-                timer = setInterval(nextSlide, 3000);
+                currentIndex = index;
+                showSlide(currentIndex);
+                startAutoSlide();
             });
         });
+
+        // slidesContainer.addEventListener("mouseenter", stopAutoSlide);
+        // slidesContainer.addEventListener("mouseleave", startAutoSlide);
+
+        showSlide(0);
+        startAutoSlide();
+
     </script>
 </body>
 
