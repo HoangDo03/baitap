@@ -989,20 +989,30 @@ footer {
         padding-bottom: 2rem;
     }
 
-    .banner-section {
-        height: 100vh;
-        width: 100%;
+    .banner-section{
+        background: url(img/banner-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        align-items: center;
+        position: relative;
     }
 
     .banner-section .banner-content-container h1 {
-        font-size: var(--font-h2-size);
-        line-height: 35px;
+        line-height: 40px;
     }
-
+    .banner-section .banner-content-container button{
+        padding: 0.2rem 1rem;
+    }
     .banner-section .banner-content-container {
         padding-bottom: 0;
-        padding-top: 5rem;
+        padding-top: 1rem;
         float: inline-end;
+    }
+    .banner-section .banner-content-container>* {
+        margin-bottom: 0.3rem;
     }
 
     .top-header {
@@ -1010,7 +1020,6 @@ footer {
     }
 
     .bottom-header {
-        position: fixed;
         z-index: 1000;
         top: 0;
         left: 0;
@@ -1089,8 +1098,15 @@ footer {
 
 @media (max-width: 400px) {
     .banner-section .banner-content-container h1 {
-        font-size: var(--font-h4-size);
+        font-size: var(--font-h2-size);
         line-height: 28px;
+    }
+    .banner-section .banner-content-container{
+        margin: 0 auto;
+        /* display: flex; */
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .esg-card-item .icon {
