@@ -79,6 +79,7 @@ h5 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -797,14 +798,23 @@ footer {
 
 .contact-detail ul li {
     display: flex;
-    align-items: last baseline;
-    gap: 2rem;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
     text-decoration: none;
     color: white;
-    
-
 }
 
+.contact-detail ul li i{
+    flex: 1;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-detail ul li div{
+    flex: 9;
+}
 
 .top-footer ul li,
 .office,
@@ -872,6 +882,7 @@ footer {
     }
     .content-map .title {
         text-align: center;
+        padding-bottom: 1rem;
     }
 
     .layer-1 {
@@ -982,6 +993,16 @@ footer {
         flex-direction: column;
         gap: 1rem;
     }
+    
+    .contact-detail ul li i{
+        flex: 0.5;
+
+    }
+
+    .contact-detail ul li div{
+        flex: 9.5;
+    }
+
 
 }
 
@@ -1088,12 +1109,21 @@ footer {
     .news-item {
         width: 100%;
     }
+    
 
 
     .bottom-footer {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+    }
+    .contact-detail ul li i{
+        flex: 1;
+
+    }
+
+    .contact-detail ul li div{
+        flex: 9;
     }
 
 }
