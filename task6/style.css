@@ -1125,7 +1125,9 @@ footer {
         width: 100%;
     }
     
-
+    .bottom-footer .link img{
+        margin: 0 0.5rem;
+    }
 
     .bottom-footer {
         flex-direction: column;
