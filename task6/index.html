@@ -61,23 +61,24 @@
             <ul>
                 <li><a class="active" href="#">Home</a></li>
                 <li><a href="#">We Are Triwin</a></li>
-                <li><a href="#">Products</a></li>
+                <li class="has-submenu">
+                    <input type="checkbox" id="submenu" hidden>
+                    <button class="menu-item"><label for="submenu" class="menu-item"><a href="#">Products</a></label><i
+                            class="fa-solid fa-chevron-down"></i></button>
+                    <ul class="submenu">
+                        <li><a href="#">Outdoor Furniture</a></li>
+                        <li><a href="#">Indoor Furniture</a></li>
+                        <li><a href="#">Upholstery</a></li>
+                        <li><a href="#">Home Decor</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">ESG & Sustainability</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
-            <!-- <div class="contact-info">
-                <div class="contact">
-                    <img src="img/phone.svg" alt="">
-                    <div>02836226639</div>
-                </div>
-                <div class="contact">
-                    <img src="img/mailbox.svg" alt="">
-                    <div>sales@triwinus.com</div>
-                <div>
-            </div>
-                 -->
         </nav>
+        <div id="overlay"></div>
         <section class="banner-section section">
             <!-- <img src="img/unsplash-image-NxAwryAbtIw.jpg" alt="" class="overlay-banner-section"> -->
             <div class="banner-content-container container-section">
@@ -191,8 +192,11 @@
                             <canvas id="myChart"></canvas>
                             <svg class="label-arc" style="position:absolute; top:0; left:0; pointer-events:none;"></svg>
                             <div class="center-circle">
-                                <div><span style="color:#004200;">E</span><span style="color:#007500;">S</span><span
-                                        style="color:#00A800;">G</span></div>
+                                <div>
+                                    <span style="color:#004200;">E</span>
+                                    <span style="color:#007500;">S</span>
+                                    <span style="color:#00A800;">G</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -285,9 +289,7 @@
                     <span class="dot active"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+
                 </div>
 
             </div>
@@ -296,6 +298,7 @@
         <script>
             const menuBtn = document.querySelector('.menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('overlay')
             const closeBtn = document.getElementById('close-btn');
             const slider = document.querySelector('.news-content-container');
             const slides = slider.querySelectorAll('.news-item');
@@ -324,10 +327,12 @@
 
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.add('active');
+                overlay.classList.add('active');
             });
 
             closeBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
             });
 
 
@@ -419,8 +424,10 @@
                     cutout: '50%',
                     plugins: {
                         legend: { display: false },
-                        datalabels: { display: false }
+                        datalabels: { display: false },
+                        tooltip: { enabled: false }
                     },
+
                     animation: {
                         onComplete: drawTextOnArcs
                     },

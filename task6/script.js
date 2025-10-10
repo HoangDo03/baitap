@@ -1,10 +1,10 @@
 const width = 1000,
-  height = 700;
+  height = 500;
 const svg = d3.select("#map").attr("viewBox", [0, 0, width, height]);
 const projection = d3
   .geoMercator()
-  .scale(160)
-  .translate([width / 2, height / 1.45]);
+  .scale(120)
+  .translate([width / 2, height / 1.4]);
 const path = d3.geoPath().projection(projection);
 
 d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
@@ -18,7 +18,7 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       .join("path")
       .attr("class", "country")
       .attr("d", path)
-      .style("fill", "#acadaf")
+      .style("fill","#acadaf")
       .style("stroke", "white");
 
     const zoom = d3
@@ -51,7 +51,8 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       .style("padding", "8px 12px")
       .style("pointer-events", "none")
       .style("border-radius", "1rem")
-      .style("display", "none");
+      .style("display", "none")
+      .style("width","100");
     const countryNames = new Map(
       countries.features.map((d) => [d.id, d.properties?.name || ""])
     );
@@ -59,19 +60,21 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
     svg
       .selectAll("path.country")
       .on("mouseover", (event, d) => {
+       d3.select(event.currentTarget).style("fill", "#ccccccff");
         tooltip_countries
           .style("display", "block")
-          .html(`<strong>${countryNames.get(d.id)}</strong><br>`);
+          .html(`<strong>${countryNames.get(d.id)}</strong><br>`)
+          
       })
       .on("mousemove", (event) => {
         const tooltipWidth = tooltip_countries.node().offsetWidth;
         const tooltipHeight = tooltip_countries.node().offsetHeight;
-
         tooltip_countries
           .style("left", event.pageX - tooltipWidth - 5 + "px")
           .style("top", event.pageY - tooltipHeight - 5 + "px");
       })
       .on("mouseout", (event) => {
+        d3.select(event.currentTarget).style("fill", "#acadaf");
         tooltip_countries.style("display", "none");
       });
 
@@ -196,11 +199,11 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       .select("body")
       .append("div")
       .attr("class", "tooltip")
-      .style("width", "200px")
+      .style("width", "250px")
       .style("background", "#333333")
       .style("position", "absolute")
       .style("color", "white")
-      .style("padding", "8px 12px")
+      .style("padding", "8px 10px")
       .style("pointer-events", "none")
       .style("border-radius", "1rem")
       .style("display", "none")
@@ -209,6 +212,7 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
     svg
       .selectAll("circle")
       .on("mouseover", (event, d) => {
+    
         tooltip.style("display", "block")
           .html(`<strong>${d.country}</strong><br>\
                     ${d.address}<br>\
