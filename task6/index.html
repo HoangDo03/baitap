@@ -63,8 +63,8 @@
                 <li><a href="#">We Are Triwin</a></li>
                 <li class="has-submenu">
                     <input type="checkbox" id="submenu" hidden>
-                    <button class="menu-item"><label for="submenu" class="menu-item"><a href="#">Products</a></label><i
-                            class="fa-solid fa-chevron-down"></i></button>
+                    <div class="menu-item"><label for="submenu" class="menu-item"><a href="#">Products</a></label><i
+                            class="fa-solid fa-chevron-down"></i></div>
                     <ul class="submenu">
                         <li><a href="#">Outdoor Furniture</a></li>
                         <li><a href="#">Indoor Furniture</a></li>
@@ -378,8 +378,12 @@
             }
 
             function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                showSlide(currentIndex);
+                if (currentIndex < totalSlides - 1) {
+                    currentIndex++;
+                    showSlide(currentIndex);
+                } else {
+                    stopAutoSlide();
+                }
             }
 
             function startAutoSlide() {
@@ -445,11 +449,22 @@
                 };
             }
 
-            function arcPath(cx, cy, r, startAngle, endAngle) {
-                const start = point(cx, cy, r, startAngle);
-                const end = point(cx, cy, r, endAngle);
-                const largeArcFlag = endAngle - startAngle <= Math.PI ? 0 : 1;
-                return `M ${start.x} ${start.y} A ${r} ${r} 0 ${largeArcFlag} 1 ${end.x} ${end.y}`;
+            function arcPath(cx, cy, r, startAngle, endAngle, reverse = false) {
+                let start, end, sweepFlag;
+
+                if (!reverse) {
+                    start = point(cx, cy, r, startAngle);
+                    end = point(cx, cy, r, endAngle);
+                    sweepFlag = 1;
+                } else {
+          
+                    start = point(cx, cy, r, endAngle);
+                    end = point(cx, cy, r, startAngle);
+                    sweepFlag = 0;
+                }
+
+                const largeArcFlag = Math.abs(endAngle - startAngle) <= Math.PI ? 0 : 1;
+                return `M ${start.x} ${start.y} A ${r} ${r} 0 ${largeArcFlag} ${sweepFlag} ${end.x} ${end.y}`;
             }
 
             function drawTextOnArcs() {
@@ -461,8 +476,10 @@
                 const meta = chart.getDatasetMeta(0);
                 meta.data.forEach((arc, i) => {
                     const id = `arcPath${i}`;
+                    const label = chart.data.labels[i];
                     const r = (arc.outerRadius + arc.innerRadius) / 2;
-                    const d = arcPath(arc.x, arc.y, r, arc.startAngle, arc.endAngle);
+                    const reverse = label === 'Governance';
+                    const d = arcPath(arc.x, arc.y, r, arc.startAngle, arc.endAngle, reverse);
 
                     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
                     path.setAttribute("id", id);
@@ -473,20 +490,21 @@
                     const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                     text.setAttribute('fill', 'white');
                     text.setAttribute('font-size', '25');
-                    text.setAttribute('font-weight', 'bold');
+                    text.setAttribute('font-weight', '700');
                     text.setAttribute('text-anchor', 'middle');
-                    // if (chart.data.labels[i] === 'Governance') {
-                    //     const offsetY = chart.height / 2; 
-                    //     text.setAttribute('transform', `scale(1,-1) translate(0, -${offsetY})`);
-                    // }
 
                     const textPath = document.createElementNS('http://www.w3.org/2000/svg', 'textPath');
                     textPath.setAttribute('href', `#${id}`);
                     textPath.setAttribute('startOffset', '50%');
-                    textPath.textContent = chart.data.labels[i];
-
+                    textPath.textContent = label;
                     text.appendChild(textPath);
                     svg.appendChild(text);
+
+                    if (reverse) {
+                        text.setAttribute('dy', '20');
+                    } else {
+                        text.setAttribute('dy', '-6');
+                    }
                 });
             }
             window.addEventListener('resize', () => {

@@ -18,7 +18,7 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       .join("path")
       .attr("class", "country")
       .attr("d", path)
-      .style("fill","#acadaf")
+      .style("fill", "#acadaf")
       .style("stroke", "white");
 
     const zoom = d3
@@ -48,11 +48,11 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       .style("background", "#333333")
       .style("position", "absolute")
       .style("color", "white")
-      .style("padding", "8px 12px")
+      .style("padding", "3px 5px")
       .style("pointer-events", "none")
       .style("border-radius", "1rem")
       .style("display", "none")
-      .style("width","100");
+      .style("width", "100");
     const countryNames = new Map(
       countries.features.map((d) => [d.id, d.properties?.name || ""])
     );
@@ -60,11 +60,10 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
     svg
       .selectAll("path.country")
       .on("mouseover", (event, d) => {
-       d3.select(event.currentTarget).style("fill", "#ccccccff");
+        d3.select(event.currentTarget).style("fill", "#ccccccff");
         tooltip_countries
           .style("display", "block")
-          .html(`<strong>${countryNames.get(d.id)}</strong><br>`)
-          
+          .html(`<strong>${countryNames.get(d.id)}</strong><br>`);
       })
       .on("mousemove", (event) => {
         const tooltipWidth = tooltip_countries.node().offsetWidth;
@@ -212,7 +211,6 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
     svg
       .selectAll("circle")
       .on("mouseover", (event, d) => {
-    
         tooltip.style("display", "block")
           .html(`<strong>${d.country}</strong><br>\
                     ${d.address}<br>\
