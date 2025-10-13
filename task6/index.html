@@ -340,30 +340,24 @@
 
             const topHeader = document.querySelector('.top-header-wrapper');
             const bottomHeader = document.querySelector('.bottom-header-wrapper');
-            let ticking = false;
+           
+let lastScroll = 0;
+let ticking = false;
 
 window.addEventListener('scroll', () => {
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      handleScroll();
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 50) {
+        bottomHeader.classList.add('sticky');
+      } else {
+        bottomHeader.classList.remove('sticky');
+      }
       ticking = false;
     });
     ticking = true;
   }
 });
-
-function handleScroll() {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > 50) {
-    if (!bottomHeader.classList.contains('sticky')) {
-      bottomHeader.classList.add('sticky');
-    }
-  } else {
-    if (bottomHeader.classList.contains('sticky')) {
-      bottomHeader.classList.remove('sticky');
-    }
-  }
-}
 
 
 
@@ -380,14 +374,14 @@ function handleScroll() {
 
 
             document.addEventListener("DOMContentLoaded", () => {
-                const observer = new IntersectionObserver((entries) => {
+                const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add("animate");
                             observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.2 });
+                }, { threshold: 0.3 });
                 document.querySelectorAll("\
                 .banner-section,\
                 button,\
