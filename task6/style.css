@@ -1330,8 +1330,8 @@ footer {
         height: 50vh;
     }
      .esg-card-item .icon {
-        width: 15vh;
-        height: 15vh;
+        width: 13vh;
+        height: 13vh;
         /* transform: translateX(-80%); */
     }
 
@@ -1350,8 +1350,6 @@ footer {
         justify-content: center;
         align-items: center;
     }
-
-   
 
     .chart-container {
 
