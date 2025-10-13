@@ -313,8 +313,9 @@ function drawTextOnArcs() {
     svg.appendChild(path);
 
     const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("class","text-svg-chart")
     text.setAttribute("fill", "white");
-    text.setAttribute("font-size", "25");
+    text.setAttribute("font-size", "23");
     text.setAttribute("font-weight", "700");
     text.setAttribute("text-anchor", "middle");
 
