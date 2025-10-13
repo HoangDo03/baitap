@@ -1019,10 +1019,12 @@ footer {
     .bottom-header {
         font-size: var(--font-body-s);
     }
-  .esg-card-item .icon{
+
+    .esg-card-item .icon {
         transform: translateX(-60%);
-  }
-    .esg-card-item .card-text{
+    }
+
+    .esg-card-item .card-text {
         margin-left: 0;
 
     }
@@ -1129,7 +1131,8 @@ footer {
         height: 13vh;
         transform: translateX(-80%);
     }
-            .esg-card-item .card-text {
+
+    .esg-card-item .card-text {
 
         margin-left: 0;
     }
@@ -1168,14 +1171,15 @@ footer {
         max-width: 100%;
     }
 
-        .esg-card-item .icon{
-            width: 14vh;
-            height: 14vh;
-        }
+    .esg-card-item .icon {
+        width: 14vh;
+        height: 14vh;
+    }
 
-  .esg-card-item .card-text{
-    width: 80%;
-  }
+    .esg-card-item .card-text {
+        width: 80%;
+    }
+
     .news-title {
         max-width: 100%;
     }
@@ -1313,9 +1317,10 @@ footer {
         float: right;
         margin-left: 0;
     }
-     .esg-card-item .card-text{
-    width: 75%;
-  }
+
+    .esg-card-item .card-text {
+        width: 75%;
+    }
 
     .center-circle>div {
         letter-spacing: -0.4rem;
@@ -1354,15 +1359,17 @@ footer {
         flex: 9;
     }
 
-    #map{
+    #map {
         height: 50vh;
     }
-     .esg-card-item .icon {
+
+    .esg-card-item .icon {
         width: 13vh;
         height: 13vh;
         /* transform: translateX(-80%); */
     }
-    .text-svg-chart{
+
+    .text-svg-chart {
         font-size: 17px;
     }
 
@@ -1458,32 +1465,33 @@ footer {
 }
 
 .center-circle text {
-  opacity: 0;
-  transform: translateY(10px);
-  animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(10px);
+    animation-fill-mode: forwards;
 }
 
 .text-e {
-  animation: fadeUp 1s ease-in 0.2s forwards;
+    animation: fadeUp 1s ease-in 0.2s forwards;
 }
 
 .text-s {
-  animation: fadeUp 1s ease-in 0.6s forwards;
+    animation: fadeUp 1s ease-in 0.6s forwards;
 }
 
 .text-g {
-  animation: fadeUp 1s ease-in 1s forwards;
+    animation: fadeUp 1s ease-in 1s forwards;
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -1508,7 +1516,7 @@ p,
 .map,
 .content-map .title,
 .esg-img,
-.esg-card-item{
+.esg-card-item {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -1529,7 +1537,7 @@ p.animate,
 .map.animate,
 .content-map .title.animate,
 .esg-img.animate,
-.esg-card-item.animate{
+.esg-card-item.animate {
     opacity: 1;
     transform: translateY(0);
 }

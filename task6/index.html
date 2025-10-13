@@ -340,24 +340,24 @@
 
             const topHeader = document.querySelector('.top-header-wrapper');
             const bottomHeader = document.querySelector('.bottom-header-wrapper');
-           
-let lastScroll = 0;
-let ticking = false;
 
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 50) {
-        bottomHeader.classList.add('sticky');
-      } else {
-        bottomHeader.classList.remove('sticky');
-      }
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
+            let lastScroll = 0;
+            let ticking = false;
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const currentScroll = window.pageYOffset;
+                        if (currentScroll > 50) {
+                            bottomHeader.classList.add('sticky');
+                        } else {
+                            bottomHeader.classList.remove('sticky');
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
 
 
 
@@ -466,8 +466,8 @@ window.addEventListener('scroll', () => {
                 showSlide(currentIndex);
             });
 
-            
-            
+
+
         </script>
         <script src="script.js" defer></script>
     </main>
