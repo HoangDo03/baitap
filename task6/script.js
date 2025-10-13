@@ -230,3 +230,111 @@ d3.json("https://unpkg.com/world-atlas@2.0.2/countries-110m.json").then(
       });
   }
 );
+
+//esg-chart
+const ctx = document.getElementById("myChart");
+const chart = new Chart(ctx, {
+  type: "doughnut",
+  data: {
+    labels: ["Social", "Governance", "Environment"],
+    datasets: [
+      {
+        data: [1, 1, 1],
+        backgroundColor: ["#007500", "#00A800", "#004200"],
+        borderColor: ["#007500", "#00A800", "#004200"],
+        borderRadius: 10,
+        borderWidth: 6,
+        spacing: 20,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: "50%",
+    plugins: {
+      legend: { display: false },
+      datalabels: { display: false },
+      tooltip: { enabled: false },
+    },
+
+    animation: {
+      onComplete: drawTextOnArcs,
+    },
+    onResize: () => {
+      setTimeout(drawTextOnArcs, 200);
+    },
+  },
+  plugins: [ChartDataLabels],
+});
+
+function point(cx, cy, r, angle) {
+  return {
+    x: cx + r * Math.cos(angle),
+    y: cy + r * Math.sin(angle),
+  };
+}
+
+function arcPath(cx, cy, r, startAngle, endAngle, reverse = false) {
+  let start, end, sweepFlag;
+
+  if (!reverse) {
+    start = point(cx, cy, r, startAngle);
+    end = point(cx, cy, r, endAngle);
+    sweepFlag = 1;
+  } else {
+    start = point(cx, cy, r, endAngle);
+    end = point(cx, cy, r, startAngle);
+    sweepFlag = 0;
+  }
+
+  const largeArcFlag = Math.abs(endAngle - startAngle) <= Math.PI ? 0 : 1;
+  return `M ${start.x} ${start.y} A ${r} ${r} 0 ${largeArcFlag} ${sweepFlag} ${end.x} ${end.y}`;
+}
+
+function drawTextOnArcs() {
+  const svg = document.querySelector(".label-arc");
+  svg.setAttribute("width", chart.width);
+  svg.setAttribute("height", chart.height);
+  svg.innerHTML = "";
+
+  const meta = chart.getDatasetMeta(0);
+  meta.data.forEach((arc, i) => {
+    const id = `arcPath${i}`;
+    const label = chart.data.labels[i];
+    const r = (arc.outerRadius + arc.innerRadius) / 2;
+    const reverse = label === "Governance";
+    const d = arcPath(arc.x, arc.y, r, arc.startAngle, arc.endAngle, reverse);
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("id", id);
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    svg.appendChild(path);
+
+    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("fill", "white");
+    text.setAttribute("font-size", "25");
+    text.setAttribute("font-weight", "700");
+    text.setAttribute("text-anchor", "middle");
+
+    const textPath = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "textPath"
+    );
+    textPath.setAttribute("href", `#${id}`);
+    textPath.setAttribute("startOffset", "50%");
+    textPath.textContent = label;
+    text.appendChild(textPath);
+    svg.appendChild(text);
+
+    if (reverse) {
+      text.setAttribute("dy", "20");
+    } else {
+      text.setAttribute("dy", "-6");
+    }
+  });
+}
+window.addEventListener("resize", () => {
+  setTimeout(drawTextOnArcs, 300);
+});
