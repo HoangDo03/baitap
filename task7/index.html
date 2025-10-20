@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task7</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top-wrapper">
+            <div class="header-top container">
+                <div class="left-top-header">
+                    <div class="header-logo"><img src="imgs/header-logo.png" alt=""></div>
+                    <div class="header-content">
+                        <h3 class="header-title">Sàn giao dịch việc làm trực tuyến</h1>
+                            <h5 class="header-subtitle">Ưu tiên người khuyết tật</h5>
+                    </div>
+                </div>
+                <div class="login-signup">
+                    <div><a href="#">Đăng nhập</a></div>
+                    <div><a href="#">Đăng ký</a></div>
+                </div>
+                <div class="btn-mobile-menu hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom-wrapper">
+            <nav class="header-nav container">
+                <ul class="header-menu">
+                    <li class="header-item"><a href="#">Trang chủ</a></li>
+                    
+                    <li class="header-item has-submenu">
+                        <input type="checkbox" id="drop1">
+                        <label for="drop1">Việc làm ▾</label>
+                        <ul class="submenu">
+                            <li><a href="#">Người tìm việc</a></li>
+                            <li><a href="#">Nhà tuyển dụng</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="header-item has-submenu">
+                        <input type="checkbox" id="drop2">
+                        <label for="drop2">Tư vấn hướng nghiệp ▾</label>
+                        <ul class="submenu">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="header-item"><a href="#">Biểu mẫu</a></li>
+                    
+                    <li class="header-item"><a href="#">Xưởng hòa nhập ASET</a></li>
+                    
+                    <li class="header-item"><a href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="menu-mobile">
+        <div>
+            <div class="btn-close"><i class="fa-solid fa-circle-xmark"></i></div>
+        </div>
+        <nav class="">
+            <ul class="menu">
+                <li class="item"><a href="#">Trang chủ</a></li>
+                <li class="item has-submenu">
+                    <input type="checkbox" id="drop3" hidden>
+                    <label for="drop3">Việc làm ▾</label>
+                    
+                    <ul class="submenu">
+                        <li>Người tìm việc</li>
+                        <li>Nhà tuyển dụng</li>
+                    </ul>
+                </li>
+                <li class="item has-submenu">
+                    <input type="checkbox" id="drop4" hidden>
+                    <label for="drop4">Tư vấn hướng nghiệp ▾</label>
+                    <ul class="submenu">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </li>
+                <li class="item"><a href="#">Biểu mẫu</a></li>
+                <li class="item"><a href="#">Xưởng hòa nhập ASET</a></li>
+                <li class="item"><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <main>
+        <div class="overlay"></div>
+        <section class="hero">
+
+            <div class="hero-slideshow ">
+                <div class="hero-slides">
+                    <div class="hero-slide active" id="s1">
+                        <img src="imgs/banner-hero.png" alt="">
+                    </div>
+                    <!-- <div class="hero-slide" id="s2">
+                            <img src="img/11-0611" alt="">
+                        </div> -->
+                </div>
+            </div>
+            <div class="hero-p container">
+                <p>Chào mừng bạn đến với website vieclamkt.vn</p>
+            </div>
+        </section>
+        <section class="filter-find-job section">
+            <div class="filter-wrapper container">
+                <h5>Tìm việc nhanh</h5>
+                <div class="filter">
+                    <select name="area" id="area">
+                        <option value="">Hồ Chí Minh</option>
+                        <option value="">Hà Nội</option>
+                    </select>
+                    <select name="job" id="job">
+                        <option value="">Kinh tế</option>
+                        <option value="">Lao động phổ thông</option>
+                    </select>
+                    <div class="salary">
+                        <label for="temp">Chọn mức lương:</label><br />
+                        <input type="range" min="0" max="20" list="markers">
+                        <datalist id="markers">
+                            <option value="0" label="0"></option>
+                            <option value="20" label="20tr"></option>
+                        </datalist>
+                    </div>
+                    <div class="btn-find">
+                        <input type="text">
+                        <button>Tìm kiếm</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="main-section container">
+                <div class="left-container">
+                    <div class="recruit">
+                        <div class="recruit-article title">
+                            <p>Thông tin tuyển dụng</p>
+                        </div>
+                        <div class="recruit-list">
+                            <ul>
+                                <li>Máy tính/CNTT (<span>227</span>)</li>
+                                <li>Quảng cáo/Marketing (<span>227</span>)</li>
+                                <li>Nghệ thuật (<span>227</span>)</li>
+                                <li>May mặc/Giày da (<span>227</span>)</li>
+                                <li>Kinh tế (<span>227</span>)</li>
+                                <li>Biên/phiên dịch (<span>227</span>)</li>
+                                <li>Giáo dục - đào tạo (<span>227</span>)</li>
+                                <li>Xây dựng (<span>227</span>)</li>
+                                <li>Hành chính nhân sự (<span>227</span>)</li>
+                                <li>Du lịch/ Nhà hàng - khách sạn (<span>227</span)>
+                                </li>
+                                <li>Điện – điện tử (<span>227</span>)</li>
+                                <li>Ngành khác (<span>227</span>)</li>
+                                <li>Tiếp thị / Truyền thông (<span>227</span>)</li>
+                                <li>Xây dựng/Bất động sản (<span>227</span>)</li>
+                                <li>Y tế (<span>227</span>)</li>
+                                <li>Tài xế, lái xe/ Giao nhận (<span>227</span>)</li>
+                                <li>Thời vụ/bán thời gian (<span>227</span>)</li>
+                                <li>Thực phẩm/ dịch vụ ăn uống (<span>227</span>)</li>
+                                <li>Bảo vệ, vệ sĩ (<span>227</span>)</li>
+                                <li>Phục vụ, tạp vụ, giúp việc (<span>227</span>)</li>
+                                <li>Lao động phổ thông (<span>227</span>)</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="newest-recruit">
+                        <div class="title">
+                            <p>Tuyển dụng mới nhất</p>
+                        </div>
+                        <div class="recruit-list">
+
+                            <table class="job-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vị trí tuyển dụng</th>
+                                        <th>Khu vực</th>
+                                        <th>Dạng tật</th>
+                                        <th>Mức lương</th>
+                                        <th>Ngày đăng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>TUYỂN 15 NHÂN VIÊN NHẮC PHÍ GẤP</strong><br>
+                                            <span>Công ty cổ phần Mắt Bão</span>
+                                        </td>
+                                        <td>Quận Tân Bình</td>
+                                        <td>Khuyết tật chân/tay</td>
+                                        <td>7.000.000đ</td>
+                                        <td>01/12/2016</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="auth box">
+                        <div class="title">
+                            <p>Đăng nhập</p>
+                        </div>
+                        <div class="content">
+                            <input type="text" placeholder="Tên đăng nhập">
+                            <input type="text" placeholder="Mật khẩu...">
+                            <button>Đăng nhập</button>
+                            <div class="signup">
+                                <a href="#">Đăng ký ứng viên</a>
+                                <a href="#">Đăng ký tuyển dụng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clip-container box">
+                        <div class="title">
+                            <p>Việc làm cho người khuyết tật</p>
+                        </div>
+                        <div class="clip">
+                            <iframe src="https://www.youtube.com/embed/tP7JB_Rqw1A" title="YouTube video"
+                                frameborder="0" allowfullscreen>
+                            </iframe>
+                            <p>Hội chợ việc làm 01/2017</p>
+                        </div>
+
+                    </div>
+                    <div class="contact box">
+                        <div class="title">
+                            <p>Hỗ trợ online</p>
+                        </div>
+                        <div class="contact-information">
+                            <p>Hotline:
+                            </p>
+                            <strong>08.3932.0483</strong>
+                            <div class="contact-phone">
+                                <div><button>Skype call </button>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <p>(Gặp ABC)</p>
+                                </div>
+                                <div>
+                                    <button>Zalo call </button>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <p>(Gặp ABC)</p>
+                                </div>
+                                <div>
+                                    <button>Skype call </button>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <p>(Gặp ABC)</p>
+                                </div>
+                                <div><button>Zalo call </button>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <p>(Gặp ABC)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="chart box">
+                        <div class="title">
+                            <p>Thị trường lao động</p>
+                        </div>
+                        <div class="draw-chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="access-statistic box">
+                        <div class="title">
+                            <p>Thống kê truy cập</p>
+                        </div>
+                        <div class="access-data">
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <!-- <img src="imgs/worker.png" alt=""> -->
+                                <p>Hiện đang online: <span>82</span></p>
+                            </div>
+                            <div><i class="fa-solid fa-users-line"></i>
+                                <p>Hôm nay: <span>33</span></p>
+                            </div>
+                            <div><i class="fa-solid fa-user-group"></i>
+                                <p>Hôm qua: <span>166</span></p>
+                            </div>
+                            <div><i class="fa-solid fa-users"></i>
+                                <p>Trong tháng: <span>777</span></p>
+                            </div>
+                            <div><i class="fa-solid fa-chart-simple"></i>
+                                <p>Tổng truy cập: <span>97190</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="news section">
+            <div class="container">
+                <div class="news-list">
+                <button class="pre"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="news-flex">
+                    <div class="news-item">
+                        <div class="img">
+                            <img src="imgs/11-0611.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <strong>Thêm ưu tiên cho người khuyết tật</strong>
+                            <p>Theo đó, từ ngày 15-10, hành khách hạn chế khả năng di chuyển chỉ cần thông báo về tình
+                                trạng đặc biệt ngay khi đặt chỗ,...</p>
+                            <button class="btn-detail">Chi tiết <i class="fa-solid fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="img">
+                            <img src="imgs/1.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <strong>Ngày hội việc làm "Ưu tiên người khuyết tật" TPHCM 2016</strong>
+                            <p>Trung tâm Bảo trọ - Dạy nghề và Tạo việc làm cho người tàn tật TP.HCM vừa tổ chức Ngày
+                                hội việc làm "Ưu tiên người khuyết tật" ...</p>
+                            <button class="btn-detail">Chi tiết <i class="fa-solid fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                     <div class="news-item">
+                        <div class="img">
+                            <img src="imgs/1.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <strong>Ngày hội việc làm "Ưu tiên người khuyết tật" TPHCM 2016</strong>
+                            <p>Trung tâm Bảo trọ - Dạy nghề và Tạo việc làm cho người tàn tật TP.HCM vừa tổ chức Ngày
+                                hội việc làm "Ưu tiên người khuyết tật" ...</p>
+                            <button class="btn-detail">Chi tiết <i class="fa-solid fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="img">
+                            <img src="imgs/1.jpg" alt="">
+                        </div>
+                        <div class="news-content">
+                            <strong>Ngày hội việc làm "Ưu tiên người khuyết tật" TPHCM 2016</strong>
+                            <p>Trung tâm Bảo trọ - Dạy nghề và Tạo việc làm cho người tàn tật TP.HCM vừa tổ chức Ngày
+                                hội việc làm "Ưu tiên người khuyết tật" ...</p>
+                            <button class="btn-detail">Chi tiết <i class="fa-solid fa-caret-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            </div>
+
+        </section>
+        <section class="affiliate section">
+            <div class="container">
+                <div class="title ">
+                    <p>Đơn vị liên kết</p>
+                </div>
+                <div class="agency-wrapper">
+                    <button class="agency-pre"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="agency-list">
+                        <div class="agency-logo">
+                            <img src="imgs/viettrix.png" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/dhdc.jpg" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/yescenter.jpg" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/logo_ttdvvlhcm2.png" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/sun.png" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/images.png" alt="">
+                        </div>
+                        <div class="agency-logo">
+                            <img src="imgs/falmi.png" alt="">
+                        </div>
+                        
+                    </div>
+                    <button class="agency-next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-wrapper  container">
+            <div class="left-footer">
+                <p>Sở lao động - thương binh và xã hội tp.hcm</p>
+                <p>Trung tâm bảo trợ - dạy nghề và tạo việc làm cho người tàn tật thành phố</p>
+            </div>
+            <div class="right-footer">
+                <p><span>Địa chỉ:</span> 215 Võ Thị Sáu, Phường 7, Quận 3, Thành phố Hồ Chí Minh</p>
+                <p><span>Điện thoại:</span> 08.3932.0483 - Fax: 08.3932.7177</p>
+                <p><span>Email:</span> hotro@vietlamnkt.vn - <span>Website:</span> www.vieclamnkt.vn</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>

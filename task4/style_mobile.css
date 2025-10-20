@@ -176,8 +176,7 @@
     }
 
     .overlay-1-about-section img {
-        width: clamp(10%, 100%, 300px);
-        height: auto;
+        display: none;
     }
 
     .sub-container img {
@@ -186,7 +185,7 @@
     }
 
     .wrapper-sub-container .title {
-        top: 5%;
+        top: -5%;
         font-size: clamp(1.5rem, 3.5vw, 26px);
     }
 
@@ -197,7 +196,7 @@
 
     .lines {
         margin-top: 3rem;
-        position: absolute;
+        /* position: absolute; */
         top: 20%;
         align-items: flex-start;
         display: grid;
@@ -222,13 +221,14 @@
         text-align: center;
         height: clamp(10px, 10vh, 80px);
         width: clamp(10%, 80%, 80%);
-        background-color: #ffffff33;
+        background-color: #a8a8a833;
         padding: 3rem 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+
     }
 
 
     .lines i {
-        color: #FBC02D;
         font-size: 18px;
     }
 
@@ -279,6 +279,10 @@
     }
     .grid-policy .card p {
         font-size: clamp(14px, 2.8vw, 17px);
+    }
+
+    .policy .text-container{
+        flex-direction: column;
     }
 
     .policy .text-container .title {
@@ -434,15 +438,14 @@
         font-size: clamp(0.2rem, 2.5vw, 20px);
     }
 
-    .posts {
+    .posts-grid {
         display: flex;
         width: 300%;
         overflow: hidden;
         animation: autoSlide 9s linear infinite;
-
     }
 
-    .posts .post {
+    .posts-grid .post {
         width: -33.3333%;
         flex-shrink: 0;
         display: inline-block;
@@ -516,7 +519,7 @@
         width: 25%;
     }
 
-    .post-section .posts {
+    .post-section .posts-grid {
         display: flex;
         gap: clamp(0.5rem, 2vw, 3rem);
         padding: 1rem 0;
