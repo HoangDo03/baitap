@@ -1261,6 +1261,10 @@ footer {
     }
     .info{
         gap:0.5rem;
+        padding: 0.5rem;
+        align-items: self-start;
+    }
+    .contact-information .contact-phone{
         grid-template-columns: 1fr;
     }
 }
@@ -1402,6 +1406,7 @@ footer {
     }
     .info{
         grid-template-columns: 1fr 1fr;
+        align-items: self-start;
     }
     
 
@@ -1464,6 +1469,13 @@ footer {
     .btn-find button {
         border-top: none;
         border-radius: 0 0 4px 4px;
+    }
+    .info{
+        grid-template-columns: 1fr;
+    }
+    .candidate img{
+        width: 60px;
+        height: 60px;
     }
 }
 
