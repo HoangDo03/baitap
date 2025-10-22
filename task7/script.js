@@ -17,8 +17,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-
 const btn_mobile_menu = document.querySelector(".btn-mobile-menu");
 const menu_mobile = document.querySelector(".menu-mobile");
 const btn_close = document.querySelector(".fa-circle-xmark");
@@ -38,11 +36,10 @@ const submenuLinks = document.querySelectorAll(".submenu a");
 const default_p = document.querySelector(".default");
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  submenuLinks.forEach(link => {
+  submenuLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       breadcrumb.classList.add("show");
-      default_p.style.display="none";
+      default_p.style.display = "none";
       e.preventDefault();
       const sub = link.dataset.sub;
       breadcrumbSub.textContent = sub;
@@ -79,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentSlide < 0) currentSlide = totalSlides - 1;
     updateSlide();
   });
-const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -103,9 +100,7 @@ const observer = new IntersectionObserver(
     .forEach((el) => {
       observer.observe(el);
     });
-
 });
-
 
 const ctx = document.getElementById("myChart").getContext("2d");
 const data = {
@@ -143,14 +138,7 @@ const config = {
     },
   },
 };
-new Chart(ctx, config);
-setInterval(() => {
-  myChart.data.datasets.forEach(dataset => {
-    dataset.data = dataset.data.map(() => Math.floor(Math.random() * 500000));
-  });
-  myChart.update();
-}, 3000);
-
+const myChart = new Chart(ctx, config);
 
 document.addEventListener("DOMContentLoaded", () => {
   const agencyList = document.querySelector(".agency-list");
@@ -167,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateSlide() {
     const perView = getItemsPerView();
-    const logoWidth = logos[0].offsetWidth + 16; 
+    const logoWidth = logos[0].offsetWidth + 16;
     const shiftX = -(logoWidth * perView) * currentSlide_agency;
     agencyList.style.transform = `translateX(${shiftX}px)`;
   }
@@ -197,6 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
       () => (agencyList.style.transition = "transform 0.4s ease"),
       100
     );
+    myChart.resize();
+    myChart.update();
   });
 
   updateSlide();
@@ -207,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSlideshow = document.querySelector(".hero-slideshow");
   const newestRecruit = document.querySelector(".newest-recruit");
 
-  candidateRoles.forEach(el => el.style.display = "none");
-  recruiterRoles.forEach(el => el.style.display = "none");
+  candidateRoles.forEach((el) => (el.style.display = "none"));
+  recruiterRoles.forEach((el) => (el.style.display = "none"));
   default_p.style.display = "block";
 
   const loginBtn = loginBox.querySelector("button");
@@ -217,101 +207,37 @@ document.addEventListener("DOMContentLoaded", () => {
     if (role === "candidate") {
       heroSlideshow.style.display = "none";
       loginBox.style.display = "none";
-      candidateRoles.forEach(el => el.style.display = "block");
-      recruiterRoles.forEach(el => el.style.display = "none");
+      candidateRoles.forEach((el) => (el.style.display = "block"));
+      recruiterRoles.forEach((el) => (el.style.display = "none"));
       newestRecruit.style.display = "block";
       breadcrumb.classList.add("show");
       breadcrumbSub.textContent = "Người tìm việc";
-      default_p.style.display="none";
+      default_p.style.display = "none";
     } else if (role === "recruiter") {
       heroSlideshow.style.display = "none";
       loginBox.style.display = "none";
-      candidateRoles.forEach(el => el.style.display = "none");
-      recruiterRoles.forEach(el => el.style.display = "block");
+      candidateRoles.forEach((el) => (el.style.display = "none"));
+      recruiterRoles.forEach((el) => (el.style.display = "block"));
       newestRecruit.style.display = "none";
       breadcrumb.classList.add("show");
       breadcrumbSub.textContent = "Nhà tuyển dụng";
-      default_p.style.display="none";
+      default_p.style.display = "none";
     } else {
       alert("Role không hợp lệ!");
     }
   });
 
-  document.querySelectorAll(".auth .content button").forEach(btn => {
+  document.querySelectorAll(".auth .content button").forEach((btn) => {
     btn.addEventListener("click", () => {
       if (btn.innerText.includes("Thoát")) {
         loginBox.style.display = "block";
         heroSlideshow.style.display = "block";
-        candidateRoles.forEach(el => el.style.display = "none");
-        recruiterRoles.forEach(el => el.style.display = "none");
+        candidateRoles.forEach((el) => (el.style.display = "none"));
+        recruiterRoles.forEach((el) => (el.style.display = "none"));
         newestRecruit.style.display = "block";
-        breadcrumb.classList.remove("show");
-      breadcrumbSub.textContent = "";
-      }
-    });
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const breadcrumb = document.querySelector(".breadcrumb");
-  const breadcrumbSub = document.getElementById("breadcrumb-sub");
-  const submenuLinks = document.querySelectorAll(".submenu a");
-  const default_p = document.querySelector(".default");
-
-  const loginBox = document.querySelector(".login-box");
-  const candidateRoles = document.querySelectorAll(".candidate-role");
-  const recruiterRoles = document.querySelectorAll(".recruiter-role");
-  const heroSlideshow = document.querySelector(".hero-slideshow");
-  const newestRecruit = document.querySelector(".newest-recruit");
-
-  candidateRoles.forEach(el => el.style.display = "none");
-  recruiterRoles.forEach(el => el.style.display = "none");
-  default_p.style.display = "block";
-
-  submenuLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      breadcrumb.classList.add("show");
-      default_p.style.display = "none";
-      breadcrumbSub.textContent = link.dataset.sub || link.textContent;
-    });
-  });
-
-  const loginBtn = loginBox.querySelector("button");
-  loginBtn.addEventListener("click", () => {
-    const role = prompt("Nhập role (candidate hoặc recruiter):");
-    if (role === "candidate" || role === "recruiter") {
-      const isCandidate = role === "candidate";
-      heroSlideshow.style.display = "none";
-      loginBox.style.display = "none";
-      newestRecruit.style.display = isCandidate ? "block" : "none";
-      default_p.style.display = "none";
-      candidateRoles.forEach(el => el.style.display = isCandidate ? "block" : "none");
-      recruiterRoles.forEach(el => el.style.display = isCandidate ? "none" : "block");
-      breadcrumb.classList.add("show");
-      breadcrumbSub.textContent = isCandidate ? "Người tìm việc" : "Nhà tuyển dụng";
-    } else {
-      alert("Role không hợp lệ! Hãy nhập 'candidate' hoặc 'recruiter'.");
-    }
-  });
-
-  document.querySelectorAll(".auth .content button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (btn.innerText.includes("Thoát")) {
-        heroSlideshow.style.display = "block";
-        loginBox.style.display = "block";
-        newestRecruit.style.display = "block";
-        candidateRoles.forEach(el => el.style.display = "none");
-        recruiterRoles.forEach(el => el.style.display = "none");
         breadcrumb.classList.remove("show");
         breadcrumbSub.textContent = "";
-        default_p.style.display = "block";
       }
     });
   });
 });
-
-
-
-
-
-

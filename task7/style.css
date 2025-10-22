@@ -238,13 +238,14 @@ button {
     list-style: none;
 }
 
-.header-menu .submenu li{
+.header-menu .submenu li {
     color: var(--color2);
     font-size: var(--font-body-m);
     padding-left: 0.5rem;
     /* position: relative; */
 }
-.header-menu .submenu li a{
+
+.header-menu .submenu li a {
     text-decoration: none;
 }
 
@@ -437,41 +438,49 @@ button {
     white-space: nowrap;
 
 }
+
 .hero-p p {
     opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 1s ease forwards;
+    transform: translateY(10px);
+    animation: fadeUp 1s ease forwards;
 
 }
+
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.breadcrumb.show{
+
+.breadcrumb.show {
     display: flex;
 }
+
 .breadcrumb {
-  display: none;
-  gap: 5px;
-  font-size: 15px;
-  color: #777;
+    display: none;
+    gap: 5px;
+    font-size: 15px;
+    color: #777;
 }
+
 .breadcrumb li {
-  list-style: none;
+    list-style: none;
 }
+
 .breadcrumb li a {
-  text-decoration: none;
-  color: #999;
+    text-decoration: none;
+    color: #999;
 }
+
 .breadcrumb li::after {
-  content: "▸";
-  margin: 0 4px;
-  color: #ccc;
+    content: "▸";
+    margin: 0 4px;
+    color: #ccc;
 }
+
 .breadcrumb li:last-child::after {
-  content: "";
+    content: "";
 }
 
 .filter-wrapper>* {
@@ -491,7 +500,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap:1rem;
+    gap: 1rem;
 }
 
 datalist {
@@ -525,38 +534,39 @@ input[type="range"] {
 }
 
 .btn-find {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
 }
 
 .btn-find input {
-  flex: 1;
-  min-width: 0;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-  box-sizing: border-box;
+    flex: 1;
+    min-width: 0;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
 }
 
 .btn-find button {
-  flex-shrink: 0;
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  background-color: var(--color11);
-  color: white;
-  cursor: pointer;
-  box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--color11);
+    color: white;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .btn-find button:hover {
-  background-color: var(--color2);
+    background-color: var(--color2);
 }
+
 .main-section {
     display: flex;
     justify-content: center;
@@ -565,6 +575,8 @@ input[type="range"] {
 
 .left-container {
     flex: 70%;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-container {
@@ -587,14 +599,14 @@ input[type="range"] {
 }
 
 .newest-recruit {
-  overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .recruit-list {
     border-top: 1px solid var(--color2);
     padding: 1rem 0;
-    max-height: none;
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 .recruit-list ul {
@@ -748,7 +760,7 @@ input[type="range"] {
     display: flex;
 }
 
-.news{
+.news {
     overflow: hidden;
 }
 
@@ -773,10 +785,11 @@ input[type="range"] {
     border: 1px solid var(--color7);
     transition: transform 0.6s ease-out, transform 0.6s ease-out;
 }
+
 .news-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  z-index: 2;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .pre,
@@ -896,7 +909,7 @@ input[type="range"] {
 }
 
 .agency-logo img {
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: contain;
 }
@@ -1053,7 +1066,7 @@ input[type="range"] {
 
 .contact-information .contact-phone {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -1166,12 +1179,19 @@ footer {
     .recruit-list ul li {
         white-space: wrap;
     }
+
     .newest-recruit .recruit-list {
-    max-height: 80vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #999 #f2f2f2;
-  }
+        height: 100%;
+        max-height: none;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #999 #f2f2f2;
+    }
+
+    .contact-information .contact-phone {
+
+        /* grid-template-columns: 1fr; */
+    }
 
 }
 
@@ -1199,6 +1219,10 @@ footer {
 
     .agency-logo {
         flex: 0 0 calc(100% / 3 - 1rem);
+    }
+    .newest-recruit .recruit-list {
+        max-height:80vh;
+      
     }
 }
 
@@ -1266,13 +1290,13 @@ footer {
         padding: 0.5rem;
     }
 
-    .filter select{
+    .filter select {
         width: 50%;
-  max-width: 250px;
-  box-sizing: border-box; 
+        max-width: 250px;
+        box-sizing: border-box;
 
     }
-    
+
     .left-container,
     .right-container {
         flex: 100%;
@@ -1295,7 +1319,7 @@ footer {
         gap: 0.5rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+        grid-template-columns: 1fr 1fr;
     }
 
     .contact-information {
@@ -1377,26 +1401,27 @@ footer {
     .agency-logo {
         flex: 0 0 calc(100% / 2 - 1rem);
     }
-    .filter{
-        grid-template-columns:1fr ;
-        
+
+    .filter {
+        grid-template-columns: 1fr;
+
     }
 
-  .btn-find input,
-  .btn-find button {
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
+    .btn-find input,
+    .btn-find button {
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
 
-  .btn-find input {
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-  }
+    .btn-find input {
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+    }
 
-  .btn-find button {
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-  }
+    .btn-find button {
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+    }
 }
 
 .hero-slide {
@@ -1409,21 +1434,22 @@ footer {
     opacity: 1;
     transform: scale(1);
 }
+
 .filter-wrapper,
 .recruit,
 .newest-recruit,
 .box {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .filter-wrapper.animate,
 .recruit.animate,
 .newest-recruit.animate,
 .box.animate {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .agency-logo {
