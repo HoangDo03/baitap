@@ -781,7 +781,7 @@ input[type="range"] {
 
 .job-table tbody tr td {
     border-top: 1px dotted gray;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.2rem;
     font-size: var(--font-body-m);
 }
 
@@ -1008,7 +1008,8 @@ input[type="range"] {
     padding: 0.5rem;
 }
 
-.candidate-role .content div {
+.candidate-role .content > div,
+.recruiter-role .content > div{
     display: flex;
     text-align: left;
     justify-content: left;
@@ -1018,9 +1019,11 @@ input[type="range"] {
 
 .candidate-role .content i,
 .recruiter-role .content i {
-    width: 16px;
+    width: 17px;
     text-align: center;
     padding-right: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .candidate-role .content span,
@@ -1256,7 +1259,7 @@ footer {
         flex: 0 0 calc(100% / 3 - 1rem);
     }
     .newest-recruit .recruit-list {
-        max-height:80vh;
+        max-height:90%;
       
     }
     .info{

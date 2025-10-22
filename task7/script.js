@@ -197,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const recruiterRoles = document.querySelectorAll(".recruiter-role");
   const heroSlideshow = document.querySelector(".hero-slideshow");
   const newestRecruit = document.querySelector(".newest-recruit");
+  const recruit_list = document.querySelector(".recruit-list");
 
   candidateRoles.forEach((el) => (el.style.display = "none"));
   recruiterRoles.forEach((el) => (el.style.display = "none"));
