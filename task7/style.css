@@ -29,7 +29,7 @@
     margin: 0;
     padding: 0;
     font-family: "Tahoma", "Arial", sans-serif;
-    /* border:  solid 1px red; */
+    border: solid 1px red;
 
 }
 
@@ -71,6 +71,11 @@ h6 {
     font-weight: 400;
     font-size: var(--font-h6-size);
     line-height: 40px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 button {
@@ -225,7 +230,7 @@ button {
     white-space: nowrap;
 }
 
-.header-item a:hover{
+.header-item a:hover {
     color: var(--color1);
 }
 
@@ -233,12 +238,14 @@ button {
     list-style: none;
 }
 
-.header-menu .submenu li {
+.header-menu .submenu li{
     color: var(--color2);
-    text-decoration: none;
     font-size: var(--font-body-m);
     padding-left: 0.5rem;
     /* position: relative; */
+}
+.header-menu .submenu li a{
+    text-decoration: none;
 }
 
 .has-submenu {
@@ -253,7 +260,7 @@ button {
     white-space: nowrap;
 }
 
-.header-menu .has-submenu label:hover{
+.header-menu .has-submenu label:hover {
     color: var(--color1);
 }
 
@@ -426,7 +433,45 @@ button {
     color: var(--color4);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
 
+}
+.hero-p p {
+    opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 1s ease forwards;
+
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.breadcrumb.show{
+    display: flex;
+}
+.breadcrumb {
+  display: none;
+  gap: 5px;
+  font-size: 15px;
+  color: #777;
+}
+.breadcrumb li {
+  list-style: none;
+}
+.breadcrumb li a {
+  text-decoration: none;
+  color: #999;
+}
+.breadcrumb li::after {
+  content: "▸";
+  margin: 0 4px;
+  color: #ccc;
+}
+.breadcrumb li:last-child::after {
+  content: "";
 }
 
 .filter-wrapper>* {
@@ -446,6 +491,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap:1rem;
 }
 
 datalist {
@@ -459,10 +505,18 @@ datalist {
 .filter select {
     width: 20%;
     height: 2rem;
+    color: var(--color6);
+    -webkit-text-fill-color: var(--color6);
+    background-color: #fff;
+    font-weight: 400;
 }
 
-option {
+
+.filter select option {
     padding: 0;
+    width: 50%;
+    font-weight: 400;
+    font-size: var(--font-body-s);
 }
 
 input[type="range"] {
@@ -471,10 +525,38 @@ input[type="range"] {
 }
 
 .btn-find {
-    display: flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
+.btn-find input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+}
 
+.btn-find button {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--color11);
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn-find button:hover {
+  background-color: var(--color2);
+}
 .main-section {
     display: flex;
     justify-content: center;
@@ -504,11 +586,15 @@ input[type="range"] {
     background: linear-gradient(to top, var(--color2) 60%, var(--color4) 100%);
 }
 
-
+.newest-recruit {
+  overflow: hidden;
+}
 
 .recruit-list {
     border-top: 1px solid var(--color2);
     padding: 1rem 0;
+    max-height: none;
+    overflow: hidden;
 }
 
 .recruit-list ul {
@@ -636,6 +722,7 @@ input[type="range"] {
 
 .job-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .job-table thead tr th {
@@ -657,9 +744,12 @@ input[type="range"] {
 
 .news-list {
     position: relative;
-    overflow: hidden;
     width: 100%;
     display: flex;
+}
+
+.news{
+    overflow: hidden;
 }
 
 .news-flex {
@@ -681,6 +771,12 @@ input[type="range"] {
     gap: 1rem;
     padding: 0.5rem;
     border: 1px solid var(--color7);
+    transition: transform 0.6s ease-out, transform 0.6s ease-out;
+}
+.news-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
 .pre,
@@ -690,6 +786,7 @@ input[type="range"] {
     background: var(--color7);
     color: var(--color6);
     z-index: 5;
+    cursor: pointer;
 }
 
 
@@ -724,6 +821,7 @@ input[type="range"] {
 
 .news-content button {
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 /* .agency-wrapper {
@@ -853,7 +951,7 @@ input[type="range"] {
 }
 
 .candidate-role .content,
-.recruiter-role .content{
+.recruiter-role .content {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -903,11 +1001,11 @@ input[type="range"] {
 .candidate-role button i,
 .recruiter-role button i {
     color: #fff;
-    
+
 }
 
 .candidate-role button:hover,
-.recruiter-role button:hover{
+.recruiter-role button:hover {
     background: var(--color11);
 }
 
@@ -1068,6 +1166,13 @@ footer {
     .recruit-list ul li {
         white-space: wrap;
     }
+    .newest-recruit .recruit-list {
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f2f2f2;
+  }
+
 }
 
 @media (max-width: 992px) {
@@ -1151,6 +1256,9 @@ footer {
 
     .filter {
         gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
     }
 
     .filter-wrapper h5 {
@@ -1158,6 +1266,13 @@ footer {
         padding: 0.5rem;
     }
 
+    .filter select{
+        width: 50%;
+  max-width: 250px;
+  box-sizing: border-box; 
+
+    }
+    
     .left-container,
     .right-container {
         flex: 100%;
@@ -1168,7 +1283,7 @@ footer {
     }
 
     .contact-phone div button {
-        width: 40%;
+        width: 50%;
         font-size: var(--font-body-s);
     }
 
@@ -1245,14 +1360,6 @@ footer {
         height: 40vh;
     }
 
-    .filter {
-        display: grid;
-    }
-
-    .filter select {
-        width: 100%;
-    }
-
     .contact-phone div button {
         width: 100%;
     }
@@ -1270,6 +1377,26 @@ footer {
     .agency-logo {
         flex: 0 0 calc(100% / 2 - 1rem);
     }
+    .filter{
+        grid-template-columns:1fr ;
+        
+    }
+
+  .btn-find input,
+  .btn-find button {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .btn-find input {
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .btn-find button {
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+  }
 }
 
 .hero-slide {
@@ -1281,6 +1408,22 @@ footer {
 .hero-slide.animate {
     opacity: 1;
     transform: scale(1);
+}
+.filter-wrapper,
+.recruit,
+.newest-recruit,
+.box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.filter-wrapper.animate,
+.recruit.animate,
+.newest-recruit.animate,
+.box.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .agency-logo {

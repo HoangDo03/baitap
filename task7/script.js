@@ -17,6 +17,8 @@ window.addEventListener("scroll", () => {
   }
 });
 
+
+
 const btn_mobile_menu = document.querySelector(".btn-mobile-menu");
 const menu_mobile = document.querySelector(".menu-mobile");
 const btn_close = document.querySelector(".fa-circle-xmark");
@@ -29,6 +31,81 @@ btn_close.addEventListener("click", () => {
   menu_mobile.classList.remove("active");
   overlay.classList.remove("active");
 });
+
+const breadcrumb = document.querySelector(".breadcrumb");
+const breadcrumbSub = document.getElementById("breadcrumb-sub");
+const submenuLinks = document.querySelectorAll(".submenu a");
+const default_p = document.querySelector(".default");
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  submenuLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      breadcrumb.classList.add("show");
+      default_p.style.display="none";
+      e.preventDefault();
+      const sub = link.dataset.sub;
+      breadcrumbSub.textContent = sub;
+    });
+  });
+
+  const newsFlex = document.querySelector(".news-flex");
+  const items = document.querySelectorAll(".news-item");
+  const prevBtn = document.querySelector(".pre");
+  const nextBtn = document.querySelector(".next");
+  let currentSlide = 0;
+  function getItemsPerView() {
+    if (window.innerWidth < 576) return 1;
+    if (window.innerWidth < 992) return 2;
+    return 2;
+  }
+  function totalSlides() {
+    return Math.ceil(items.length / getItemsPerView());
+  }
+
+  function updateSlide() {
+    const shift = -(100 / getItemsPerView()) * currentSlide;
+    newsFlex.style.transform = `translateX(${shift}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    currentSlide++;
+    if (currentSlide >= totalSlides) currentSlide = 0;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide--;
+    if (currentSlide < 0) currentSlide = totalSlides - 1;
+    updateSlide();
+  });
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  document
+    .querySelectorAll(
+      ".hero-slide,\
+                  .agency-logo,\
+                  .candidate,\
+                  .filter-wrapper,\
+                  .recruit,\
+.newest-recruit,\
+.box"
+    )
+    .forEach((el) => {
+      observer.observe(el);
+    });
+
+});
+
 
 const ctx = document.getElementById("myChart").getContext("2d");
 const data = {
@@ -74,38 +151,6 @@ setInterval(() => {
   myChart.update();
 }, 3000);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const newsFlex = document.querySelector(".news-flex");
-  const items = document.querySelectorAll(".news-item");
-  const prevBtn = document.querySelector(".pre");
-  const nextBtn = document.querySelector(".next");
-  let currentSlide = 0;
-  function getItemsPerView() {
-    if (window.innerWidth < 576) return 1;
-    if (window.innerWidth < 992) return 2;
-    return 2;
-  }
-  function totalSlides() {
-    return Math.ceil(items.length / getItemsPerView());
-  }
-
-  function updateSlide() {
-    const shift = -(100 / getItemsPerView()) * currentSlide;
-    newsFlex.style.transform = `translateX(${shift}%)`;
-  }
-
-  nextBtn.addEventListener("click", () => {
-    currentSlide++;
-    if (currentSlide >= totalSlides) currentSlide = 0;
-    updateSlide();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    currentSlide--;
-    if (currentSlide < 0) currentSlide = totalSlides - 1;
-    updateSlide();
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   const agencyList = document.querySelector(".agency-list");
@@ -155,32 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateSlide();
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-  document
-    .querySelectorAll(
-      ".hero-slide,\
-                  .agency-logo,\
-                  .candidate"
-    )
-    .forEach((el) => {
-      observer.observe(el);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const loginBox = document.querySelector(".login-box");
   const candidateRoles = document.querySelectorAll(".candidate-role");
   const recruiterRoles = document.querySelectorAll(".recruiter-role");
@@ -189,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   candidateRoles.forEach(el => el.style.display = "none");
   recruiterRoles.forEach(el => el.style.display = "none");
+  default_p.style.display = "block";
 
   const loginBtn = loginBox.querySelector("button");
   loginBtn.addEventListener("click", () => {
@@ -199,12 +220,18 @@ document.addEventListener("DOMContentLoaded", () => {
       candidateRoles.forEach(el => el.style.display = "block");
       recruiterRoles.forEach(el => el.style.display = "none");
       newestRecruit.style.display = "block";
+      breadcrumb.classList.add("show");
+      breadcrumbSub.textContent = "Người tìm việc";
+      default_p.style.display="none";
     } else if (role === "recruiter") {
       heroSlideshow.style.display = "none";
       loginBox.style.display = "none";
       candidateRoles.forEach(el => el.style.display = "none");
       recruiterRoles.forEach(el => el.style.display = "block");
       newestRecruit.style.display = "none";
+      breadcrumb.classList.add("show");
+      breadcrumbSub.textContent = "Nhà tuyển dụng";
+      default_p.style.display="none";
     } else {
       alert("Role không hợp lệ!");
     }
@@ -218,8 +245,73 @@ document.addEventListener("DOMContentLoaded", () => {
         candidateRoles.forEach(el => el.style.display = "none");
         recruiterRoles.forEach(el => el.style.display = "none");
         newestRecruit.style.display = "block";
+        breadcrumb.classList.remove("show");
+      breadcrumbSub.textContent = "";
       }
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const breadcrumb = document.querySelector(".breadcrumb");
+  const breadcrumbSub = document.getElementById("breadcrumb-sub");
+  const submenuLinks = document.querySelectorAll(".submenu a");
+  const default_p = document.querySelector(".default");
+
+  const loginBox = document.querySelector(".login-box");
+  const candidateRoles = document.querySelectorAll(".candidate-role");
+  const recruiterRoles = document.querySelectorAll(".recruiter-role");
+  const heroSlideshow = document.querySelector(".hero-slideshow");
+  const newestRecruit = document.querySelector(".newest-recruit");
+
+  candidateRoles.forEach(el => el.style.display = "none");
+  recruiterRoles.forEach(el => el.style.display = "none");
+  default_p.style.display = "block";
+
+  submenuLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      breadcrumb.classList.add("show");
+      default_p.style.display = "none";
+      breadcrumbSub.textContent = link.dataset.sub || link.textContent;
+    });
+  });
+
+  const loginBtn = loginBox.querySelector("button");
+  loginBtn.addEventListener("click", () => {
+    const role = prompt("Nhập role (candidate hoặc recruiter):");
+    if (role === "candidate" || role === "recruiter") {
+      const isCandidate = role === "candidate";
+      heroSlideshow.style.display = "none";
+      loginBox.style.display = "none";
+      newestRecruit.style.display = isCandidate ? "block" : "none";
+      default_p.style.display = "none";
+      candidateRoles.forEach(el => el.style.display = isCandidate ? "block" : "none");
+      recruiterRoles.forEach(el => el.style.display = isCandidate ? "none" : "block");
+      breadcrumb.classList.add("show");
+      breadcrumbSub.textContent = isCandidate ? "Người tìm việc" : "Nhà tuyển dụng";
+    } else {
+      alert("Role không hợp lệ! Hãy nhập 'candidate' hoặc 'recruiter'.");
+    }
+  });
+
+  document.querySelectorAll(".auth .content button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.innerText.includes("Thoát")) {
+        heroSlideshow.style.display = "block";
+        loginBox.style.display = "block";
+        newestRecruit.style.display = "block";
+        candidateRoles.forEach(el => el.style.display = "none");
+        recruiterRoles.forEach(el => el.style.display = "none");
+        breadcrumb.classList.remove("show");
+        breadcrumbSub.textContent = "";
+        default_p.style.display = "block";
+      }
+    });
+  });
+});
+
+
+
+
+
 
