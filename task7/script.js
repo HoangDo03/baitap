@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn_agency.addEventListener("click", prevSlide);
 
   window.addEventListener("resize", () => {
+    clearTimeout(window.resizing);
     currentSlide_agency = 0;
     agencyList.style.transition = "none";
     updateSlide();
