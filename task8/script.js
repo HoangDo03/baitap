@@ -228,17 +228,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 document.addEventListener("DOMContentLoaded", () => {
   const workSlider = new Swiper(".work-slider", {
-    slidesPerView: 3,         // số ảnh hiển thị cùng lúc
-    spaceBetween: 20,         // khoảng cách giữa các ảnh
-    loop: true,               // chạy vòng lặp
-    speed: 4000,              // tốc độ trượt (ms)
+    slidesPerView: 3,         
+    spaceBetween: 20,         
+    loop: true,              
+    speed: 4000,             
     autoplay: {
-      delay: 0,               // không dừng giữa các ảnh
-      disableOnInteraction: false, // không dừng khi user chạm
+      delay: 0,              
+      disableOnInteraction: false, 
     },
-    allowTouchMove: false,    // tắt vuốt tay
-    grabCursor: false,        // tắt con trỏ dạng kéo
-    breakpoints: {            // responsive
+    allowTouchMove: false,   
+    grabCursor: false,        
+    breakpoints: {           
       768: { slidesPerView: 2 },
       576: { slidesPerView: 1.5 },
       400: { slidesPerView: 1 },
