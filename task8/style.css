@@ -1312,7 +1312,7 @@ font-family: "Euip", "Arial", sans-serif;
 
     .hero-wrapper figure.backround-mountain {
         width: 180%;
-        grid-row: 2/4;
+        grid-row: 3/4;
     }
 
     .hero-wrapper figure.egg {
@@ -1378,18 +1378,6 @@ font-family: "Euip", "Arial", sans-serif;
         width: 30%;
         transform: translateY(50px);
     }
-    .home_wave_wrapper {
-  position: relative;
-  width: 100%;
-  /* overflow: hidden; */
-  line-height: 0;
-}
-
-.home_wave_wrapper svg {
-    width: 250%;
-    height: auto;
-    transform: translateY(20px);
-  }
 
 
     /* .hero-wrapper figure.reflections {
@@ -1422,15 +1410,22 @@ font-family: "Euip", "Arial", sans-serif;
 
     .home_wave_wrapper {
         position: absolute;
-        z-index: 13;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        z-index: 10; 
+    }
 
+    .home_wave_wrapper svg {
+        width: 100%;
+        transform: none;
     }
 
     .home_wave_wrapper svg {
         display: block;
         width: 250%;
         height: auto;
-        transform: translateY(20px);
+        transform: translateY(30%);
     }
 
     .home_wave_content {
