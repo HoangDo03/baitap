@@ -8,7 +8,12 @@ btn_close.addEventListener("click", () => {
   menu_mobile.classList.remove("active");
 });
 gsap.registerPlugin(ScrollTrigger);
-
+window.addEventListener("load", () => {
+  const figures = document.querySelectorAll(".hero-wrapper figure");
+  figures.forEach((fig, i) => {
+    setTimeout(() => fig.classList.add("show"), i * 250);
+  });
+});
 function waveAnimation(){
   gsap.to("#wave-svg", {
   x: 30,

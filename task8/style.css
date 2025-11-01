@@ -219,7 +219,17 @@ font-family: "Euip", "Arial", sans-serif;
     padding: 0;
     justify-self: center;
     align-self: center;
+   
 }
+.popup{
+ opacity: 0;
+  transform: scale(0.8) translateY(30px);
+  transition: all 0.5s ease-out;
+}
+.popup.show {
+  animation: popupFade 0.8s cubic-bezier(.45,1.35,.6,1) forwards;
+}
+
 
 .backround-sky {
     z-index: 1;
@@ -315,9 +325,6 @@ font-family: "Euip", "Arial", sans-serif;
     opacity: 0;
 }
 
-.text-wt {
-    opacity: 1;
-}
 
 .on .text-yl {
     animation: flicker-on 1.6s ease forwards;
@@ -460,13 +467,13 @@ font-family: "Euip", "Arial", sans-serif;
 
 .home_wave_content {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translateX(-50%);
 
     justify-content: center;
     text-align: center;
-    font-size: var(--font-h4-size);
+    font-size: var(--font-h2-size);
 
 }
 
@@ -1184,6 +1191,14 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 @media (max-width:992px) {
+    .home_wave_content {
+
+    top: 50%;
+ 
+    
+    font-size: var(--font-h4-size);
+
+}
 
     .hero-wrapper figure.hero-text {
         grid-column: 3 / 11;
@@ -1500,4 +1515,17 @@ font-family: "Euip", "Arial", sans-serif;
     .animated-text-moving a{
         font-size: 1.3rem;
     }
+}
+@keyframes popupFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  80% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
