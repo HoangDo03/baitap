@@ -1381,7 +1381,7 @@ font-family: "Euip", "Arial", sans-serif;
     .home_wave_wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   line-height: 0;
 }
 
