@@ -1410,31 +1410,27 @@ font-family: "Euip", "Arial", sans-serif;
 
     .home_wave_wrapper {
         position: absolute;
-        bottom: -1px;
+        bottom: -70%;
         left: 0;
         width: 100%;
         z-index: 10; 
     }
 
-    .home_wave_wrapper svg {
-        width: 100%;
-        transform: none;
-    }
 
     .home_wave_wrapper svg {
         display: block;
         width: 250%;
         height: auto;
-        transform: translateY(30%);
+
     }
 
     .home_wave_content {
         width: 80%;
-        top: -19%;
+        top: -50%;
         z-index: 20;
         font-weight: 600;
         line-height: 1.3;
-        font-size: var(--font-h4-size);
+        font-size: var(--font-h3-size);
     }
 
     .home_middle_copy {
@@ -1484,6 +1480,10 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 @media (max-width:420px) {
+      .home_wave_content {
+        top: 0%;
+        font-size: var(--font-h5-size);
+    }
     .hero-wrapper figure.backround-mountain {
         top: 25%;
 
