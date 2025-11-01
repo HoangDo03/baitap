@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diver Slide-In (Từ Trên Xuống)</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .spacer {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ccc;
+            font-size: 2rem;
+        }
+
+        .collage-driver {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #a9c5d9; 
+            height: 70vh; 
+            overflow: hidden;
+        }
+        
+        .collage-driver figure {
+             position: absolute; 
+             margin: 0;
+             /* * SỬA CSS: 
+              * Đặt opacity: 0 để GSAP 'fromTo' làm mờ
+             */
+             opacity: 0; 
+        }
+        
+        .collage-driver figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- VỊ TRÍ CÁC LỚP --- */
+
+        .mug-front {
+            width: 60%;
+            left: 20%;
+            bottom: 5%;
+            z-index: 10; 
+            pointer-events: none; 
+        }
+        
+        .diver {
+            width: 10%;
+            left: 45%;
+            top: 10%; 
+            z-index: 5; 
+        }
+        
+        .hand-mug {
+            width: 60%;
+            left: 20%; 
+            bottom: 5%; 
+            z-index: 1; 
+        }
+
+        .mount {
+            width: 100%;
+            bottom: -20%;
+            z-index: 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="spacer">Scroll Down</div>
+
+    <div class="collage-driver">
+        
+        <figure class="mug-front">
+            <img src="https://via.placeholder.com/600x200/311D09/00000000?text=+" alt="Coffee Lid (Mask)">
+        </figure>
+
+        <figure class="diver">
+            <img src="https://via.placeholder.com/100/CCCCCC/FFFFFF?text=Diver" alt="Diver">
+        </figure>
+        
+        <figure class="hand-mug">
+            <img src="https://via.placeholder.com/600/AAAAAA/FFFFFF?text=Mug+Back" alt="Mug Back">
+        </figure>
+        
+        <figure class="mount">
+            <img src="https://via.placeholder.com/1000/CCCCCC/FFFFFF?text=Mount" alt="Mount">
+        </figure>
+
+    </div>
+
+    <div class="spacer">Scroll Up</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        window.onload = function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- JAVASCRIPT ĐÃ SỬA ---
+            // (Áp dụng logic của 'baconophoneAnimation' cho 'diveAnimation')
+            function diveAnimation() {
+                
+                // Chọn TẤT CẢ các figure trong collage
+                const allFigures = ".collage-driver figure";
+
+                gsap.fromTo(allFigures,
+                    {
+                        // Bắt đầu từ 100% BÊN TRÊN
+                        yPercent: -100, 
+                        opacity: 0
+                    },
+                    {
+                        // Di chuyển VỀ 0 (vị trí CSS ban đầu)
+                        yPercent: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power2.out",
+                        stagger: 0.2, // Hiệu ứng xuất hiện lần lượt
+                        scrollTrigger: {
+                            trigger: ".collage-driver",
+                            start: "top center", 
+                            toggleActions: "play none none reverse",
+                        }
+                    }
+                );
+            }
+
+            diveAnimation();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESG Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <style>
+    .chart-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+
+    .center-circle {
+      font-size: 5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 55%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #E6E6E6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+    <svg class="label-arc" style="position:absolute; top:0; left:0; pointer-events:none;"></svg>
+    <div class="center-circle">
+      <div>
+        <span style="color:#004200;">E</span>
+        <span style="color:#007500;">S</span>
+        <span style="color:#00A800;">G</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    const chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Social', 'Governance', 'Environment'],
+        datasets: [{
+          data: [1, 1, 1],
+          backgroundColor: ['#007500', '#00A800', '#004200'],
+          borderColor: ['#007500', '#00A800', '#004200'],
+          borderRadius: 10,
+          borderWidth: 6,
+          spacing: 20
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '50%',
+        plugins: {
+          legend: { display: false },
+          datalabels: { display: false }
+        },
+        animation: {
+          onComplete: drawTextOnArcs
+        },
+        onResize: () => {
+          setTimeout(drawTextOnArcs, 200);
+        }
+      },
+      plugins: [ChartDataLabels]
+    });
+
+    function point(cx, cy, r, angle) {
+      return {
+        x: cx + r * Math.cos(angle),
+        y: cy + r * Math.sin(angle)
+      };
+    }
+
+    function arcPath(cx, cy, r, startAngle, endAngle, reverse = false) {
+      if (reverse) {
+        const temp = startAngle;
+        startAngle = endAngle;
+        endAngle = temp;
+      }
+      const start = point(cx, cy, r, startAngle);
+      const end = point(cx, cy, r, endAngle);
+      const largeArcFlag = Math.abs(endAngle - startAngle) <= Math.PI ? 0 : 1;
+      const sweepFlag = reverse ? 0 : 1;
+      return `M ${start.x} ${start.y} A ${r} ${r} 0 ${largeArcFlag} ${sweepFlag} ${end.x} ${end.y}`;
+    }
+
+    function drawTextOnArcs() {
+      const svg = document.querySelector('.label-arc');
+      svg.setAttribute('width', chart.width);
+      svg.setAttribute('height', chart.height);
+      svg.innerHTML = '';
+
+      const meta = chart.getDatasetMeta(0);
+      meta.data.forEach((arc, i) => {
+        const id = `arcPath${i}`;
+        const r = (arc.outerRadius + arc.innerRadius) / 2;
+        const reverse = chart.data.labels[i] === 'Governance';
+        const d = arcPath(arc.x, arc.y, r, arc.startAngle, arc.endAngle, reverse);
+
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("id", id);
+        path.setAttribute("d", d);
+        path.setAttribute("fill", "none");
+        svg.appendChild(path);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('fill', 'white');
+        text.setAttribute('font-size', '20');
+        text.setAttribute('font-weight', 'bold');
+        text.setAttribute('text-anchor', 'middle');
+
+        const textPath = document.createElementNS('http://www.w3.org/2000/svg', 'textPath');
+        textPath.setAttribute('href', `#${id}`);
+        textPath.setAttribute('startOffset', '50%');
+        textPath.textContent = chart.data.labels[i];
+        text.appendChild(textPath);
+
+        if (chart.data.labels[i] === 'Governance') {
+          const offsetY = chart.height / 2;
+          text.setAttribute('transform', `scale(1,-1) translate(0, -${offsetY})`);
+        }
+
+        svg.appendChild(text);
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      setTimeout(drawTextOnArcs, 300);
+    });
+  </script>
+</body>
+</html>

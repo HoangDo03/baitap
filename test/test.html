@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Text Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .home-text-scroll-1 {
+            margin: 2rem 5rem;
+        }
+
+        .animated-text_container {
+            position: relative;
+            width: fit-content;
+            font-size: 50px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .animated-text a {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease;
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            height: 60px;
+            text-decoration: none;
+        }
+
+        .animated-text a.revealed {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .animated-text-moving {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .animated-text-moving a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .animated-text-moving.is-moving {
+            transition: transform 1.5s linear;
+        }
+
+        .home-text-scroll-work {
+            margin: 2rem 5rem;
+        }
+
+        .animated-text-container-work {
+            position: relative;
+            width: fit-content;
+            font-size: 50px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .animated-text-work a {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease;
+            color: white;
+
+            height: 60px;
+            text-decoration: none;
+        }
+
+        .animated-text-work a.revealed {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .animated-text-moving-work {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .animated-text-moving-work a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .animated-text-moving-work.is-moving {
+            transition: transform 1.5s linear;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="home-text-scroll-1">
+        <div class="animated-text_container">
+            <div class="animated-text">
+                <a href="">GET IN TOUCH</a>
+                <a href="">GET IN TOUCH</a>
+                <a href="">GET IN TOUCH</a>
+                <a href="">GET IN TOUCH</a>
+                <a href="">GET IN TOUCH</a>
+            </div>
+            <div class="animated-text-moving">
+                <a href="">GET IN TOUCH</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-text-scroll-work">
+        <div class="animated-text-container-work">
+            <div class="animated-text-work">
+                <a href="">WORK</a>
+                <a href="">WORK</a>
+                <a href="">WORK</a>
+                <a href="">WORK</a>
+               
+            </div>
+            <div class="animated-text-moving-work">
+                <a href="">WORK</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            function setupAnimation(containerSelector, linesSelector, movingSelector) {
+                const container = document.querySelector(containerSelector);
+                
+                if (!container) return;
+                
+                const lines = container.querySelectorAll(linesSelector);
+                const mainText = container.querySelector(movingSelector);
+                const totalLines = lines.length;
+
+                if (totalLines === 0 || !mainText) return;
+
+                const totalSlideDuration = 1500;
+                const pauseAtEndDuration = 1000;
+
+                const finalTarget = lines[totalLines - 1];
+                const finalTop = finalTarget.offsetTop;
+
+                const revealDelays = [];
+                lines.forEach(line => {
+                    const lineTop = line.offsetTop;
+                    const revealTime = (lineTop / finalTop) * totalSlideDuration;
+                    revealDelays.push(revealTime);
+                });
+
+                async function startFullSlide() {
+                    lines.forEach(line => line.classList.remove('revealed'));
+                    mainText.classList.remove('is-moving');
+                    mainText.style.transform = `translateY(0px)`;
+
+                    await new Promise(r => setTimeout(r, 50));
+
+                    mainText.classList.add('is-moving');
+
+                    revealDelays.forEach((delay, index) => {
+                        setTimeout(() => {
+                            lines[index].classList.add('revealed');
+                        }, delay);
+                    });
+
+                    mainText.style.transform = `translateY(${finalTop}px)`;
+
+                    setTimeout(startFullSlide, totalSlideDuration + pauseAtEndDuration);
+                }
+
+                startFullSlide();
+            }
+
+            setupAnimation(
+                ".animated-text_container", 
+                ".animated-text a", 
+                ".animated-text-moving"
+            );
+
+            setupAnimation(
+                ".animated-text-container-work", 
+                ".animated-text-work a", 
+                ".animated-text-moving-work"
+            );
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task8</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-header container">
+            <nav class="header__nav">
+                <ul id="headerNavItems" class="header__nav__items">
+                    <li id="menu-item-29"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 header__nav__item">
+                        <a href="latest-work/index.html">Latest Work</a>
+                    </li>
+                    <li id="menu-item-28"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28 header__nav__item">
+                        <a href="about/index.html">About</a>
+                    </li>
+                    <li id="menu-item-27"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27 header__nav__item">
+                        <a href="services/index.html">Services</a>
+                    </li>
+                    <li id="menu-item-30"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30 header__nav__item">
+                        <a href="contact/index.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="header-mobile-menu">
+                <a href="#">Logo</a>
+                <div><i class="fa-solid fa-xmark"></i></div>
+            </div>
+            <nav class="menu_mobile_nav">
+                <ul id="menuNavItems" class="menu_nav_items">
+                    <li class="menu-item">
+                        <a href="latest-work/index.html">Latest Work</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="about/index.html">About</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="services/index.html">Services</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact/index.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <figure class="banana"><img src="imgs/menu-banana.png" alt=""></figure>
+        </div>
+    </header>
+    <main>
+        <div class="home-page">
+            <div class="home_hero_wrapper">
+                <section class="home-hero">
+                    <div class="hero-wrapper">
+                        <figure class="backround-sky">
+                            <img src="imgs/sky@2x.jpg" alt="Sky">
+                        </figure>
+                        <figure class="egg-balloon">
+                            <img src="imgs/egg-balloon.png" alt="">
+                        </figure>
+                        <figure class="hero-text">
+                            <img src="imgs/logo.png" alt="">
+                        </figure>
+                        <figure class="backround-mountain">
+                            <img src="imgs/hills.png" alt="">
+                        </figure>
+                        <figure class="text-yl">
+                            <img src="imgs/sign-light-yolky.png" alt="">
+                        </figure>
+                        <figure class="text-wt">
+                            <img src="imgs/sign-1.png" alt="">
+                        </figure>
+                        <figure class="switch">
+                            <img src="imgs/switch.png" alt="">
+                        </figure>
+                        <figure class="egg">
+                            <img src="imgs/egg-1.png" alt="">
+                        </figure>
+                        <figure class="control-daynight">
+                            <img src="imgs/dial-gold.png" alt="Dial">
+                        </figure>
+                        <figure class="reflections">
+                            <img src="imgs/reflections.png" alt="">
+                        </figure>
+                        <figure class="raspberry-1">
+                            <img src="imgs/raspberry-1.png" alt="">
+                        </figure>
+                        <figure class="raspberry-2">
+                            <img src="imgs/raspberry-2.png" alt="">
+                        </figure>
+                        <figure class="raspberry-3">
+                            <img src="imgs/raspberry-3.png" alt="">
+                        </figure>
+                        <figure class="tape">
+                            <img src="imgs/tape.png" alt="">
+                        </figure>
+                    </div>
+                </section>
+            </div>
+            <div class="home_middle-wrapper">
+                <div class="home_middle">
+
+                    <section class="home_wave-block">
+
+                        <div class="home_wave">
+
+                            <div class="home_wave_wrapper">
+                                
+                                <svg id="wave-svg" xmlns="http://www.w3.org/2000/svg" width="1920" height="805.9"
+                                    viewBox="0 0 1920 805.9">
+                                    <path fill="#f4c0cf">
+                                        <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                                            values="
+                                                M1920,214.4c-47.94-45.29-128.78-145.4-240.71-126.58-104.15,17.51-352.18,202.68-470.32,212.9-141.05,12.2-289.21-143.45-495.48-128.52-189.04,13.68-363.68,249.09-487.74,249.29-89.34,.14-143.36-114.02-225.74-228.19l.06,336.97c82.39,114.17,134.51,202.6,223.86,202.46,124.06-.2,295.24-193.56,469.59-176.39,189.15,18.63,371.55,154.7,513.13,154.7,113.81,0,365.87-162.58,471.48-162.58,111.48,0,176.52,66.19,241.87,132.39V214.4Z;
+
+                                                M1920,250c-47.94-70.29-128.78-180.4-240.71-160.58-104.15,37.51-352.18,222.68-470.32,232.9-141.05,20.2-289.21-163.45-495.48-148.52-189.04,13.68-363.68,269.09-487.74,269.29-89.34,.14-143.36-134.02-225.74-248.19l.06,336.97c82.39,114.17,134.51,202.6,223.86,202.46,124.06-.2,295.24-193.56,469.59-176.39,189.15,18.63,371.55,154.7,513.13,154.7,113.81,0,365.87-182.58,471.48-182.58,111.48,0,176.52,66.19,241.87,132.39V250Z;
+
+                                                M1920,190c-47.94-25.29-128.78-120.4-240.71-105.58-104.15,5.51-352.18,180.68-470.32,190.9-141.05,10.2-289.21-123.45-495.48-108.52-189.04,13.68-363.68,229.09-487.74,229.29-89.34,.14-143.36-94.02-225.74-208.19l.06,336.97c82.39,114.17,134.51,202.6,223.86,202.46,124.06-.2,295.24-193.56,469.59-176.39,189.15,18.63,371.55,154.7,513.13,154.7,113.81,0,365.87-142.58,471.48-142.58,111.48,0,176.52,66.19,241.87,132.39V190Z;
+
+                                                M1920,214.4c-47.94-45.29-128.78-145.4-240.71-126.58-104.15,17.51-352.18,202.68-470.32,212.9-141.05,12.2-289.21-143.45-495.48-128.52-189.04,13.68-363.68,249.09-487.74,249.29-89.34,.14-143.36-114.02-225.74-228.19l.06,336.97c82.39,114.17,134.51,202.6,223.86,202.46,124.06-.2,295.24-193.56,469.59-176.39,189.15,18.63,371.55,154.7,513.13,154.7,113.81,0,365.87-162.58,471.48-162.58,111.48,0,176.52,66.19,241.87,132.39V214.4Z" />
+                                    </path>
+                                </svg>
+                            </div>
+
+
+
+
+
+                            <div class="home_wave_content">
+                                <p>BREAKFAST IS REMIXING THE INGREDIENTS OF THE TRAILER MUSIC WORLD.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="home_middle_sticker">
+                            <img src="imgs/hungry-for-more-sticker.png" alt="">
+                        </div>
+
+                    </section>
+                    <div class="home_middle_copy">
+                        <p>We’ve pulled the best hip hop, indie and rock producers from the record business and
+                            reprogrammed them for the trailer music world.</p>
+                    </div>
+
+                    <div class="home_middle_collage-baconophone">
+
+                        <div class="collage-baconophone">
+
+                            <figure class="collage-baconophone_media collage-baconophone_media--bacon">
+                                <img src="../cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon.png"
+                                    class="collage-baconophone_media_image" alt="" decoding="async"
+                                    srcset="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon.png 1318w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-300x205.png 300w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-1024x699.png 1024w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-768x524.png 768w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-600x410.png 600w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-900x615.png 900w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-1200x819.png 1200w"
+                                    sizes="(max-width: 1318px) 100vw, 1318px" />
+                            </figure>
+
+                            <figure class="collage-baconophone_media collage-baconophone_media--hands">
+                                <img src="../cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands.png"
+                                    class="collage-baconophone_media_image" alt="" decoding="async"
+                                    srcset="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands.png 1400w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-291x300.png 291w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-993x1024.png 993w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-768x792.png 768w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-300x309.png 300w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-600x618.png 600w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-900x928.png 900w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-1200x1237.png 1200w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-873x900.png 873w"
+                                    sizes="(max-width: 1400px) 100vw, 1400px" />
+                            </figure>
+
+                        </div>
+
+                    </div>
+
+                    </section>
+
+                </div>
+                <div class="home_end-wrapper">
+                    <section class="home-work">
+                        <div class="home-text-scroll-work">
+                            <div class="animated-text-container-work">
+                                <div class="animated-text-work">
+                                    <a href="">WORK</a><a href="">WORK</a><a href="">WORK</a><a href="">WORK</a>
+                                </div>
+                                <div class="animated-text-moving-work">
+                                    <a href="">WORK</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-rose-hand">
+                            <div class="rose-hand">
+                                <figure class="rose">
+                                    <img src="imgs/rose.png" alt="">
+                                </figure>
+                                <figure class="hand">
+                                    <img src="imgs/hand.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="home-work-copy">
+                            <p>OUR SOUND IS UNLIKE ANYTHING ELSE 
+                                BECAUSE WE&#8217;RE NOT USING EVERYONE ELSE.</p>
+                        </div>
+                        <div class="services_latest-work">
+                            <div class="work-sliders">
+                                <div class="work-slider">
+                                    <span class="work-slider-ticker">
+                                        <a href="">LATEST WORK</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-slider_wrapper">
+                            <div class="swiper work-slider">
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/lupin-netflix-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/tenet-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/moonknight-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/falcon-winter-soldier-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/a-black-lady-sketch-show-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/lupin-netflix-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/tenet-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/moonknight-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/falcon-winter-soldier-poster-breakfast.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide work-slider__slide">
+                                    <img src="imgs/a-black-lady-sketch-show-poster-breakfast.jpeg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="services_latest-work">
+                            <div class="work-sliders">
+                                <div class="work-slider">
+                                    <span class="work-slider-ticker">
+                                        <a href="">LATEST WORK</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="work-collage-diver">
+                        <div class="home-text-scroll-1">
+                            <div class="animated-text_container">
+                                <div class="animated-text">
+                                    <a href="">GET IN TOUCH</a>
+                                    <a href="">GET IN TOUCH</a>
+                                    <a href="">GET IN TOUCH</a>
+                                    <a href="">GET IN TOUCH</a>
+                                    <a href="">GET IN TOUCH</a>
+                                </div>
+
+                                <div class="animated-text-moving">
+                                    <a href="">GET IN TOUCH</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collage-driver">
+                            <figure class="diver">
+                                <img src="imgs/diver.png" alt="">
+                            </figure>
+                              
+        <figure class="mug-front">
+            <img src="imgs/mug-front.png" alt="Coffee Lid (Mask)">
+        </figure>
+
+                            <figure class="hand-mug">
+                                <img src="imgs/hand-mug.png" alt="">
+                         
+                            </figure>
+                            <figure class="mount">
+                                <img src="imgs/hollywood.png" alt="">
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-main">
+            <a href="index.html" class="footer__logo">
+                <svg class="footer__logo__svg" width="136" height="176">
+                    <use
+                        xlink:href="wp-content/themes/breakfast/assets/dist/images/icons/svg-sprite.svg#breakfast_icon_W">
+                    </use>
+                </svg>
+            </a>
+            <ul class="footer-nav">
+                <li class="menu-item"><a href="">LATEST WORK</a></li>
+                <li class="menu-item"><a href="">ABOUT</a></li>
+                <li class="menu-item"><a href="">SERVICES</a></li>
+                <li class="menu-item"><a href="">CONTACT</a></li>
+            </ul>
+            <div class="footer-blocks">
+                <div class="footer-block">
+                    <div class="footer-block-heading">
+                        STUDIO
+                    </div>
+                    <div class="footer-block-content">
+                        <p>Breakfast Studios<br />
+                            1500 S Ogden Drive<br />
+                            LA, Ca, 9019</p>
+                    </div>
+                </div>
+
+                <div class="footer-block">
+                    <div class="footer-block-heading">
+                        GET IN TOUCH
+                    </div>
+                    <div class="footer-block-content">
+                        <a
+                            href="mailto:%69%6e%66%6f&#64;w%65a&#114;e%62&#114;%65&#97;%6bfa%73&#116;.c%6f%6d">info@wearebreakfast.com</a>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <div class="footer-block-heading">
+                        SOCIALS
+                    </div>
+                    <div class="footer-block-content">
+                        <a class="footer-social-link" href="">Instagram</a>
+                        <a class="footer-social-link" href="">Vimeo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>©2025 BREAKFAST. All rights reserved.</p>
+                <p>No part of this website may be reproduced without permission.</p>
+            </div>
+
+            <div class="footer-credits">
+                <a class="footer-credits-link" href="">Design & Branding
+                    <span>Studio 315</span></a>
+                <a class="footer-credits-link" href="">Development
+                    <span>Thousand Lines</span></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

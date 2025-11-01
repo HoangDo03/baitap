@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <title>Light Switch Animation</title>
+    <style>
+        body {
+            background: #c8bbdc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        figure {
+            margin: 0;
+            position: absolute;
+        }
+
+        .text-yl, .text-wt {
+            width: 400px;
+            height: auto;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Ban đầu: tắt đèn */
+        .text-yl { opacity: 0; }
+        .text-wt { opacity: 1; }
+
+        /* --- Animation đèn bật (chớp 2 lần rồi sáng hẳn) --- */
+        @keyframes flicker-on {
+            0%   { opacity: 1; }
+            20%  { opacity: 0; }
+            40%  { opacity: 1; }
+            60%  { opacity: 0; }
+            80%, 100% { opacity: 1; }
+        }
+
+        /* Animation cho đèn tối (chớp ngược lại rồi tắt hẳn) */
+        @keyframes flicker-off {
+            0%   { opacity: 0; }
+            20%  { opacity: 1; }
+            40%  { opacity: 0; }
+            60%  { opacity: 1; }
+            80%, 100% { opacity: 0; }
+        }
+
+        /* Khi bật công tắc */
+        .on .text-yl {
+            animation: flicker-on 1.6s ease forwards;
+        }
+
+        /* Công tắc */
+        .switch {
+            position: relative;
+            top: 260px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100px; /* Thêm chiều rộng cho placeholder */
+        }
+
+        .switch.active {
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+
+    <figure class="text-yl">
+        <img src="https://via.placeholder.com/400/FFFF99/000000?text=LIGHT+ON" alt="Đèn sáng">
+    </figure>
+
+    <figure class="text-wt">
+        <img src="https://via.placeholder.com/400/CCCCCC/FFFFFF?text=LIGHT+OFF" alt="Đèn tắt">
+    </figure>
+
+    <figure class="switch">
+        <img src="https://via.placeholder.com/100/AAAAAA/FFFFFF?text=SWITCH" alt="Công tắc">
+    </figure>
+
+    <script>
+        const switchBtn = document.querySelector('.switch');
+        const body = document.body;
+
+        switchBtn.addEventListener('click', () => {
+            const isOn = body.classList.toggle('on');
+            switchBtn.classList.toggle('active', isOn);
+
+            const light = document.querySelector('.text-yl');
+            const dark = document.querySelector('.text-wt');
+
+            // Reset animation mỗi lần click để có thể bật/tắt nhiều lần
+            [light, dark].forEach(el => {
+                el.style.animation = 'none';
+                void el.offsetWidth; // Force reflow
+            });
+
+            if (isOn) {
+                // Bật đèn (đèn sáng chớp on, đèn tối chớp off)
+                light.style.animation = 'flicker-on 1.6s ease forwards';
+                dark.style.animation = 'flicker-off 1.6s ease forwards';
+            } else {
+                // Tắt đèn (trở về trạng thái ban đầu ngay lập tức)
+                light.style.opacity = 0;
+                dark.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+</html>

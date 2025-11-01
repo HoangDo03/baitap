@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation (Z-Index Correct)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            min-height: 200vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .spacer {
+            height: 100vh;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .collage-baconophone {
+            position: relative;
+            width: 80vw;
+            max-width: 1200px;
+            margin: 100px auto;
+            height: 500px;
+            overflow: hidden;
+            background-color: #a0c0e0;
+        }
+
+        .collage-baconophone_media {
+            position: absolute;
+            margin: 0;
+            width: 50%;
+            height: auto;
+            opacity: 0;
+        }
+
+        .collage-baconophone_media--bacon {
+            top: 5%;
+            left: 5%;
+            width: 60%;
+            z-index: 2; /* Sẽ nằm dưới */
+        }
+
+        .collage-baconophone_media--hands {
+            bottom: 0;
+            right: 30%;
+            width: 40%;
+            z-index: 3; /* Sẽ đè lên trên */
+        }
+
+        .collage-baconophone_media_image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="spacer">Scroll Down</div>
+
+    <div class="collage-baconophone">
+        <figure class="collage-baconophone_media collage-baconophone_media--bacon">
+            <img src="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon.png"
+                class="collage-baconophone_media_image" alt="" decoding="async"
+                srcset="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon.png 1318w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-300x205.png 300w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-1024x699.png 1024w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-768x524.png 768w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-600x410.png 600w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-900x615.png 900w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/bacon-1200x819.png 1200w"
+                sizes="(max-width: 1318px) 100vw, 1318px" />
+        </figure>
+
+        <figure class="collage-baconophone_media collage-baconophone_media--hands">
+            <img src="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands.png"
+                class="collage-baconophone_media_image" alt="" decoding="async"
+                srcset="https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands.png 1400w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-291x300.png 291w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-993x1024.png 993w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-768x792.png 768w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-300x309.png 300w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-600x618.png 600w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-900x928.png 900w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-1200x1237.png 1200w, https://cc5d904ea32865928201.b-cdn.net/wp-content/uploads/hands-873x900.png 873w"
+                sizes="(max-width: 1400px) 100vw, 1400px" />
+        </figure>
+    </div>
+
+    <div class="spacer">More Content Below</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const allImages = ".collage-baconophone_media";
+
+            gsap.fromTo(allImages,
+                {
+                    xPercent: -100, 
+                    yPercent: 100,  
+                    opacity: 0
+                },
+                {
+                    xPercent: 0,
+                    yPercent: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    stagger: 0.2, 
+                    scrollTrigger: {
+                        trigger: ".collage-baconophone",
+                        start: "top center", 
+                        toggleActions: "play none none reverse",
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>

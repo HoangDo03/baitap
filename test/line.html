@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biểu đồ cột - Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    canvas {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Biểu đồ so sánh các nhóm theo năm</h3>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const data = {
+      labels: ['2010', '2011', '2012', '2013'],
+      datasets: [
+        {
+          label: 'Nhóm A',
+          data: [370000, 420000, 390000, 410000],
+          backgroundColor: '#1E88E5'
+        },
+        {
+          label: 'Nhóm B',
+          data: [320000, 380000, 350000, 360000],
+          backgroundColor: '#E53935'
+        },
+        {
+          label: 'Nhóm C',
+          data: [60000, 70000, 80000, 90000],
+          backgroundColor: '#43A047'
+        }
+      ]
+    };
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          title: {
+            display: true,
+            text: 'Thống kê theo năm (2010–2013)'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: value => value.toLocaleString('vi-VN')
+            }
+          }
+        }
+      }
+    };
+
+    new Chart(ctx, config);
+  </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakfast Hero Grid</title>
+  <style>
+   /* variables */
+    /* $break-576: 576px;
+    $break-768: 768px;
+    $break-1024: 1024px;
+    $break-1440: 1440px; */
+
+/* base */
+* { box-sizing: border-box; }
+html,body { height: 100%; }
+body { overflow-x: hidden; font-family: 'Euip Thin', Arial, sans-serif; }
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  background: #f0f0f0; /* fallback */
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-inline: clamp(0.5rem, 6vw, 6%);
+    /* this creates a centered stage; layers inside are absolute */
+  }
+
+  /* common layer styles */
+  &__layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+  }
+
+  /* Sky - contains inner wrapper we animate for parallax */
+  &__layer--sky {
+    z-index: 1;
+    overflow: hidden;
+
+    .hero__sky-inner {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 180%;     /* desktop default, responsive below */
+      height: 100%;
+      will-change: transform;
+    }
+
+    .hero__img--sky {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* mountain sits above sky */
+  &__layer--mountain {
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 120%;
+    height: auto;
+    transform: translateY(12%);
+    .hero__img--mountain {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  /* main content (text/logo) - center-left big text */
+  &__content {
+    position: absolute;
+    z-index: 10;
+    top: 12%;
+    left: 6%;
+    transform: translateZ(0);
+    max-width: 70%;
+    pointer-events: auto;
+
+    .hero__logo img {
+      width: min(70vw, 900px);
+      height: auto;
+      display: block;
+    }
+  }
+
+  /* balloon */
+  &__layer--balloon {
+    z-index: 12;
+    width: 18vw;
+    left: 4%;
+    top: 6%;
+    transform-origin: center;
+    animation: balloonFloat 6s ease-in-out infinite;
+
+    .hero__img--balloon {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /* control knob */
+  &__layer--control {
+    z-index: 9;
+    right: 8%;
+    bottom: 18%;
+    width: 20vw;
+    max-width: 240px;
+
+    .hero__img--dial {
+      width: 100%;
+      display: block;
+      cursor: grab;
+    }
+  }
+
+  /* reflections / decorative items */
+  &__layer--reflections {
+    z-index: 6;
+    bottom: -5%;
+    left: 0;
+    width: 120%;
+    transform: translateY(10%);
+    opacity: 1;
+  }
+}
+
+/* small animation */
+@keyframes balloonFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* RESPONSIVE: adjust wrapper width / positions for smaller screens */
+@media (min-width: $break-1024) {
+  .hero__layer--sky .hero__sky-inner { width: 160%; }
+}
+
+@media (max-width: $break-1024) {
+  .hero__content { left: 5%; top: 10%; max-width: 75%; }
+  .hero__layer--mountain { width: 140%; transform: translateY(20%); }
+  .hero__layer--control { width: 26vw; right: 6%; bottom: 12%; }
+  .hero__layer--sky .hero__sky-inner { width: 200%; }
+  .hero__layer--balloon { width: 26vw; left: 6%; top: 4%; }
+}
+
+@media (max-width: $break-768) {
+  .hero__content { top: 18%; max-width: 85%; }
+  .hero__logo img { width: min(80vw, 700px); }
+  .hero__layer--mountain { width: 180%; transform: translateY(30%); }
+  .hero__layer--control { width: 32vw; right: 5%; bottom: 8%; }
+  .hero__layer--sky .hero__sky-inner { width: 240%; }
+  .hero__layer--balloon { display: block; left: 8%; width: 30vw; top: 6%; }
+}
+
+@media (max-width: $break-576) {
+  .hero__inner { height: 100vh; }
+  .hero__content {
+    left: 6%;
+    top: 40%;
+    max-width: 95%;
+  }
+  .hero__logo img { width: 95vw; }
+  .hero__layer--mountain { width: 220%; transform: translateY(40%); bottom: -10%; }
+  .hero__layer--sky .hero__sky-inner { width: 300%; }
+  .hero__layer--control { display: none; } /* hide knob on tiny screens by default */
+  .hero__layer--balloon { width: 36vw; left: 10%; top: 8%; }
+}
+
+  </style>
+</head>
+
+<body>
+  <section class="hero" aria-label="Hero">
+  <div class="hero__inner container">
+    <!-- background sky layer (absolute full) -->
+    <figure class="hero__layer hero__layer--sky" aria-hidden="true">
+      <div class="hero__sky-inner">
+        <img src="imgs/sky@2x.jpg" alt="" class="hero__img hero__img--sky">
+      </div>
+    </figure>
+
+    <!-- mountain / collage -->
+    <figure class="hero__layer hero__layer--mountain" aria-hidden="true">
+      <img src="imgs/mountain.png" alt="" class="hero__img hero__img--mountain">
+    </figure>
+
+    <!-- large text -->
+    <div class="hero__content">
+      <figure class="hero__logo hero__layer--text">
+        <img src="imgs/logo.png" alt="Breakfast" class="hero__img hero__img--logo">
+      </figure>
+    </div>
+
+    <!-- balloon / egg -->
+    <figure class="hero__layer hero__layer--balloon" aria-hidden="true">
+      <img src="imgs/egg-balloon.png" alt="" class="hero__img hero__img--balloon">
+    </figure>
+
+    <!-- control knob (day/night) -->
+    <figure class="hero__layer hero__layer--control" aria-hidden="true">
+      <img src="imgs/dial.png" alt="" class="hero__img hero__img--dial">
+    </figure>
+
+    <!-- decorations (raspberries etc) -->
+    <figure class="hero__layer hero__layer--reflections" aria-hidden="true">
+      <img src="imgs/reflections.png" alt="" class="hero__img hero__img--reflections">
+    </figure>
+  </div>
+</section>
+
+</body>
+</html>
