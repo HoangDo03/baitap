@@ -1378,6 +1378,19 @@ font-family: "Euip", "Arial", sans-serif;
         width: 30%;
         transform: translateY(50px);
     }
+    .home_wave_wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.home_wave_wrapper svg {
+    width: 250%;
+    height: auto;
+    transform: translateY(20px);
+  }
+
 
     /* .hero-wrapper figure.reflections {
         visibility: hidden;
