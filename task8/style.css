@@ -1481,7 +1481,7 @@ font-family: "Euip", "Arial", sans-serif;
 
 @media (max-width:420px) {
       .home_wave_content {
-        top: 0%;
+        top: 10%;
         font-size: var(--font-h5-size);
     }
     .hero-wrapper figure.backround-mountain {
