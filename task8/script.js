@@ -96,8 +96,8 @@ function diveAnimation() {
       scale: 1,
     },
     {
-      yPercent: 110,
-      xPercent: 20,
+      yPercent: 120,
+      xPercent: 60,
       rotate: 0,
       scale: 0.9,
       ease: "power2.inOut",
