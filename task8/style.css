@@ -39,6 +39,13 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Euip';
+    src: url('../task8/fonts/Equip\ W03\ Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 * {
@@ -47,7 +54,7 @@
     padding: 0;
 
 
-    /* border: solid 1px red; */
+    border: solid 1px red;
 
 }
 
@@ -467,18 +474,18 @@ font-family: "Euip", "Arial", sans-serif;
 
 .home_wave_content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
 
     justify-content: center;
     text-align: center;
-    font-size: var(--font-h2-size);
+    font-size: var(--font-h3-size);
 
 }
 
 .home_wave_content p {
-    font-weight: 700;
+    font-weight: 400;
     font-family: "Euip", "Arial", sans-serif;
 }
 
@@ -848,11 +855,14 @@ font-family: "Euip", "Arial", sans-serif;
     align-self: end;
     justify-self: center;
     z-index: 5;
-    transform: translate(21.3%, -110%);
+    /* transform: translate(21.3%, -110%); */
+    width: 45%;
+    transform: translate(-14%,-110%);
 }
 
 .mug-front img {
-    width: 45%;
+    /* width: 45%; */
+    width: 100%;
     height: auto;
 }
 
@@ -864,7 +874,7 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 .diver img {
-    width: 100px;
+    width: 60%;
     height: auto;
     transform-origin: center top;
 }
@@ -1259,7 +1269,7 @@ font-family: "Euip", "Arial", sans-serif;
 
     .hero-wrapper figure.text-yl,
     .hero-wrapper figure.text-wt {
-        grid-row: 2/4;
+        grid-row: 3/4;
         transform: translateY(200%);
         width: 140%;
     }
