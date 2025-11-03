@@ -1520,6 +1520,16 @@ footer.footer {
     .menu-item{
         display: flex;
         justify-content: center;
+        
+    }
+    .footer-nav .menu-item a{
+font-size: var(--font-body-l);
+    }
+    .footer-block-heading{
+font-size: var(--font-body-m);
+    }
+    .footer-block-content a{
+        font-size: var(--font-body-s);
     }
     .footer-block > *{
     display: flex;
@@ -1538,6 +1548,7 @@ footer.footer {
         justify-content: center;
         align-items: center;
     }
+  
     
 }
 
