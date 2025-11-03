@@ -127,7 +127,7 @@ function runningText() {
     const tickerWidth = ticker.scrollWidth / 15;
     gsap.to(ticker, {
       x: `-${tickerWidth}`,
-      duration: 2,
+      duration: 1,
       ease: "none",
       repeat: -1,
       modifiers: {

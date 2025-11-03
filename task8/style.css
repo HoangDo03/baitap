@@ -39,6 +39,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Euip';
     src: url('../task8/fonts/Equip\ W03\ Medium.ttf') format('truetype');
@@ -103,8 +104,8 @@ figure img {
 .menu-header nav ul li {
     list-style: none;
     font-weight: 700;
-            font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
     text-transform: uppercase;
 }
 
@@ -161,8 +162,8 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 .menu_mobile_nav ul {
-          font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
     position: absolute;
     width: 100%;
     list-style: none;
@@ -174,7 +175,7 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 .menu_mobile_nav ul li a {
-  
+
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -226,15 +227,17 @@ font-family: "Euip", "Arial", sans-serif;
     padding: 0;
     justify-self: center;
     align-self: center;
-   
+
 }
-.popup{
- opacity: 0;
-  transform: scale(0.8) translateY(30px);
-  transition: all 0.5s ease-out;
+
+.popup {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.5s ease-out;
 }
+
 .popup.show {
-  animation: popupFade 0.8s cubic-bezier(.45,1.35,.6,1) forwards;
+    animation: popupFade 0.8s cubic-bezier(.45, 1.35, .6, 1) forwards;
 }
 
 
@@ -385,7 +388,7 @@ font-family: "Euip", "Arial", sans-serif;
 .hero-wrapper figure.reflections {
     grid-column: 1 / -1;
     position: absolute;
-    top: 100%;
+    top: 98%;
     left: 0;
     width: 100%;
     height: auto;
@@ -612,7 +615,7 @@ font-family: "Euip", "Arial", sans-serif;
     -webkit-text-stroke: 1px #fff;
     height: 40px;
     font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-family: "Euip", "Arial", sans-serif;
     text-decoration: none;
 
 
@@ -621,8 +624,8 @@ font-family: "Euip", "Arial", sans-serif;
 .animated-text a.revealed {
     opacity: 1;
     font-size: 3rem;
-        font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
     visibility: visible;
 }
 
@@ -639,8 +642,8 @@ font-family: "Euip", "Arial", sans-serif;
     font-size: 3rem;
     text-decoration: none;
     white-space: nowrapp;
-        font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
 }
 
 .animated-text-moving.is-moving {
@@ -669,7 +672,6 @@ font-family: "Euip", "Arial", sans-serif;
     visibility: hidden;
     transition: opacity 0.2s ease;
     color: white;
-
     height: 60px;
     text-decoration: none;
 }
@@ -677,8 +679,8 @@ font-family: "Euip", "Arial", sans-serif;
 .animated-text-work a.revealed {
     opacity: 1;
     visibility: visible;
-        font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
 }
 
 .animated-text-moving-work {
@@ -757,8 +759,8 @@ font-family: "Euip", "Arial", sans-serif;
     color: white;
     font-size: var(--font-h5-size);
     padding-left: 1rem;
-        font-weight: 700;
-font-family: "Euip", "Arial", sans-serif;
+    font-weight: 700;
+    font-family: "Euip", "Arial", sans-serif;
 }
 
 .work-slider_wrapper {
@@ -810,7 +812,7 @@ font-family: "Euip", "Arial", sans-serif;
 }
 
 .swiper-slide img {
-    width: 300px;
+    width: 450px;
 }
 
 
@@ -857,7 +859,7 @@ font-family: "Euip", "Arial", sans-serif;
     z-index: 5;
     /* transform: translate(21.3%, -110%); */
     width: 45%;
-    transform: translate(-14%,-110%);
+    transform: translate(-14%, -110%);
 }
 
 .mug-front img {
@@ -885,7 +887,7 @@ footer.footer {
     background-color: #f8d834;
     color: #000;
     padding: 3rem;
-font-family: "Euip", "Arial", sans-serif;
+    font-family: "Euip", "Arial", sans-serif;
 }
 
 .footer-main {
@@ -1203,12 +1205,12 @@ font-family: "Euip", "Arial", sans-serif;
 @media (max-width:992px) {
     .home_wave_content {
 
-    top: 50%;
- 
-    
-    font-size: var(--font-h4-size);
+        top: 50%;
 
-}
+
+        font-size: var(--font-h4-size);
+
+    }
 
     .hero-wrapper figure.hero-text {
         grid-column: 3 / 11;
@@ -1395,9 +1397,11 @@ font-family: "Euip", "Arial", sans-serif;
         left: 50%;
         width: 28vw;
     }
-.hero-wrapper figure.tape{
-    visibility: hidden;
-}
+
+    .hero-wrapper figure.tape {
+        visibility: hidden;
+    }
+
     .home_middle_sticker {
         z-index: 20;
         width: 30%;
@@ -1438,7 +1442,7 @@ font-family: "Euip", "Arial", sans-serif;
         bottom: -70%;
         left: 0;
         width: 100%;
-        z-index: 10; 
+        z-index: 10;
     }
 
 
@@ -1497,18 +1501,20 @@ font-family: "Euip", "Arial", sans-serif;
     .home-work-copy p {
         font-size: 1.8rem;
     }
+
     .animated-text a.revealed,
-    .animated-text-moving a{
+    .animated-text-moving a {
         font-size: 2rem;
     }
-   
+
 }
 
 @media (max-width:420px) {
-      .home_wave_content {
+    .home_wave_content {
         top: 10%;
         font-size: var(--font-h5-size);
     }
+
     .hero-wrapper figure.backround-mountain {
         top: 25%;
 
@@ -1521,21 +1527,25 @@ font-family: "Euip", "Arial", sans-serif;
     .home_wave_wrapper svg {
         top: -20%;
     }
+
     .animated-text a.revealed,
-    .animated-text-moving a{
+    .animated-text-moving a {
         font-size: 1.3rem;
     }
 }
+
 @keyframes popupFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(30px);
-  }
-  80% {
-    transform: scale(1.05) translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+
+    80% {
+        transform: scale(1.05) translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
