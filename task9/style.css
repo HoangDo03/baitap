@@ -797,6 +797,9 @@ footer {
         transform: translate(-10%, 47%);
         width: 100%;
     }
+    .typical_customers_ticker a{
+        font-size: var(--font-body-m);
+    }
     .footer_logo img {
     width: 20%;
         padding: 1rem;
