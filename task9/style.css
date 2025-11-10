@@ -440,6 +440,8 @@ body {
 
 .showcase_slider {
     padding-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .showcase_item img {
