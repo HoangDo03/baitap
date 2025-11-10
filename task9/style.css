@@ -432,7 +432,7 @@ body {
 
 .typical_customers_ticker a {
     text-decoration: none;
-    color: white;
+    color: var(--color1);
     font-size: var(--font-h5-size);
     padding-left: 1rem;
     font-weight: 700;
@@ -798,7 +798,7 @@ footer {
         width: 100%;
     }
     .typical_customers_ticker a{
-        font-size: var(--font-body-s);
+        font-size: 0.8rem;
     }
     .footer_logo img {
     width: 20%;
