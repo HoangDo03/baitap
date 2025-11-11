@@ -727,7 +727,7 @@ footer {
     padding: 2rem;
     margin: 0 auto;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .footer_main {
@@ -754,7 +754,7 @@ footer {
 }
 
 .footer_block {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     text-align: left;
     line-height: 1.5rem;
 }
