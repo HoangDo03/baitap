@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2EVENT</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,8 +23,15 @@
                         <li class="menu_item active"><a href="index.html">Home</a></li>
                         <li class="menu_item"><a href="about.html">About</a></li>
                         <li class="menu_item"><a href="services.html">Services</a></li>
-                        <li class="menu_item"><a href="#">Cultures</a></li>
-                        <li class="menu_item"><a href="#">Hiring</a></li>
+                        <li class="menu_item has-sub">
+                            <a href="#">Cultures</a>
+
+                            <ul class="sub_menu">
+                                <li><a href="podcast.html">Podcast</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu_item"><a href="hiring.html">Hiring</a></li>
                     </ul>
                 </nav>
                 <div class="btn_menu_mobile">
@@ -31,66 +39,109 @@
                 </div>
             </div>
         </div>
+
     </header>
+    <div class="mobile-menu">
+        <div class="header-mobile-menu">
+            <a href="#"></a>
+            <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <nav class="menu_mobile_nav">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item active"><a href="index.html">Home</a></li>
+                <li class="menu_item"><a href="about.html">About</a></li>
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <a href="javascript:void(0);">Cultures</a>
+                    <ul class="sub_menu">
+                        <li><a href="culture-vn.html">Podcast</a></li>
+                        <li><a href="culture-jp.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
+
+    </div>
     <main>
         <div class="home_page">
             <div class="">
                 <section class="home_wrapper container">
-                    <figure class="hero_layer hero_backround--1">
-                        <img src="imgs/home/34.png" alt="">
-                    </figure>
-                    <figure class="hero_layer hero_person--right">
-                        <img src="imgs/home/30.png" alt="">
-                    </figure>
-                    <figure class="hero_layer hero_person--middle">
-                        <img src="imgs/home/32.png" alt="">
-                    </figure>
-                    <figure class="hero_layer hero_title">
-                        <img src="imgs/home/31.png" alt="">
-                    </figure>
-                    <figure class="hero_layer hero_backround--2">
-                        <img src="imgs/home/33.png" alt="">
-                    </figure>
+                    <div class="hero_layer hero_backround--1 ">
+                        <figure class="hero_backround--1_animate popup">
+                            <img src="imgs/home/34.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer hero_person--right">
+                        <figure class="hero_person--right_animate popup">
+                            <img src="imgs/home/30.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer hero_person--middle">
+                        <figure class="popup">
+                            <img src="imgs/home/32.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer hero_title">
+                        <figure class="popup">
+                            <img src="imgs/home/31.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer hero_backround--2">
+                        <figure class="popup">
+                            <img src="imgs/home/33.png" alt="">
+                        </figure>
+                    </div>
                     <figure class="hero_layer hero_backround--3">
                         <img src="imgs/home/33.png" alt="">
                     </figure>
-                    <figure class="hero_layer card_personnel">
-                        <img src="imgs/home/2.png" alt="">
-                    </figure>
-                    <figure class="hero_layer card_projects">
-                        <img src="imgs/home/3.png" alt="">
-                    </figure>
-                    <figure class="hero_layer card_years_experience">
-                        <img src="imgs/home/4.png" alt="">
-                    </figure>
-                    <figure class="hero_layer img_b2event">
-                        <img src="imgs/home/6.png" alt="">
-                    </figure>
-                    <figure class="hero_layer decor_pattern">
-                        <img src="imgs/home/1.png" alt="">
-                    </figure>
-                    <figure class="hero_layer card_clients">
-                        <img src="imgs/home/5.png" alt="">
-                    </figure>
-                    <figure class="hero_layer person_bottom">
-                        <img src="imgs/home/ele-03.png" alt="">
-                    </figure>
+                    <div class="hero_layer card_personnel">
+                        <figure class="popup_float-1">
+                            <img src="imgs/home/2.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer card_projects">
+                        <figure class="popup_float-1">
+                            <img src="imgs/home/3.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer card_years_experience">
+                        <figure class="popup_float-1">
+                            <img src="imgs/home/4.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer img_b2event">
+                        <figure class="popup">
+                            <img src="imgs/home/6.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer decor_pattern">
+                        <figure class="popup">
+                            <img src="imgs/home/1.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer card_clients">
+                        <figure class="popup_float-1">
+                            <img src="imgs/home/5.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer person_bottom">
+                        <figure class="popup">
+                            <img src="imgs/home/ele-03.png" alt="">
+                        </figure>
+                    </div>
                     <div class="showcase">
                         <div class="showcase_title">
-                             <div class="showcase_typical_customers">
-                            <div class="typical_customers_sliders">
-                                <div class="typical_customers_slider">
-                                    <span class="typical_customers_ticker">
-                                        <a href="">TYPICAL CUSTOMERS</a>
-                                        <a href="">TYPICAL CUSTOMERS</a>
-                                        <a href="">TYPICAL CUSTOMERS</a>
-                                        <a href="">TYPICAL CUSTOMERS</a>
-                                        <a href="">TYPICAL CUSTOMERS</a>
-                                        
-                                    </span>
+                            <div class="showcase_typical_customers">
+                                <div class="typical_customers_sliders">
+                                    <div class="typical_customers_slider">
+                                        <span class="typical_customers_ticker">
+                                            <a href="">TYPICAL CUSTOMERS</a>
+
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                         <div class="showcase_slider">
                             <div class="showcase_item">
@@ -105,61 +156,101 @@
                             <div class="showcase_item">
                                 <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
                             </div>
-
+                            <div class="showcase_item">
+                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                            </div>
+                            <div class="showcase_item">
+                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                            </div>
                         </div>
                     </div>
-                    <figure class="hero_layer bg_city">
-                        <img src="imgs/home/22.png" alt="">
-                    </figure>
-                    <figure class="hero_layer contact_infor">
-                        <img src="imgs/home/ele-04.png" alt="">
-                    </figure>
+                    <div class="hero_layer bg_city">
+                        <figure class="">
+                            <img src="imgs/home/22.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer contact_infor">
+                        <figure class="popup">
+                            <img src="imgs/home/ele-04.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer bulding">
+                        <figure class="popup">
+                            <img src="imgs/home/18.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer flowers-1">
+                        <figure class="popup">
+                            <img src="imgs/home/17.png" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="hero_layer flowers-2">
+                        <figure class="popup">
+                            <img src="imgs/home/19.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer flowers-3">
+                        <figure class="popup">
+                            <img src="imgs/home/20.png" alt="">
+                        </figure>
+                    </div>
+                    <div class="hero_layer flowers-4">
+                        <figure class="popup">
+                            <img src="imgs/home/21.png" alt="">
+                        </figure>
+                    </div>
                     <div class="card_contact_us">
-                        <figure class="hero_layer">
-                            <img src="imgs/home/ele-05.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_phone">
-                            <img src="imgs/home/ele-08.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_mail">
-                            <img src="imgs/home/ele-07.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_zalo">
-                            <img src="imgs/home/ele-09.png" alt="">
-                        </figure>
+                        <div class="hero_layer contact_us">
+                            <figure class="popup_shake">
+                                <img src="imgs/home/ele-05.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_phone">
+                            <figure class="popup_float-2">
+                                <img src="imgs/home/ele-08.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_mail">
+                            <figure class="popup_float-2">
+                                <img src="imgs/home/ele-07.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_zalo">
+                            <figure class="popup_float-2">
+                                <img src="imgs/home/ele-09.png" alt="">
+                            </figure>
+                        </div>
+
                     </div>
                     <div class="card_fl_b2event">
-                        <figure class="hero_layer">
-                            <img src="imgs/home/ele-06.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_youtube">
-                            <img src="imgs/home/ele-12.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_fb">
-                            <img src="imgs/home/ele-13.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_ig">
-                            <img src="imgs/home/ele-10.png" alt="">
-                        </figure>
-                        <figure class="hero_layer card_linkedin">
-                            <img src="imgs/home/ele-11.png" alt="">
-                        </figure>
+                        <div class="hero_layer fl_b2event">
+                            <figure class="popup_shake">
+                                <img src="imgs/home/ele-06.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_youtube">
+                            <figure class="popup_float-3">
+                                <img src="imgs/home/ele-12.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_fb">
+                            <figure class="popup_float-3">
+                                <img src="imgs/home/ele-13.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_ig">
+                            <figure class="popup_float-3">
+                                <img src="imgs/home/ele-10.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="hero_layer card_linkedin">
+                            <figure class="popup_float-3">
+                                <img src="imgs/home/ele-11.png" alt="">
+                            </figure>
+                        </div>
                     </div>
-                    <figure class="hero_layer flowers-1">
-                        <img src="imgs/home/17.png" alt="">
-                    </figure>
-                    <figure class="hero_layer bulding">
-                        <img src="imgs/home/18.png" alt="">
-                    </figure>
-                    <figure class="hero_layer flowers-2">
-                        <img src="imgs/home/19.png" alt="">
-                    </figure>
-                    <figure class="hero_layer flowers-3">
-                        <img src="imgs/home/20.png" alt="">
-                    </figure>
-                    <figure class="hero_layer flowers-4">
-                        <img src="imgs/home/21.png" alt="">
-                    </figure>
+
                 </section>
             </div>
         </div>
