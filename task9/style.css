@@ -112,7 +112,7 @@ header {
     font-weight: 900;
 }
 
-.sub_menu {
+.header_nav .sub_menu {
     visibility: hidden;
     display: none;
     position: absolute;
@@ -141,6 +141,7 @@ header {
     font-size: var(--font-h4-size);
     white-space: nowrap;
 }
+
 
 .btn_menu_mobile {
     display: none;
@@ -193,11 +194,11 @@ header {
     width: 100%;
     list-style: none;
     margin: auto;
-    margin-top: 1rem;
     text-align: center;
 }
 
-.menu_mobile_nav ul li a {
+.menu_mobile_nav ul li a,
+.menu_mobile_nav ul li label {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -206,26 +207,50 @@ header {
     font-size: 1.5rem;
 }
 
-.menu_mobile_nav .sub_menu {
+
+
+.menu_mobile_nav .sub_menu_mobile {
+    max-height: 0;
+    opacity: 0;
     display: none;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    width: 100%;
-    z-index: 10;
+    transition: 
+        max-height .35s ease,
+        opacity .25s ease,
+        transform .25s ease;
+}
+.menu_mobile_nav .has-sub > label {
+    position: relative;
+    padding-right: 1.2rem;
 }
 
-.menu_mobile_nav .menu_mobile_nav ul li:hover .sub_menu,
-.menu_mobile_nav .menu_mobile_nav ul li:focus-within .sub_menu {
+.menu_mobile_nav .has-sub > label::after {
+    content: "\f107"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.25s ease;
+}
+.menu_mobile_nav .has-sub input[type="checkbox"]:checked + label::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+#drop1{
+    display: none;
+}
+
+.menu_mobile_nav .has-sub input[type="checkbox"]:checked ~ .sub_menu_mobile {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
     display: block;
 }
 
-.menu_mobile_nav .sub_menu li {
-    padding: 1rem;
-}
-
-.menu_mobile_nav .sub_menu li a {
+.menu_mobile_nav .sub_menu_mobile li a {
     color: white;
+    font-size: var(--font-h4-size);
 }
 
 .home_wrapper,
@@ -295,14 +320,38 @@ header {
 }
 
 .hero_title {
-    grid-column: 2/12;
+    grid-column: 1/-1;
     grid-row: 1;
-    /* position: absolute; */
     justify-self: center;
     z-index: 6;
     transform: translateY(14%);
     width: 100%;
+    padding: .25em 0 .325em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--font-h2-size);
+    font-weight: 900;
+    font-family: 'Anton', sans-serif;
+
+    /* --- Hiệu ứng chạy màu bên trong chữ --- */
+    background: url(imgs/z7241188176713_211c18e185297e205ed906821c7869fc.jpg) repeat-y;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: aitf 15s linear infinite;
+
+    /* --- Viền chữ trắng --- */
+    -webkit-text-stroke: 2px #fff;
+    text-stroke: 2px #fff;
 }
+
+@keyframes aitf {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
 
 .card_personnel {
     grid-column: 1/7;
@@ -813,6 +862,7 @@ header {
     transform: rotateY(180deg);
     position: absolute;
     z-index: 4;
+
 }
 
 .starts_mid {
@@ -827,6 +877,7 @@ header {
     position: absolute;
     z-index: 4;
     align-self: end;
+
 }
 
 .human_jump {
@@ -1477,6 +1528,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero_title{
+            font-size: var(--font-h3-size);
+    }
     .services {
         transform: translateY(35%);
 
@@ -1495,6 +1549,9 @@ footer {
 @media (max-width:576px) {
     .header_nav {
         display: none;
+    }
+    .hero_title{
+            font-size: var(--font-h5-size);
     }
 
     .btn_menu_mobile {
@@ -2057,6 +2114,12 @@ footer {
     75% {
         transform: rotate(40deg);
     }
+}
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  75% { transform: rotate(-10deg); }
 }
 
 @keyframes floatY-1 {

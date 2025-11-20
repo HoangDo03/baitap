@@ -41,21 +41,30 @@
 
     </header>
     <div class="mobile-menu">
-            <div class="header-mobile-menu">
-                <a href="#"></a>
-                <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
-            </div>
-            <nav class="menu_mobile_nav">
-                <ul id="menuNavItems" class="menu_nav_items">
-                    <li class="menu_item"><a href="index.html">Home</a></li>
-                        <li class="menu_item active"><a href="about.html">About</a></li>
-                        <li class="menu_item"><a href="services.html">Services</a></li>
-                        <li class="menu_item"><a href="blog.html">Cultures</a></li>
-                        <li class="menu_item"><a href="hiring.html">Hiring</a></li>
-                </ul>
-            </nav>
-    
+        <div class="header-mobile-menu">
+            <a href="#"></a>
+            <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
         </div>
+        <nav class="menu_mobile_nav">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item"><a href="index.html">Home</a></li>
+                <li class="menu_item active"><a href="about.html">About</a></li>
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label>
+                    <!-- <a href="javascript:void(0);">Cultures</a> -->
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <main>
     <main>
         <div class="about_page">
             <div class="about_wrapper about_container">
@@ -119,18 +128,26 @@
                     <figure class="layer paper_circle">
                         <img src="imgs/About/17.png" alt="">
                     </figure>
-                    <figure class="layer starts_top">
+                    <div class="layer starts_top">
+                        <figure class="popup">
                         <img src="imgs/About/16.png" alt="">
                     </figure>
-                    <figure class="layer starts_mid">
+                    </div>
+                    <div class="layer starts_mid">
+                        <figure class="popup">
                         <img src="imgs/About/16.png" alt="">
                     </figure>
-                    <figure class="layer starts_bottom">
+                    </div>
+                    <div class="layer starts_bottom">
+                        <figure class="popup">
                         <img src="imgs/About/16.png" alt="">
                     </figure>
-                    <figure class="layer human_jump">
+                    </div>
+                    <div class="layer human_jump">
+                        <figure class="popup">
                         <img src="imgs/About/12.png" alt="">
                     </figure>
+                    </div>
                     <figure class="layer pattern">
                         <img src="imgs/About/19.png" alt="">
                     </figure>

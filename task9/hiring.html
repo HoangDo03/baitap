@@ -48,15 +48,24 @@
         </div>
         <nav class="menu_mobile_nav">
             <ul id="menuNavItems" class="menu_nav_items">
-                <li class="menu_item active"><a href="index.html">Home</a></li>
+                <li class="menu_item"><a href="index.html">Home</a></li>
                 <li class="menu_item"><a href="about.html">About</a></li>
                 <li class="menu_item"><a href="services.html">Services</a></li>
-                <li class="menu_item"><a href="blog.html">Cultures</a></li>
-                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+                <li class="menu_item has-sub">
+                    <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label>
+                    <!-- <a href="javascript:void(0);">Cultures</a> -->
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item active"><a href="hiring.html">Hiring</a></li>
             </ul>
         </nav>
 
     </div>
+    <main>
     <main>
         <div class="hiring_page">
             <div class="hiring_container">
@@ -64,9 +73,11 @@
                 <figure class="layer hiring_background">
                     <img src="imgs/Hiring/Orange.png" alt="">
                 </figure>
-                <figure class="layer hiring_human">
+                <div class="layer hiring_human">
+                    <figure class="popup">
                     <img src="imgs/Hiring/10.png" alt="">
                 </figure>
+                </div>
                 <section class="hiring_hero">
 
                     <h2 class="hiring_subtitle_big">
