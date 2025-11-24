@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Blink Fast</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+  }
+
+  .blinking-text {
+    font-size: 36px;
+    font-weight: bold;
+    animation: blinkFast 0.5s infinite alternate; /* 0.5s = nhấp nháy nhanh */
+  }
+
+  @keyframes blinkFast {
+    0% { color: orange; }
+    50% { color: blue; }
+    100% { color: orange; }
+  }
+</style>
+</head>
+<body>
+  <p class="blinking-text">Text nhấp nháy cam và xanh</p>
+</body>
+</html>

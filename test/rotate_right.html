@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiệu ứng xoay tròn chậm</title>
+<style>
+    /* Thiết lập kiểu dáng cho vật thể cần xoay (ví dụ là một hình ảnh hoặc một khối div) */
+    .xoay-tron {
+        width: 150px;
+        height: 150px;
+        /* Sử dụng hình ảnh để dễ thấy hiệu ứng xoay */
+        background-image: url('https://cdn-icons-png.flaticon.com/512/3665/3665909.png'); /* Hình bánh răng */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 100px auto; /* Căn giữa màn hình để dễ nhìn */
+
+        /* --- PHẦN QUAN TRỌNG NHẤT --- */
+        /* Áp dụng animation có tên 'xoay-phai' */
+        /* Thời gian hoàn thành 1 vòng là 10 giây (10s) -> Rất chậm */
+        /* 'linear' giúp tốc độ xoay đều, không bị nhanh chậm thất thường */
+        /* 'infinite' để nó xoay mãi mãi không dừng */
+        animation: xoay-phai 10s linear infinite;
+    }
+
+    /* Định nghĩa chuyển động xoay */
+    @keyframes xoay-phai {
+        from {
+            /* Trạng thái bắt đầu: góc 0 độ */
+            transform: rotate(0deg);
+        }
+        to {
+            /* Trạng thái kết thúc: góc 360 độ (một vòng tròn đầy đủ) */
+            /* Sử dụng số dương để xoay theo chiều kim đồng hồ (trái sang phải) */
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Tùy chọn thêm: Rê chuột vào thì tạm dừng xoay */
+    .xoay-tron:hover {
+        animation-play-state: paused;
+    }
+</style>
+</head>
+<body>
+
+    <div class="xoay-tron"></div>
+
+</body>
+</html>

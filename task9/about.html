@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | B2Event</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 </head>
 
 <body>
+    <!-- Facebook SDK (bắt buộc để video chạy) -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
     <header>
         <div class="menu_header">
             <div class="menu_header_wrapper">
@@ -65,156 +73,278 @@
 
     </div>
     <main>
-    <main>
-        <div class="about_page">
-            <div class="about_wrapper about_container">
-                <figure class="layer about_background--1">
-                    <img src="imgs/home/33.png" alt="">
-                </figure>
-                <figure class="layer about_background--2">
-                    <img src="imgs/home/33.png" alt="">
-                </figure>
-                <figure class="layer about_background--3">
-                    <img src="imgs/home/33.png" alt="">
-                </figure>
-                <!-- <figure class="layer about_background--4">
+        <main>
+            <div class="about_page">
+                <div class="about_wrapper about_container">
+                    <figure class="layer about_background--1">
+                        <img src="imgs/home/33.png" alt="">
+                    </figure>
+                    <figure class="layer about_background--2">
+                        <img src="imgs/home/33.png" alt="">
+                    </figure>
+                    <figure class="layer about_background--3">
+                        <img src="imgs/home/33.png" alt="">
+                    </figure>
+                    <!-- <figure class="layer about_background--4">
                     <img src="imgs/home/33.png" alt="">
                 </figure> -->
-                <figure class="layer about_background--5">
-                    <img src="imgs/home/33.png" alt="">
-                </figure>
-                <figure class="layer about_background--6">
-                    <img src="imgs/home/33.png" alt="">
-                </figure>
-                <section class="hero">
-                    <div class="about_intro">
-                        <h3 class="title">We are an event experience agency</h3>
-                        <p>We partner with global and local brands and trusted talent for truly creaive content
-                            solutions.<br>Branding. Content. Design. Visuals. Marketing. Events.</p>
-                    </div>
-                    <figure class="layer book">
-                        <img src="imgs/About/book.png" alt="">
+                    <figure class="layer about_background--5">
+                        <img src="imgs/home/33.png" alt="">
                     </figure>
-                </section>
-
-                <section class="clients">
-                    <div class="about_trust">
-                        <h3 class="title">80% of big corp customers trust b2event service</h3>
-                        <p>Being alongside our esteemed customers is greatest pride of B2EVENT. Each successful
-                            milestone of
-                            our clients is a source of motivation for us to continually innovate, create, and reach even
-                            further.</p>
-
-                    </div>
-                    <figure class="layer head_universe">
-                        <img src="imgs/About/3.png" alt="">
+                    <figure class="layer about_background--6">
+                        <img src="imgs/home/33.png" alt="">
+                    </figure>
+                    <section class="hero">
+                        <div class="about_intro">
+                            <h3 class="title">We are an event experience agency</h3>
+                            <p>We partner with global and local brands and trusted talent for truly creaive content
+                                solutions.<br>Branding. Content. Design. Visuals. Marketing. Events.</p>
+                        </div>
+                    <figure class="layer showreel">
+                        <div class="mask-wrap">
+                            <video src="videos/showreel.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <img src="imgs/About/book_1.png" class="frame">
                     </figure>
 
-                </section>
-                <section class="creative">
 
-                    <figure class="layer about_backround_city">
-                        <img src="imgs/About/18.png" alt="">
-                    </figure>
-                    <figure class="layer sunset">
-                        <img src="imgs/About/13.png" alt="">
-                    </figure>
-                    <figure class="layer flowers-5">
-                        <img src="imgs/About/14.png" alt="">
-                    </figure>
-                    <figure class="layer flowers-6">
-                        <img src="imgs/About/15.png" alt="">
-                    </figure>
-                    <figure class="layer paper_circle">
-                        <img src="imgs/About/17.png" alt="">
-                    </figure>
-                    <div class="layer starts_top">
-                        <figure class="popup">
-                        <img src="imgs/About/16.png" alt="">
-                    </figure>
-                    </div>
-                    <div class="layer starts_mid">
-                        <figure class="popup">
-                        <img src="imgs/About/16.png" alt="">
-                    </figure>
-                    </div>
-                    <div class="layer starts_bottom">
-                        <figure class="popup">
-                        <img src="imgs/About/16.png" alt="">
-                    </figure>
-                    </div>
-                    <div class="layer human_jump">
-                        <figure class="popup">
-                        <img src="imgs/About/12.png" alt="">
-                    </figure>
-                    </div>
-                    <figure class="layer pattern">
-                        <img src="imgs/About/19.png" alt="">
-                    </figure>
-                </section>
+                    </section>
+                    <section class="clients">
+                        <div class="about_trust">
+                            <h3 class="title">80% of big corp customers trust b2event service</h3>
+                            <p>Being alongside our esteemed customers is greatest pride of B2EVENT. Each successful
+                                milestone of
+                                our clients is a source of motivation for us to continually innovate, create, and reach
+                                even
+                                further.</p>
+
+                        </div>
+                        <div class="logo_customers" id="logo_customers">
+                            <figure class="layer head_universe">
+                                <img src="imgs/About/3.png" alt="">
+                            </figure>
+                            <div class="galaxy-container" id="galaxyContainer"></div>
+
+                        </div>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const galaxyContainer = document.getElementById('galaxyContainer');
+                                const logo_customers = document.getElementById('logo_customers');
+
+                                const logoUrls = [
+                               
+                                    'imgs/logo khách hàng/4.png',
+                                    'imgs/logo khách hàng/5.png',
+                                    'imgs/logo khách hàng/6.png',
+                                    'imgs/logo khách hàng/7.png',
+                                    'imgs/logo khách hàng/8.png',
+                                    'imgs/logo khách hàng/11.png',
+                                    'imgs/logo khách hàng/12.png',
+                                    'imgs/logo khách hàng/13.png',
+                                    'imgs/logo khách hàng/14.png',
+                                    'imgs/logo khách hàng/15.png',
+                                    'imgs/logo khách hàng/16.png',
+                                    'imgs/logo khách hàng/17.png',
+                                    'imgs/logo khách hàng/18.png',
+                                    'imgs/logo khách hàng/19.png',
+                                ];
+
+                                function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
+                                function getDistance(x1, y1, x2, y2) {
+                                    const a = x1 - x2; b = y1 - y2; return Math.sqrt(a * a + b * b);
+                                }
+
+                                const containerW = logo_customers.offsetWidth;
+                                const containerH = logo_customers.offsetHeight;
+                                const safePaddingPx = 120;
+                                const minPaddingPx = 30;
+                                const maxSafeTopPercent = ((containerH - safePaddingPx) / containerH) * 100;
+                                const minSafeTopPercent = (minPaddingPx / containerH) * 100;
+                                const minSafeLeftPercent = (minPaddingPx / containerW) * 100;
+
+                                const isMobile = window.innerWidth < 768;
+                                const minSafePixelDist = isMobile ? 60 : 130;
+                                // Tăng số lần thử lên vì diện tích đặt logo bị thu hẹp
+                                const maxAttempts = 2500;
+
+                                const logoData = [];
+                                const placedPositions = [];
+
+                                logoUrls.forEach((url, index) => {
+                                    let top, left, collision;
+                                    let attempts = 0;
+
+                                    const isLeftSide = Math.random() < 0.5;
+
+                                    do {
+                                        collision = false;
+                                        attempts++;
+
+                                        
+                                        top = randomInt(minSafeTopPercent, maxSafeTopPercent);
+                                        if (isLeftSide) {
+                                            const maxLeftLimit = 20;
+                                            left = randomInt(1, maxLeftLimit);
+                                        } else {
+                                            const minRightLimit = 65;
+                                            const maxRightLimit = 85; 
+                                            left = randomInt(minRightLimit, maxRightLimit);
+                                        }
+
+                                        const currentTopPx = (top / 100) * containerH;
+                                        const currentLeftPx = (left / 100) * containerW;
+
+                                        for (const pos of placedPositions) {
+                                            const placedTopPx = (pos.top / 100) * containerH;
+                                            const placedLeftPx = (pos.left / 100) * containerW;
+                                            const pixelDistance = getDistance(currentLeftPx, currentTopPx, placedLeftPx, placedTopPx);
+
+                                            if (pixelDistance < minSafePixelDist) {
+                                                collision = true;
+                                                break;
+                                            }
+                                        }
+                                    } while (collision && attempts < maxAttempts);
+
+                                
+                                    placedPositions.push({ top, left });
+                                    logoData.push({
+                                        url: url,
+                                        top: top,
+                                        left: left,
+                                        scale: randomInt(85, 115) / 100
+                                    });
+                                });
+
+
+                                logoData.sort((a, b) => a.left - b.left);
+                                const animationDuration = 8;
+                                logoData.forEach((data, index) => {
+                                    const wrapper = document.createElement('div');
+                                    wrapper.className = 'logo-wrapper';
+                                    wrapper.style.top = `${data.top}%`;
+                                    wrapper.style.left = `${data.left}%`;
+                                    wrapper.style.transform = `scale(${data.scale})`;
+
+                                    const img = document.createElement('img');
+                                    img.src = data.url;
+                                    img.className = 'logo-item';
+
+                                    const delayOffset = (index / (logoData.length - 1)) * animationDuration;
+                                    img.style.animationDelay = `-${delayOffset.toFixed(2)}s`;
+
+                                    wrapper.appendChild(img);
+                                    galaxyContainer.appendChild(wrapper);
+                                });
+                            });
+                        </script>
+                    </section>
+                    <section class="creative">
+
+                        <figure class="layer about_backround_city">
+                            <img src="imgs/About/18.png" alt="">
+                        </figure>
+                        <div class="layer sunset">
+                            <figure class="up">
+                                <img src="imgs/About/13.png" alt="">
+                            </figure>
+                        </div>
+                        <figure class="layer flowers-5">
+                            <img src="imgs/About/14.png" alt="">
+                        </figure>
+                        <figure class="layer flowers-6">
+                            <img src="imgs/About/15.png" alt="">
+                        </figure>
+                        <figure class="layer paper_circle">
+                            <img src="imgs/About/17.png" alt="">
+                        </figure>
+                        <div class="layer starts_top">
+                            <figure class="">
+                                <img src="imgs/About/16.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="layer starts_mid">
+                            <figure class="">
+                                <img src="imgs/About/16.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="layer starts_bottom">
+                            <figure class="">
+                                <img src="imgs/About/16.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="layer human_jump">
+                            <figure class="from-right">
+                                <img src="imgs/About/12.png" alt="">
+                            </figure>
+                        </div>
+                        <figure class="layer pattern">
+                            <img src="imgs/About/19.png" alt="">
+                        </figure>
+                    </section>
+                </div>
             </div>
-        </div>
 
 
-    </main>
+        </main>
 
 
-    <footer>
-        <div class="footer">
-            <a href="index.html" class="footer_logo">
-                <img src="imgs/logo.png" alt="">
-            </a>
-            <div class="footer_main">
+        <footer>
+            <div class="footer">
+                <a href="index.html" class="footer_logo">
+                    <img src="imgs/logo.png" alt="">
+                </a>
+                <div class="footer_main">
 
-                <div class="footer_top">
-                    <div class="footer_blocks">
-                        <div class="footer_block">
-                            <div class="footer_block_heading">
-                                Ho Chi Minh Head Office
+                    <div class="footer_top">
+                        <div class="footer_blocks">
+                            <div class="footer_block">
+                                <div class="footer_block_heading">
+                                    Ho Chi Minh Head Office
+                                </div>
+                                <div class="footer_block_content">
+                                    <p>75 Hoang Van Thu, 15 Ward, Phu Nhuan District</p>
+                                    <p>(028) 38 225 34781/782/783</p>
+                                </div>
                             </div>
-                            <div class="footer_block_content">
-                                <p>75 Hoang Van Thu, 15 Ward, Phu Nhuan District</p>
-                                <p>(028) 38 225 34781/782/783</p>
+                            <div class="footer_block">
+                                <div class="footer_block_heading">
+                                    Ha Noi Office
+                                </div>
+                                <div class="footer_block_content">
+                                    <p>579 Lac Long Quan, Tay Ho District</p>
+                                    <p>(024) 37 585 3501</p>
+                                </div>
+                            </div>
+                            <div class="footer_block">
+                                <div class="footer_block_heading">
+                                    Hotline
+                                </div>
+                                <div class="footer_block_content">
+                                    <p>0907 561 170 - Kevin Pham</p>
+                                    <a
+                                        href="mailto:%63%6f%6e%74%61%63%74&#64;b%32%65%76%65%6e%74.%76%6e">contact@b2event.vn</a>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="footer_block">
-                            <div class="footer_block_heading">
-                                Ha Noi Office
-                            </div>
-                            <div class="footer_block_content">
-                                <p>579 Lac Long Quan, Tay Ho District</p>
-                                <p>(024) 37 585 3501</p>
-                            </div>
+                    </div>
+                    <div class="footer_bottom">
+                        <div class="footer_copyright">
+                            Copyright © 2023. All rights
                         </div>
-                        <div class="footer_block">
-                            <div class="footer_block_heading">
-                                Hotline
-                            </div>
-                            <div class="footer_block_content">
-                                <p>0907 561 170 - Kevin Pham</p>
-                                <a
-                                    href="mailto:%63%6f%6e%74%61%63%74&#64;b%32%65%76%65%6e%74.%76%6e">contact@b2event.vn</a>
-
-                            </div>
+                        <div class="footer_credits">
+                            <a href="" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="footer_bottom">
-                    <div class="footer_copyright">
-                        Copyright © 2023. All rights
-                    </div>
-                    <div class="footer_credits">
-                        <a href="" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
+
             </div>
+        </footer>
 
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

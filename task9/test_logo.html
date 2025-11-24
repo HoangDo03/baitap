@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Galaxy - Split Sides</title>
+    <style>
+        /* --- CẤU TRÚC NỀN TẢNG (GIỮ NGUYÊN) --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+            background: #fccc6e;
+        }
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle at center bottom, #fff7d1 10%, #fccc6e 40%, #f75e2e 80%);
+            overflow: hidden;
+        }
+        .fire-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: url('https://i.imgur.com/PZc0j3T.png') repeat-x center bottom;
+            background-size: auto 100%;
+            opacity: 0.6;
+            z-index: 2;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+        .central-head-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            z-index: 100; 
+            width: 450px;
+            max-width: 90%;
+            height: auto;
+            pointer-events: none;
+        }
+        .central-head-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+        }
+        .galaxy-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        /* --- STYLES CHO LOGO (GIỮ NGUYÊN) --- */
+        .logo-wrapper {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Kích thước cố định là 80px */
+            width: 150px; 
+            height: 150px;
+            cursor: pointer;
+            z-index: 15;
+            transition: z-index 0.3s ease;
+            perspective: 1000px; 
+        }
+
+        .logo-item {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: gentleSway3D 8s ease-in-out infinite alternate;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+            backface-visibility: hidden; 
+            -webkit-backface-visibility: hidden;
+            padding: 1rem;
+        }
+        @keyframes gentleSway3D {
+            0% { transform: rotateY(-25deg); }
+            100% { transform: rotateY(25deg); }
+        }
+        .logo-wrapper:hover { z-index: 200; }
+        .logo-wrapper:hover .logo-item {
+            animation-play-state: paused;
+            transform: rotateY(0deg) scale(1.3) translateZ(50px) !important; 
+            filter: brightness(1.1) drop-shadow(0 15px 20px rgba(0,0,0,0.3));
+        }
+    
+    </style>
+</head>
+<body>
+
+<div class="hero-container" id="heroContainer">
+    <div class="fire-bottom"></div>
+    <div class="central-head-container">
+        <img src="imgs/About/3.png" alt="Central Head Illustration">
+    </div>
+    <div class="galaxy-container" id="galaxyContainer"></div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const galaxyContainer = document.getElementById('galaxyContainer');
+        const heroContainer = document.getElementById('heroContainer');
+
+        const logoUrls = [
+            'imgs/logo khách hàng/4.png',
+            'imgs/logo khách hàng/4.png',
+            'imgs/logo khách hàng/5.png',
+            'imgs/logo khách hàng/6.png',
+            'imgs/logo khách hàng/7.png',
+            'imgs/logo khách hàng/8.png',
+            'imgs/logo khách hàng/11.png',
+            'imgs/logo khách hàng/12.png',
+            'imgs/logo khách hàng/13.png',
+            'imgs/logo khách hàng/14.png',
+            'imgs/logo khách hàng/15.png',
+            'imgs/logo khách hàng/16.png',
+            'imgs/logo khách hàng/17.png',
+            'imgs/logo khách hàng/18.png',
+            'imgs/logo khách hàng/19.png',
+        ];
+
+        function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
+        function getDistance(x1, y1, x2, y2) {
+            const a = x1 - x2; b = y1 - y2; return Math.sqrt(a * a + b * b);
+        }
+
+        // --- TÍNH TOÁN GIỚI HẠN ---
+        const containerW = heroContainer.offsetWidth;
+        const containerH = heroContainer.offsetHeight;
+        const safePaddingPx = 120; 
+        const minPaddingPx = 20;
+        const maxSafeTopPercent = ((containerH - safePaddingPx) / containerH) * 100;
+        // const maxSafeLeftPercent = ((containerW - safePaddingPx) / containerW) * 100; // Bỏ dòng này vì ta sẽ tính theo zone
+        const minSafeTopPercent = (minPaddingPx / containerH) * 100;
+        const minSafeLeftPercent = (minPaddingPx / containerW) * 100;
+
+        // --- CẤU HÌNH KHOẢNG CÁCH PIXEL ---
+        const minSafePixelDist = 90;
+        // Tăng số lần thử lên vì diện tích đặt logo bị thu hẹp
+        const maxAttempts = 500; 
+
+        const logoData = [];
+        const placedPositions = [];
+
+        logoUrls.forEach((url, index) => {
+            let top, left, collision;
+            let attempts = 0;
+            
+            // Quyết định ngẫu nhiên xem logo này thuộc phe TRÁI hay PHẢI
+            // Để cân bằng, ta có thể dùng random hoặc chia chẵn lẻ. Ở đây dùng random 50/50.
+            const isLeftSide = Math.random() < 0.5;
+
+            do {
+                collision = false;
+                attempts++;
+                
+                // 1. Tạo vị trí Top ngẫu nhiên (Toàn màn hình theo chiều dọc)
+                top = randomInt(minSafeTopPercent, maxSafeTopPercent);
+
+                // 2. Tạo vị trí Left dựa trên phe (Né phần giữa)
+                if (isLeftSide) {
+                    // Phe TRÁI: Từ 2% -> 25% chiều rộng
+                    // (Để chừa khoảng trống lớn ở giữa cho hình người)
+                    const maxLeftLimit = 25; 
+                    left = randomInt(2, maxLeftLimit);
+                } else {
+                    // Phe PHẢI: Từ 75% -> 90% chiều rộng
+                    // (Bắt đầu sau hình người)
+                    const minRightLimit = 75;
+                    const maxRightLimit = 90; // Tránh sát mép phải quá
+                    left = randomInt(minRightLimit, maxRightLimit);
+                }
+
+                // --- KIỂM TRA VA CHẠM BẰNG PIXEL ---
+                const currentTopPx = (top / 100) * containerH;
+                const currentLeftPx = (left / 100) * containerW;
+
+                for (const pos of placedPositions) {
+                    const placedTopPx = (pos.top / 100) * containerH;
+                    const placedLeftPx = (pos.left / 100) * containerW;
+                    const pixelDistance = getDistance(currentLeftPx, currentTopPx, placedLeftPx, placedTopPx);
+
+                    if (pixelDistance < minSafePixelDist) {
+                        collision = true;
+                        break; 
+                    }
+                }
+            } while (collision && attempts < maxAttempts);
+
+            // Nếu sau 500 lần thử mà vẫn va chạm (do quá chật), vẫn chấp nhận đặt đại để không mất logo
+            // Nhưng thường với không gian dọc lớn thì sẽ không bị.
+            
+            placedPositions.push({ top, left });
+            logoData.push({
+                url: url,
+                top: top,
+                left: left,
+                scale: randomInt(85, 115) / 100 
+            });
+        });
+
+        // Sắp xếp và tạo phần tử
+        logoData.sort((a, b) => a.left - b.left);
+        const animationDuration = 8; 
+        logoData.forEach((data, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'logo-wrapper';
+            wrapper.style.top = `${data.top}%`;
+            wrapper.style.left = `${data.left}%`;
+            wrapper.style.transform = `scale(${data.scale})`;
+
+            const img = document.createElement('img');
+            img.src = data.url;
+            img.className = 'logo-item';
+            
+            const delayOffset = (index / (logoData.length - 1)) * animationDuration;
+            img.style.animationDelay = `-${delayOffset.toFixed(2)}s`;
+
+            wrapper.appendChild(img);
+            galaxyContainer.appendChild(wrapper);
+        });
+    });
+</script>
+
+</body>
+</html>
