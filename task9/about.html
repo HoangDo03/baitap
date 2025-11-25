@@ -15,10 +15,7 @@
 </head>
 
 <body>
-    <!-- Facebook SDK (bắt buộc để video chạy) -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
+    
     <header>
         <div class="menu_header">
             <div class="menu_header_wrapper">
@@ -102,7 +99,7 @@
                         </div>
                     <figure class="layer showreel">
                         <div class="mask-wrap">
-                            <video src="videos/showreel.mp4" autoplay loop muted playsinline></video>
+                            <video src="videos/showreel.mp4" autoplay loop muted playsinline preload="auto"></video>
                         </div>
                         <img src="imgs/About/book_1.png" class="frame">
                     </figure>
@@ -123,7 +120,7 @@
                             <figure class="layer head_universe">
                                 <img src="imgs/About/3.png" alt="">
                             </figure>
-                            <div class="galaxy-container" id="galaxyContainer"></div>
+                            <!-- <div class="galaxy-container" id="galaxyContainer"></div> -->
 
                         </div>
                         <script>

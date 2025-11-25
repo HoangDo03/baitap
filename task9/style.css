@@ -826,11 +826,12 @@ header {
 .about_trust p {
     font-weight: 100;
     font-size: var(--font-body-m);
+    color: white;
 }
 
-.about_trust p {
+/* .about_trust p {
     opacity: 0.5;
-}
+} */
 
 .about_intro .title,
 .about_trust .title {
@@ -879,8 +880,6 @@ header {
     z-index: 2;
     pointer-events: none;
 }
-
-
 
 /* section  */
 .clients {
@@ -1301,15 +1300,11 @@ header {
     font-size: var(--font-h3-size);
 }
 
-.services_detail_text ul li:first-child {
-    color: var(--color1);
-    font-weight: 800;
-}
 
 .services_detail_text ul li {
-    color: white;
+    color: var(--color1);
     padding-top: 1rem;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .services_detail_showcases {
