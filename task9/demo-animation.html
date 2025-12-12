@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GSAP Hero Scroll Demo</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        overflow-x: hidden;
+    }
+
+    /* HERO VIDEO */
+    .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* CONTENT */
+    .content {
+        min-height: 200vh;
+        background: white;
+        position: relative;
+        z-index: 10;
+        opacity: 0; /* Fade in */
+        transform: translateY(50px); /* Bắt đầu trượt lên */
+    }
+
+    .inner {
+
+        opacity: 0; /* Fade in cho text */
+        transform: translateY(30px);
+    }
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+    <video src="videos/SHOWREEL.mp4" autoplay muted loop></video>
+</section>
+
+<section class="content">
+    <div class="inner">
+        <h1>Content Section</h1>
+        <p>Phần này sẽ trượt lên và che hero video.</p>
+    </div>
+</section>
+
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Giữ hero video đứng yên
+ScrollTrigger.create({
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false
+});
+
+// Content trượt lên + fade in
+gsap.to(".content", {
+    scrollTrigger: {
+        trigger: ".content",
+        start: "top bottom",
+        end: "top top",
+        scrub: true
+    },
+    y: 0,
+    opacity: 1,
+    ease: "power2.out"
+});
+
+// Text bên trong content fade in + trượt nhẹ
+gsap.to(".inner", {
+    scrollTrigger: {
+        trigger: ".content",
+        start: "top 80%", // bắt đầu animation khi content gần vào viewport
+        end: "top 30%",
+        scrub: true
+    },
+    y: 0,
+    opacity: 1,
+    ease: "power2.out"
+});
+</script>
+
+</body>
+</html>

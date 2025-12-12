@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logo Slider Infinite</title>
+<style>
+    body {
+        background: #d8d8d8;
+        margin: 0;
+        padding: 40px;
+        font-family: Arial;
+    }
+
+    #logo-container {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-row {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        cursor: grab;
+    }
+
+    .logo-track {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        will-change: transform;
+        transform: translateX(0);
+    }
+
+    .logo-track img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    /* Skeleton */
+    .skeleton {
+        background: #8b8b8b;
+        border-radius: 12px;
+        animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="logo-container"></div>
+
+<script>
+window.addEventListener("load", function () {
+
+    let logos = [
+        "imgs/Logo_cus/1.png", "imgs/Logo_cus/2.png", "imgs/Logo_cus/3.png", "imgs/Logo_cus/4.png",
+        "imgs/Logo_cus/5.png", "imgs/Logo_cus/6.png", "imgs/Logo_cus/7.png", "imgs/Logo_cus/8.png",
+        "imgs/Logo_cus/9.png", "imgs/Logo_cus/10.png", "imgs/Logo_cus/11.png", "imgs/Logo_cus/12.png",
+        "imgs/Logo_cus/13.png", "imgs/Logo_cus/14.png", "imgs/Logo_cus/15.png", "imgs/Logo_cus/16.png",
+        "imgs/Logo_cus/17.png", "imgs/Logo_cus/18.png", "imgs/Logo_cus/19.png", "imgs/Logo_cus/20.png",
+        "imgs/Logo_cus/21.png", "imgs/Logo_cus/22.png", "imgs/Logo_cus/23.png", "imgs/Logo_cus/24.png",
+        "imgs/Logo_cus/25.png", "imgs/Logo_cus/26.png", "imgs/Logo_cus/27.png", "imgs/Logo_cus/28.png",
+        "imgs/Logo_cus/29.png", "imgs/Logo_cus/30.png", "imgs/Logo_cus/31.png", "imgs/Logo_cus/32.png",
+        "imgs/Logo_cus/33.png", "imgs/Logo_cus/34.png", "imgs/Logo_cus/35.png"
+    ];
+
+    const rows = 3;
+    const perRow = Math.ceil(logos.length / rows);
+    const container = document.getElementById("logo-container");
+
+    for (let i = 0; i < rows; i++) {
+        const start = i * perRow;
+        const group = logos.slice(start, start + perRow);
+
+        const row = document.createElement("div");
+        row.className = "logo-row";
+
+        const track = document.createElement("div");
+        track.className = "logo-track";
+
+        // NHÂN 3 LẦN → infinite 2 chiều
+        const triple = [...group, ...group, ...group];
+
+        triple.forEach(src => {
+            const img = document.createElement("img");
+
+            img.classList.add("skeleton");
+            img.onload = () => {
+                img.classList.remove("skeleton");
+                img.style.opacity = "1";
+            };
+
+            img.src = src;
+            track.appendChild(img);
+        });
+
+        row.appendChild(track);
+        container.appendChild(row);
+
+        // Animation loop hai chiều
+        let x = -track.offsetWidth / 3; // luôn bắt đầu chính giữa
+        let speed = 0.5 + Math.random() * 0.4;
+        let dragging = false;
+        let lastX = 0;
+        let paused = false;
+
+        function animate() {
+            if (!paused && !dragging) {
+                x -= speed;
+            }
+
+            const wrap = track.offsetWidth / 3;
+
+            // loop vô hạn 2 hướng
+            if (x <= -wrap) x += wrap;
+            if (x >= 0) x -= wrap;
+
+            track.style.transform = `translateX(${x}px)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Pause khi hover
+        row.addEventListener("mouseenter", () => paused = true);
+        row.addEventListener("mouseleave", () => paused = false);
+
+        // Drag
+        row.addEventListener("mousedown", (e) => {
+            dragging = true;
+            lastX = e.clientX;
+            row.style.cursor = "grabbing";
+        });
+
+        row.addEventListener("mousemove", (e) => {
+            if (dragging) {
+                let dx = e.clientX - lastX;
+                lastX = e.clientX;
+                x += dx; // kéo tay → 2 chiều đều có logo
+                track.style.transform = `translateX(${x}px)`;
+            }
+        });
+
+        window.addEventListener("mouseup", () => {
+            dragging = false;
+            row.style.cursor = "grab";
+        });
+    }
+});
+</script>
+
+</body>
+</html>

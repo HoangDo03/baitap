@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2EVENT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
+<body class="preload home">
+
+    <!-- <header>
         <div class="menu_header">
             <div class="menu_header_wrapper">
                 <div class="header_logo">
@@ -21,7 +27,7 @@
                 <nav class="header_nav">
                     <ul>
                         <li class="menu_item active"><a href="index.html">Home</a></li>
-                        <li class="menu_item"><a href="about.html">About</a></li>
+
                         <li class="menu_item"><a href="services.html">Services</a></li>
                         <li class="menu_item has-sub">
                             <a href="#">Cultures</a>
@@ -34,14 +40,33 @@
                         <li class="menu_item"><a href="hiring.html">Hiring</a></li>
                     </ul>
                 </nav>
-                <div class="btn_menu_mobile">
-                    <i class="fa-solid fa-bars"></i>
+                <div class="btn_menu_mobile" id="btnMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
 
+    </header> -->
+    <header class="home_header">
+        <div class="home_header_wrapper">
+            <div class="home_header_logo">
+                <a href="index.html"><img src="imgs/logo.png" alt=""></a>
+            </div>
+            <div class="home_btn_menu_mobile" id="homeBtnMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
     </header>
-    <div class="mobile-menu">
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+
         <div class="header-mobile-menu">
             <a href="#"></a>
             <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
@@ -49,7 +74,7 @@
         <nav class="menu_mobile_nav">
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Home</a></li>
-                <li class="menu_item"><a href="about.html">About</a></li>
+                <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
                 <li class="menu_item"><a href="services.html">Services</a></li>
                 <li class="menu_item has-sub">
                     <input type="checkbox" id="drop1">
@@ -65,208 +90,284 @@
         </nav>
 
     </div>
+
+    <script>
+
+
+
+    </script>
     <main>
         <div class="home_page">
             <div class="">
-                <section class="home_wrapper container">
-                    <div class="hero_layer hero_backround--1 ">
-                        <figure class="">
-                            <img src="imgs/home/34.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer hero_person--right">
-                        <figure class="">
-                            <img src="imgs/home/30.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer hero_person--middle">
-                        <figure class="">
-                            <img src="imgs/home/32.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer hero_title_bottom">
-                        <!-- <figure class="">
-                            <img src="imgs/home/31.png" alt="">
-                        </figure> -->
-                        <div class="">
-                            
-                        </div>
-                        <h1>integrated marketing & event solutions</h1>
-                    </div>
-                    <div class="hero_layer hero_title_top">
-                        <!-- <figure class="">
-                            <img src="imgs/home/31.png" alt="">
-                        </figure> -->
-                        <div class="">
-                            
-                        </div>
-                        <h1>integrated marketing & event solutions</h1>
-                    </div>
-                    <div class="hero_layer hero_backround--2">
-                        <figure class="">
-                            <img src="imgs/home/33.png" alt="">
-                        </figure>
-                    </div>
-                    <figure class="hero_layer hero_backround--3">
-                        <img src="imgs/home/33.png" alt="">
-                    </figure>
-                    <div class="hero_layer card_personnel">
-                        <figure class="popup">
-                            <img src="imgs/home/2.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer card_projects">
-                        <figure class="popup">
-                            <img src="imgs/home/3.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer card_years_experience">
-                        <figure class="popup">
-                            <img src="imgs/home/4.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer img_b2event">
-                        <figure>
-                            <img src="imgs/home/6.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer decor_pattern">
-                        <figure>
-                            <img src="imgs/home/1.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer card_clients">
-                        <figure class="popup">
-                            <img src="imgs/home/5.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer person_bottom">
-                        <figure class="">
-                            <img src="imgs/home/ele-03.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="showcase">
-                        <div class="showcase_title">
-                            <div class="showcase_typical_customers">
-                                <div class="typical_customers_sliders">
-                                    <div class="typical_customers_slider">
-                                        <span class="typical_customers_ticker">
-                                            <a href="">TYPICAL CUSTOMERS</a>
+                <div class="home_wrapper">
 
-                                        </span>
+                    <section class="hero_layer hero_showreel">
+                        <video id="myVideo" autoplay playsinline preload="auto">
+                            <source src="videos/SHOWREEL.mp4" type="video/mp4">
+                        </video>
+                    </section>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const video = document.getElementById("myVideo");
+
+                            video.muted = false;
+                            video.autoplay = true;
+                            video.loop = false;
+
+                            video.addEventListener("ended", () => {
+                                video.autoplay = false;
+                                video.setAttribute("controls", "true");
+                            });
+
+                            video.play().catch(err => {
+                                video.muted = true;
+                                video.play();
+                            });
+                            unmuteTrigger.addEventListener("click", () => {
+        video.muted = false;
+        video.play();
+    });
+                        });
+                    </script>
+
+                    <section class="main_content" id="main_home_content">
+                        <div class="main_content_inner">
+                            <div class="about_intro" id="about">
+                                <div class="hero_layer hero_backround--2">
+                                    <figure class="">
+                                        <img src="imgs/Home/33.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="intro_text">
+                                    <h3 class="title">We are an event experience agency</h3>
+                                    <p>We partner with global and local brands and trusted talents for truly creative
+                                        content
+                                        solutions.
+                                        <br>Branding. Content. Design. Visuals. Marketing. Events.
+                                    </p>
+                                </div>
+                                <div class="showcase">
+                                    <div class="showcase_slider">
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
                                     </div>
+                                    <button class="btn_seemore">See more</button>
+                                    <div class="intro_text">
+                                        <h3 class="title">What we do</h3>
+                                        <p>We don't just organize events<br>we ignite emotions, own the spotlight, and
+                                            leave
+                                            your audience wide-eyed
+                                        </p>
+                                    </div>
+                                    <ul class="home_services_list">
+                                        <li class="ser_item item1">
+
+                                            <a href="services_detail.html?service=launch">EVENT LAUNCHES</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-03.png" alt=""></div>
+                                        </li>
+                                        <li class="ser_item item7"><a
+                                                href="services_detail.html?service=activation">BRAND
+                                                ACTIVATION</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-06.png" alt=""
+                                                    style="transform: scale(1.1);"></div>
+                                        </li>
+                                        <li class="ser_item item2">
+
+                                            <a href="services_detail.html?service=conference">CONFERENCES & SEMINARS</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-10.png" alt=""></div>
+                                        </li>
+                                        <li class="ser_item item3">
+
+                                            <a href="services_detail.html?service=mice">MICE SOLUTIONS</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-04.png" alt=""></div>
+                                        </li>
+
+
+                                        <li class="ser_item item6"><a href="services_detail.html?service=mega">MEGA
+                                                FESTIVALS</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-07.png" alt=""
+                                                    style="transform: scale(1.1);"></div>
+                                        </li>
+
+                                        <li class="ser_item item8"><a
+                                                href="services_detail.html?service=production">IN-HOUSE
+                                                PRODUCTION</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-05.png" alt=""></div>
+                                        </li>
+                                        <li class="ser_item item4">
+
+                                            <a href="services_detail.html?service=private">PRIVATE
+                                                EVENTS</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-08.png" alt=""></div>
+
+
+                                        </li>
+                                        <li class="ser_item item5"><a
+                                                href="services_detail.html?service=corporate">CORPORATE
+                                                EVENTS</a>
+                                            <div class="ser_item_img"><img src="imgs/Home/Web10-09.png" alt=""></div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="intro_text">
+                                        <h3 class="title">80% of big corp customers trust b2event service</h3>
+                                        <p>Being alongside our esteemed customers is the greatest pride of B2EVENT. Each
+                                            successful
+                                            milestone of our clients is a source of motivation for us to continually
+                                            innovate,
+                                            create, and reach even further.</p>
+
+                                    </div>
+
+
+                                    <div id="logo-container"></div>
+
+
+
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="showcase_slider">
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero_layer bg_city">
-                        <figure class="">
-                            <img src="imgs/home/22.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer contact_infor">
-                        <figure class="popup">
-                            <img src="imgs/home/ele-04.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer bulding">
-                        <figure class="">
-                            <img src="imgs/home/18.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer flowers-1">
-                        <figure class="popup">
-                            <img src="imgs/home/17.png" alt="">
-                        </figure>
-                    </div>
 
-                    <div class="hero_layer flowers-2">
-                        <figure class="popup">
-                            <img src="imgs/home/19.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer flowers-3">
-                        <figure class="popup">
-                            <img src="imgs/home/20.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="hero_layer flowers-4">
-                        <figure class="popup">
-                            <img src="imgs/home/21.png" alt="">
-                        </figure>
-                    </div>
-                    <div class="card_contact_us">
-                        <div class="hero_layer contact_us">
-                            <figure class="popup_shake">
-                                <img src="imgs/home/ele-05.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_phone">
-                            <figure class="popup_float-2">
-                                <img src="imgs/home/ele-08.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_mail">
-                            <figure class="popup_float-2">
-                                <img src="imgs/home/ele-07.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_zalo">
-                            <figure class="popup_float-2">
-                                <img src="imgs/home/ele-09.png" alt="">
-                            </figure>
-                        </div>
 
-                    </div>
-                    <div class="card_fl_b2event">
-                        <div class="hero_layer fl_b2event">
-                            <figure class="popup_shake">
-                                <img src="imgs/home/ele-06.png" alt="">
+                            <div class="hero_layer bg_city">
+                                <figure class="">
+                                    <img src="imgs/Home/Web10-01.png" alt="">
+                                </figure>
+                            </div>
+                            <figure class="hero_layer bg_contact_us">
+                                <img src="imgs/Home/Web10-02.png" alt="">
                             </figure>
-                        </div>
-                        <div class="hero_layer card_youtube">
-                            <figure class="popup_float-3">
-                                <img src="imgs/home/ele-12.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_fb">
-                            <figure class="popup_float-3">
-                                <img src="imgs/home/ele-13.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_ig">
-                            <figure class="popup_float-3">
-                                <img src="imgs/home/ele-10.png" alt="">
-                            </figure>
-                        </div>
-                        <div class="hero_layer card_linkedin">
-                            <figure class="popup_float-3">
-                                <img src="imgs/home/ele-11.png" alt="">
-                            </figure>
-                        </div>
-                    </div>
+                            <div class="hero_layer contact_infor">
+                                <figure class="popup">
+                                    <img src="imgs/Home/ele-04.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="hero_layer bulding">
+                                <figure class="">
+                                    <img src="imgs/Home/18.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="hero_layer flowers-1">
+                                <figure class="popup">
+                                    <img src="imgs/Home/17.png" alt="">
+                                </figure>
+                            </div>
 
-                </section>
+                            <div class="hero_layer flowers-2">
+                                <figure class="popup">
+                                    <img src="imgs/Home/19.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="hero_layer flowers-3">
+                                <figure class="popup">
+                                    <img src="imgs/Home/20.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="hero_layer flowers-4">
+                                <figure class="popup">
+                                    <img src="imgs/Home/21.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="card_contact_us">
+                                <div class="hero_layer contact_us">
+                                    <figure class="popup_shake">
+                                        <img src="imgs/Home/ele-05.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_phone">
+                                    <figure class="popup_float-2">
+                                        <img src="imgs/Home/ele-08.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_mail">
+                                    <figure class="popup_float-2">
+                                        <img src="imgs/Home/ele-07.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_zalo">
+                                    <figure class="popup_float-2">
+                                        <img src="imgs/Home/ele-09.png" alt="">
+                                    </figure>
+                                </div>
+
+                            </div>
+                            <div class="card_fl_b2event">
+                                <div class="hero_layer fl_b2event">
+                                    <figure class="popup_shake">
+                                        <img src="imgs/Home/ele-06.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_youtube">
+                                    <figure class="popup_float-3">
+                                        <img src="imgs/Home/ele-12.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_fb">
+                                    <figure class="popup_float-3">
+                                        <img src="imgs/Home/ele-13.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_ig">
+                                    <figure class="popup_float-3">
+                                        <img src="imgs/Home/ele-10.png" alt="">
+                                    </figure>
+                                </div>
+                                <div class="hero_layer card_linkedin">
+                                    <figure class="popup_float-3">
+                                        <img src="imgs/Home/ele-11.png" alt="">
+                                    </figure>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- GSAP -->
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+                    <script>
+                        gsap.registerPlugin(ScrollTrigger);
+
+                        // Giữ hero video đứng yên
+                        ScrollTrigger.create({
+                            trigger: ".hero_showreel",
+                            start: "top top",
+                            end: "bottom top",
+                            pin: true,
+                            pinSpacing: false // KHÔNG tạo khoảng trống
+                        });
+
+                        // Content trượt lên che video
+                        gsap.from(".content", {
+                            scrollTrigger: {
+                                trigger: ".content",
+                                start: "top bottom",
+                                end: "top top",
+                                scrub: true
+                            },
+                            y: "50vh"
+                        });
+
+                    </script>
+
+                </div>
             </div>
         </div>
     </main>
@@ -284,27 +385,34 @@
                                 Ho Chi Minh Head Office
                             </div>
                             <div class="footer_block_content">
-                                <p>75 Hoang Van Thu, 15 Ward, Phu Nhuan District</p>
+                                <p>75 Hoang Van Thu Street, Cau Kieu Ward, Ho Chi Minh City</p>
                                 <p>(028) 38 225 34781/782/783</p>
+                                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1594867674917!2d106.67551347355216!3d10.799094258778235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f8bdc6fb5e1%3A0x94761f2803103fb2!2sB2EVENT%20-%20Creative%20Agency!5e0!3m2!1sen!2sus!4v1764819269322!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                             </div>
                         </div>
                         <div class="footer_block">
                             <div class="footer_block_heading">
-                                Ha Noi Office
+                                CONTACT B2EVENT
                             </div>
                             <div class="footer_block_content">
-                                <p>579 Lac Long Quan, Tay Ho District</p>
-                                <p>(024) 37 585 3501</p>
+                                <p>Email: contact@b2event.vn</p>
+                                <p>Hotline/Zalo : 0907 561 170 - Kevin Dang</p>
+                                <p>Working Hours: 9:00 AM – 6:00 PM</p>
                             </div>
                         </div>
                         <div class="footer_block">
                             <div class="footer_block_heading">
-                                Hotline
+                                FOLLOW B2EVENT
                             </div>
                             <div class="footer_block_content">
-                                <p>0907 561 170 - Kevin Pham</p>
-                                <a
-                                    href="mailto:%63%6f%6e%74%61%63%74&#64;b%32%65%76%65%6e%74.%76%6e">contact@b2event.vn</a>
+                                <div class="footer_credits">
+                                    <a href="" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="" class="footer_creadits_link"><i class="fa-brands fa-tiktok"></i></a>
+                                    <a href="" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
+
+
+                                </div>
 
                             </div>
                         </div>
@@ -314,16 +422,87 @@
                     <div class="footer_copyright">
                         Copyright © 2023. All rights
                     </div>
-                    <div class="footer_credits">
+                    <!-- <div class="footer_credits">
                         <a href="" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
                         <a href="" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
                         <a href="" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    <script>
+        const logoCount = 35;
+        const rows = 3;
+        const container = document.getElementById("logo-container");
+
+        const logos = Array.from({ length: logoCount }, (_, i) => `imgs/Logo_cus/${i + 1}.png`);
+
+        const perRow = Math.ceil(logoCount / rows);
+        container.innerHTML = Array.from({ length: rows }, (_, rowIndex) => {
+            const group = logos.slice(rowIndex * perRow, rowIndex * perRow + perRow);
+            const cells = [...group, ...group].map(src => `<div class="gallery-cell"><img src="${src}"></div>`).join('');
+            return `<div class="row"><div class="gallery gallery-${rowIndex}">${cells}</div></div>`;
+        }).join('');
+
+        async function preloadImages() {
+            const imgs = container.querySelectorAll("img");
+            await Promise.all([...imgs].map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; })));
+        }
+
+        async function startSlider() {
+            await preloadImages();
+            container.classList.add("loaded");
+            await new Promise(requestAnimationFrame);
+
+            const speeds = [1, 1.5, 1];
+
+            for (let i = 0; i < rows; i++) {
+                const selector = `.gallery-${i}`;
+                const galleryEl = document.querySelector(selector);
+                const flkty = new Flickity(galleryEl, {
+                    wrapAround: true,
+                    pageDots: false,
+                    prevNextButtons: false,
+                    draggable: false,
+                    freeScroll: true,
+                    cellAlign: 'left',
+                    contain: true
+                });
+
+                let paused = false;
+
+
+                galleryEl.addEventListener('mouseenter', () => {
+                    paused = true;
+                    flkty.options.draggable = true;
+                    flkty.updateDraggable();
+                    galleryEl.style.cursor = 'grab';
+                });
+                galleryEl.addEventListener('mouseleave', () => {
+                    paused = false;
+                    flkty.options.draggable = false;
+                    flkty.updateDraggable();
+                    galleryEl.style.cursor = 'default';
+                });
+
+
+                (function animate() {
+                    if (!paused) {
+                        flkty.x -= speeds[i];
+                        flkty.positionSlider();
+                    }
+                    requestAnimationFrame(animate);
+                })();
+            }
+        }
+
+        startSlider();
+    </script>
+
     <script src="script.js"></script>
 </body>
 

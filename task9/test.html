@@ -2,106 +2,356 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dark Tech Orange Tabs</title>
+<title>Continuous Logo Slider</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
 <style>
-  body {
-    background-color: #111; /* dark tech background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
-    font-family: sans-serif;
-  }
-
-  .tab {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    background: #1a1a1a;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ff7a00;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 6px rgba(255, 122, 0, 0.3);
-    animation: neonPulse 3s infinite ease-in-out, floatTab 4s infinite ease-in-out;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden;
-  }
-
-  /* Active Tab */
-  .tab.active {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ff7a00, 0 0 40px #ff9f52;
-  }
-
-  /* Border Energy Surge */
-  .tab.active::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    border: 2px solid #ff7a00;
-    border-radius: 14px;
-    animation: borderSurge 0.4s forwards;
-  }
-
-  /* Shimmer Beam */
-  .tab.active::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+#logo-container {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#logo-container.loaded {
+    opacity: 1;
+}
+.row {
+    margin-bottom: 20px;
+}
+.gallery {
+    cursor: default;
+    will-change: transform;
+}
+.gallery-cell {
+    width: 120px;
+    margin-right: 25px;
+}
+.gallery-cell img {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,122,0,0) 0%, rgba(255,255,200,0.4) 50%, rgba(255,122,0,0) 100%);
-    animation: shimmer 0.5s forwards;
-  }
-
-  /* Neon Pulse */
-  @keyframes neonPulse {
-    0%, 100% { box-shadow: 0 0 6px rgba(255,122,0,0.3); }
-    50% { box-shadow: 0 0 12px rgba(255,122,0,0.6); }
-  }
-
-  /* Floating effect */
-  @keyframes floatTab {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-2px); }
-  }
-
-  /* Border surge effect */
-  @keyframes borderSurge {
-    0% { transform: scale(0.9); opacity: 0; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  /* Shimmer beam */
-  @keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-  }
+    display: block;
+}
 </style>
 </head>
 <body>
 
-<div class="tab active">Tab 1</div>
-<div class="tab">Tab 2</div>
-<div class="tab">Tab 3</div>
-<div class="tab">Tab 4</div>
+<div id="logo-container"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
 <script>
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
+const logoCount = 35;
+const rows = 3;
+const container = document.getElementById("logo-container");
+
+// Tạo mảng logo
+const logos = Array.from({length: logoCount}, (_, i) => `imgs/Logo_cus/${i+1}.png`);
+
+// Tạo HTML cho các row + clone 2 lần
+const perRow = Math.ceil(logoCount / rows);
+container.innerHTML = Array.from({length: rows}, (_, rowIndex) => {
+    const group = logos.slice(rowIndex*perRow, rowIndex*perRow+perRow);
+    const cells = [...group, ...group].map(src => `<div class="gallery-cell"><img src="${src}"></div>`).join('');
+    return `<div class="row"><div class="gallery gallery-${rowIndex}">${cells}</div></div>`;
+}).join('');
+
+// Preload tất cả ảnh
+async function preloadImages() {
+    const imgs = container.querySelectorAll("img");
+    await Promise.all([...imgs].map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; })));
+}
+
+// Khởi tạo Flickity + scroll liên tục
+async function startSlider() {
+    await preloadImages();
+    container.classList.add("loaded");
+    await new Promise(requestAnimationFrame); // ensure DOM updated
+
+    const speeds = [1, 1.5, 1]; // px/frame cho mỗi row
+
+    for (let i = 0; i < rows; i++) {
+        const selector = `.gallery-${i}`;
+        const galleryEl = document.querySelector(selector);
+        const flkty = new Flickity(galleryEl, {
+            wrapAround: true,
+            pageDots: false,
+            prevNextButtons: false,
+            draggable: false,
+            freeScroll: true,
+            cellAlign: 'left',
+            contain: true
+        });
+
+        let paused = false;
+
+        // Hover để pause và bật draggable
+        galleryEl.addEventListener('mouseenter', () => {
+            paused = true;
+            flkty.options.draggable = true;
+            flkty.updateDraggable();
+            galleryEl.style.cursor = 'grab';
+        });
+        galleryEl.addEventListener('mouseleave', () => {
+            paused = false;
+            flkty.options.draggable = false;
+            flkty.updateDraggable();
+            galleryEl.style.cursor = 'default';
+        });
+
+        // Auto-scroll pixel-by-pixel
+        (function animate() {
+            if (!paused) {
+                flkty.x -= speeds[i];
+                flkty.positionSlider();
+            }
+            requestAnimationFrame(animate);
+        })();
+    }
+}
+
+startSlider();
 </script>
+    <!-- <script>
+window.addEventListener("load", function () {
+
+    let logos = [
+        "imgs/Logo_cus/1.png", "imgs/Logo_cus/2.png", "imgs/Logo_cus/3.png", "imgs/Logo_cus/4.png",
+        "imgs/Logo_cus/5.png", "imgs/Logo_cus/6.png", "imgs/Logo_cus/7.png", "imgs/Logo_cus/8.png",
+        "imgs/Logo_cus/9.png", "imgs/Logo_cus/10.png", "imgs/Logo_cus/11.png", "imgs/Logo_cus/12.png",
+        "imgs/Logo_cus/13.png", "imgs/Logo_cus/14.png", "imgs/Logo_cus/15.png", "imgs/Logo_cus/16.png",
+        "imgs/Logo_cus/17.png", "imgs/Logo_cus/18.png", "imgs/Logo_cus/19.png", "imgs/Logo_cus/20.png",
+        "imgs/Logo_cus/21.png", "imgs/Logo_cus/22.png", "imgs/Logo_cus/23.png", "imgs/Logo_cus/24.png",
+        "imgs/Logo_cus/25.png", "imgs/Logo_cus/26.png", "imgs/Logo_cus/27.png", "imgs/Logo_cus/28.png",
+        "imgs/Logo_cus/29.png", "imgs/Logo_cus/30.png", "imgs/Logo_cus/31.png", "imgs/Logo_cus/32.png",
+        "imgs/Logo_cus/33.png", "imgs/Logo_cus/34.png", "imgs/Logo_cus/35.png"
+    ];
+
+    let rows = 3;
+    let perRow = Math.ceil(logos.length / rows);
+    let container = document.getElementById("logo-container");
+
+    // Render HTML
+    for (let i = 0; i < rows; i++) {
+        let start = i * perRow;
+        let group = logos.slice(start, start + perRow);
+
+        let html = `<div class="row"><div class="gallery gallery-${i}">`;
+        group.forEach(src => html += `<div class="gallery-cell"><img src="${src}"></div>`);
+        html += `</div></div>`;
+
+        container.innerHTML += html;
+    }
+
+    // Load tất cả ảnh rồi mới chạy Flickity
+    let allImages = document.querySelectorAll("#logo-container img");
+
+    imagesLoaded(allImages, function () {
+
+        let flickities = [];
+        let paused = [false, false, false];
+
+        // tốc độ từng hàng
+        let speeds = [1, 2, 1];
+
+
+
+        // số frame giảm tốc độ
+        let tick = [0, 0, 0];
+
+        for (let i = 0; i < rows; i++) {
+
+            let selector = `.gallery-${i}`;
+
+            let flkty = new Flickity(selector, {
+    wrapAround: true,
+    pageDots: false,
+    prevNextButtons: false,
+    freeScroll: false,
+    draggable: false,
+
+    // TẮT HOÀN TOÀN ANIMATION
+    selectedAttraction: 0.0001,
+    friction: 0.0001,
+    dragThreshold: 3,
+    cellAlign: "left"
+});
+
+
+            flickities[i] = flkty;
+
+            let row = document.querySelector(selector);
+
+            row.addEventListener("mouseenter", () => {
+                paused[i] = true;
+                flkty.options.draggable = true;
+                flkty.updateDraggable();
+                row.style.cursor = "grab";
+            });
+
+            row.addEventListener("mouseleave", () => {
+                paused[i] = false;
+                flkty.options.draggable = false;
+                flkty.updateDraggable();
+                row.style.cursor = "default";
+            });
+        }
+
+        // Auto scroll chuẩn – không bao giờ bị lòi logo ra sau
+      function animate() {
+    for (let i = 0; i < rows; i++) {
+        let flkty = flickities[i];
+        if (!flkty) continue;
+
+        if (!paused[i]) {
+
+            // Auto scroll trực tiếp – không easing → mượt tuyệt đối
+            flkty.x -= speeds[i];
+
+            // Reset modulo
+            let W = flkty.slideableWidth;
+            if (flkty.x <= -W) {
+                flkty.x += W;
+            }
+
+            flkty.positionSlider(); // update ngay
+        }
+    }
+    requestAnimationFrame(animate);
+}
+
+      
+
+        animate();
+
+    }); // end imagesLoaded
+
+});
+</script> -->
+
+    <!-- <script>
+window.addEventListener("load", async function () {
+
+    let logos = [
+        "imgs/Logo_cus/1.webp","imgs/Logo_cus/2.webp","imgs/Logo_cus/3.webp","imgs/Logo_cus/4.webp",
+        "imgs/Logo_cus/5.webp","imgs/Logo_cus/6.webp","imgs/Logo_cus/7.webp","imgs/Logo_cus/8.webp",
+        "imgs/Logo_cus/9.webp","imgs/Logo_cus/10.webp","imgs/Logo_cus/11.webp","imgs/Logo_cus/12.webp",
+        "imgs/Logo_cus/13.webp","imgs/Logo_cus/14.webp","imgs/Logo_cus/15.webp","imgs/Logo_cus/16.webp",
+        "imgs/Logo_cus/17.webp","imgs/Logo_cus/18.webp","imgs/Logo_cus/19.webp","imgs/Logo_cus/20.webp",
+        "imgs/Logo_cus/21.webp","imgs/Logo_cus/22.webp","imgs/Logo_cus/23.webp","imgs/Logo_cus/24.webp",
+        "imgs/Logo_cus/25.webp","imgs/Logo_cus/26.webp","imgs/Logo_cus/27.webp","imgs/Logo_cus/28.webp",
+        "imgs/Logo_cus/29.webp","imgs/Logo_cus/30.webp","imgs/Logo_cus/31.webp","imgs/Logo_cus/32.webp",
+        "imgs/Logo_cus/33.webp","imgs/Logo_cus/34.webp","imgs/Logo_cus/35.webp"
+    ];
+
+    let rows = 3;
+    let perRow = Math.ceil(logos.length / rows);
+    let container = document.getElementById("logo-container");
+
+    let fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < rows; i++) {
+        let rowDiv = document.createElement("div");
+        rowDiv.className = "row";
+
+        let gallery = document.createElement("div");
+        gallery.className = `gallery gallery-${i}`;
+
+        let start = i * perRow;
+        let group = logos.slice(start, start + perRow);
+
+        group.forEach(src => {
+            let cell = document.createElement("div");
+            cell.className = "gallery-cell";
+
+            let img = document.createElement("img");
+            img.src = src;
+            img.loading = "eager";
+            img.decoding = "async";
+
+            cell.appendChild(img);
+            gallery.appendChild(cell);
+        });
+
+        rowDiv.appendChild(gallery);
+        fragment.appendChild(rowDiv);
+    }
+
+    container.appendChild(fragment);
+
+    function preloadImages(imgs) {
+        let arr = [];
+        imgs.forEach(img => {
+            arr.push(new Promise(res => {
+                if (img.complete) res();
+                else {
+                    img.onload = res;
+                    img.onerror = res;
+                }
+            }));
+        });
+        return Promise.all(arr);
+    }
+
+    let allImages = document.querySelectorAll("#logo-container img");
+
+    // CHỜ TOÀN BỘ ẢNH LOAD XONG
+    await preloadImages(allImages);
+
+    // ---- ẢNH XONG → HIỆN CONTAINER ----
+    container.classList.add("loaded");
+
+    // ==== KHỞI TẠO FLICKITY SAU KHI LOAD XONG ====
+    let flickities = [];
+    let speeds = [0.6, 0.9, 0.7];
+    let paused = [false, false, false];
+
+    for (let i = 0; i < rows; i++) {
+        let selector = `.gallery-${i}`;
+
+        let flkty = new Flickity(selector, {
+            wrapAround: true,
+            pageDots: false,
+            prevNextButtons: false,
+            draggable: false,
+            freeScroll: true,
+            selectedAttraction: 0.01,
+            friction: 0.15
+        });
+
+        flickities[i] = flkty;
+
+        let rowEl = document.querySelector(selector);
+
+        rowEl.addEventListener("mouseenter", () => {
+            paused[i] = true;
+            flkty.options.draggable = true;
+            flkty.updateDraggable();
+        });
+
+        rowEl.addEventListener("mouseleave", () => {
+            paused[i] = false;
+            flkty.options.draggable = false;
+            flkty.updateDraggable();
+        });
+    }
+
+    // ==== CHỈ CHẠY ANIMATION KHI ẢNH ĐÃ LOAD ====
+    function animate() {
+        for (let i = 0; i < flickities.length; i++) {
+            let flkty = flickities[i];
+            if (flkty && !paused[i]) {
+                flkty.x -= speeds[i];
+                flkty.positionSlider();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+});
+</script> -->
+
 
 </body>
 </html>

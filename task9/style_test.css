@@ -1,44 +1,169 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+/* cultures/blog */
+.blog_container {
+    overflow: hidden;
+    display: grid;
+    /* max-width: 1200px; */
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    width: 100%;
+    /* min-height: 100vh; */
+    position: relative;
 }
 
-.head_universe {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #FF9A00; /* Background color */
+.background_headphone {
+    grid-column: 5/10;
+    grid-row: 1;
+    z-index: 4;
 }
 
-.head {
-  position: absolute;
-  z-index: 1;
+.blog_background {
+    grid-column: 1/-1;
+    transform: translateY(40%) rotateX(180deg);
+    grid-row: 2/3;
+    z-index: 3;
+    position: relative;
 }
 
-.logos-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centers the logo wrapper */
-  width: 300px; /* Controls the radius of the circle */
-  height: 300px; /* Controls the radius of the circle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+/* .blog_background::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, white 30%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+} */
+
+.background_flowers_human {
+    grid-column: 2/12;
+    grid-row: 3;
+    align-self: end;
+    z-index: 3;
+    transform: translate(0, 4%);
+    /* position: relative; */
+    /* padding-bottom: 100px; */
 }
 
-.logo {
-  position: absolute;
-  transition: transform 0.5s ease;
+.blog_hero {
+    grid-column: 1/-1;
+    grid-row: 1;
+    z-index: 4;
+    margin: 0 auto;
+    position: relative;
+    align-self: end;
+    bottom: 10%;
+    /* left: 50%;
+    transform: translateX(-50%); */
 }
 
-.logo img {
-  width: 50px; /* Adjust as needed */
-  height: auto;
+.blog_hero_title {
+    font-size: clamp(2rem, 12vw, 10rem);
+    font-weight: 900;
+}
+
+.blog_hero_title span {
+    color: var(--color4);
+}
+
+.blog_list_section {
+    position: relative;
+    grid-column: 1/-1;
+    grid-row: 2;
+    z-index: 4;
+    transform: translate(0, -5%);
+    /* margin: 0rem auto; */
+}
+
+.blog_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 90%;
+    margin: auto;
+    /* margin: 0rem auto; */
+}
+
+.blog_item {
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease;
+    height: auto;
+
+}
+
+.blog_item:hover {
+    transform: translateY(-5px);
+}
+
+.blog_img {
+    display: flex;
+    justify-content: center;
+
+}
+
+.blog_img img {
+    width: 100%;
+    aspect-ratio: 7/4;
+    object-fit: cover;
+    display: block;
+}
+
+.blog_content {
+    margin: 1rem auto;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.blog_title {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog_text {
+    color: #333;
+    font-weight: 400;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog_note {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.blog_list_section .pagination {
+    width: 100%;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+    top: 4%;
+}
+
+.pagination button {
+    padding: 8px 14px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.pagination button.active {
+    background: var(--color4);
+    color: #fff;
+}
+
+.pagination button:hover {
+    background: var(--color4);
+    color: white;
 }
 

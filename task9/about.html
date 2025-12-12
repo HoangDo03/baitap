@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <div class="menu_header">
             <div class="menu_header_wrapper">
@@ -25,7 +25,7 @@
                 <nav class="header_nav">
                     <ul>
                         <li class="menu_item "><a href="index.html">Home</a></li>
-                        <li class="menu_item active"><a href="about.html">About</a></li>
+                        <!-- <li class="menu_item active"><a href="about.html">About</a></li> -->
                         <li class="menu_item"><a href="services.html">Services</a></li>
                         <li class="menu_item has-sub">
                             <a href="#">Cultures</a>
@@ -69,82 +69,110 @@
         </nav>
 
     </div>
-    <main>
+    
         <main>
             <div class="about_page">
                 <div class="about_wrapper about_container">
                     <figure class="layer about_background--1">
-                        <img src="imgs/home/33.png" alt="">
+                        <img src="imgs/Home/33.png" alt="">
                     </figure>
                     <figure class="layer about_background--2">
-                        <img src="imgs/home/33.png" alt="">
+                        <img src="imgs/Home/33.png" alt="">
                     </figure>
                     <figure class="layer about_background--3">
-                        <img src="imgs/home/33.png" alt="">
+                        <img src="imgs/Home/33.png" alt="">
                     </figure>
                     <!-- <figure class="layer about_background--4">
                     <img src="imgs/home/33.png" alt="">
                 </figure> -->
                     <figure class="layer about_background--5">
-                        <img src="imgs/home/33.png" alt="">
+                        <img src="imgs/Home/33.png" alt="">
                     </figure>
                     <figure class="layer about_background--6">
-                        <img src="imgs/home/33.png" alt="">
+                        <img src="imgs/Home/33.png" alt="">
                     </figure>
                     <section class="hero">
                         <div class="about_intro">
                             <h3 class="title">We are an event experience agency</h3>
-                            <p>We partner with global and local brands and trusted talent for truly creaive content
-                                solutions.<br>Branding. Content. Design. Visuals. Marketing. Events.</p>
+                            <p>We partner with global and local brands and trusted talents for truly creative content
+                                solutions.
+                                <br>Branding. Content. Design. Visuals. Marketing. Events.
+                            </p>
                         </div>
-                    <figure class="layer showreel">
-                        <div class="mask-wrap">
-                            <video src="videos/showreel.mp4" autoplay loop muted playsinline preload="auto"></video>
-                        </div>
-                        <img src="imgs/About/book_1.png" class="frame">
-                    </figure>
+                        <figure class="layer showreel">
+                            <div class="mask-wrap">
+                                <video id="myVideo" src="videos/SHOWREEL.mp4" playsinline preload="auto"></video>
+                            </div>
+                            <img src="imgs/About/book_1.png" class="frame">
+                            <button id="playBtn" style="display:none;">▶</button>
+                        </figure>
+
+                        <script>
+                            const video = document.getElementById("myVideo");
+                            const playBtn = document.getElementById("playBtn");
+
+                            function tryPlayWithSound() {
+                                const clickEvent = new Event("click");
+                                document.body.dispatchEvent(clickEvent);
+                                video.play().catch(() => {
+                                    playBtn.style.display = "block";
+                                });
+                            }
+
+                            document.body.addEventListener("click", () => {
+                                video.play().catch(() => {
+                                    playBtn.style.display = "block";
+                                });
+                            }, { once: true });
+
+                            window.addEventListener("load", () => {
+                                tryPlayWithSound();
+                            });
+
+                            video.addEventListener("ended", () => {
+                                playBtn.style.display = "block";
+                            });
+
+                            playBtn.addEventListener("click", () => {
+                                video.currentTime = 0;
+                                video.play();
+                                playBtn.style.display = "none";
+                            });
+                        </script>
+
 
 
                     </section>
                     <section class="clients">
                         <div class="about_trust">
                             <h3 class="title">80% of big corp customers trust b2event service</h3>
-                            <p>Being alongside our esteemed customers is greatest pride of B2EVENT. Each successful
-                                milestone of
-                                our clients is a source of motivation for us to continually innovate, create, and reach
-                                even
-                                further.</p>
+                            <p>Being alongside our esteemed customers is the greatest pride of B2EVENT. Each successful
+                                milestone of our clients is a source of motivation for us to continually innovate,
+                                create, and reach even further.</p>
 
                         </div>
                         <div class="logo_customers" id="logo_customers">
                             <figure class="layer head_universe">
                                 <img src="imgs/About/3.png" alt="">
                             </figure>
-                            <!-- <div class="galaxy-container" id="galaxyContainer"></div> -->
-
+                            <div class="galaxy-container" id="galaxyContainer"></div>
+                            <div class="galaxy-dots" id="galaxyDots"></div>
                         </div>
                         <script>
+
+
                             document.addEventListener("DOMContentLoaded", () => {
                                 const galaxyContainer = document.getElementById('galaxyContainer');
                                 const logo_customers = document.getElementById('logo_customers');
 
-                                const logoUrls = [
-                               
-                                    'imgs/logo khách hàng/4.png',
-                                    'imgs/logo khách hàng/5.png',
-                                    'imgs/logo khách hàng/6.png',
-                                    'imgs/logo khách hàng/7.png',
-                                    'imgs/logo khách hàng/8.png',
-                                    'imgs/logo khách hàng/11.png',
-                                    'imgs/logo khách hàng/12.png',
-                                    'imgs/logo khách hàng/13.png',
-                                    'imgs/logo khách hàng/14.png',
-                                    'imgs/logo khách hàng/15.png',
-                                    'imgs/logo khách hàng/16.png',
-                                    'imgs/logo khách hàng/17.png',
-                                    'imgs/logo khách hàng/18.png',
-                                    'imgs/logo khách hàng/19.png',
-                                ];
+                                const logoUrls = [];
+                                for (let i = 1; i <= 35; i++) {
+                                    logoUrls.push(`imgs/Logo_cus/${i}.png`);
+                                }
+                                const isMobile = window.innerWidth < 576;
+
+                                const perSlide = isMobile ? 10 : 14;
+                                const totalSlides = Math.ceil(logoUrls.length / perSlide);
 
                                 function randomInt(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
                                 function getDistance(x1, y1, x2, y2) {
@@ -159,81 +187,128 @@
                                 const minSafeTopPercent = (minPaddingPx / containerH) * 100;
                                 const minSafeLeftPercent = (minPaddingPx / containerW) * 100;
 
-                                const isMobile = window.innerWidth < 768;
-                                const minSafePixelDist = isMobile ? 60 : 130;
-                                // Tăng số lần thử lên vì diện tích đặt logo bị thu hẹp
-                                const maxAttempts = 2500;
-
-                                const logoData = [];
-                                const placedPositions = [];
-
-                                logoUrls.forEach((url, index) => {
-                                    let top, left, collision;
-                                    let attempts = 0;
-
-                                    const isLeftSide = Math.random() < 0.5;
-
-                                    do {
-                                        collision = false;
-                                        attempts++;
-
-                                        
-                                        top = randomInt(minSafeTopPercent, maxSafeTopPercent);
-                                        if (isLeftSide) {
-                                            const maxLeftLimit = 20;
-                                            left = randomInt(1, maxLeftLimit);
-                                        } else {
-                                            const minRightLimit = 65;
-                                            const maxRightLimit = 85; 
-                                            left = randomInt(minRightLimit, maxRightLimit);
-                                        }
-
-                                        const currentTopPx = (top / 100) * containerH;
-                                        const currentLeftPx = (left / 100) * containerW;
-
-                                        for (const pos of placedPositions) {
-                                            const placedTopPx = (pos.top / 100) * containerH;
-                                            const placedLeftPx = (pos.left / 100) * containerW;
-                                            const pixelDistance = getDistance(currentLeftPx, currentTopPx, placedLeftPx, placedTopPx);
-
-                                            if (pixelDistance < minSafePixelDist) {
-                                                collision = true;
-                                                break;
-                                            }
-                                        }
-                                    } while (collision && attempts < maxAttempts);
-
                                 
-                                    placedPositions.push({ top, left });
-                                    logoData.push({
-                                        url: url,
-                                        top: top,
-                                        left: left,
-                                        scale: randomInt(85, 115) / 100
+                                const minSafePixelDist = isMobile ? 50 : 140;
+                              
+                                const maxAttempts = 7000;
+
+                                for (let s = 0; s < totalSlides; s++) {
+                                    const slide = document.createElement("div");
+                                    slide.className = "galaxy-slide";
+                                    if (s === 0) slide.classList.add("active");
+                                    const placedPositions = [];
+                                    const slideLogos = logoUrls.slice(s * perSlide, (s + 1) * perSlide);
+
+
+
+
+                                    slideLogos.forEach(url => {
+                                        let top, left, collision;
+                                        let attempts = 0;
+
+                                        const isLeftSide = Math.random() < 0.5;
+
+                                        do {
+                                            collision = false;
+                                            attempts++;
+
+
+                                            top = randomInt(minSafeTopPercent, maxSafeTopPercent);
+                                            if (isMobile) {
+                                                if (isLeftSide) {
+                                                    left = randomInt(-10, 10);
+                                                } else {
+                                                    left = randomInt(50, 65);
+                                                }
+                                            } else {
+                                                if (isLeftSide) {
+                                                    left = randomInt(1, 20);
+                                                } else {
+                                                    left = randomInt(65, 85);
+                                                }
+                                            }
+
+
+                                            const currentTopPx = (top / 100) * containerH;
+                                            const currentLeftPx = (left / 100) * containerW;
+
+                                            for (const pos of placedPositions) {
+                                                const placedTopPx = (pos.top / 100) * containerH;
+                                                const placedLeftPx = (pos.left / 100) * containerW;
+                                                const pixelDistance = getDistance(currentLeftPx, currentTopPx, placedLeftPx, placedTopPx);
+
+                                                if (pixelDistance < minSafePixelDist) {
+                                                    collision = true;
+                                                    break;
+                                                }
+                                            }
+                                        } while (collision && attempts < maxAttempts);
+
+
+                                        placedPositions.push({ top, left });
+
+
+                                       
+                                        const wrapper = document.createElement('div');
+                                        wrapper.className = 'logo-wrapper';
+                                        wrapper.style.top = `${top}%`;
+                                        wrapper.style.left = `${left}%`;
+                                        if (isMobile) {
+                                            wrapper.style.transform = `scale(${randomInt(60, 70) / 100})`;
+                                        } else {
+                                            wrapper.style.transform = `scale(${randomInt(85, 115) / 100})`;
+                                        }
+
+                                        const img = document.createElement('img');
+                                        img.src = url;
+                                        img.className = 'logo-item';
+
+                                        wrapper.appendChild(img);
+                                        slide.appendChild(wrapper);
                                     });
-                                });
+
+                                    galaxyContainer.appendChild(slide);
+                                }
+                                let current = 0;
+
+                                setInterval(() => {
+                                    const slides = document.querySelectorAll(".galaxy-slide");
+
+                                    slides[current].classList.remove("active");
+
+                                    current = (current + 1) % slides.length;
+
+                                    slides[current].classList.add("active");
+
+                                    animateGalaxySlide(slides[current]);
+
+                                }, 4000);
 
 
-                                logoData.sort((a, b) => a.left - b.left);
-                                const animationDuration = 8;
-                                logoData.forEach((data, index) => {
-                                    const wrapper = document.createElement('div');
-                                    wrapper.className = 'logo-wrapper';
-                                    wrapper.style.top = `${data.top}%`;
-                                    wrapper.style.left = `${data.left}%`;
-                                    wrapper.style.transform = `scale(${data.scale})`;
-
-                                    const img = document.createElement('img');
-                                    img.src = data.url;
-                                    img.className = 'logo-item';
-
-                                    const delayOffset = (index / (logoData.length - 1)) * animationDuration;
-                                    img.style.animationDelay = `-${delayOffset.toFixed(2)}s`;
-
-                                    wrapper.appendChild(img);
-                                    galaxyContainer.appendChild(wrapper);
-                                });
                             });
+                            function animateGalaxySlide(slide) {
+                                const logos = slide.querySelectorAll(".logo-wrapper img");
+
+                                logos.forEach(logo => {
+                                    logo.classList.remove("logo-fly-anim");
+                                    void logo.offsetWidth;
+                                    logo.classList.add("logo-fly-anim");
+                                });
+                            }
+                            let resizeTimeout;
+
+let lastMode = window.matchMedia("(max-width: 576px)").matches ? "mobile" : "desktop";
+
+window.addEventListener("resize", () => {
+    const nowMode = window.matchMedia("(max-width: 576px)").matches ? "mobile" : "desktop";
+
+    if (nowMode !== lastMode) {
+        location.reload();
+    }
+
+    lastMode = nowMode;
+});
+
                         </script>
                     </section>
                     <section class="creative">
@@ -334,11 +409,14 @@
                             <a href="" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
                             <a href="" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
                             <a href="" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="" class="footer_creadits_link"><i class="fa-brands fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+
         </footer>
 
         <script src="script.js"></script>
