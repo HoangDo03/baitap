@@ -12,36 +12,56 @@
 </head>
 
 <body>
-    <header>
-        <div class="menu_header">
-            <div class="menu_header_wrapper">
-                <div class="header_logo">
-                    <a href="index.html"><img src="imgs/logo.png" alt=""></a>
-                </div>
-                <nav class="header_nav">
-                    <ul>
-                        <li class="menu_item"><a href="index.html">Home</a></li>
-                        <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
-                        <li class="menu_item active"><a href="services.html">Services</a></li>
-                        <li class="menu_item has-sub">
-                            <a href="#">Cultures</a>
-
-                            <ul class="sub_menu">
-                                <li><a href="podcast.html">Podcast</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu_item"><a href="hiring.html">Hiring</a></li>
-                    </ul>
-                </nav>
-                <div class="btn_menu_mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
+        <header class="header">
+    <div class="header_wrapper">
+        <div class="header_logo">
+            <a href="index.html"><img src="imgs/logo.png" alt=""></a>
         </div>
 
-    </header>
-    <div class="mobile-menu">
+        <nav class="header_nav">
+            <ul>
+                <li class="menu_item"><a href="index.html">Home</a></li>
+                <li class="menu_item active"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <a href="#">Cultures</a>
+                    <ul class="sub_menu">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
+        <div class="btn_menu_mobile" id="btnMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+    <nav class="menu_mobile_nav" id="menu">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item active"><a href="index.html">Home</a></li>
+                
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <!-- <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label> -->
+                    <a href="#" class="submenu-toggle">
+                        Cultures
+                        <span class="arrow">▾</span>
+                    </a>
+                   
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
+</header>
+    <!-- <div class="mobile-menu" id="menuHidden">
         <div class="header-mobile-menu">
             <a href="#"></a>
             <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
@@ -49,12 +69,12 @@
         <nav class="menu_mobile_nav">
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Home</a></li>
-                <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
+               
                 <li class="menu_item"><a href="services.html">Services</a></li>
                 <li class="menu_item has-sub">
                     <input type="checkbox" id="drop1">
                     <label for="drop1">Cultures</label>
-                    <!-- <a href="javascript:void(0);">Cultures</a> -->
+                   
                     <ul class="sub_menu_mobile">
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -64,7 +84,7 @@
             </ul>
         </nav>
 
-    </div>
+    </div> -->
    
         <main>
             <div class="services_page">
@@ -112,54 +132,69 @@
                             <h3 class="services_quote">"Let’s create a launch moment that leads the market — not follows
                                 it."</h3>
                         </div>
-                        <div class="services_showcase">
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-                            <div class="showcase_item">
-                                <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="services_showcases">
-                            <div class="services_showcase">
-                                <div class="showcase_item">
-                                    <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                                </div>
-                                <div class="showcase_item">
-                                    <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                                </div>
-                                <div class="showcase_item">
-                                    <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                                </div>
-                                <div class="showcase_item">
-                                    <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                                </div>
-
-                            </div>
-                            <div class="services_showcases">
-                                <div class="services_showcase">
-                                    <div class="showcase_item">
-                                        <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                        <div class="showcase">
+                                    <div class="showcase_slider">
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
                                     </div>
-                                    <div class="showcase_item">
-                                        <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                        <div class="showcase">
+                                    <div class="showcase_slider">
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
                                     </div>
-                                    <div class="showcase_item">
-                                        <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                            <div class="showcase">
+                                    <div class="showcase_slider">
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
+                                        <div class="showcase_item">
+                                            <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
+                                        </div>
                                     </div>
-                                    <div class="showcase_item">
-                                        <img src="imgs/dai-nhac-hoi-Charm-Fantasea-2024.jpg" alt="">
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                 </div>
         </main>

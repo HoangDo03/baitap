@@ -12,36 +12,57 @@
 </head>
 
 <body>
-    <header>
-        <div class="menu_header">
-            <div class="menu_header_wrapper">
-                <div class="header_logo">
-                    <a href="index.html"><img src="imgs/logo.png" alt=""></a>
-                </div>
-                <nav class="header_nav">
-                    <ul>
-                        <li class="menu_item "><a href="index.html">Home</a></li>
-                        <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
-                        <li class="menu_item"><a href="services.html">Services</a></li>
-                        <li class="menu_item has-sub active">
-                            <a href="#">Cultures</a>
-
-                            <ul class="sub_menu">
-                                <li><a href="podcast.html">Podcast</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu_item"><a href="hiring.html">Hiring</a></li>
-                    </ul>
-                </nav>
-                <div class="btn_menu_mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+    <header class="header">
+        <div class="header_wrapper">
+            <div class="header_logo">
+                <a href="index.html"><img src="imgs/logo.png" alt=""></a>
             </div>
-        </div>
 
+            <nav class="header_nav">
+                <ul>
+                    <li class="menu_item"><a href="index.html">Home</a></li>
+                    <li class="menu_item "><a href="services.html">Services</a></li>
+                    <li class="menu_item has-sub active">
+                        <a href="#">Cultures</a>
+                        <ul class="sub_menu">
+                            <li><a href="podcast.html">Podcast</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+                </ul>
+            </nav>
+            <div class="btn_menu_mobile" id="btnMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+        <nav class="menu_mobile_nav" id="menu">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item active"><a href="index.html">Home</a></li>
+                
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <!-- <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label> -->
+                    <a href="#" class="submenu-toggle">
+                        Cultures
+                        <span class="arrow">▾</span>
+                    </a>
+                   
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
     </header>
-<div class="mobile-menu">
+
+    <!-- <div class="mobile-menu" id="menuHidden">
         <div class="header-mobile-menu">
             <a href="#"></a>
             <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
@@ -49,12 +70,10 @@
         <nav class="menu_mobile_nav">
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item"><a href="index.html">Home</a></li>
-                <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
                 <li class="menu_item"><a href="services.html">Services</a></li>
                 <li class="menu_item has-sub active">
                     <input type="checkbox" id="drop1">
                     <label for="drop1">Cultures</label>
-                    <!-- <a href="javascript:void(0);">Cultures</a> -->
                     <ul class="sub_menu_mobile">
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -64,8 +83,8 @@
             </ul>
         </nav>
 
-    </div>
-    <main>
+    </div> -->
+
     <main>
         <div class="blog_page">
             <div class="blog_container">
@@ -84,227 +103,227 @@
                 <section class="blog_list_section">
                     <div class="blog_list" id="blog_list">
                         <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
 
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
+                        </div>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog_item">
+                            <div class="blog_wrapper">
+                                <div class="blog_img">
+                                    <img src="imgs/Cultures/blog.avif" alt="Podcast image">
+                                </div>
+                                <div class="blog_content">
+                                    <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
+                                    <p class="blog_text">
+                                        Every episode is crafted with fresh voices, bold perspectives, and stories that
+                                        actually move people.
+                                    </p>
+                                    <p class="blog_note">We don't recycle. We reimagine.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-<div class="blog_item">
-                        <div class="blog_wrapper">
-                            <div class="blog_img">
-                                <img src="imgs/Cultures/blog.avif" alt="Podcast image">
-                            </div>
-                            <div class="blog_content">
-                                <h3 class="blog_title">EFFECTIVE MARKETING MODEL</h3>
-                                <p class="blog_text">
-                                    Every episode is crafted with fresh voices, bold perspectives, and stories that
-                                    actually move people.
-                                </p>
-                                <p class="blog_note">We don't recycle. We reimagine.</p>
-                            </div>
-                        </div>
+                    <div class="pagination" id="pagination">
+
                     </div>
-                    </div>
-                     <div class="pagination" id="pagination">
-    
-    </div>
                 </section>
-                
+
                 <script>
-                    function initResponsivePagination(selector = ".blog_item", 
-                                 container = "#blog_list",
-                                 paginationContainer = "#pagination") {
-    
-    const allItems = Array.from(document.querySelectorAll(selector));
-    const blogList = document.querySelector(container);
-    const pagination = document.querySelector(paginationContainer);
+                    function initResponsivePagination(selector = ".blog_item",
+                        container = "#blog_list",
+                        paginationContainer = "#pagination") {
 
-    if (!allItems.length || !blogList || !pagination) return;
+                        const allItems = Array.from(document.querySelectorAll(selector));
+                        const blogList = document.querySelector(container);
+                        const pagination = document.querySelector(paginationContainer);
 
-    function getItemsPerPage() {
-        if (window.innerWidth <= 576) return 3;
-        if (window.innerWidth <= 768) return 4;
-        if (window.innerWidth <= 1024) return 6;
-        return 9;
-    }
+                        if (!allItems.length || !blogList || !pagination) return;
 
-    let itemsPerPage = getItemsPerPage();
-    let currentPage = 1;
-    let totalPages = Math.ceil(allItems.length / itemsPerPage);
+                        function getItemsPerPage() {
+                            if (window.innerWidth <= 576) return 3;
+                            if (window.innerWidth <= 768) return 4;
+                            if (window.innerWidth <= 1024) return 6;
+                            return 9;
+                        }
 
-    function renderPage(page) {
-        blogList.innerHTML = "";
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        allItems.slice(start, end).forEach(item => blogList.appendChild(item));
-        updatePagination(page);
-    }
+                        let itemsPerPage = getItemsPerPage();
+                        let currentPage = 1;
+                        let totalPages = Math.ceil(allItems.length / itemsPerPage);
 
-    function updatePagination(activePage) {
-        pagination.innerHTML = "";
-        for (let i = 1; i <= totalPages; i++) {
-            const btn = document.createElement("button");
-            btn.textContent = i;
-            if (i === activePage) btn.classList.add("active");
-            btn.addEventListener("click", () => {
-                currentPage = i;
-                renderPage(currentPage);
-            });
-            pagination.appendChild(btn);
-        }
-    }
+                        function renderPage(page) {
+                            blogList.innerHTML = "";
+                            const start = (page - 1) * itemsPerPage;
+                            const end = start + itemsPerPage;
+                            allItems.slice(start, end).forEach(item => blogList.appendChild(item));
+                            updatePagination(page);
+                        }
 
-    window.addEventListener("resize", () => {
-        const newItemsPerPage = getItemsPerPage();
-        if (newItemsPerPage !== itemsPerPage) {
-            itemsPerPage = newItemsPerPage;
-            totalPages = Math.ceil(allItems.length / itemsPerPage);
-            currentPage = 1;
-            renderPage(currentPage);
-        }
-    });
+                        function updatePagination(activePage) {
+                            pagination.innerHTML = "";
+                            for (let i = 1; i <= totalPages; i++) {
+                                const btn = document.createElement("button");
+                                btn.textContent = i;
+                                if (i === activePage) btn.classList.add("active");
+                                btn.addEventListener("click", () => {
+                                    currentPage = i;
+                                    renderPage(currentPage);
+                                });
+                                pagination.appendChild(btn);
+                            }
+                        }
 
-    renderPage(currentPage);
-}
+                        window.addEventListener("resize", () => {
+                            const newItemsPerPage = getItemsPerPage();
+                            if (newItemsPerPage !== itemsPerPage) {
+                                itemsPerPage = newItemsPerPage;
+                                totalPages = Math.ceil(allItems.length / itemsPerPage);
+                                currentPage = 1;
+                                renderPage(currentPage);
+                            }
+                        });
 
-document.addEventListener("DOMContentLoaded", () => {
-    initResponsivePagination();
-});
+                        renderPage(currentPage);
+                    }
+
+                    document.addEventListener("DOMContentLoaded", () => {
+                        initResponsivePagination();
+                    });
 
                 </script>
             </div>
@@ -347,11 +366,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             </div>
                             <div class="footer_block_content">
                                 <div class="footer_credits">
-                        <a href="https://www.facebook.com/B2Event.Innovative" class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="https://www.youtube.com/@b2eventofficial773" class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://www.facebook.com/B2Event.Innovative"
+                                        class="footer_creadits_link"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="https://www.youtube.com/@b2eventofficial773"
+                                        class="footer_creadits_link"><i class="fa-brands fa-youtube"></i></a>
                                     <a href="" class="footer_creadits_link"><i class="fa-brands fa-tiktok"></i></a>
-                                    <a href="https://www.instagram.com/b2event.vn/" class="footer_creadits_link"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+                                    <a href="https://www.instagram.com/b2event.vn/" class="footer_creadits_link"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
 
                             </div>
                         </div>

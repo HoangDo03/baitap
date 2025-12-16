@@ -5,152 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamburger Menu Demo</title>
   <style>
-    /* Body cơ bản */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+  /* TOGGLE BUTTON */
+  *{
+    border: 1px solid red;
+  }
+.menu-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px; /* NÚT BÊN PHẢI */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #111;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    /* Hamburger button */
-    .btn_menu_mobile {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 20px;
-      height: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 1001; /* nổi trên menu */
-      border-radius: 50%;
-      padding: 0.5rem;
-      border: 4px solid #EF4136;
-    }
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    content: '';
+}
 
-    .btn_menu_mobile span {
-      display: block;
-      height: 4px;
-      width: 100%;
-      background-color: #F15A29;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
+.menu-toggle span::before { transform: translateY(-6px); }
+.menu-toggle span::after  { transform: translateY(6px); }
 
-    /* Khi active: thành X */
-    .btn_menu_mobile.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
+/* FULLSCREEN MENU */
+.fullscreen-menu {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    clip-path: circle(0px at calc(100% - 38px) 38px);
+    transition: clip-path 0.7s cubic-bezier(.4,0,.2,1);
+    z-index: 1000;
+}
 
-    .btn_menu_mobile.active span:nth-child(2) {
-      opacity: 0;
-    }
+.fullscreen-menu.active {
+    clip-path: circle(150% at calc(100% - 38px) 38px);
+}
 
-    .btn_menu_mobile.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
+/* MENU LIST */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-list > li {
+    margin: 12px 0;     /* CHỈ đặt ở đây */
+}
 
-    /* Menu mobile */
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 250px;
-      height: 100vh;
-      background-color: #f2f2f2;
-      padding: 50px 20px;
-      transition: left 0.3s ease;
-      z-index: 1000;
-    }
+.menu-list > li > a {
+    display: block;
+    line-height: 1.1;   /* ÉP đều */
+    padding: 0;
+}
 
-    .mobile-menu.open {
-      left: 0;
-    }
 
-    /* Menu items */
-    .mobile-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+/* MENU ITEM */
+.menu-list > li {
+    margin: 12px 0;
+    text-align: center;
+}
 
-    .mobile-menu ul li {
-      margin-bottom: 20px;
-    }
+.menu-list a {
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    .mobile-menu ul li a {
-      text-decoration: none;
-      color: #333;
-      font-size: 18px;
-      transition: color 0.2s;
-    }
+/* SUBMENU */
+.sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .45s ease, opacity .3s ease;
+}
 
-    .mobile-menu ul li a:hover {
-      color: #007bff;
-    }
+/* SUBMENU ITEM */
+.sub-menu li a {
+    font-size: 22px;
+    color: #aaa;
+    padding: 6px 0;
+    display: block;
+}
 
-    /* Overlay mờ phía sau menu */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s;
-      z-index: 900;
-    }
+/* ACTIVE */
+.menu-item-has-children.open .sub-menu {
+    max-height: 300px; /* đủ lớn */
+    opacity: 1;
+}
 
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
+/* ARROW */
+.arrow {
+    font-size: 18px;
+    transition: transform .3s ease;
+}
+
+.menu-item-has-children.open .arrow {
+    transform: rotate(180deg);
+}
+
+
 
   </style>
 </head>
 <body>
 
-  <!-- Hamburger button -->
-  <div class="btn_menu_mobile" id="btnMenu">
+  <div class="menu-toggle" id="menuToggle">
     <span></span>
-    <span></span>
-    <span></span>
-  </div>
+</div>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+<nav class="fullscreen-menu" id="menu">
+    <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+
+        <li class="menu-item-has-children">
+            <a href="#" class="submenu-toggle">
+                Services
+                <span class="arrow">▾</span>
+            </a>
+            <ul class="sub-menu">
+                <li><a href="#">Event Launch</a></li>
+                <li><a href="#">Brand Activation</a></li>
+                <li><a href="#">Conference</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
     </ul>
-  </div>
+</nav>
 
-  <!-- Overlay -->
-  <div class="overlay" id="overlay"></div>
 
-  <script>
-    const btnMenu = document.getElementById('btnMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
+<script>
+const toggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
 
-    btnMenu.addEventListener('click', () => {
-      btnMenu.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      overlay.classList.toggle('active');
+toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+/* SUBMENU */
+
+document.querySelectorAll('.submenu-toggle').forEach(toggle => {
+    toggle.addEventListener('click', e => {
+        e.preventDefault();
+
+        const parent = toggle.closest('.menu-item-has-children');
+
+        // đóng submenu khác
+        document.querySelectorAll('.menu-item-has-children').forEach(item => {
+            if (item !== parent) item.classList.remove('open');
+        });
+
+        parent.classList.toggle('open');
     });
+});
 
-    // Click overlay để đóng menu
-    overlay.addEventListener('click', () => {
-      btnMenu.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      overlay.classList.remove('active');
-    });
-  </script>
+
+</script>
+
 
 </body>
 </html>

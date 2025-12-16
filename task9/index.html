@@ -17,7 +17,18 @@
 </head>
 
 <body class="preload home">
+    <!-- <div class="menu-toggle" id="menuToggle">
+    <span></span>
+</div>
 
+<nav class="fullscreen-menu" id="menu">
+    <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
+</nav> -->
     <!-- <header>
         <div class="menu_header">
             <div class="menu_header_wrapper">
@@ -54,32 +65,26 @@
             <div class="home_header_logo">
                 <a href="index.html"><img src="imgs/logo.png" alt=""></a>
             </div>
-            <div class="home_btn_menu_mobile" id="homeBtnMenu">
+            <div class="home_btn_menu_mobile" id="btnMenu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
         </div>
-    </header>
-
-    <div class="overlay" id="overlay"></div>
-
-    <div class="mobile-menu" id="mobileMenu">
-
-        <div class="header-mobile-menu">
-            <a href="#"></a>
-            <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
-        </div>
-        <nav class="menu_mobile_nav">
+        <nav class="menu_mobile_nav" id="menu">
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Home</a></li>
-                <!-- <li class="menu_item"><a href="about.html">About</a></li> -->
+                
                 <li class="menu_item"><a href="services.html">Services</a></li>
                 <li class="menu_item has-sub">
-                    <input type="checkbox" id="drop1">
-                    <label for="drop1">Cultures</label>
-                    <!-- <a href="javascript:void(0);">Cultures</a> -->
+                    <!-- <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label> -->
+                    <a href="#" class="submenu-toggle">
+                        Cultures
+                        <span class="arrow">▾</span>
+                    </a>
+                   
                     <ul class="sub_menu_mobile">
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -88,14 +93,52 @@
                 <li class="menu_item"><a href="hiring.html">Hiring</a></li>
             </ul>
         </nav>
+    </header>
 
-    </div>
+    <!-- <nav class="menu_mobile_nav" id="menu">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item active"><a href="index.html">Home</a></li>
+                
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label>
+                   
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav> -->
+    <!-- <div class="mobile-menu" id="menuHidden">
 
-    <script>
+        <div class="header-mobile-menu">
+            <a href="#"></a>
+            <div class="btn_close"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <nav class="menu_mobile_nav" id="menu">
+            <ul id="menuNavItems" class="menu_nav_items">
+                <li class="menu_item active"><a href="index.html">Home</a></li>
+                
+                <li class="menu_item"><a href="services.html">Services</a></li>
+                <li class="menu_item has-sub">
+                    <input type="checkbox" id="drop1">
+                    <label for="drop1">Cultures</label>
+                   
+                    <ul class="sub_menu_mobile">
+                        <li><a href="podcast.html">Podcast</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="hiring.html">Hiring</a></li>
+            </ul>
+        </nav>
+        
 
+    </div> -->
 
-
-    </script>
     <main>
         <div class="home_page">
             <div class="">
@@ -332,7 +375,7 @@
                                 <div class="hero_layer card_linkedin">
                                     <figure class="popup_float-3">
                                         <img src="imgs/Home/ele-11.png" alt="">
-                                    </figure>
+                                    </fi'gure>
                                 </div>
 
                             </div>

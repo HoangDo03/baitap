@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Circular Reveal Menu Demo</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        height: 200vh;
+        background: #f5f5f5;
+    }
+
+    /* BUTTON */
+    .menu-toggle {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #111;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        left: 0;
+    }
+
+    .menu-toggle span::before {
+        top: -6px;
+    }
+
+    .menu-toggle span::after {
+        top: 6px;
+    }
+
+    /* FULLSCREEN MENU */
+    .fullscreen-menu {
+        position: fixed;
+        inset: 0;
+        background: #111;
+        clip-path: circle(0px at 100% 0);
+        transition: clip-path 0.6s ease-in-out;
+        z-index: 1000;
+    }
+
+    .fullscreen-menu.active {
+         clip-path: circle(150% at 100% 0);
+    }
+
+    /* MENU LIST */
+    .fullscreen-menu ul {
+        height: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .fullscreen-menu li {
+        color: #fff;
+        font-size: 32px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s ease-out;
+    }
+
+    .fullscreen-menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .fullscreen-menu.active li:nth-child(1) { transition-delay: .2s; }
+    .fullscreen-menu.active li:nth-child(2) { transition-delay: .3s; }
+    .fullscreen-menu.active li:nth-child(3) { transition-delay: .4s; }
+    .fullscreen-menu.active li:nth-child(4) { transition-delay: .5s; }
+</style>
+</head>
+
+<body>
+
+<div class="menu-toggle" id="menuToggle">
+    <span></span>
+</div>
+
+<nav class="fullscreen-menu" id="menu">
+    <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
+</nav>
+
+<script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
