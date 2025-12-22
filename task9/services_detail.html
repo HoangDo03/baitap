@@ -40,6 +40,23 @@
 
     </div>
     <nav class="menu_mobile_nav" id="menu">
+        <svg width="0" height="0">
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 22 -10" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+            </svg>
+
+
+            <div class="bg">
+                <div class="bg-circle circle-1"></div>
+                <div class="bg-circle circle-2"></div>
+            </div>
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Home</a></li>
                 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liquid Blob Demo</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0f3f33;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===== Gooey filter ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  filter: url(#gooey);
+  z-index: 0;
+}
+
+/* ===== Blob ===== */
+.bg-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #1b6a58;
+}
+
+/* Left → center */
+.circle-1 {
+  left: -260px;
+  top: -10%;
+  animation: moveRight 7s ease-in-out infinite alternate;
+}
+
+/* Right → center */
+.circle-2 {
+  right: -260px;
+  top: 45%;
+  animation: moveLeft 7s ease-in-out infinite alternate;
+}
+
+/* ===== Animations ===== */
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 110px));
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 110px));
+  }
+}
+
+
+/* ===== Text overlay (demo) ===== */
+.center-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 32px;
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0">
+  <filter id="gooey">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
+    <feColorMatrix
+      in="blur"
+      mode="matrix"
+      values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 22 -10"
+      result="goo"
+    />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+  </filter>
+</svg>
+
+
+<div class="bg">
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+</div>
+
+<div class="center-text">
+  Liquid Blob Demo
+</div>
+
+</body>
+</html>

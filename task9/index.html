@@ -73,9 +73,26 @@
 
         </div>
         <nav class="menu_mobile_nav" id="menu">
+            <svg width="0" height="0">
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 22 -10" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+            </svg>
+
+
+            <div class="bg">
+                <div class="bg-circle circle-1"></div>
+                <div class="bg-circle circle-2"></div>
+            </div>
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Home</a></li>
-                
+
                 <li class="menu_item"><a href="services.html">Services</a></li>
                 <li class="menu_item has-sub">
                     <!-- <input type="checkbox" id="drop1">
@@ -84,7 +101,7 @@
                         Cultures
                         <span class="arrow">▾</span>
                     </a>
-                   
+
                     <ul class="sub_menu_mobile">
                         <li><a href="podcast.html">Podcast</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -168,9 +185,9 @@
                                 video.play();
                             });
                             unmuteTrigger.addEventListener("click", () => {
-        video.muted = false;
-        video.play();
-    });
+                                video.muted = false;
+                                video.play();
+                            });
                         });
                     </script>
 
@@ -375,7 +392,7 @@
                                 <div class="hero_layer card_linkedin">
                                     <figure class="popup_float-3">
                                         <img src="imgs/Home/ele-11.png" alt="">
-                                    </fi'gure>
+                                        </fi'gure>
                                 </div>
 
                             </div>

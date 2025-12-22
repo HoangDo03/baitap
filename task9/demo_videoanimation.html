@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo video nhỏ dần khi scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 3000px; /* để có scroll */
+    }
+
+    .video-wrapper {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    video {
+      width: 600px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: width 0.15s linear;
+    }
+
+    .hint {
+      margin-top: 700px;
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-wrapper">
+    <video id="scrollVideo" autoplay muted loop playsinline>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="hint">⬇️ Kéo chuột xuống để video nhỏ lại</div>
+
+  <script>
+    const video = document.getElementById("scrollVideo");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      const maxWidth = 600;
+      const minWidth = 220;
+      const shrinkRange = 600;
+
+      const width = Math.max(
+        minWidth,
+        maxWidth - (scrollY / shrinkRange) * (maxWidth - minWidth)
+      );
+
+      video.style.width = width + "px";
+    });
+  </script>
+
+</body>
+</html>

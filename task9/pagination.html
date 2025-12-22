@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>No Jump Height Change</title>
+
+<style>
+/* 1️⃣ Giữ scrollbar ổn định */
+html {
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+/* 2️⃣ Layout cố định vùng nhìn */
+main {
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+.container {
+  width: 900px;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* 3️⃣ VÙNG AN TOÀN */
+.list {
+  min-height: 700px;        /* 🔑 giữ cảm giác ổn định */
+  transition: opacity .2s;  /* 🔑 đánh lạc hướng */
+}
+
+/* Item */
+.item {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  display: none;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button.active {
+  background: #ff6a00;
+  color: #fff;
+}
+
+/* Footer để thấy không bị kéo */
+footer {
+  margin-top: 80px;
+  padding: 40px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <h1 style="margin-bottom:40px">Demo: Height change nhưng không nhận ra</h1>
+
+    <div class="list" id="list">
+      <!-- 8 item -->
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+        <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+
+  </div>
+</main>
+
+<footer>Footer đứng yên – không bị giật</footer>
+
+<script>
+const items = document.querySelectorAll(".item");
+const list = document.getElementById("list");
+const pagination = document.getElementById("pagination");
+
+const perPage = 8;
+const totalPages = Math.ceil(items.length / perPage);
+
+function showPage(page) {
+  list.style.opacity = "0"; // đánh lạc hướng
+
+  setTimeout(() => {
+    items.forEach((item, i) => {
+      item.style.display =
+        i >= (page - 1) * perPage && i < page * perPage
+          ? "block"
+          : "none";
+    });
+
+    updatePagination(page);
+    list.style.opacity = "1";
+  }, 150);
+}
+
+function updatePagination(active) {
+  pagination.innerHTML = "";
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = "Page " + i;
+    if (i === active) btn.classList.add("active");
+    btn.onclick = () => showPage(i);
+    pagination.appendChild(btn);
+  }
+}
+
+showPage(1);
+</script>
+
+</body>
+</html>
