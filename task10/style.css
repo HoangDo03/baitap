@@ -1,93 +1,17 @@
-:root {
-    --font-h1-size: clamp(1rem, 4.6vw, 3.7rem);
-    --font-h2-size: clamp(0.75rem, 3vw, 2rem);
-    --font-h3-size: clamp(1.5rem, 3vw, 2rem);
-    --font-h4-size: clamp(1.25rem, 2vw, 1.5rem);
-    --font-h5-size: clamp(1rem, 1.5vw, 1.25rem);
-    --font-h6-size: 20px;
-    --font-body-l: 16px;
-    --font-body-m: 14px;
-    --font-body-s: 12px;
-    --font-btn-size: 14px;
-
-}
-
-@font-face {
-    font-family: 'NotoSansTaiViet';
-    src: url('Font/Vietnamese&Thaifont/NotoSansTaiViet-Regular.ttf') format('truetype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'TheMacallan';
-    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Italic.ttf') format('truetype');
-    font-style: italic;
-    font-display: swap;
-    font-weight: 400;
-}
-
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     
-
+    /* border: solid 1px white; */
 }
 
 main {
-    background-color: black;
+    background-color: #801F1D;
     font-family: 'TheMacallan',  serif;
     font-weight: 400;
     color: white;
-}
-
-h1 {
-    font-weight: 600;
-}
-
-h2 {
-    font-weight: 500;
 }
 
 img {
@@ -98,11 +22,13 @@ img {
 .hero-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(1, 1fr);
     width: 100%;
     /* min-height: 100vh; */
     height: auto;
     position: relative;
+    background: url(Images/Banner-background.png);
+    background-size: 100%;
+    background-position: top;
 }
 
 .hero-image-left {
@@ -157,45 +83,32 @@ img {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 1rem;
 }
 
 .logo {
     width: 30%;
-    margin: 0 auto 3% auto
-}
-
-.content {
-    padding-top: 5%;
-    margin: 0 auto 5% auto;
-    width: 100%;
-}
-
-.title,
-.subtitle {
-    text-transform: uppercase;
-    text-align: center;
     margin: 0 auto;
 }
 
-.title {
-    width: clamp(10%, 70%, 1000px);
-    font-size: var(--font-h1-size);
-    padding: 1rem 0;
+.content {
+    padding-top: 2%;
+    margin: 0 auto 5% auto;
+    width: 100%;
 }
-
-.hero .title {
-    width: clamp(10%, 100%, 1000px);
+.hero{
+        margin: 0 auto;
 }
-
-.subtitle {
-    width: clamp(10%, 90%, 700px);
-    font-size: var(--font-h2-size);
+.title{
+     width: clamp(10%, 100%, 1000px);
+     margin: 0 auto;
+}
+.main-container .title{
+ width: clamp(10%, 90%, 800px);
 }
 
 .text {
     font-size: clamp(0.2rem, 3.4vw, 24px);
-    width: clamp(10%, 90%, 850px);
+    width: clamp(10%, 90%, 800px);
     text-align: justify;
     margin: 2% auto 0 auto;
     line-height: 1.45;
@@ -206,7 +119,8 @@ img {
 }
 
 .hero .text {
-    width: clamp(10%, 100%, 900px);
+    width: clamp(10%, 95%, 900px);
+    margin: 0 auto;
 }
 
 .text span {
@@ -253,9 +167,6 @@ img {
     padding-top: 3%;
 }
 
-.img-3 {
-    padding-top: 3%;
-}
 
 @media (max-width:768px) {
     .flex-content {
@@ -322,7 +233,7 @@ img {
 
 .anim-text.animate {
   animation: textFade 1s ease-out forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 @keyframes imgReveal {
   from {
