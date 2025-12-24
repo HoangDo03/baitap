@@ -132,7 +132,6 @@ img {
     flex-direction: row;
     width: 80%;
     margin: 0 auto;
-    padding: 1rem 0;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -172,7 +171,6 @@ img {
     .flex-content {
         flex-direction: column;
         width: 100%;
-        padding-top: 1rem;
     }
 
     .text {
@@ -186,6 +184,9 @@ img {
     }
     .flex-content{
         gap: 1.2rem
+    }
+    .content{
+        margin: 0 auto;
     }
 }
 
