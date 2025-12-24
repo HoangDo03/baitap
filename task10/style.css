@@ -180,7 +180,7 @@ img {
 .title {
     width: clamp(10%, 70%, 1000px);
     font-size: var(--font-h1-size);
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 }
 
 .hero .title {
@@ -284,12 +284,10 @@ img {
   0% {
     opacity: 0;
     transform: translateY(24px);
-    letter-spacing: 0.25em;
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    letter-spacing: 0.08em;
   }
 }
 
