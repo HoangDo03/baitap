@@ -247,6 +247,7 @@ img {
 .main-container{
     background:url(Images/bg.jpg);
     background-size: cover;
+    background-position: bottom;
 }
 .main-container .logo {
     padding-top: 3%;
