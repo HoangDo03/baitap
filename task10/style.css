@@ -1,18 +1,17 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
     /* border: solid 1px white; */
 }
 
 main {
     background-color: #801F1D;
-    font-family: 'TheMacallan',  serif;
+    font-family: 'TheMacallan', serif;
     font-weight: 400;
     color: white;
-    
+
 }
 
 img {
@@ -25,7 +24,7 @@ img {
 .hero-container {
     display: grid;
     grid-template-columns: 2fr 6fr 2fr;
-    align-items: stretch; 
+    align-items: stretch;
     width: 100%;
     background: url(Images/Banner-background.png);
     background-size: cover;
@@ -59,7 +58,7 @@ img {
     grid-column: 1/-1;
     z-index: 2;
     /* transform: translate(0, 75%); */
-align-self: end;
+    align-self: end;
 }
 
 .hero-image-right {
@@ -79,6 +78,7 @@ align-self: end;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 3%;
 }
 
 .logo {
@@ -91,15 +91,18 @@ align-self: end;
     margin: 0 auto 5% auto;
     width: 100%;
 }
-.hero{
-        margin: 0 auto;
+
+.hero {
+    margin: 0 auto;
 }
-.title{
-     width: clamp(10%, 100%, 1000px);
-     margin: 0 auto;
+
+.title {
+    width: clamp(10%, 100%, 1000px);
+    margin: 0 auto;
 }
-.main-container .title{
- width: clamp(10%, 90%, 800px);
+
+.main-container .title {
+    width: clamp(10%, 90%, 800px);
 }
 
 .text {
@@ -153,11 +156,12 @@ align-self: end;
     width: clamp(10%, 100%, 1100px);
 }
 
-.main-container{
-    background:url(Images/bg.jpg);
+.main-container {
+    background: url(Images/bg.jpg);
     background-size: cover;
     background-position: bottom;
 }
+
 .main-container .logo {
     padding-top: 3%;
 }
@@ -178,10 +182,12 @@ align-self: end;
         margin: 3% auto 0 auto;
         width: clamp(10%, 90%, 1000px);
     }
-    .flex-content{
+
+    .flex-content {
         gap: 1.2rem
     }
-    .content{
+
+    .content {
         margin: 0 auto;
     }
 }
@@ -191,86 +197,103 @@ align-self: end;
 .anim-text,
 .anim-img,
 .anim-fade,
-.anim-stagger > * {
-  opacity: 0;
-}
-@keyframes titleReveal {
-  0% {
+.anim-stagger>* {
     opacity: 0;
-    transform: translateY(24px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+}
+
+@keyframes titleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .anim-title.animate {
-  animation: titleReveal 1.4s ease-out forwards;
+    animation: titleReveal 1.4s ease-out forwards;
 }
+
 @keyframes subtitleReveal {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .anim-subtitle.animate {
-  animation: subtitleReveal 1.2s ease-out forwards;
-  animation-delay: 0.15s;
+    animation: subtitleReveal 1.2s ease-out forwards;
+    animation-delay: 0.15s;
 }
+
 @keyframes textFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .anim-text.animate {
-  animation: textFade 1s ease-out forwards;
-  animation-delay: 0.3s;
+    animation: textFade 1s ease-out forwards;
+    animation-delay: 0.3s;
 }
+
 @keyframes imgReveal {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .anim-img.animate {
-  animation: imgReveal 1.6s ease-out forwards;
+    animation: imgReveal 1.6s ease-out forwards;
 }
+
 @keyframes fadeUpSmall {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.anim-stagger > *.animate {
-  animation: fadeUpSmall 1s ease-out forwards;
+.anim-stagger>*.animate {
+    animation: fadeUpSmall 1s ease-out forwards;
 }
 
-.anim-stagger > *:nth-child(1).animate { animation-delay: 0.15s; }
-.anim-stagger > *:nth-child(2).animate { animation-delay: 0.3s; }
+.anim-stagger>*:nth-child(1).animate {
+    animation-delay: 0.15s;
+}
+
+.anim-stagger>*:nth-child(2).animate {
+    animation-delay: 0.3s;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
+    * {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
-
-
