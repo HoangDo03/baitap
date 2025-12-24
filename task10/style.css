@@ -71,8 +71,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
-    color: white;
+    
 
 }
 
@@ -80,6 +79,7 @@ main {
     background-color: black;
     font-family: 'TheMacallan',  serif;
     font-weight: 400;
+    color: white;
 }
 
 h1 {
@@ -166,7 +166,8 @@ img {
 }
 
 .content {
-    margin: 5% auto 5% auto;
+    padding-top: 5%;
+    margin: 0 auto 5% auto;
     width: 100%;
 }
 
@@ -243,6 +244,10 @@ img {
     width: clamp(10%, 100%, 1100px);
 }
 
+.main-container{
+    background:url(Images/bg.jpg);
+    background-size: cover;
+}
 .main-container .logo {
     padding-top: 3%;
 }
