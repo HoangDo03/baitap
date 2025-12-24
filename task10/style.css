@@ -1,6 +1,6 @@
-:root{
-    --font-h1-size: clamp(2rem, 4.6vw, 3.7rem);
-    --font-h2-size: clamp(1.5rem, 3vw, 2rem);
+:root {
+    --font-h1-size: clamp(1rem, 4.6vw, 3.7rem);
+    --font-h2-size: clamp(0.75rem, 3vw, 2rem);
     --font-h3-size: clamp(1.5rem, 3vw, 2rem);
     --font-h4-size: clamp(1.25rem, 2vw, 1.5rem);
     --font-h5-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -11,36 +11,101 @@
     --font-btn-size: 14px;
 
 }
+
 @font-face {
-    font-family: 'Equip';
-    src: url('Font/TheMacallanFont\ TTF/') format('truetype');
-    font-weight: 200;
+    font-family: 'NotoSansTaiViet';
+    src: url('Font/Vietnamese&Thaifont/NotoSansTaiViet-Regular.ttf') format('truetype');
+    font-weight: 400;
 }
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TheMacallan';
+    src: url('Font/TheMacallanFontTTF/TheMacallanFont-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-display: swap;
+    font-weight: 400;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     /* border: 1px solid red; */
     color: white;
-    
+
 }
-main{
+
+main {
     background-color: black;
+    font-family: 'TheMacallan',  serif;
+    font-weight: 400;
 }
+
+h1 {
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 500;
+}
+
 img {
     width: 100%;
     height: auto;
 }
-.hero-container{    
+
+.hero-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(1, 1fr);
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     height: auto;
     position: relative;
 }
-.hero-image-left{
+
+.hero-image-left {
     grid-row: 1/-1;
     grid-column: 1/3;
     position: relative;
@@ -49,23 +114,27 @@ img {
     grid-template-rows: repeat(3, 1fr);
 
 }
-.bg-left-1{
+
+.bg-left-1 {
     grid-row: 1/-1;
     grid-column: 1/-1;
 }
-.bg-left-2{
+
+.bg-left-2 {
     grid-row: 1/-1;
     grid-column: 1/4;
-    transform: translate(-25%,0);
+    transform: translate(-25%, 0);
 }
-.bg-left-3{
+
+.bg-left-3 {
     grid-row: 1/-1;
     grid-column: 1/-1;
     z-index: 2;
-    transform: translate(0,72%);
+    transform: translate(0, 105%);
     position: absolute;
 }
-.hero-image-right{
+
+.hero-image-right {
     grid-row: 1;
     grid-column: 11/13;
     position: relative;
@@ -74,12 +143,14 @@ img {
     grid-template-rows: repeat(1, 1fr);
     overflow: hidden;
 }
-.bg-right-1{
+
+.bg-right-1 {
     grid-row: 1/-1;
     grid-column: 1/-1;
-    width: 160%;
+    width: 190%;
 }
-.hero{
+
+.hero {
     grid-row: 1;
     grid-column: 3/11;
     display: flex;
@@ -89,79 +160,205 @@ img {
     padding: 0 1rem;
 }
 
-.logo{
+.logo {
     width: 30%;
     margin: 0 auto 3% auto
 }
 
-.content{
-    margin: 4% auto 0 auto;
+.content {
+    margin: 5% auto 5% auto;
     width: 100%;
 }
-.title,.subtitle{
+
+.title,
+.subtitle {
     text-transform: uppercase;
     text-align: center;
     margin: 0 auto;
 }
-.title{
+
+.title {
     width: clamp(10%, 70%, 1000px);
     font-size: var(--font-h1-size);
     padding: 0.5rem 0;
 }
-.hero .title{
- width: clamp(10%, 100%, 1000px);
+
+.hero .title {
+    width: clamp(10%, 100%, 1000px);
 }
-.subtitle{
+
+.subtitle {
     width: clamp(10%, 90%, 700px);
     font-size: var(--font-h2-size);
 }
-.text{
+
+.text {
     font-size: clamp(0.2rem, 3.4vw, 24px);
     width: clamp(10%, 90%, 850px);
     text-align: justify;
     margin: 2% auto 0 auto;
-    line-height: 1.5;
-    font-weight: 500;
+    line-height: 1.45;
+    font-family: 'NotoSansTaiViet', sans-serif;
+    font-weight: 400;
+    font-style: normal;
     padding-bottom: 1%;
 }
-.hero .text{
-width: clamp(10%, 100%, 900px);
+
+.hero .text {
+    width: clamp(10%, 100%, 900px);
 }
-.text span{
+
+.text span {
     font-weight: 900;
 }
-.flex-content{
+
+.flex-content {
     display: flex;
     flex-direction: row;
     width: 80%;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding: 1rem 0;
     justify-content: center;
     text-align: center;
     align-items: center;
     gap: 2rem;
 }
-.flex-content>*{
+
+.flex-content>* {
     flex: 1;
     padding: 0;
     margin: 0;
+    font-size: clamp(0.2rem, 3vw, 20px);
+    line-height: 1.4;
 }
 
-.img-1{
+.img-1 {
     margin: 3% auto 0 auto;
     width: clamp(10%, 100%, 900px);
-   
-}
-.img-2{
-    margin: 3% auto 0 auto;
-     width: clamp(10%, 100%, 1100px);
-}
-.main-container .logo{
-    padding-top: 3%;
-}
-.img-3{
-padding-top: 3%;
+
 }
 
+.img-2 {
+    margin: 3% auto 0 auto;
+    width: clamp(10%, 100%, 1100px);
+}
+
+.main-container .logo {
+    padding-top: 3%;
+}
+
+.img-3 {
+    padding-top: 3%;
+}
+
+@media (max-width:768px) {
+    .flex-content {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .text {
+        margin-bottom: 5%;
+    }
+
+    .img-flex,
+    .img-1 {
+        margin: 3% auto 0 auto;
+        width: clamp(10%, 90%, 1000px);
+    }
+    .flex-content{
+        gap: 1.2rem
+    }
+}
+
+.anim-title,
+.anim-subtitle,
+.anim-text,
+.anim-img,
+.anim-fade,
+.anim-stagger > * {
+  opacity: 0;
+}
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    letter-spacing: 0.25em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.08em;
+  }
+}
+
+.anim-title.animate {
+  animation: titleReveal 1.4s ease-out forwards;
+}
+@keyframes subtitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-subtitle.animate {
+  animation: subtitleReveal 1.2s ease-out forwards;
+  animation-delay: 0.15s;
+}
+@keyframes textFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.anim-text.animate {
+  animation: textFade 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+@keyframes imgReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-img.animate {
+  animation: imgReveal 1.6s ease-out forwards;
+}
+@keyframes fadeUpSmall {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-stagger > *.animate {
+  animation: fadeUpSmall 1s ease-out forwards;
+}
+
+.anim-stagger > *:nth-child(1).animate { animation-delay: 0.15s; }
+.anim-stagger > *:nth-child(2).animate { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 
