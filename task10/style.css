@@ -131,7 +131,7 @@ img {
 
 
 .text {
-    font-size: clamp(0.2rem, 3.4vw, 26px);
+    font-size: clamp(0.3rem, 3.6vw, 27px);
     width: clamp(10%, 90%, 900px);
     text-align: justify;
     margin: 3% auto 0 auto;
@@ -197,6 +197,9 @@ img {
 
 
 @media (max-width:768px) {
+    .hero{
+        transform: translateX(-6%);
+    }
     .flex-content {
         flex-direction: column;
         width: 100%;
@@ -220,12 +223,11 @@ img {
     .content {
         margin: 0 auto;
     }
+
 }
 
 @media (max-width:576px) {
-    .hero{
-        transform: translateX(-6%);
-    }
+    
     .main-container .logo{
         padding: 5% 0 2% 0;
     }
