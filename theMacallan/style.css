@@ -104,16 +104,16 @@ img {
 }
 
 .title {
-    width: clamp(10%, 100%, 1000px);
+    width: clamp(10%, 100%, 1200px);
     margin: 0 auto;
 
 }
 
 .main-container .title-1 {
-    width: clamp(10%, 54%, 900px);
+    width: clamp(10%, 56%, 900px);
 }
 .main-container .title-2 {
-    width: clamp(10%, 64%, 1000px);
+    width: clamp(10%, 68%, 1000px);
 }
 
 
