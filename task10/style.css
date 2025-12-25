@@ -61,20 +61,20 @@ img {
 .bg-left-1 {
     grid-row: 1/-1;
     grid-column: 1/-1;
-    transform: translate(-35%, -4%) rotate(10deg);
+    
 }
 
 .bg-left-2 {
     grid-row: 1/-1;
     grid-column: 1/4;
-    transform: translate(-22%, 0);
+
 }
 
 .bg-left-3 {
     grid-row: 1/-1;
     grid-column: 1/-1;
     z-index: 2;
-    transform: translate(1%, 0);
+;
     align-self: end;
 }
 
@@ -123,16 +123,16 @@ img {
 }
 
 .main-container .title-1 {
-    width: clamp(10%, 55%, 800px);
+    width: clamp(10%, 54%, 900px);
 }
 .main-container .title-2 {
-    width: clamp(10%, 60%, 900px);
+    width: clamp(10%, 64%, 1000px);
 }
 
 
 .text {
     font-size: clamp(0.2rem, 3.4vw, 26px);
-    width: clamp(10%, 90%, 800px);
+    width: clamp(10%, 90%, 900px);
     text-align: justify;
     margin: 3% auto 0 auto;
     line-height: 1.25;
@@ -144,7 +144,7 @@ img {
 }
 
 .hero .text {
-    width: clamp(10%, 85%, 900px);
+    width: clamp(10%, 85%, 850px);
     margin: 0 auto;
     margin-bottom: 7%;
 }
@@ -224,7 +224,7 @@ img {
 
 @media (max-width:576px) {
     .hero{
-        transform: translateX(-5%);
+        transform: translateX(-6%);
     }
     .main-container .logo{
         padding: 5% 0 2% 0;
@@ -252,7 +252,18 @@ img {
     transform: translateY(40px);
     transition: transform 1s ease, opacity 1s ease;
 }
-.hero-container.hero-animate .hero-image-left figure,
+.hero-container.hero-animate .hero-image-left .bg-left-1{
+    opacity: 1;
+    transform: translate(-15%,-4%) rotate(5deg);
+}
+.hero-container.hero-animate .hero-image-left .bg-left-2{
+    opacity: 1;
+    transform: translateX(-22%);
+}
+.hero-container.hero-animate .hero-image-left .bg-left-3{
+    opacity: 1;
+        transform: translate(1%, 0)
+}
 .hero-container.hero-animate .hero-image-right figure {
     opacity: 1;
     transform: translateX(0);
