@@ -224,6 +224,9 @@ img {
         margin: 3% auto 0 auto;
         width: clamp(10%, 90%, 1000px);
     }
+    .title-2{
+        padding: 0.6rem 0;
+    }
 
     .content {
         margin: 0 auto;
