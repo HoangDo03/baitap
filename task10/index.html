@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task10</title>
+    <title>The Macallan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +17,8 @@
     </header>
     <main>
 
-        <section class="hero-container">
+        <div class="main">
+            <section class="hero-container">
 
             <div class="hero-image-left">
                 <figure class="bg-left-1">
@@ -31,8 +35,8 @@
                 <figure class="logo">
                     <img src="Images/logo.png" alt="">
                 </figure>
-                <figure class="title anim-title"><img src="Images/title1.png" alt=""></figure>
-                <p class="text anim-text">Trong lần hợp tác cùng nhà thiết kế đồ họa danh tiếng David Carson, The
+                <figure class="title anim-title-hero"><img src="Images/title1.png" alt=""></figure>
+                <p class="text anim-text-hero">Trong lần hợp tác cùng nhà thiết kế đồ họa danh tiếng David Carson, The
                     Macallan chính thức giới thiệu ngôn ngữ thị giác trong diện mạo mới của <span>Timeless
                         Collections</span>. Lần
                     làm mới này tập trung tinh chỉnh hệ thống nhận diện nhằm giúp câu chuyện về di sản, thùng gỗ sồi và
@@ -47,7 +51,7 @@
         </section>
         <section class="main-container">
 
-            <figure class="title anim-title"><img src="Images/title2.png" alt=""></figure>
+            <figure class="title title-1 anim-title"><img src="Images/title2.png" alt=""></figure>
 
             <div class="flex-content anim-stagger">
                 <figure class="img-flex">
@@ -86,8 +90,8 @@
             </figure>
 
 
-            <figure class="title anim-title"><img src="Images/title3.png" alt=""></figure>
-            <div class="content"></div>
+            <figure class="title title-2 anim-title"><img src="Images/title3.png" alt=""></figure>
+            <div class="content">
             <p class="text anim-text">Ở phiên bản hiện tại, Timeless Collections còn được thể hiện rõ qua hệ màu riêng
                 trên vỏ hộp
                 của từng bộ
@@ -141,6 +145,7 @@
             </figure>
         </section>
 
+        </div>
 
     </main>
 
@@ -150,23 +155,31 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("animate");
-                        } else {
-                            entry.target.classList.remove("animate");
-                        }
-                    });
-                },
-                { threshold: 0.2 }
-            );
+        const hero = document.querySelector(".hero-container");
+            if (hero) {
+                setTimeout(() => {
+                    hero.classList.add("hero-animate");
+                }, 200);
+            }
+            const initScrollAnimations = () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
 
-            document.querySelectorAll(
-                ".anim-title, .anim-subtitle, .anim-text, .anim-img, .anim-fade, .anim-stagger > *"
-            ).forEach((el) => observer.observe(el));
-        });
+        document.querySelectorAll(
+            ".anim-title, .anim-subtitle, .anim-text, .anim-img, .anim-fade, .anim-stagger > *"
+        ).forEach((el) => observer.observe(el));
+    };
+     setTimeout(initScrollAnimations, 2000);
+
+});
     </script>
 
 </body>
