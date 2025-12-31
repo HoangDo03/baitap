@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="home_header_wrapper">
+            <div class="home_header_logo">
+                <img src="imgs/logo.jpg" alt="">
+            </div>
+            <div></div>
+            <div class="home_header_menu" id="btnMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main">
+            <section class="hero">
+                <video id="myVideo" autoplay playsinline preload="auto">
+                    <source src="video/wooden-floor-baby-foot.mp4" type="video/mp4">
+                </video>
+                <p class="hero-caption">Bring out the beauty in floor.</p>
+            </section>
+            <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const video = document.getElementById("myVideo");
+
+                            video.muted = false;
+                            video.autoplay = true;
+                            video.loop = true;
+
+                            video.addEventListener("ended", () => {
+                                video.autoplay = true;
+                                // video.setAttribute("controls", "true");
+                            });
+
+                            video.play().catch(err => {
+                                video.muted = true;
+                                video.play();
+                            });
+                            unmuteTrigger.addEventListener("click", () => {
+                                video.muted = false;
+                                video.play();
+                            });
+                        });
+                    </script>
+            <section class="about-us">
+                <div class="bg_about-us">
+                    <div class="content">
+                        <h2 class="title">About Us</h2>
+                        <p class="text">
+                            Since our founding in 1919, a constant thread has woven Bona’s foundation. Our
+                            values—passion,
+                            performance, and pioneering—shape everything we do, from our products to our company culture
+                            to
+                            our responsible business practices. It’s how we operate our business and engage with the
+                            world.
+                        </p>
+                    </div>
+                    <div class="btn-about">
+                        <button>About Masion Source Vietnam</button>
+                        <button>About Bona</button>
+                    </div>
+                </div>
+            </section>
+            <section class="our-products">
+                <div class="content">
+                    <h2 class="title">Our Products</h2>
+                    <p class="text">
+                        Beautiful floors, every time. For 100 years Bona has innovated, engineered, pioneered and
+                        perfected an entire system to create floors that last a lifetime.
+                    </p>
+                </div>
+                <img src="imgs/2154d851c6ce03cfc559c84c88d6e557b61029f5.jpg" alt="">
+                <div class="op-categories">
+
+                    <span class="op-label">OUR PRODUCTS CATEGORIES</span>
+                    <ul>
+                        <li>1. Keo dán sàn gỗ <span>→</span></li>
+                        <li>2. Dầu lau cho sàn gỗ & nội thất <span>→</span></li>
+                        <li>3. Lớp phủ bảo vệ <span>→</span></li>
+                        <li>4. Máy móc thiết bị <span>→</span></li>
+                        <li>5. Dung dịch vệ sinh sàn gỗ <span>→</span></li>
+                        <li>6. Sàn gỗ tự nhiên <span>→</span></li>
+                    </ul>
+
+                </div>
+                <img src="imgs/2bc045d6aec22a9aaba08b9f02013e27469de05f.png" alt="">
+            </section>
+            <section class="our-projects">
+                <div class="our-projects-wrapper">
+                    <span class="op-label">our projects</span>
+                    <div>
+                        <div class="slides">
+                            <div class="slide"><img src="imgs/ed999110f2bc9f3bf942cea044b1ddf025f91508.jpg" alt="">
+                            </div>
+                            <span class="btn-next">→</span>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h2 class="title">HERITAGE VILLA NHÀ BÈ</h2>
+                        <div class="use-lists"><span>PRODUCTS USE</span>
+                            <ul>
+                                <li>Bona Titan</li>
+                                <li>Bona Traffic HD Anti-slip</li>
+                                <li>See more</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button>view project</button>
+
+            </section>
+            <section class="lastest-news">
+                <div class="content">
+                    <h2 class="title">
+                        Lastest news
+                    </h2>
+                    <p class="text">Stay up-to-date with the latest news from Maison Source VN. Read about our partnerships,
+                        projects, and innovative solutions for wood flooring.</p>
+                </div>
+                <div class="news">
+                    <div class="new">
+                        <div class="new-img"><img  src="imgs/c8eab8b466857c118b055589b44e44ece134262e.jpg" alt=""></div>
+                        <div class="new-content">
+                            <h4 class="new-title">Aurawood Design – Technology</h4>
+                            <p class="new-text">Aura Wood áp dụng công nghệ laser tiên tiến trong việc khảm sàn, kết hợp
+                                với các máy móc phức tạp và hiện đại được nhập khẩu trực tiếp từ Châu Âu, nhằm tạo ra
+                                những tấm sàn gỗ tinh xảo không giới hạn về độ phức tạp.</p>
+                            <a class="read-more" href="#">Đọc thêm</a>
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div  class="new-img"><img src="imgs/7683a843ec2371fbdd707b3452f9a2121c2f6dca.jpg" alt=""></div>
+                        <div class="new-content">
+                            <h4 class="new-title">Aurawood Design – Technology</h4>
+                            <p class="new-text">Aura Wood áp dụng công nghệ laser tiên tiến trong việc khảm sàn, kết hợp
+                                với các máy móc phức tạp và hiện đại được nhập khẩu trực tiếp từ Châu Âu, nhằm tạo ra
+                                những tấm sàn gỗ tinh xảo không giới hạn về độ phức tạp.</p>
+                            <a class="read-more" href="#">Đọc thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footer-menu">
+            <ul>
+                <li>Giới thiệu</li>
+                <li>Sản phẩm</li>
+                <li>Dịch vụ</li>
+                <li>Dự án</li>
+                <li>Tin tức</li>
+                <li>Liên hệ</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="footer-brand">
+            <h2>ms</h2>
+            <h5>© Maison Source Vietnam</h5>
+        </div>
+        <div class="footer-bg">
+            <img src="imgs/bg-decor.png" alt="">
+        </div>
+    </footer>
+</body>
