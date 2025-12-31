@@ -437,11 +437,14 @@ section{
     justify-content: left;
     text-align: center;
     padding: 2rem 0;
+
     /* border-bottom: 1px solid white; */
 
 }
 .footer-menu ul li{
     padding: 0.3rem 2rem;
+    font-weight: 500;
+    font-size: clamp(0.5rem,1.5vw,2rem);
 }
 hr{
     width: 95%;
