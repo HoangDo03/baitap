@@ -69,6 +69,7 @@ button{
     text-transform: uppercase;
     font-weight: 500;
     color: var(--color6);
+    cursor: pointer;
 }
 button:after{
     content: " →";
@@ -176,7 +177,7 @@ section{
 
         background-size:
             cover,
-            280px 220px; 
+            260px 200px; 
 
         background-position:
             left center,
@@ -401,6 +402,7 @@ section{
     font-family: 'Lora',sans-serif;
     font-weight: 600;
     color: var(--color1);
+    font-size: clamp(0.6rem,1.8vw,2rem);
 }
 .new-text{
     font-weight: 300;
@@ -409,10 +411,12 @@ section{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
     overflow: hidden;
+    font-size: clamp(0.5rem,1.6vw,1.7rem);
 }
 .read-more{
     font-weight: 500;
     color: var(--color6);
+    font-size: clamp(0.5rem,1.6vw,1.7rem);
 }
 
 
@@ -472,7 +476,7 @@ hr{
         padding: 0.5rem 0;
     }
     .op-categories li{
-        padding: 0.2rem 2rem;
+        padding: 0.2rem 1.3rem;
     }
     .our-projects-wrapper .content{
         flex-direction: column;
@@ -480,7 +484,23 @@ hr{
     .use-lists ul li{
         margin: 0 0.5rem;
     }
+    .lastest-news{
+        padding: 3rem 1rem;
+    }
+    .news{
+        padding: 2rem 1rem;
+    }
+    .new-text{
+        line-height: 20px;
+        height: 45px;
+    }
+    .footer-menu ul li{
+    padding: 0.3rem 1rem;
+}
+    
 }
 @media (max-width:576px) {
-    
+    .news{
+        grid-template-columns: 1fr;
+    }
 }
