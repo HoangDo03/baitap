@@ -50,6 +50,11 @@
     padding: 0;
     /* border: 1px solid red; */
 }
+body{
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
 #main{
     background: white;
     justify-content: center;
@@ -112,6 +117,7 @@ img, video{
     align-items: end;
     float: left;
     transform: translateX(-2%);
+    cursor: pointer;
 }
 .home_header_menu span{
     display: block;
@@ -120,6 +126,30 @@ img, video{
     background-color: var(--color1);
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+.home_header_menu.active{
+    border-color: white;
+}
+.home_header_menu.active span:nth-child(1){
+    transform: rotate(45deg) translate(5px,5px);
+    background-color: white;
+}
+.home_header_menu.active span:nth-child(2){
+    display: none;
+}
+.home_header_menu.active span:nth-child(3){
+    transform: rotate(-45deg) translate(5px,-6px);
+    background-color: white;
+}
+
+.menu_mobile_nav{
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left: 0;
+    background: var(--color3);
+    position: absolute;
+    z-index: 10000;
 }
 
 /* home page */
@@ -148,49 +178,55 @@ section{
     bottom: 10%;
     right: 10%;
     width: 25%;
-    font-size: clamp(1.5rem, 4vw, 7rem);
+    font-size: clamp(2.3rem, 4vw, 7rem);
     color: white;
     font-family: 'Lora',sans-serif;
     font-weight: 500;
 }
 .about-us{
     background-color: var(--color6);
-    height: 100vh;
+    height: fit-content;
 }
-.bg_about-us{
-    
+.bg_about-us {
+
     min-height: 100vh;
+
     background-image:
-            linear-gradient(
-                90deg,
-                #0b1f1b 0%,
-                rgba(11,31,27,0.95) 55%,
-                rgba(11,31,27,0.7) 60%,
-                rgba(11,31,27,0.3) 70%,
-                rgba(11,31,27,0) 85%
-            ),
-            url("imgs/bg-decor.png");
+        radial-gradient(circle at 85% 5%,
+            rgba(6, 255, 189, 0.368),
+            transparent 30%),
+        linear-gradient(90deg, var(--color6) 0%, rgba(11, 31, 27, 0.868) 100%),
+        url("imgs/bg-decor.png");
 
-        background-repeat:
-            no-repeat,
-            repeat;
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        repeat;
 
-        background-size:
-            cover,
-            260px 200px; 
+    background-size:
+        cover,
+        cover,
+        260px 200px;
 
-        background-position:
-            left center,
-            top left;
+    background-position:
+        left center,
+        left center,
+        top left;
 }
 
 .content{
     color: white;
-    position: absolute;
+    /* position: absolute;
     left: 5%;
-    top: 10%;
-    width: 35%;
+    top: 10%; */
+    /* padding: 5rem 3rem; */
+    width: 50%;
     z-index: 3;
+}
+.about-us .content{
+    /* width: 50%; */
+    padding: 3rem;
+    background: var(--color6);
 }
 .title{
     font-size: clamp(1rem, 3vw, 5rem);
@@ -234,7 +270,7 @@ section{
 .our-products .content{
     position: relative;
     width: 70%;
-    left: 2%;
+    /* left: 2%; */
     float: left;
     color: var(--color6);
 }
@@ -249,7 +285,7 @@ section{
     padding: 0.3rem 0.5rem;
     position: absolute;
     text-transform: uppercase;
-    font-size: clamp(0.5rem,1.4vw,3rem);
+    font-size: clamp(0.7rem,1.4vw,3rem);
     font-weight: 600;
 }
 .op-categories ul{
@@ -346,14 +382,14 @@ section{
 }
 .use-lists span{
     font-weight: 600;
-    font-size: clamp(0.8rem,1.3vw,1.8rem);
+    font-size: clamp(1rem,1.3vw,1.8rem);
 }
 .use-lists ul li{
     margin:0 1rem ;
     padding: 0.5rem;
     text-decoration: underline;
     font-weight: 300;
-    font-size: clamp(0.7rem,1.2vw,1.5rem);
+    font-size: clamp(0.8rem,1.2vw,1.5rem);
 }
 .lastest-news{
     /* height: 100vh; */
@@ -386,11 +422,15 @@ section{
 }
 .new-img{
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 .new-img img{
-    aspect-ratio: 4/5;
-    scale: 1.05;
+    aspect-ratio: 3/5;
+    scale: 1.1;
     object-fit: contain;
+    
 }
 .new-content{
     margin: auto;
@@ -402,7 +442,7 @@ section{
     font-family: 'Lora',sans-serif;
     font-weight: 600;
     color: var(--color1);
-    font-size: clamp(0.6rem,1.8vw,2rem);
+    font-size: clamp(1rem,2.3vw,2.6rem);
 }
 .new-text{
     font-weight: 300;
@@ -411,12 +451,13 @@ section{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
     overflow: hidden;
-    font-size: clamp(0.5rem,1.6vw,1.7rem);
+    font-size: clamp(0.5rem,1.6vw,1.9rem);
+
 }
 .read-more{
     font-weight: 500;
     color: var(--color6);
-    font-size: clamp(0.5rem,1.6vw,1.7rem);
+    font-size: clamp(0.5rem,1.6vw,1.9rem);
 }
 
 
@@ -444,7 +485,7 @@ section{
 .footer-menu ul li{
     padding: 0.3rem 2rem;
     font-weight: 500;
-    font-size: clamp(0.5rem,1.5vw,2rem);
+    font-size: clamp(1rem,1.5vw,2rem);
 }
 hr{
     width: 95%;
@@ -484,6 +525,9 @@ hr{
     .our-projects-wrapper .content{
         flex-direction: column;
     }
+    .our-products{
+        padding: 4rem 2rem;
+    }
     .use-lists ul li{
         margin: 0 0.5rem;
     }
@@ -503,7 +547,74 @@ hr{
     
 }
 @media (max-width:576px) {
+    .hero-caption{
+        width: 45%;
+    }
     .news{
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
+    .new{
+        grid-template-columns: 1fr;
+        padding: 0.7rem 0.5rem;
+
+    }
+    .new-img{
+        margin: auto;
+    }
+    .new-img img{
+width: 240px;
+height: 240px;
+
+object-fit: cover;
+    }
+
+    .content{
+        width: 94%;
+       
+    }
+    .about-us{
+        height: fit-content;
+    }
+    .bg_about-us{
+        height: fit-content;
+    }
+    .about-us .content{
+        width:100%;
+        padding: 2rem;
+    }
+    /* .bg_about-us{
+        min-height: 50vh;
+    } */
+     .title{
+        font-size: clamp(1rem, 5.7vw, 7.5rem);
+     }
+     .text{
+        font-size: clamp(1rem, 3.6vw, 6rem);
+        line-height: clamp(10px,28px,35px);
+     }
+     button{
+        font-size: clamp(0.5rem,2.5vw,4rem);
+     }
+     .btn-about{
+        right: 0;
+     }
+    
+     .new-title{
+        font-size: clamp(1.2rem,2vw,2.5rem);
+     }
+     .new-text{
+        height:45px;
+        padding-bottom: 0.5rem;
+        font-size: clamp(0.9rem,1.5vw,1.9rem);
+     }
+     .read-more{
+        margin-top: 1rem;
+        font-size: clamp(0.9rem,1.5vw,1.9rem);
+     }
+     .footer-menu ul,
+     .footer-brand{
+        flex-direction: column;
+     }
+
 }
