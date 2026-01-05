@@ -21,9 +21,7 @@
                 <span></span>
             </div>
         </div>
-        
-    </header>
-     <!-- <nav class="menu_mobile_nav" id="menu">
+        <nav class="menu_mobile_nav" id="menu">
 
             <ul id="menuNavItems" class="menu_nav_items">
                 <li class="menu_item active"><a href="index.html">Giới thiệu</a></li>
@@ -33,7 +31,21 @@
                 <li class="menu_item"><a href="">Tin tức</a></li>
                 <li class="menu_item"><a href="">Liên hệ</a></li>
             </ul>
-        </nav>  -->
+        </nav> 
+    </header>
+     <script>
+        window.addEventListener("load", () => {
+  document.body.classList.remove("preload");
+});
+const toggle = document.getElementById("btnMenu");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+  toggle.classList.toggle("active");
+  
+});
+     </script>
     <main>
         <div id="main">
             <section class="hero">
@@ -154,10 +166,8 @@
                     <div class="new">
                         <div  class="new-img"><img src="imgs/7683a843ec2371fbdd707b3452f9a2121c2f6dca.jpg" alt=""></div>
                         <div class="new-content">
-                            <h4 class="new-title">Aurawood Design – Technology</h4>
-                            <p class="new-text">Aura Wood áp dụng công nghệ laser tiên tiến trong việc khảm sàn, kết hợp
-                                với các máy móc phức tạp và hiện đại được nhập khẩu trực tiếp từ Châu Âu, nhằm tạo ra
-                                những tấm sàn gỗ tinh xảo không giới hạn về độ phức tạp.</p>
+                            <h4 class="new-title">Chủ nhà ngỡ ngàng trước màn cú hóa thành công của căn chung cũ!</h4>
+                            <p class="new-text">Giấu bố sửa nhà, mẹ con bác Trúc Lâm quyết định dành cho bác Lê Bảo một bất ngờ thật lớn khi biến hoá </p>
                             <a class="read-more" href="#">Đọc thêm</a>
                         </div>
                     </div>
@@ -169,12 +179,12 @@
     <footer id="footer">
         <div class="footer-menu">
             <ul>
-                <li>Giới thiệu</li>
-                <li>Sản phẩm</li>
-                <li>Dịch vụ</li>
-                <li>Dự án</li>
-                <li>Tin tức</li>
-                <li>Liên hệ</li>
+                <li class="menu_item active"><a href="index.html">Giới thiệu</a></li>
+                <li class="menu_item"><a href="">Sản phẩm</a></li>
+                <li class="menu_item"><a href="">Dịch vụ</a></li>
+                <li class="menu_item"><a href="">Dự án</a></li>
+                <li class="menu_item"><a href="">Tin tức</a></li>
+                <li class="menu_item"><a href="">Liên hệ</a></li>
             </ul>
         </div>
         <hr>
