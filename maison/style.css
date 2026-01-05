@@ -769,6 +769,7 @@ hr {
     }
 
     .our-products {
+        padding: 2rem 1rem;
         grid-template-columns: 1fr;
     }
     .our-products .content{
@@ -792,6 +793,12 @@ hr {
 
     .btn-about {
         right: 0;
+    }
+    .lastest-news{
+        padding: 2rem 1rem;
+    }
+    .news{
+        padding: 2rem 0;
     }
 
     .new-title {
