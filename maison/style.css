@@ -618,7 +618,13 @@ section {
 
 #footer {
     width: 100%;
-    background: var(--color6);
+    background: linear-gradient(
+        90deg,
+        #0e1f19 0%,
+        #132b22 60%,
+        #1f4b3a 80%,
+        #2e6b55 100%
+    );
     color: white;
     padding: 1rem 0 2rem 0;
     position: relative;
