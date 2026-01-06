@@ -31,21 +31,21 @@
                 <li class="menu_item"><a href="">Tin tức</a></li>
                 <li class="menu_item"><a href="">Liên hệ</a></li>
             </ul>
-        </nav> 
+        </nav>
     </header>
-     <script>
+    <script>
         window.addEventListener("load", () => {
-  document.body.classList.remove("preload");
-});
-const toggle = document.getElementById("btnMenu");
-const menu = document.getElementById("menu");
+            document.body.classList.remove("preload");
+        });
+        const toggle = document.getElementById("btnMenu");
+        const menu = document.getElementById("menu");
 
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  toggle.classList.toggle("active");
-  
-});
-     </script>
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+
+        });
+    </script>
     <main>
         <div id="main">
             <section class="hero">
@@ -55,28 +55,28 @@ toggle.addEventListener("click", () => {
                 <p class="hero-caption">Bring out the beauty in floor.</p>
             </section>
             <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            const video = document.getElementById("myVideo");
+                document.addEventListener("DOMContentLoaded", () => {
+                    const video = document.getElementById("myVideo");
 
-                            video.muted = false;
-                            video.autoplay = true;
-                            video.loop = true;
+                    video.muted = false;
+                    video.autoplay = true;
+                    video.loop = true;
 
-                            video.addEventListener("ended", () => {
-                                video.autoplay = true;
-                                // video.setAttribute("controls", "true");
-                            });
+                    video.addEventListener("ended", () => {
+                        video.autoplay = true;
+                        // video.setAttribute("controls", "true");
+                    });
 
-                            video.play().catch(err => {
-                                video.muted = true;
-                                video.play();
-                            });
-                            unmuteTrigger.addEventListener("click", () => {
-                                video.muted = false;
-                                video.play();
-                            });
-                        });
-                    </script>
+                    video.play().catch(err => {
+                        video.muted = true;
+                        video.play();
+                    });
+                    unmuteTrigger.addEventListener("click", () => {
+                        video.muted = false;
+                        video.play();
+                    });
+                });
+            </script>
             <section class="about-us">
                 <div class="bg_about-us">
                     <div class="content">
@@ -123,13 +123,43 @@ toggle.addEventListener("click", () => {
             <section class="our-projects">
                 <div class="our-projects-wrapper">
                     <span class="op-label">our projects</span>
-                    <div>
+                    <div class="slider">
+                        <span class="btn-prev">←</span>
                         <div class="slides">
                             <div class="slide"><img src="imgs/ed999110f2bc9f3bf942cea044b1ddf025f91508.jpg" alt="">
                             </div>
-                            <span class="btn-next">→</span>
+                            <div class="slide"><img src="imgs/ed999110f2bc9f3bf942cea044b1ddf025f91508.jpg" alt="">
+                            </div>
+                            <div class="slide"><img src="imgs/ed999110f2bc9f3bf942cea044b1ddf025f91508.jpg" alt="">
+                            </div>
+                            <div class="slide"><img src="imgs/ed999110f2bc9f3bf942cea044b1ddf025f91508.jpg" alt="">
+                            </div>
+
                         </div>
+                        <span class="btn-next">→</span>
                     </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const slides = document.querySelector('.slides');
+                            const slideItems = document.querySelectorAll('.slide');
+                            const nextBtn = document.querySelector('.btn-next');
+                            const prevBtn = document.querySelector('.btn-prev');
+
+                            let index = 0;
+
+                            nextBtn.addEventListener('click', () => {
+                                index = (index + 1) % slideItems.length;
+                                slides.style.transform = `translateX(-${index * 100}%)`;
+                            });
+
+                            prevBtn.addEventListener('click', () => {
+                                index = (index - 1 + slideItems.length) % slideItems.length;
+                                slides.style.transform = `translateX(-${index * 100}%)`;
+                            });
+                        });
+                    </script>
+
+
                     <div class="content">
                         <h2 class="title">HERITAGE VILLA NHÀ BÈ</h2>
                         <div class="use-lists"><span>PRODUCTS USE</span>
@@ -149,12 +179,13 @@ toggle.addEventListener("click", () => {
                     <h2 class="title">
                         Lastest news
                     </h2>
-                    <p class="text">Stay up-to-date with the latest news from Maison Source VN. Read about our partnerships,
+                    <p class="text">Stay up-to-date with the latest news from Maison Source VN. Read about our
+                        partnerships,
                         projects, and innovative solutions for wood flooring.</p>
                 </div>
                 <div class="news">
                     <div class="new">
-                        <div class="new-img"><img  src="imgs/c8eab8b466857c118b055589b44e44ece134262e.jpg" alt=""></div>
+                        <div class="new-img"><img src="imgs/c8eab8b466857c118b055589b44e44ece134262e.jpg" alt=""></div>
                         <div class="new-content">
                             <h4 class="new-title">Aurawood Design – Technology</h4>
                             <p class="new-text">Aura Wood áp dụng công nghệ laser tiên tiến trong việc khảm sàn, kết hợp
@@ -164,10 +195,11 @@ toggle.addEventListener("click", () => {
                         </div>
                     </div>
                     <div class="new">
-                        <div  class="new-img"><img src="imgs/7683a843ec2371fbdd707b3452f9a2121c2f6dca.jpg" alt=""></div>
+                        <div class="new-img"><img src="imgs/7683a843ec2371fbdd707b3452f9a2121c2f6dca.jpg" alt=""></div>
                         <div class="new-content">
                             <h4 class="new-title">Chủ nhà ngỡ ngàng trước màn cú hóa thành công của căn chung cũ!</h4>
-                            <p class="new-text">Giấu bố sửa nhà, mẹ con bác Trúc Lâm quyết định dành cho bác Lê Bảo một bất ngờ thật lớn khi biến hoá </p>
+                            <p class="new-text">Giấu bố sửa nhà, mẹ con bác Trúc Lâm quyết định dành cho bác Lê Bảo một
+                                bất ngờ thật lớn khi biến hoá </p>
                             <a class="read-more" href="#">Đọc thêm</a>
                         </div>
                     </div>
@@ -175,7 +207,7 @@ toggle.addEventListener("click", () => {
             </section>
         </div>
     </main>
-<script src="script.js"></script>
+    <script src="script.js"></script>
     <footer id="footer">
         <div class="footer-menu">
             <ul>
@@ -196,5 +228,5 @@ toggle.addEventListener("click", () => {
             <img src="imgs/bg-decor.png" alt="">
         </div>
     </footer>
-    
+
 </body>

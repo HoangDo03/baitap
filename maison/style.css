@@ -451,22 +451,35 @@ section {
     width: fit-content;
 
 }
-
-.slides {
+.slider {
     width: fit-content;
     position: relative;
     overflow: hidden;
 }
+.slides {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s ease;
+}
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+}
 
 .slide img {
+      min-width: 100%;
+    height: 100%;
     aspect-ratio: 3/1;
     object-fit: cover;
 }
 
-.slides .btn-next {
+.slider .btn-next,.slider .btn-prev {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
     font-size: clamp(0.5rem, 2vw, 2rem);
     color: black;
@@ -479,6 +492,13 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 3;
+}
+.slider .btn-prev {
+    left: 0;
+}
+.slider .btn-next{
+    right:0;
 }
 
 .our-projects-wrapper .content {
@@ -623,12 +643,14 @@ section {
 .footer-menu ul li {
     padding: 0.3rem 2rem;
     font-weight: 500;
+    font-family: 'Lora', sans-serif;
     font-size: clamp(1rem, 1.5vw, 2rem);
 }
 
 .footer-menu ul li a {
     text-decoration: none;
     color: var(--color7);
+
 }
 
 .footer-menu ul li a:hover {
@@ -789,6 +811,9 @@ hr {
     }
     .our-products img:last-child{
         border-radius: 0 0 5rem 0;
+    }
+    .slide img{
+        aspect-ratio: 3/2;
     }
 
     .btn-about {
